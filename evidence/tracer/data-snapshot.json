@@ -1,0 +1,8 @@
+{
+  "asset_rows": 3251,
+  "benchmark_rows": 2533,
+  "dataset_hash": "ee6da69ed1ec98fa55882cb50e2e88090f3947c36c11fc558b3137ad70e79ade",
+  "generated_at": "2026-09-27T20:56:38.053838+00:00",
+  "local_dataset_path": "evidence/market-data/tracer-candles.json (gitignored)",
+  "source": "Bitget Reality public UTA v3 history-candles"
+}

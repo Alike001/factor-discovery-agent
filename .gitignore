@@ -4,6 +4,7 @@
 .venv/
 __pycache__/
 *.py[cod]
+*.egg-info/
 .pytest_cache/
 .ruff_cache/
 .coverage
@@ -14,4 +15,3 @@ out/
 *.log
 evidence/market-data/
 backend/evidence/market-data/
-

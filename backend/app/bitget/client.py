@@ -83,6 +83,8 @@ class BitgetPublicClient:
             if not page:
                 break
             for candle in page:
+                if candle.timestamp_ms in by_timestamp:
+                    raise ValueError(f"duplicate candle timestamp from source: {candle.timestamp_ms}")
                 by_timestamp[candle.timestamp_ms] = candle
             oldest = min(candle.timestamp_ms for candle in page)
             if oldest <= launch_ms or (end_ms is not None and oldest >= end_ms):
@@ -95,4 +97,3 @@ def closed_candles(candles: list[Candle], interval: str, now_ms: int | None = No
     current_ms = now_ms if now_ms is not None else int(datetime.now(UTC).timestamp() * 1000)
     duration = INTERVAL_MS[interval]
     return [candle for candle in candles if candle.timestamp_ms + duration <= current_ms]
-

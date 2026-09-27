@@ -11,6 +11,15 @@
 - Database: unverified; deployment architecture remains one-shot GitHub Actions jobs + Neon.
 - Local verification uses Python 3.14 because Python 3.12 is unavailable; metadata targets Python 3.12.
 
-## Phase 1 — cleared to start
+## Phase 1 — complete
 
-The public Reality candle gate has no hard blocker. The tracer must use timestamp intersections and no forward-filling.
+- Real Bitget Reality data path completed: RNVDA + RQQQ closed 1H candles -> normalized snapshot -> FactorSpec -> deterministic evaluation -> evidence JSON -> `/lab`.
+- Tracer verdict: failed costs; OOS inconclusive; never eligible for promotion.
+- Evidence: `evidence/tracer/tracer-experiment.json`.
+- Frontend: root redirect and Lab-only App Router product surface.
+- Execution remains `local_paper`; Phase 1 does not place paper or real orders.
+- Verification: 15 Python tests pass; frontend lint and production build pass; npm audit reports zero vulnerabilities.
+
+## Stop point
+
+Phase 2 has not started. Awaiting review.

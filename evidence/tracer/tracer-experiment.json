@@ -1,0 +1,389 @@
+{
+  "claim": "Architecture tracer only; not discovered alpha and not a paper portfolio result.",
+  "data_snapshot": {
+    "asset_rows": 3251,
+    "benchmark_rows": 2533,
+    "dataset_hash": "ee6da69ed1ec98fa55882cb50e2e88090f3947c36c11fc558b3137ad70e79ade",
+    "generated_at": "2026-09-27T20:56:38.053838+00:00",
+    "local_dataset_path": "evidence/market-data/tracer-candles.json (gitignored)",
+    "source": "Bitget Reality public UTA v3 history-candles"
+  },
+  "execution_audit": {
+    "fill_count": 48,
+    "same_decision_candle_violations": 0
+  },
+  "expression_human": "zscore(ret(RNVDA.close, 12h) \u2212 ret(RQQQ.close, 12h), 120h); enter below \u22121.0 overnight, exit at 0.0",
+  "factor": {
+    "direction": "long_flat",
+    "entry_condition": {
+      "args": [
+        {
+          "args": [],
+          "field": null,
+          "lookback": null,
+          "op": "signal",
+          "sessions": null,
+          "symbol": null,
+          "threshold": null
+        }
+      ],
+      "field": null,
+      "lookback": null,
+      "op": "lt",
+      "sessions": null,
+      "symbol": null,
+      "threshold": -1.0
+    },
+    "exit_condition": {
+      "args": [
+        {
+          "args": [],
+          "field": null,
+          "lookback": null,
+          "op": "signal",
+          "sessions": null,
+          "symbol": null,
+          "threshold": null
+        }
+      ],
+      "field": null,
+      "lookback": null,
+      "op": "gte",
+      "sessions": null,
+      "symbol": null,
+      "threshold": 0.0
+    },
+    "horizon_bars": 12,
+    "name": "Overnight Relative Return Z-Score",
+    "rationale": "This fixed, unoptimized expression exists only to prove the safe data-to-evidence path.",
+    "rebalance_bars": 1,
+    "session_filter": [
+      "overnight"
+    ],
+    "signal": {
+      "args": [
+        {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [],
+                  "field": "close",
+                  "lookback": null,
+                  "op": "source",
+                  "sessions": null,
+                  "symbol": "RNVDAUSDT",
+                  "threshold": null
+                }
+              ],
+              "field": null,
+              "lookback": 12,
+              "op": "ret",
+              "sessions": null,
+              "symbol": null,
+              "threshold": null
+            },
+            {
+              "args": [
+                {
+                  "args": [],
+                  "field": "close",
+                  "lookback": null,
+                  "op": "source",
+                  "sessions": null,
+                  "symbol": "RQQQUSDT",
+                  "threshold": null
+                }
+              ],
+              "field": null,
+              "lookback": 12,
+              "op": "ret",
+              "sessions": null,
+              "symbol": null,
+              "threshold": null
+            }
+          ],
+          "field": null,
+          "lookback": null,
+          "op": "sub",
+          "sessions": null,
+          "symbol": null,
+          "threshold": null
+        }
+      ],
+      "field": null,
+      "lookback": 120,
+      "op": "zscore",
+      "sessions": null,
+      "symbol": null,
+      "threshold": null
+    },
+    "thesis": "A deeply negative hourly z-score of NVDA rToken return relative to QQQ during overnight trading may mean-revert.",
+    "universe": [
+      "RNVDAUSDT",
+      "RQQQUSDT"
+    ]
+  },
+  "factor_hash": "049175bda7545abf380d47b97d6b8eb7de5926fee4520af65f873c5ba0a3647d",
+  "gates": [
+    {
+      "name": "Syntax",
+      "reason": "FactorSpec validated against the safe JSON AST.",
+      "verdict": "PASS"
+    },
+    {
+      "name": "Coverage",
+      "reason": "2497 aligned closed hourly observations; no forward-fill.",
+      "verdict": "PASS"
+    },
+    {
+      "name": "Point-in-time",
+      "reason": "Only closed rToken and rQQQ candle fields were used.",
+      "verdict": "PASS"
+    },
+    {
+      "name": "Mechanics",
+      "reason": "Every fill follows its decision candle.",
+      "verdict": "PASS"
+    },
+    {
+      "name": "Costs",
+      "reason": "Net return is not positive after the stated costs.",
+      "verdict": "FAIL"
+    },
+    {
+      "name": "OOS",
+      "reason": "16 OOS fills against a 20-fill minimum.",
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "name": "Stability",
+      "reason": "Phase 1 tracer does not run the certification stability battery.",
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "name": "Promotion",
+      "reason": "A hardcoded tracer cannot be promoted or called discovered alpha.",
+      "verdict": "INCONCLUSIVE"
+    }
+  ],
+  "generated_at": "2026-09-27T20:56:39.313040+00:00",
+  "integrity": {
+    "deterministic": true,
+    "records_hash": "0cbeb2e5eb321a6b28e7cc4afe9c45fce9e8070454d74b0887066ac3c476f71f"
+  },
+  "label": "PAPER \u00b7 REAL BITGET MARKET DATA",
+  "metrics": {
+    "fill_count": 48,
+    "gross": {
+      "max_drawdown": -0.13956879784931264,
+      "observations": 2496,
+      "sharpe": -1.4045172883549404,
+      "total_return": -0.100267848678946,
+      "turnover": 48.0
+    },
+    "is_net": {
+      "max_drawdown": -0.10917989159947084,
+      "observations": 1794,
+      "sharpe": -1.1706683092610402,
+      "total_return": -0.07056679933834309,
+      "turnover": 32.0
+    },
+    "net": {
+      "max_drawdown": -0.1623885926213573,
+      "observations": 2496,
+      "sharpe": -1.9246516576294144,
+      "total_return": -0.13208379151941618,
+      "turnover": 48.0
+    },
+    "oos_fill_count": 16,
+    "oos_net": {
+      "max_drawdown": -0.0743534181168567,
+      "observations": 702,
+      "sharpe": -6.1174082008874064,
+      "total_return": -0.06618764225043872,
+      "turnover": 16.0
+    }
+  },
+  "protocol": {
+    "entry_threshold": -1.0,
+    "exit_threshold": 0.0,
+    "fee_basis": "ASSUMED_PUBLISHED_BASELINE",
+    "fee_per_fill": 0.0005,
+    "fill_rule": "next available aligned hourly candle open after decision",
+    "relative_lookback_hours": 12,
+    "slippage_per_fill": 0.00025,
+    "split_rule": "latest aligned timestamp minus 30 calendar days; fixed before metrics",
+    "split_timestamp": "2026-08-28T19:00:00+00:00",
+    "zscore_lookback_hours": 120
+  },
+  "sample_records": [
+    {
+      "cost": 0.0,
+      "fill_decision_timestamp_ms": null,
+      "fill_timestamp_ms": null,
+      "gross_return": 0.0,
+      "net_return": 0.0,
+      "next_timestamp_ms": 1790496000000,
+      "position": 0.0,
+      "session": "weekend",
+      "signal": 0.7424257288650303,
+      "timestamp_ms": 1790492400000,
+      "turnover": 0.0
+    },
+    {
+      "cost": 0.0,
+      "fill_decision_timestamp_ms": null,
+      "fill_timestamp_ms": null,
+      "gross_return": 0.0,
+      "net_return": 0.0,
+      "next_timestamp_ms": 1790499600000,
+      "position": 0.0,
+      "session": "weekend",
+      "signal": 0.8733448919532651,
+      "timestamp_ms": 1790496000000,
+      "turnover": 0.0
+    },
+    {
+      "cost": 0.0,
+      "fill_decision_timestamp_ms": null,
+      "fill_timestamp_ms": null,
+      "gross_return": 0.0,
+      "net_return": 0.0,
+      "next_timestamp_ms": 1790503200000,
+      "position": 0.0,
+      "session": "weekend",
+      "signal": 0.9234560021631327,
+      "timestamp_ms": 1790499600000,
+      "turnover": 0.0
+    },
+    {
+      "cost": 0.0,
+      "fill_decision_timestamp_ms": null,
+      "fill_timestamp_ms": null,
+      "gross_return": -0.0,
+      "net_return": -0.0,
+      "next_timestamp_ms": 1790506800000,
+      "position": 0.0,
+      "session": "weekend",
+      "signal": 1.5954625533682443,
+      "timestamp_ms": 1790503200000,
+      "turnover": 0.0
+    },
+    {
+      "cost": 0.0,
+      "fill_decision_timestamp_ms": null,
+      "fill_timestamp_ms": null,
+      "gross_return": -0.0,
+      "net_return": -0.0,
+      "next_timestamp_ms": 1790510400000,
+      "position": 0.0,
+      "session": "weekend",
+      "signal": 1.0489669778797615,
+      "timestamp_ms": 1790506800000,
+      "turnover": 0.0
+    },
+    {
+      "cost": 0.0,
+      "fill_decision_timestamp_ms": null,
+      "fill_timestamp_ms": null,
+      "gross_return": 0.0,
+      "net_return": 0.0,
+      "next_timestamp_ms": 1790514000000,
+      "position": 0.0,
+      "session": "weekend",
+      "signal": 1.1471176511467036,
+      "timestamp_ms": 1790510400000,
+      "turnover": 0.0
+    },
+    {
+      "cost": 0.0,
+      "fill_decision_timestamp_ms": null,
+      "fill_timestamp_ms": null,
+      "gross_return": 0.0,
+      "net_return": 0.0,
+      "next_timestamp_ms": 1790517600000,
+      "position": 0.0,
+      "session": "weekend",
+      "signal": 1.0112810359609767,
+      "timestamp_ms": 1790514000000,
+      "turnover": 0.0
+    },
+    {
+      "cost": 0.0,
+      "fill_decision_timestamp_ms": null,
+      "fill_timestamp_ms": null,
+      "gross_return": -0.0,
+      "net_return": -0.0,
+      "next_timestamp_ms": 1790521200000,
+      "position": 0.0,
+      "session": "weekend",
+      "signal": 1.4752167439747208,
+      "timestamp_ms": 1790517600000,
+      "turnover": 0.0
+    },
+    {
+      "cost": 0.0,
+      "fill_decision_timestamp_ms": null,
+      "fill_timestamp_ms": null,
+      "gross_return": -0.0,
+      "net_return": -0.0,
+      "next_timestamp_ms": 1790524800000,
+      "position": 0.0,
+      "session": "weekend",
+      "signal": 1.103665268268155,
+      "timestamp_ms": 1790521200000,
+      "turnover": 0.0
+    },
+    {
+      "cost": 0.0,
+      "fill_decision_timestamp_ms": null,
+      "fill_timestamp_ms": null,
+      "gross_return": 0.0,
+      "net_return": 0.0,
+      "next_timestamp_ms": 1790528400000,
+      "position": 0.0,
+      "session": "weekend",
+      "signal": 1.237500985675832,
+      "timestamp_ms": 1790524800000,
+      "turnover": 0.0
+    },
+    {
+      "cost": 0.0,
+      "fill_decision_timestamp_ms": null,
+      "fill_timestamp_ms": null,
+      "gross_return": 0.0,
+      "net_return": 0.0,
+      "next_timestamp_ms": 1790532000000,
+      "position": 0.0,
+      "session": "weekend",
+      "signal": -0.2878986062953137,
+      "timestamp_ms": 1790528400000,
+      "turnover": 0.0
+    },
+    {
+      "cost": 0.0,
+      "fill_decision_timestamp_ms": null,
+      "fill_timestamp_ms": null,
+      "gross_return": 0.0,
+      "net_return": 0.0,
+      "next_timestamp_ms": 1790535600000,
+      "position": 0.0,
+      "session": "weekend",
+      "signal": 1.3102054577811482,
+      "timestamp_ms": 1790532000000,
+      "turnover": 0.0
+    }
+  ],
+  "schema_version": "phase1-tracer-v1",
+  "source": {
+    "aligned_rows": 2497,
+    "asset": "RNVDAUSDT",
+    "benchmark": "RQQQUSDT",
+    "first_timestamp": "2026-06-01T13:00:00+00:00",
+    "forming_candles_excluded": true,
+    "last_timestamp": "2026-09-27T19:00:00+00:00",
+    "missing_bar_policy": "timestamp intersection; never forward-fill",
+    "provider": "Bitget Reality public UTA v3"
+  }
+}
