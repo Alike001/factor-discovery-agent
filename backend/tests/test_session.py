@@ -37,5 +37,7 @@ def test_dst_conversion_uses_new_york_rules() -> None:
 
 
 def test_missing_expected_anchor_fails_closed() -> None:
-    assert validate_expected_anchor(date(2026, 9, 25), {date(2026, 9, 24)}) is AnchorStatus.MISSING_ANCHOR
-
+    assert (
+        validate_expected_anchor(date(2026, 9, 25), {date(2026, 9, 24)})
+        is AnchorStatus.MISSING_EXPECTED_ANCHOR
+    )

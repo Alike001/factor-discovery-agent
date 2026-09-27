@@ -1,0 +1,12 @@
+{
+  "asset_rows_retrieved": 3252,
+  "benchmark_rows_retrieved": 2534,
+  "dataset_hash": "f38aaec1b6869e605c1b5ca9e106392e5e979df460075f84cb74286de3342bbc",
+  "field_valid_from": {
+    "RNVDAUSDT.close": "2026-06-02T00:00:00+00:00",
+    "RQQQUSDT.close": "2026-06-02T00:00:00+00:00"
+  },
+  "generated_at": "2026-09-27T21:32:00.170924+00:00",
+  "raw_dataset_committed": false,
+  "source": "Bitget Reality public UTA v3 history-candles"
+}

@@ -2,12 +2,13 @@ from __future__ import annotations
 
 import math
 import statistics
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from typing import Any
 
 from app.bitget.models import Candle
+from app.bitget.session import classify_session
 from app.evidence import canonical_hash
 from app.research.dsl import FactorSpec
 
@@ -23,27 +24,14 @@ class EngineConfig:
     fee_per_fill: float = 0.0005
     slippage_per_fill: float = 0.00025
     oos_days: int = 30
+    field_valid_from_ms: dict[str, int] = field(default_factory=dict)
+    market_closures: tuple[tuple[datetime, datetime], ...] = ()
+    schema_version: str = "phase1-tracer-v1"
 
 
 @dataclass(frozen=True)
 class ExperimentResult:
     evidence: dict[str, Any]
-
-
-def _session(timestamp_ms: int) -> str:
-    from zoneinfo import ZoneInfo
-
-    local = datetime.fromtimestamp(timestamp_ms / 1000, tz=UTC).astimezone(ZoneInfo("America/New_York"))
-    if local.weekday() >= 5:
-        return "weekend"
-    hour = local.hour + local.minute / 60
-    if 4 <= hour < 9.5:
-        return "pre_market"
-    if 9.5 <= hour < 16:
-        return "regular"
-    if 16 <= hour < 20:
-        return "after_hours"
-    return "overnight"
 
 
 def _metrics(returns: list[float], turnovers: list[float], periods_per_year: int = 8760) -> dict[str, Any]:
@@ -78,6 +66,8 @@ def evaluate_factor(
     asset_by_time = {item.timestamp_ms: item for item in asset_candles}
     benchmark_by_time = {item.timestamp_ms: item for item in benchmark_candles}
     timestamps = sorted(set(asset_by_time) & set(benchmark_by_time))
+    required_valid_from = max(config.field_valid_from_ms.values(), default=0)
+    timestamps = [timestamp for timestamp in timestamps if timestamp >= required_valid_from]
     if len(timestamps) < config.relative_lookback + config.zscore_lookback + 2:
         raise ValueError("insufficient aligned observations")
     latest = datetime.fromtimestamp(timestamps[-1] / 1000, tz=UTC)
@@ -117,7 +107,9 @@ def evaluate_factor(
         gross = position * (next_open / current_open - 1)
         cost = turnover * (config.fee_per_fill + config.slippage_per_fill)
         net = gross - cost
-        session = _session(timestamp + 3_600_000)
+        session = classify_session(
+            datetime.fromtimestamp((timestamp + 3_600_000) / 1000, tz=UTC), list(config.market_closures)
+        ).value
         signal = zscores[index]
         next_target = position
         if signal is not None and session in spec.session_filter:
@@ -172,7 +164,7 @@ def evaluate_factor(
         {"name": "Promotion", "verdict": "INCONCLUSIVE", "reason": "A hardcoded tracer cannot be promoted or called discovered alpha."},
     ]
     evidence = {
-        "schema_version": "phase1-tracer-v1",
+        "schema_version": config.schema_version,
         "generated_at": datetime.now(UTC).isoformat(),
         "label": "PAPER · REAL BITGET MARKET DATA",
         "claim": "Architecture tracer only; not discovered alpha and not a paper portfolio result.",
@@ -200,6 +192,10 @@ def evaluate_factor(
             "fee_per_fill": config.fee_per_fill,
             "slippage_per_fill": config.slippage_per_fill,
             "fee_basis": "ASSUMED_PUBLISHED_BASELINE",
+            "field_valid_from": {
+                key: datetime.fromtimestamp(value / 1000, tz=UTC).isoformat()
+                for key, value in sorted(config.field_valid_from_ms.items())
+            },
         },
         "metrics": {
             "gross": gross_all,

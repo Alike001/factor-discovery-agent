@@ -9,7 +9,7 @@ Generated from the live preflight on 2026-09-27. Evidence is in [`evidence/prefl
 ## Measured results
 
 - Working deadline: **2026-10-08 23:59 UTC+8**, as supplied by the live-form context package.
-- Reality discovery: **2,587** live-response instruments carried `isReality=yes`.
+- Reality discovery: the response contained **3,169 total SPOT instruments**. Exactly **2,587** carried `isReality=yes`; all 2,587 were online in the Phase 1.5 recheck. The original 2,587 label was correctly filtered, while the public 500+ copy has drifted from the API surface.
 - Primary core universe selected: **RNVDAUSDT, RAAPLUSDT, RTSLAUSDT, RMSFTUSDT, RAMZNUSDT, RMETAUSDT, RAMDUSDT, RQQQUSDT**.
 - Secondary audited symbols: **RSPYUSDT, RCOINUSDT, RHOODUSDT, RMSTRUSDT**.
 - Hourly history: every audited target had at least **117.61 calendar days**; RNVDA had **157.74 days**.
@@ -47,4 +47,3 @@ Regression tests cover normal weekday, Friday close, Saturday, holiday closure, 
 - Forming candles excluded.
 - Decisions fill no earlier than the next available candle.
 - Gross and net results shown separately with the assumed fee basis.
-

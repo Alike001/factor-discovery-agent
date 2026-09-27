@@ -1,0 +1,8 @@
+{
+  "base_url": "https://hackathon.bitgetops.com/v1",
+  "generated_at": "2026-09-27T21:31:16.560446+00:00",
+  "probes": [],
+  "requested_model": "qwen3.8-max",
+  "secret_persisted": false,
+  "status": "BLOCKED_KEY"
+}

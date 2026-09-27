@@ -19,3 +19,13 @@ def test_tracer_spec_is_valid_and_canonicalizable() -> None:
     spec = FactorSpec.model_validate(TRACER_SPEC)
     assert spec.signal.op == "zscore"
 
+
+def test_volume_operator_disabled_by_default() -> None:
+    proposal = dict(TRACER_SPEC)
+    proposal["signal"] = {
+        "op": "vol",
+        "lookback": 12,
+        "args": [{"op": "source", "symbol": "RNVDAUSDT", "field": "volume"}],
+    }
+    with pytest.raises(ValidationError, match="volume operators are disabled"):
+        FactorSpec.model_validate(proposal)

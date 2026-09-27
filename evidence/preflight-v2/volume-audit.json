@@ -1,0 +1,512 @@
+{
+  "conclusion": "Volume and turnover are populated before July 9, but the values are not proven rToken trade volume.",
+  "dsl_volume_operators": "DISABLED",
+  "generated_at": "2026-09-27T21:31:16.534143+00:00",
+  "status": "PROVENANCE_UNESTABLISHED",
+  "symbols": {
+    "RAAPLUSDT": {
+      "before_2026_07_09": {
+        "base_volume": {
+          "max_positive": 73943441.0,
+          "median_positive": 371782.0,
+          "min_positive": 0.0302,
+          "null_or_empty": 0,
+          "positive": 77494,
+          "rows": 77495,
+          "zero": 1
+        },
+        "quote_turnover": {
+          "max_positive": 14637489174.5203,
+          "median_positive": 72290918.7964,
+          "min_positive": 9.210698,
+          "null_or_empty": 0,
+          "positive": 77494,
+          "rows": 77495,
+          "zero": 1
+        }
+      },
+      "dsl_status": "DISABLED",
+      "on_or_after_2026_07_09": {
+        "base_volume": {
+          "max_positive": 50710899.086899,
+          "median_positive": 22049.000967,
+          "min_positive": 0.0044,
+          "null_or_empty": 0,
+          "positive": 1750,
+          "rows": 1750,
+          "zero": 0
+        },
+        "quote_turnover": {
+          "max_positive": 17024233950.931547,
+          "median_positive": 6927772.45710644,
+          "min_positive": 1.47422,
+          "null_or_empty": 0,
+          "positive": 1750,
+          "rows": 1750,
+          "zero": 0
+        }
+      },
+      "overnight_base_volume": {
+        "max_positive": 243450.0,
+        "median_positive": 5744.0,
+        "min_positive": 25.0,
+        "null_or_empty": 0,
+        "positive": 2081,
+        "rows": 2081,
+        "zero": 0
+      },
+      "provenance": "UNESTABLISHED",
+      "regular_session_base_volume": {
+        "max_positive": 73943441.0,
+        "median_positive": 3870838.0,
+        "min_positive": 100.0,
+        "null_or_empty": 0,
+        "positive": 29333,
+        "rows": 29333,
+        "zero": 0
+      },
+      "symbol": "RAAPLUSDT"
+    },
+    "RAMDUSDT": {
+      "before_2026_07_09": {
+        "base_volume": {
+          "max_positive": 72892259.0,
+          "median_positive": 624411.0,
+          "min_positive": 0.0204,
+          "null_or_empty": 0,
+          "positive": 70250,
+          "rows": 70251,
+          "zero": 1
+        },
+        "quote_turnover": {
+          "max_positive": 15650550432.1438,
+          "median_positive": 8802344.15865,
+          "min_positive": 10.93236,
+          "null_or_empty": 0,
+          "positive": 70250,
+          "rows": 70251,
+          "zero": 1
+        }
+      },
+      "dsl_status": "DISABLED",
+      "on_or_after_2026_07_09": {
+        "base_volume": {
+          "max_positive": 12993427.305777995,
+          "median_positive": 31759.0,
+          "min_positive": 0.006,
+          "null_or_empty": 0,
+          "positive": 1651,
+          "rows": 1653,
+          "zero": 2
+        },
+        "quote_turnover": {
+          "max_positive": 6453262778.217665,
+          "median_positive": 16602198.38,
+          "min_positive": 3.39414,
+          "null_or_empty": 0,
+          "positive": 1651,
+          "rows": 1653,
+          "zero": 2
+        }
+      },
+      "overnight_base_volume": {
+        "max_positive": 278625.0,
+        "median_positive": 13048.5,
+        "min_positive": 1.0,
+        "null_or_empty": 0,
+        "positive": 2002,
+        "rows": 2002,
+        "zero": 0
+      },
+      "provenance": "UNESTABLISHED",
+      "regular_session_base_volume": {
+        "max_positive": 69155341.0,
+        "median_positive": 4100293.0,
+        "min_positive": 44500.0,
+        "null_or_empty": 0,
+        "positive": 29327,
+        "rows": 29327,
+        "zero": 0
+      },
+      "symbol": "RAMDUSDT"
+    },
+    "RAMZNUSDT": {
+      "before_2026_07_09": {
+        "base_volume": {
+          "max_positive": 50742631.0,
+          "median_positive": 183417.0,
+          "min_positive": 0.0377,
+          "null_or_empty": 0,
+          "positive": 70614,
+          "rows": 70614,
+          "zero": 0
+        },
+        "quote_turnover": {
+          "max_positive": 12647844341.3788,
+          "median_positive": 56318470.77025,
+          "min_positive": 9.153937,
+          "null_or_empty": 0,
+          "positive": 70614,
+          "rows": 70614,
+          "zero": 0
+        }
+      },
+      "dsl_status": "DISABLED",
+      "on_or_after_2026_07_09": {
+        "base_volume": {
+          "max_positive": 30181706.707602,
+          "median_positive": 41248.421188,
+          "min_positive": 0.0244,
+          "null_or_empty": 0,
+          "positive": 1569,
+          "rows": 1570,
+          "zero": 1
+        },
+        "quote_turnover": {
+          "max_positive": 8143176804.175756,
+          "median_positive": 10499627.95359294,
+          "min_positive": 5.994836,
+          "null_or_empty": 0,
+          "positive": 1569,
+          "rows": 1570,
+          "zero": 1
+        }
+      },
+      "overnight_base_volume": {
+        "max_positive": 235893.0,
+        "median_positive": 8453.0,
+        "min_positive": 0.062367,
+        "null_or_empty": 0,
+        "positive": 2035,
+        "rows": 2035,
+        "zero": 0
+      },
+      "provenance": "UNESTABLISHED",
+      "regular_session_base_volume": {
+        "max_positive": 42088519.0,
+        "median_positive": 659842.0,
+        "min_positive": 700.0,
+        "null_or_empty": 0,
+        "positive": 29331,
+        "rows": 29331,
+        "zero": 0
+      },
+      "symbol": "RAMZNUSDT"
+    },
+    "RMETAUSDT": {
+      "before_2026_07_09": {
+        "base_volume": {
+          "max_positive": 53174191.0,
+          "median_positive": 93488.0,
+          "min_positive": 0.0041,
+          "null_or_empty": 0,
+          "positive": 18083,
+          "rows": 18086,
+          "zero": 3
+        },
+        "quote_turnover": {
+          "max_positive": 14717654609.57,
+          "median_positive": 39783591.981,
+          "min_positive": 2.363896,
+          "null_or_empty": 0,
+          "positive": 18083,
+          "rows": 18086,
+          "zero": 3
+        }
+      },
+      "dsl_status": "DISABLED",
+      "on_or_after_2026_07_09": {
+        "base_volume": {
+          "max_positive": 10436079.468166001,
+          "median_positive": 16365.586189499998,
+          "min_positive": 0.0006,
+          "null_or_empty": 0,
+          "positive": 1676,
+          "rows": 1676,
+          "zero": 0
+        },
+        "quote_turnover": {
+          "max_positive": 6972649426.202176,
+          "median_positive": 10253059.505702954,
+          "min_positive": 0.384054,
+          "null_or_empty": 0,
+          "positive": 1676,
+          "rows": 1676,
+          "zero": 0
+        }
+      },
+      "overnight_base_volume": {
+        "max_positive": 148467.0,
+        "median_positive": 3515.0,
+        "min_positive": 1.0,
+        "null_or_empty": 0,
+        "positive": 2008,
+        "rows": 2008,
+        "zero": 0
+      },
+      "provenance": "UNESTABLISHED",
+      "regular_session_base_volume": {
+        "max_positive": 41175502.0,
+        "median_positive": 1787093.5,
+        "min_positive": 70824.0,
+        "null_or_empty": 0,
+        "positive": 6450,
+        "rows": 6450,
+        "zero": 0
+      },
+      "symbol": "RMETAUSDT"
+    },
+    "RMSFTUSDT": {
+      "before_2026_07_09": {
+        "base_volume": {
+          "max_positive": 90068048.0,
+          "median_positive": 765256.0,
+          "min_positive": 0.0024,
+          "null_or_empty": 0,
+          "positive": 72564,
+          "rows": 72565,
+          "zero": 1
+        },
+        "quote_turnover": {
+          "max_positive": 12893139911.6514,
+          "median_positive": 73504270.45115,
+          "min_positive": 0.938304,
+          "null_or_empty": 0,
+          "positive": 72564,
+          "rows": 72565,
+          "zero": 1
+        }
+      },
+      "dsl_status": "DISABLED",
+      "on_or_after_2026_07_09": {
+        "base_volume": {
+          "max_positive": 22922228.221795995,
+          "median_positive": 21184.584121,
+          "min_positive": 0.0091,
+          "null_or_empty": 0,
+          "positive": 1650,
+          "rows": 1652,
+          "zero": 2
+        },
+        "quote_turnover": {
+          "max_positive": 11314763727.506004,
+          "median_positive": 9288087.611702295,
+          "min_positive": 4.511871,
+          "null_or_empty": 0,
+          "positive": 1650,
+          "rows": 1652,
+          "zero": 2
+        }
+      },
+      "overnight_base_volume": {
+        "max_positive": 1024800.0,
+        "median_positive": 6508.0,
+        "min_positive": 5.0,
+        "null_or_empty": 0,
+        "positive": 2113,
+        "rows": 2113,
+        "zero": 0
+      },
+      "provenance": "UNESTABLISHED",
+      "regular_session_base_volume": {
+        "max_positive": 90068048.0,
+        "median_positive": 3645894.0,
+        "min_positive": 100.0,
+        "null_or_empty": 0,
+        "positive": 29331,
+        "rows": 29331,
+        "zero": 0
+      },
+      "symbol": "RMSFTUSDT"
+    },
+    "RNVDAUSDT": {
+      "before_2026_07_09": {
+        "base_volume": {
+          "max_positive": 149393015.0,
+          "median_positive": 643164.0,
+          "min_positive": 0.0256,
+          "null_or_empty": 0,
+          "positive": 67647,
+          "rows": 67660,
+          "zero": 13
+        },
+        "quote_turnover": {
+          "max_positive": 27476229405.6448,
+          "median_positive": 27140390.1832,
+          "min_positive": 5.319168,
+          "null_or_empty": 0,
+          "positive": 67647,
+          "rows": 67660,
+          "zero": 13
+        }
+      },
+      "dsl_status": "DISABLED",
+      "on_or_after_2026_07_09": {
+        "base_volume": {
+          "max_positive": 91216255.94576703,
+          "median_positive": 82805.0,
+          "min_positive": 0.0499,
+          "null_or_empty": 0,
+          "positive": 1935,
+          "rows": 1935,
+          "zero": 0
+        },
+        "quote_turnover": {
+          "max_positive": 20249534532.8742,
+          "median_positive": 17368803.78,
+          "min_positive": 10.09477,
+          "null_or_empty": 0,
+          "positive": 1935,
+          "rows": 1935,
+          "zero": 0
+        }
+      },
+      "overnight_base_volume": {
+        "max_positive": 1468205.0,
+        "median_positive": 62469.5,
+        "min_positive": 0.2025,
+        "null_or_empty": 0,
+        "positive": 2118,
+        "rows": 2125,
+        "zero": 7
+      },
+      "provenance": "UNESTABLISHED",
+      "regular_session_base_volume": {
+        "max_positive": 149393015.0,
+        "median_positive": 1938274.0,
+        "min_positive": 50373.0,
+        "null_or_empty": 0,
+        "positive": 29493,
+        "rows": 29493,
+        "zero": 0
+      },
+      "symbol": "RNVDAUSDT"
+    },
+    "RQQQUSDT": {
+      "before_2026_07_09": {
+        "base_volume": {
+          "max_positive": 59066746.0,
+          "median_positive": 774238.5,
+          "min_positive": 0.0274,
+          "null_or_empty": 0,
+          "positive": 62402,
+          "rows": 62405,
+          "zero": 3
+        },
+        "quote_turnover": {
+          "max_positive": 21401207097.984,
+          "median_positive": 141470890.95340002,
+          "min_positive": 19.747454,
+          "null_or_empty": 0,
+          "positive": 62402,
+          "rows": 62405,
+          "zero": 3
+        }
+      },
+      "dsl_status": "DISABLED",
+      "on_or_after_2026_07_09": {
+        "base_volume": {
+          "max_positive": 13981134.625799,
+          "median_positive": 45959.0,
+          "min_positive": 0.0147,
+          "null_or_empty": 0,
+          "positive": 1907,
+          "rows": 1907,
+          "zero": 0
+        },
+        "quote_turnover": {
+          "max_positive": 9560281681.646343,
+          "median_positive": 32712130.53,
+          "min_positive": 10.941063,
+          "null_or_empty": 0,
+          "positive": 1907,
+          "rows": 1907,
+          "zero": 0
+        }
+      },
+      "overnight_base_volume": {
+        "max_positive": 398767.0,
+        "median_positive": 19305.0,
+        "min_positive": 1.0,
+        "null_or_empty": 0,
+        "positive": 2011,
+        "rows": 2011,
+        "zero": 0
+      },
+      "provenance": "UNESTABLISHED",
+      "regular_session_base_volume": {
+        "max_positive": 59066746.0,
+        "median_positive": 4496240.0,
+        "min_positive": 5900.0,
+        "null_or_empty": 0,
+        "positive": 23339,
+        "rows": 23339,
+        "zero": 0
+      },
+      "symbol": "RQQQUSDT"
+    },
+    "RTSLAUSDT": {
+      "before_2026_07_09": {
+        "base_volume": {
+          "max_positive": 85926757.0,
+          "median_positive": 207050.5,
+          "min_positive": 0.0203,
+          "null_or_empty": 0,
+          "positive": 60460,
+          "rows": 60461,
+          "zero": 1
+        },
+        "quote_turnover": {
+          "max_positive": 24771877775.5482,
+          "median_positive": 54033013.0483,
+          "min_positive": 8.090362,
+          "null_or_empty": 0,
+          "positive": 60460,
+          "rows": 60461,
+          "zero": 1
+        }
+      },
+      "dsl_status": "DISABLED",
+      "on_or_after_2026_07_09": {
+        "base_volume": {
+          "max_positive": 26249146.296378,
+          "median_positive": 33870.0,
+          "min_positive": 0.0013,
+          "null_or_empty": 0,
+          "positive": 1841,
+          "rows": 1841,
+          "zero": 0
+        },
+        "quote_turnover": {
+          "max_positive": 8536109485.985611,
+          "median_positive": 11816897.24407479,
+          "min_positive": 0.401804,
+          "null_or_empty": 0,
+          "positive": 1841,
+          "rows": 1841,
+          "zero": 0
+        }
+      },
+      "overnight_base_volume": {
+        "max_positive": 626501.0,
+        "median_positive": 30263.0,
+        "min_positive": 0.0013,
+        "null_or_empty": 0,
+        "positive": 2211,
+        "rows": 2211,
+        "zero": 0
+      },
+      "provenance": "UNESTABLISHED",
+      "regular_session_base_volume": {
+        "max_positive": 85926757.0,
+        "median_positive": 1176324.0,
+        "min_positive": 970.0,
+        "null_or_empty": 0,
+        "positive": 24444,
+        "rows": 24444,
+        "zero": 0
+      },
+      "symbol": "RTSLAUSDT"
+    }
+  }
+}

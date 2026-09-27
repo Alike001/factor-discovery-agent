@@ -1,0 +1,19 @@
+{
+  "credentials_persisted": false,
+  "endpoint": {
+    "database": "bitget_research",
+    "hostname": "127.0.0.1",
+    "port": 55432
+  },
+  "generated_at": "2026-09-27T21:31:17.760274+00:00",
+  "migrations": [
+    "001_phase2_minimum.sql"
+  ],
+  "postgres_version": "16.15",
+  "status": "PASS",
+  "tests": {
+    "concurrent_trial_numbers_unique": true,
+    "cycle_rerun_idempotent": true,
+    "duplicate_factor_same_experiment": true
+  }
+}

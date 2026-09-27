@@ -1,0 +1,18 @@
+{
+  "database": "PASS",
+  "demo": "UNVERIFIED_NO_CREDENTIALS",
+  "execution_mode": "local_paper",
+  "fee": "ACCOUNT_FEE_UNVERIFIED",
+  "fee_basis": "ASSUMED_PUBLISHED_BASELINE",
+  "gap_semantics": "PASS_WITH_MISSING_BARS",
+  "generated_at": "2026-09-27T21:32:00.982090+00:00",
+  "history_provenance": "PASS_WITH_AMBIGUOUS_PRE_CERTIFICATION_HISTORY",
+  "phase2_blockers": [
+    "QWEN"
+  ],
+  "qwen": "BLOCKED_KEY",
+  "reality_count_audit": "PASS",
+  "status": "NO_GO",
+  "tracer_v2": "PASS_ARCHITECTURE_ONLY",
+  "volume": "DISABLED_UNPROVEN_PROVENANCE"
+}

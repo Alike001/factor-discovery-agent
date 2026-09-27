@@ -5,6 +5,8 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from app.bitget.client import BitgetPublicClient, closed_candles
+from app.bitget.integrity import certification_start_ms
+from app.bitget.session import parse_calendar_closures
 from app.evidence import canonical_hash, write_json
 from app.research.dsl import FactorSpec
 from app.research.engine import EngineConfig, evaluate_factor
@@ -68,4 +70,52 @@ async def run_tracer(root: Path) -> dict:
     write_json(output, evidence)
     write_json(public, evidence)
     write_json(root / "evidence" / "tracer" / "data-snapshot.json", snapshot)
+    return evidence
+
+
+async def run_tracer_v2(root: Path) -> dict:
+    spec = FactorSpec.model_validate(TRACER_SPEC)
+    async with BitgetPublicClient() as client:
+        instruments, calendar = await client.instruments(), await client.market_calendar()
+        launches = {item["symbol"]: int(item["launchTime"]) for item in instruments["data"]}
+        asset = await client.all_history("RNVDAUSDT", "1H", launches["RNVDAUSDT"])
+        benchmark = await client.all_history("RQQQUSDT", "1H", launches["RQQQUSDT"])
+    asset = closed_candles(asset, "1H")
+    benchmark = closed_candles(benchmark, "1H")
+    valid_from = {
+        "RNVDAUSDT.close": certification_start_ms(launches["RNVDAUSDT"]),
+        "RQQQUSDT.close": certification_start_ms(launches["RQQQUSDT"]),
+    }
+    closures = tuple(parse_calendar_closures(calendar["data"].get("specificConfig", [])))
+    candle_payload = {
+        "asset": [item.model_dump(mode="json") for item in asset],
+        "benchmark": [item.model_dump(mode="json") for item in benchmark],
+        "field_valid_from_ms": valid_from,
+    }
+    snapshot = {
+        "generated_at": datetime.now(UTC).isoformat(),
+        "source": "Bitget Reality public UTA v3 history-candles",
+        "dataset_hash": canonical_hash(candle_payload),
+        "asset_rows_retrieved": len(asset),
+        "benchmark_rows_retrieved": len(benchmark),
+        "field_valid_from": {
+            key: datetime.fromtimestamp(value / 1000, tz=UTC).isoformat() for key, value in valid_from.items()
+        },
+        "raw_dataset_committed": False,
+    }
+    result = evaluate_factor(
+        spec,
+        asset,
+        benchmark,
+        EngineConfig(
+            asset_symbol="RNVDAUSDT",
+            benchmark_symbol="RQQQUSDT",
+            field_valid_from_ms=valid_from,
+            market_closures=closures,
+            schema_version="phase1.5-tracer-v2",
+        ),
+    )
+    evidence = {**result.evidence, "data_snapshot": snapshot}
+    write_json(root / "evidence" / "tracer-v2" / "tracer-experiment.json", evidence)
+    write_json(root / "evidence" / "tracer-v2" / "data-snapshot.json", snapshot)
     return evidence

@@ -57,3 +57,20 @@ def test_same_input_produces_same_financial_output() -> None:
     second = evaluate_factor(spec, asset, benchmark, EngineConfig("RNVDAUSDT", "RQQQUSDT"))
     assert first.evidence["metrics"] == second.evidence["metrics"]
     assert first.evidence["integrity"] == second.evidence["integrity"]
+
+
+def test_per_field_valid_from_excludes_older_rows() -> None:
+    asset, benchmark = series()
+    valid_from = 150 * 3_600_000
+    result = evaluate_factor(
+        FactorSpec.model_validate(TRACER_SPEC),
+        asset,
+        benchmark,
+        EngineConfig(
+            "RNVDAUSDT",
+            "RQQQUSDT",
+            field_valid_from_ms={"RNVDAUSDT.close": valid_from, "RQQQUSDT.close": valid_from},
+        ),
+    )
+    assert result.evidence["source"]["first_timestamp"] == "1970-01-07T06:00:00+00:00"
+    assert result.evidence["protocol"]["field_valid_from"]["RNVDAUSDT.close"] == "1970-01-07T06:00:00+00:00"

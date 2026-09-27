@@ -1,0 +1,91 @@
+{
+  "parameters_changed": false,
+  "v1": {
+    "metrics": {
+      "fill_count": 48,
+      "gross": {
+        "max_drawdown": -0.13956879784931264,
+        "observations": 2496,
+        "sharpe": -1.4045172883549404,
+        "total_return": -0.100267848678946,
+        "turnover": 48.0
+      },
+      "is_net": {
+        "max_drawdown": -0.10917989159947084,
+        "observations": 1794,
+        "sharpe": -1.1706683092610402,
+        "total_return": -0.07056679933834309,
+        "turnover": 32.0
+      },
+      "net": {
+        "max_drawdown": -0.1623885926213573,
+        "observations": 2496,
+        "sharpe": -1.9246516576294144,
+        "total_return": -0.13208379151941618,
+        "turnover": 48.0
+      },
+      "oos_fill_count": 16,
+      "oos_net": {
+        "max_drawdown": -0.0743534181168567,
+        "observations": 702,
+        "sharpe": -6.1174082008874064,
+        "total_return": -0.06618764225043872,
+        "turnover": 16.0
+      }
+    },
+    "source": {
+      "aligned_rows": 2497,
+      "asset": "RNVDAUSDT",
+      "benchmark": "RQQQUSDT",
+      "first_timestamp": "2026-06-01T13:00:00+00:00",
+      "forming_candles_excluded": true,
+      "last_timestamp": "2026-09-27T19:00:00+00:00",
+      "missing_bar_policy": "timestamp intersection; never forward-fill",
+      "provider": "Bitget Reality public UTA v3"
+    }
+  },
+  "v2": {
+    "metrics": {
+      "fill_count": 34,
+      "gross": {
+        "max_drawdown": -0.12803912528945838,
+        "observations": 2486,
+        "sharpe": -1.3755123555245992,
+        "total_return": -0.09391405830257049,
+        "turnover": 34.0
+      },
+      "is_net": {
+        "max_drawdown": -0.1346985016911848,
+        "observations": 1785,
+        "sharpe": -1.7584855809848456,
+        "total_return": -0.0987137785824429,
+        "turnover": 22.0
+      },
+      "net": {
+        "max_drawdown": -0.14605677899063707,
+        "observations": 2486,
+        "sharpe": -1.761006508266561,
+        "total_return": -0.11673153962061433,
+        "turnover": 34.0
+      },
+      "oos_fill_count": 12,
+      "oos_net": {
+        "max_drawdown": -0.02412356328638965,
+        "observations": 701,
+        "sharpe": -2.834117541537802,
+        "total_return": -0.019991164415930074,
+        "turnover": 12.0
+      }
+    },
+    "source": {
+      "aligned_rows": 2487,
+      "asset": "RNVDAUSDT",
+      "benchmark": "RQQQUSDT",
+      "first_timestamp": "2026-06-02T00:00:00+00:00",
+      "forming_candles_excluded": true,
+      "last_timestamp": "2026-09-27T20:00:00+00:00",
+      "missing_bar_policy": "timestamp intersection; never forward-fill",
+      "provider": "Bitget Reality public UTA v3"
+    }
+  }
+}

@@ -23,3 +23,14 @@
 ## Stop point
 
 Phase 2 has not started. Awaiting review.
+
+## Phase 1.5 — complete, Phase 2 NO-GO
+
+- Reality counts verified: 3,169 total SPOT; 2,587 Reality; 2,587 online Reality.
+- Pre-public-launch candles are inherited/ambiguous endpoint history and excluded from certification.
+- Per-field `valid_from` enforcement added; tracer-v2 begins at 2026-06-02 UTC.
+- Gap semantics now separate expected closures from expected-open missing bars.
+- Volume and turnover DSL features remain disabled.
+- PostgreSQL 16 persistence gate passes locally with migrations, concurrent trial allocation, deduplication, idempotency, and append-only lifecycle tests.
+- Qwen remains `BLOCKED_KEY`; this is the sole Phase 2 blocker.
+- Fees remain assumed; Demo remains unverified; execution remains `local_paper`.

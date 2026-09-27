@@ -106,4 +106,6 @@ class FactorSpec(StrictModel):
         referenced = {node.symbol for node in all_nodes if node.symbol}
         if not referenced.issubset(set(self.universe)):
             raise ValueError("expression references symbol outside approved universe")
+        if any(node.op == "vol" or node.field == "volume" for node in all_nodes):
+            raise ValueError("volume operators are disabled until rToken volume provenance is established")
         return self

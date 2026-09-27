@@ -4,7 +4,7 @@ Working category: Autonomous Session-Alpha Researcher for Bitget rTokens
 Track: Agentic Trading
 Sub-theme: Factor Discovery Agent
 Snapshot: 2026-09-27
-Status: Build-ready specification
+Status: Build-ready specification with Phase 1.5 integrity amendment
 
 This document is the product and implementation source of truth. Codex should not invent product scope outside this file without an explicit amendment.
 
@@ -398,7 +398,7 @@ V1 market fields:
 - rToken open
 - rToken high
 - rToken low
-- rToken volume when coverage is valid
+- rToken volume only after provenance is authoritatively established; currently disabled
 - underlying close/history when point-in-time data is available
 - benchmark close/history
 - session phase
@@ -599,6 +599,19 @@ The value states are:
 - structurally unavailable
 
 A factor requiring a missing field becomes INCONCLUSIVE or is skipped.
+
+## 9.7 Phase 1.5 integrity amendment — 2026-09-27
+
+Live measurements require these binding rules before autonomous research:
+
+- The live SPOT response contained 3,169 instruments: 2,587 `isReality=yes` and 582 not Reality. All 2,587 Reality instruments were online and stock-typed in this snapshot. This is documentation drift from the public 500+ product copy, not a filtering error.
+- rToken-symbol hourly endpoints expose history years before instrument `launchTime` and the June 2 public rToken launch. This older lineage is ambiguous and must never be described as publicly tradable rToken history.
+- Certification uses a symbol/field data contract. Price `valid_from` is `max(2026-06-02T00:00:00Z, instrument launchTime)`. A later authoritative public/online start overrides both.
+- Volume and turnover operators are disabled. If later enabled, their minimum `valid_from` is `max(price certification start, 2026-07-09T00:00:00Z)` and authoritative provenance is still required.
+- Historical session arithmetic uses IANA `America/New_York`, never the API's fixed `EST` label.
+- Gap checks distinguish `EXPECTED_CLOSED`, `EXPECTED_OPEN_MISSING`, and `OBSERVED`. Expected-open missing bars are never forward-filled.
+- Missing required underlying anchors return `MISSING_EXPECTED_ANCHOR`; older bars are not substituted.
+- Phase 2 cannot start without both 3/3 schema-valid Qwen probes and a passing persistent PostgreSQL gate.
 
 ---
 
