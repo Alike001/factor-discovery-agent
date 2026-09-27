@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-09-27T20:42:17.528121+00:00",
+  "response": {
+    "code": "00000",
+    "data": {
+      "regularConfig": [
+        "SATURDAY",
+        "SUNDAY"
+      ],
+      "specificConfig": [
+        {
+          "endTime": "2026-06-19 20:00",
+          "remark": "",
+          "startTime": "2026-06-18 20:00"
+        },
+        {
+          "endTime": "2026-07-03 20:00",
+          "remark": "",
+          "startTime": "2026-07-02 20:00"
+        },
+        {
+          "endTime": "2026-09-07 20:00",
+          "remark": "",
+          "startTime": "2026-09-06 20:00"
+        }
+      ],
+      "timeZone": "EST"
+    },
+    "msg": "success",
+    "requestTime": 1790541736923
+  },
+  "response_hash": "b95c4fb781ed65893a8b3b0b2ac1ac75a61dc4d58b15a24cd39863b3c8c529e4",
+  "source": "Bitget live public API"
+}

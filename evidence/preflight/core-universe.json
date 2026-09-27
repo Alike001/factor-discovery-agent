@@ -1,0 +1,22 @@
+{
+  "excluded": {},
+  "generated_at": "2026-09-27T20:43:25.268784+00:00",
+  "primary_selected": [
+    "RNVDAUSDT",
+    "RAAPLUSDT",
+    "RTSLAUSDT",
+    "RMSFTUSDT",
+    "RAMZNUSDT",
+    "RMETAUSDT",
+    "RAMDUSDT",
+    "RQQQUSDT"
+  ],
+  "secondary_selected": [
+    "RSPYUSDT",
+    "RCOINUSDT",
+    "RHOODUSDT",
+    "RMSTRUSDT"
+  ],
+  "selection_rule": "online Reality + stock-info mapping + usable 1H history + recent closed 15m",
+  "status": "PASS"
+}

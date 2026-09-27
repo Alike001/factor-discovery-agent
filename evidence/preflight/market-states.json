@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-09-27T20:42:17.527865+00:00",
+  "response": {
+    "code": "00000",
+    "data": {
+      "daylightType": "standard",
+      "market": "US",
+      "stateList": [
+        {
+          "endTime": "09:30",
+          "startTime": "04:00",
+          "state": "pre_market",
+          "timeZone": "EST"
+        },
+        {
+          "endTime": "16:00",
+          "startTime": "09:30",
+          "state": "regular",
+          "timeZone": "EST"
+        },
+        {
+          "endTime": "20:00",
+          "startTime": "16:00",
+          "state": "after_hours",
+          "timeZone": "EST"
+        },
+        {
+          "endTime": "04:00",
+          "startTime": "20:00",
+          "state": "overnight",
+          "timeZone": "EST"
+        }
+      ]
+    },
+    "msg": "success",
+    "requestTime": 1790541736889
+  },
+  "response_hash": "2bc594d87d3ce35fd85a770147f50dcb7cb482c6775a460fc4ae708acaf389cb",
+  "source": "Bitget live public API"
+}

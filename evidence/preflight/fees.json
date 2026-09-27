@@ -1,0 +1,8 @@
+{
+  "basis": "ASSUMED_PUBLISHED_BASELINE",
+  "fee_per_fill": 0.0005,
+  "generated_at": "2026-09-27T20:43:25.330986+00:00",
+  "status": "ACCOUNT_FEE_UNVERIFIED",
+  "stress_fee_per_fill": 0.001,
+  "symbol": "RNVDAUSDT"
+}

@@ -1,0 +1,2 @@
+"""Bitget Reality research backend."""
+

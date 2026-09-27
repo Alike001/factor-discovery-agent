@@ -1,0 +1,56 @@
+{
+  "candles": {
+    "has_60_day_symbol": true,
+    "status": "PASS"
+  },
+  "core_universe": {
+    "selected": [
+      "RNVDAUSDT",
+      "RAAPLUSDT",
+      "RTSLAUSDT",
+      "RMSFTUSDT",
+      "RAMZNUSDT",
+      "RMETAUSDT",
+      "RAMDUSDT",
+      "RQQQUSDT"
+    ],
+    "status": "PASS"
+  },
+  "database": {
+    "deployment_mode": "GitHub Actions idempotent one-shot jobs + Neon",
+    "status": "UNVERIFIED"
+  },
+  "demo_reality": {
+    "phase1_dependency": false,
+    "status": "UNVERIFIED_NO_CREDENTIALS"
+  },
+  "execution_mode": "local_paper",
+  "fees": {
+    "phase1_basis": "ASSUMED_PUBLISHED_BASELINE",
+    "status": "ACCOUNT_FEE_UNVERIFIED"
+  },
+  "generated_at": "2026-09-27T20:43:27.074837+00:00",
+  "limitations": [
+    "Gap counts are raw interval gaps and include scheduled market closures; no gaps were filled.",
+    "Stock MCP is excluded from the Phase 1 rToken-only tracer unless timestamp semantics pass.",
+    "Missing credentials are reported, never replaced with fixtures."
+  ],
+  "overall": "PASS_WITH_LIMITATIONS",
+  "phase1_public_reality_research": "GO",
+  "qwen": {
+    "phase1_tracer_dependency": false,
+    "status": "BLOCKED_KEY"
+  },
+  "reality_universe": {
+    "count": 2587,
+    "status": "PASS"
+  },
+  "session_calendar": {
+    "status": "PASS"
+  },
+  "stock_mcp": {
+    "phase1_dependency": false,
+    "status": "DEGRADED"
+  },
+  "submission_deadline": "2026-10-08T23:59:00+08:00"
+}
