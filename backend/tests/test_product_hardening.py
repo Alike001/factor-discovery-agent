@@ -61,3 +61,22 @@ def test_replay_is_stored_only_and_chain_summary_matches():
     assert all(step["status"] in {"AVAILABLE", "UNAVAILABLE"} for step in replay["steps"])
     assert chain["event_count"] == decision["event_count"] == 190
     assert chain["head_hash"] == decision["head_hash"]
+
+
+def test_landing_page_is_evidence_backed_and_routes_to_real_surfaces():
+    page = (ROOT / "web/app/page.tsx").read_text()
+    summary = load("RESEARCH_SUMMARY.json")
+    chain = load("EVIDENCE_CHAIN_SUMMARY.json")
+
+    assert "redirect(" not in page
+    assert "chainSummary()" in page and "summary()" in page and "trials()" in page
+    assert "AI proposes the trade. " in page
+    assert "Zero trades is an outcome," in page
+    for href in ("/lab", "/proof", "/replay?trial=8", "/paper", "/factors/trial-8", "/factors/trial-9", "/ledger", "/system"):
+        assert f'href="{href}"' in page
+
+    assert summary["trials"] == 9
+    assert summary["candidates"] == summary["certified"] == summary["paper_eligible"] == 0
+    assert summary["paper"] == {"capital_usdt": 0, "fills": 0, "orders": 0, "positions": 0}
+    assert chain["event_count"] == 190 and chain["status"] == "PASS"
+    assert "LIVE TRADING" not in page and "profitable" not in page.lower()

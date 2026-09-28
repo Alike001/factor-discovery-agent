@@ -25,12 +25,17 @@ export type Summary = {
   qwen_http_attempts_total: number; controlled_batch: { logical_calls: number; http_attempts: number };
   truth_line: string;
 };
+export type ChainSummary = {
+  event_count: number; events_exported: number; head_hash: string; source: string;
+  status: "PASS" | "FAIL"; verified_at: string;
+};
 
 export function evidence<T>(name: string): T {
   return JSON.parse(fs.readFileSync(path.join(ROOT, name), "utf8")) as T;
 }
 
 export const summary = () => evidence<Summary>("RESEARCH_SUMMARY.json");
+export const chainSummary = () => evidence<ChainSummary>("EVIDENCE_CHAIN_SUMMARY.json");
 export const trials = () => [evidence<Trial>("TRIAL_8.json"), evidence<Trial>("TRIAL_9.json")];
 export const formatPct = (value: number | null | undefined) => value == null ? "—" : `${(value * 100).toFixed(2)}%`;
 export const shortHash = (value: string | null | undefined) => value ? `${value.slice(0, 12)}…${value.slice(-6)}` : "—";
