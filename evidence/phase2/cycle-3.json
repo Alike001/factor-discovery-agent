@@ -1,0 +1,432 @@
+{
+  "experiment": {
+    "aggregate": "REJECTED",
+    "data_contract": {
+      "cost_model_version": "rtoken-cost-v1",
+      "end": "2026-09-28T04:00:00+00:00",
+      "field_valid_from_ms": {
+        "RQQQUSDT.close": 1780358400000,
+        "RTSLAUSDT.close": 1780358400000
+      },
+      "latest_included_timestamp": "2026-09-28T04:00:00+00:00",
+      "protocol_hash": "d91a2020851dd9f4d4d51b760c6c65d316433499a97bea3b9fbe7630e1247cb9",
+      "protocol_version": "fdp-v1",
+      "session_classification_version": "america-new-york-v1",
+      "start": "2026-06-02T00:00:00+00:00",
+      "symbols": [
+        "RQQQUSDT",
+        "RTSLAUSDT"
+      ]
+    },
+    "dataset_hash": "7802b3e9b43e838293c3442db3fb331e7c492c9895ab5580cec5bd4e164dcaee",
+    "factor": {
+      "direction": "long_flat",
+      "entry_condition": {
+        "args": [
+          {
+            "args": [],
+            "field": null,
+            "lookback": null,
+            "op": "signal",
+            "sessions": null,
+            "symbol": null,
+            "threshold": null
+          }
+        ],
+        "field": null,
+        "lookback": null,
+        "op": "gt",
+        "sessions": null,
+        "symbol": null,
+        "threshold": 0.5
+      },
+      "exit_condition": {
+        "args": [
+          {
+            "args": [],
+            "field": null,
+            "lookback": null,
+            "op": "signal",
+            "sessions": null,
+            "symbol": null,
+            "threshold": null
+          }
+        ],
+        "field": null,
+        "lookback": null,
+        "op": "lte",
+        "sessions": null,
+        "symbol": null,
+        "threshold": 0.0
+      },
+      "horizon_bars": 24,
+      "name": "Cross-rToken close divergence mean-reversion",
+      "rationale": "Autonomous cycle 3 transport probe. Tests whether a bounded cross-rToken price divergence in regular session carries predictive structure. No performance claim is made.",
+      "rebalance_bars": 6,
+      "session_filter": [
+        "regular"
+      ],
+      "signal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [],
+                "field": "close",
+                "lookback": null,
+                "op": "source",
+                "sessions": null,
+                "symbol": "RTSLAUSDT",
+                "threshold": null
+              }
+            ],
+            "field": null,
+            "lookback": 24,
+            "op": "ret",
+            "sessions": null,
+            "symbol": null,
+            "threshold": null
+          },
+          {
+            "args": [
+              {
+                "args": [],
+                "field": "close",
+                "lookback": null,
+                "op": "source",
+                "sessions": null,
+                "symbol": "RQQQUSDT",
+                "threshold": null
+              }
+            ],
+            "field": null,
+            "lookback": 24,
+            "op": "ret",
+            "sessions": null,
+            "symbol": null,
+            "threshold": null
+          }
+        ],
+        "field": null,
+        "lookback": null,
+        "op": "sub",
+        "sessions": null,
+        "symbol": null,
+        "threshold": null
+      },
+      "thesis": "When RTSLAUSDT close return diverges positively from RQQQUSDT close return over a 24-bar lookback, the spread tends to revert, producing a short-lived long signal on the basket.",
+      "universe": [
+        "RTSLAUSDT",
+        "RQQQUSDT"
+      ]
+    },
+    "gates": [
+      {
+        "name": "Syntax",
+        "outcome": "PASS",
+        "reason": "Strict FactorSpec and safe AST validation passed."
+      },
+      {
+        "name": "Coverage",
+        "outcome": "PASS",
+        "reason": "118.2 certified calendar days and 2456 aligned closed bars."
+      },
+      {
+        "name": "Point-in-time",
+        "outcome": "PASS",
+        "reason": "Only certified closed OHLC fields were used; volume remains disabled."
+      },
+      {
+        "name": "Mechanics",
+        "outcome": "PASS",
+        "reason": "Signals execute no earlier than the next aligned bar."
+      },
+      {
+        "name": "Costs",
+        "outcome": "FAIL",
+        "reason": "Net return after fee and slippage is 0.0000%."
+      },
+      {
+        "name": "OOS",
+        "outcome": "INCONCLUSIVE",
+        "reason": "0 OOS fills; net OOS return 0.0000%."
+      },
+      {
+        "name": "Stability",
+        "outcome": "INCONCLUSIVE",
+        "reason": "INCONCLUSIVE_NOT_IMPLEMENTED: full symbol/session replication is deferred; certification blocked."
+      },
+      {
+        "name": "Permutation",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Insufficient independent trade returns."
+      },
+      {
+        "name": "Multiple testing",
+        "outcome": "INCONCLUSIVE",
+        "reason": "INCONCLUSIVE_NOT_IMPLEMENTED: exact Deflated Sharpe is not claimed; certification blocked."
+      },
+      {
+        "name": "Baseline",
+        "outcome": "PASS",
+        "reason": "Factor net 0.0000% versus same-window buy-and-hold -10.6110%."
+      }
+    ],
+    "integrity": {
+      "deterministic": true,
+      "permutation_seed": 3,
+      "records_hash": "3aae2778c2a7eeda2a93a9d44630aac6dc6f1a97600f2ff603c32d208948aaac"
+    },
+    "metrics": {
+      "buy_hold": -0.10611002391824309,
+      "gross": {
+        "fills": 0,
+        "max_drawdown": 0.0,
+        "observations": 2455,
+        "sharpe": null,
+        "total_return": 0.0
+      },
+      "is_net": {
+        "fills": 0,
+        "max_drawdown": 0.0,
+        "observations": 1774,
+        "sharpe": null,
+        "total_return": 0.0
+      },
+      "net": {
+        "fills": 0,
+        "max_drawdown": 0.0,
+        "observations": 2455,
+        "sharpe": null,
+        "total_return": 0.0
+      },
+      "oos_net": {
+        "fills": 0,
+        "max_drawdown": 0.0,
+        "observations": 681,
+        "sharpe": null,
+        "total_return": 0.0
+      }
+    },
+    "protocol": "fdp-v1",
+    "report_hash": "6d984894770f5cd2378889db12784741d9100eafaa7be63a8e4bbf15779c54ca",
+    "sample_records": [
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": -0.0,
+        "net": -0.0,
+        "timestamp_ms": 1790521200000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": 0.0,
+        "net": 0.0,
+        "timestamp_ms": 1790524800000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": 0.0,
+        "net": 0.0,
+        "timestamp_ms": 1790532000000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": -0.0,
+        "net": -0.0,
+        "timestamp_ms": 1790535600000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": -0.0,
+        "net": -0.0,
+        "timestamp_ms": 1790539200000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": 0.0,
+        "net": 0.0,
+        "timestamp_ms": 1790542800000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": 0.0,
+        "net": 0.0,
+        "timestamp_ms": 1790546400000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": -0.0,
+        "net": -0.0,
+        "timestamp_ms": 1790550000000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": -0.0,
+        "net": -0.0,
+        "timestamp_ms": 1790553600000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": -0.0,
+        "net": -0.0,
+        "timestamp_ms": 1790557200000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": -0.0,
+        "net": -0.0,
+        "timestamp_ms": 1790560800000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": 0.0,
+        "net": 0.0,
+        "timestamp_ms": 1790564400000,
+        "turnover": 0.0
+      }
+    ],
+    "split_timestamp": "2026-08-29T04:00:00+00:00",
+    "trial_number": 3
+  },
+  "generated_at": "2026-09-28T05:32:06.029554+00:00",
+  "lifecycle": {
+    "action": "REVISE",
+    "reason": "The factor was rejected because it produced zero fills and zero net return after costs, causing the Costs gate to fail and leaving OOS, Stability, and Permutation gates inconclusive. The 0.5 threshold on raw 24-bar return divergence appears too restrictive for this universe.",
+    "revision_intent": "Lower or normalize the entry threshold, such as using a z-score or percentile of the return divergence, while keeping close-only regular-session data and lag-safe execution."
+  },
+  "manifest": {
+    "aggregate": "REJECTED",
+    "cycle_number": 3,
+    "factor_hash": "00771dea66f67e3153815d84ed6f5e0c3722bcd63f26c8cfed1c28d638c27fb5",
+    "manifest_hash": "ea6b0dbfeb27d66a1c1cbfa1a75f306e299d5b7ff0a640eb57883c9790ad1b17",
+    "protocol_hash": "d91a2020851dd9f4d4d51b760c6c65d316433499a97bea3b9fbe7630e1247cb9",
+    "report_hash": "6d984894770f5cd2378889db12784741d9100eafaa7be63a8e4bbf15779c54ca",
+    "snapshot_hash": "2a5d05202d345546a26b2459f6247a13421f7225c4b6c725d44c99363529e275",
+    "trial_number": 3
+  },
+  "proposal": {
+    "direction": "long_flat",
+    "entry_condition": {
+      "args": [
+        {
+          "args": [],
+          "field": null,
+          "lookback": null,
+          "op": "signal",
+          "sessions": null,
+          "symbol": null,
+          "threshold": null
+        }
+      ],
+      "field": null,
+      "lookback": null,
+      "op": "gt",
+      "sessions": null,
+      "symbol": null,
+      "threshold": 0.5
+    },
+    "exit_condition": {
+      "args": [
+        {
+          "args": [],
+          "field": null,
+          "lookback": null,
+          "op": "signal",
+          "sessions": null,
+          "symbol": null,
+          "threshold": null
+        }
+      ],
+      "field": null,
+      "lookback": null,
+      "op": "lte",
+      "sessions": null,
+      "symbol": null,
+      "threshold": 0.0
+    },
+    "horizon_bars": 24,
+    "name": "Cross-rToken close divergence mean-reversion",
+    "rationale": "Autonomous cycle 3 transport probe. Tests whether a bounded cross-rToken price divergence in regular session carries predictive structure. No performance claim is made.",
+    "rebalance_bars": 6,
+    "session_filter": [
+      "regular"
+    ],
+    "signal": {
+      "args": [
+        {
+          "args": [
+            {
+              "args": [],
+              "field": "close",
+              "lookback": null,
+              "op": "source",
+              "sessions": null,
+              "symbol": "RTSLAUSDT",
+              "threshold": null
+            }
+          ],
+          "field": null,
+          "lookback": 24,
+          "op": "ret",
+          "sessions": null,
+          "symbol": null,
+          "threshold": null
+        },
+        {
+          "args": [
+            {
+              "args": [],
+              "field": "close",
+              "lookback": null,
+              "op": "source",
+              "sessions": null,
+              "symbol": "RQQQUSDT",
+              "threshold": null
+            }
+          ],
+          "field": null,
+          "lookback": 24,
+          "op": "ret",
+          "sessions": null,
+          "symbol": null,
+          "threshold": null
+        }
+      ],
+      "field": null,
+      "lookback": null,
+      "op": "sub",
+      "sessions": null,
+      "symbol": null,
+      "threshold": null
+    },
+    "thesis": "When RTSLAUSDT close return diverges positively from RQQQUSDT close return over a 24-bar lookback, the spread tends to revert, producing a short-lived long signal on the basket.",
+    "universe": [
+      "RTSLAUSDT",
+      "RQQQUSDT"
+    ]
+  },
+  "resumed": false
+}

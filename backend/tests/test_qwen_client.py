@@ -114,3 +114,21 @@ async def test_http_200_empty_final_is_classified_without_repair() -> None:
     assert result["error_code"] == "EMPTY_FINAL_CONTENT"
     assert result["repair_attempts"] == 0
     assert result["response_metadata"]["usage"]["output_tokens"] == "UNMEASURED"
+
+
+@pytest.mark.asyncio
+async def test_factor_proposal_allows_one_repair() -> None:
+    calls = 0
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        nonlocal calls
+        calls += 1
+        content = "not-json" if calls == 1 else json.dumps(valid_proposal())
+        return httpx.Response(200, json={"model": "qwen3.8-max", "choices": [{"message": {"content": content}, "finish_reason": "stop"}]})
+
+    async with httpx.AsyncClient(base_url="https://example.test/v1", transport=httpx.MockTransport(handler)) as client:
+        result = await probe_factor_proposal_compat(client, model="qwen3.8-max", api_key="test-only",
+            schema=FactorProposal, max_repair_attempts=1)
+    assert calls == 2
+    assert result["validation"]["valid"] is True
+    assert result["repair_attempts"] == 1

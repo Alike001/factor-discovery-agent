@@ -1,0 +1,432 @@
+{
+  "experiment": {
+    "aggregate": "REJECTED",
+    "data_contract": {
+      "cost_model_version": "rtoken-cost-v1",
+      "end": "2026-09-28T04:00:00+00:00",
+      "field_valid_from_ms": {
+        "RAMDUSDT.close": 1780383311140,
+        "RNVDAUSDT.close": 1780358400000
+      },
+      "latest_included_timestamp": "2026-09-28T04:00:00+00:00",
+      "protocol_hash": "d91a2020851dd9f4d4d51b760c6c65d316433499a97bea3b9fbe7630e1247cb9",
+      "protocol_version": "fdp-v1",
+      "session_classification_version": "america-new-york-v1",
+      "start": "2026-06-02T07:00:00+00:00",
+      "symbols": [
+        "RAMDUSDT",
+        "RNVDAUSDT"
+      ]
+    },
+    "dataset_hash": "6e8c0cf4ec69f9a3c3270123c7d29178e687f34f5b70333efe25b1ed8156a463",
+    "factor": {
+      "direction": "long_flat",
+      "entry_condition": {
+        "args": [
+          {
+            "args": [],
+            "field": null,
+            "lookback": null,
+            "op": "signal",
+            "sessions": null,
+            "symbol": null,
+            "threshold": null
+          }
+        ],
+        "field": null,
+        "lookback": null,
+        "op": "gt",
+        "sessions": null,
+        "symbol": null,
+        "threshold": 0.5
+      },
+      "exit_condition": {
+        "args": [
+          {
+            "args": [],
+            "field": null,
+            "lookback": null,
+            "op": "signal",
+            "sessions": null,
+            "symbol": null,
+            "threshold": null
+          }
+        ],
+        "field": null,
+        "lookback": null,
+        "op": "lte",
+        "sessions": null,
+        "symbol": null,
+        "threshold": -0.5
+      },
+      "horizon_bars": 6,
+      "name": "Semiconductor after-hours relative momentum divergence",
+      "rationale": "Autonomous cycle 4 proposal. Tests whether after-hours relative return divergence between RAMDUSDT and RNVDAUSDT carries predictive information for short-horizon directional moves. No performance claim is made; this is a falsifiable hypothesis for schema validation and factor exploration.",
+      "rebalance_bars": 3,
+      "session_filter": [
+        "after_hours"
+      ],
+      "signal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [],
+                "field": "close",
+                "lookback": null,
+                "op": "source",
+                "sessions": null,
+                "symbol": "RAMDUSDT",
+                "threshold": null
+              }
+            ],
+            "field": null,
+            "lookback": 6,
+            "op": "ret",
+            "sessions": null,
+            "symbol": null,
+            "threshold": null
+          },
+          {
+            "args": [
+              {
+                "args": [],
+                "field": "close",
+                "lookback": null,
+                "op": "source",
+                "sessions": null,
+                "symbol": "RNVDAUSDT",
+                "threshold": null
+              }
+            ],
+            "field": null,
+            "lookback": 6,
+            "op": "ret",
+            "sessions": null,
+            "symbol": null,
+            "threshold": null
+          }
+        ],
+        "field": null,
+        "lookback": null,
+        "op": "sub",
+        "sessions": null,
+        "symbol": null,
+        "threshold": null
+      },
+      "thesis": "When RAMDUSDT after-hours close return diverges positively from RNVDAUSDT over a 6-bar lookback, it signals short-term relative strength in AMD that mean-reverts or extends depending on regime; we test the extension hypothesis using only OHLC price data in the after_hours session.",
+      "universe": [
+        "RAMDUSDT",
+        "RNVDAUSDT"
+      ]
+    },
+    "gates": [
+      {
+        "name": "Syntax",
+        "outcome": "PASS",
+        "reason": "Strict FactorSpec and safe AST validation passed."
+      },
+      {
+        "name": "Coverage",
+        "outcome": "PASS",
+        "reason": "117.9 certified calendar days and 2299 aligned closed bars."
+      },
+      {
+        "name": "Point-in-time",
+        "outcome": "PASS",
+        "reason": "Only certified closed OHLC fields were used; volume remains disabled."
+      },
+      {
+        "name": "Mechanics",
+        "outcome": "PASS",
+        "reason": "Signals execute no earlier than the next aligned bar."
+      },
+      {
+        "name": "Costs",
+        "outcome": "FAIL",
+        "reason": "Net return after fee and slippage is 0.0000%."
+      },
+      {
+        "name": "OOS",
+        "outcome": "INCONCLUSIVE",
+        "reason": "0 OOS fills; net OOS return 0.0000%."
+      },
+      {
+        "name": "Stability",
+        "outcome": "INCONCLUSIVE",
+        "reason": "INCONCLUSIVE_NOT_IMPLEMENTED: full symbol/session replication is deferred; certification blocked."
+      },
+      {
+        "name": "Permutation",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Insufficient independent trade returns."
+      },
+      {
+        "name": "Multiple testing",
+        "outcome": "INCONCLUSIVE",
+        "reason": "INCONCLUSIVE_NOT_IMPLEMENTED: exact Deflated Sharpe is not claimed; certification blocked."
+      },
+      {
+        "name": "Baseline",
+        "outcome": "FAIL",
+        "reason": "Factor net 0.0000% versus same-window buy-and-hold 22.4283%."
+      }
+    ],
+    "integrity": {
+      "deterministic": true,
+      "permutation_seed": 4,
+      "records_hash": "0cd9a83b714ede840987b4993095cad364c28f31824db3a47b9ddb4728351621"
+    },
+    "metrics": {
+      "buy_hold": 0.2242831042974025,
+      "gross": {
+        "fills": 0,
+        "max_drawdown": 0.0,
+        "observations": 2298,
+        "sharpe": null,
+        "total_return": 0.0
+      },
+      "is_net": {
+        "fills": 0,
+        "max_drawdown": 0.0,
+        "observations": 1666,
+        "sharpe": null,
+        "total_return": 0.0
+      },
+      "net": {
+        "fills": 0,
+        "max_drawdown": 0.0,
+        "observations": 2298,
+        "sharpe": null,
+        "total_return": 0.0
+      },
+      "oos_net": {
+        "fills": 0,
+        "max_drawdown": 0.0,
+        "observations": 632,
+        "sharpe": null,
+        "total_return": 0.0
+      }
+    },
+    "protocol": "fdp-v1",
+    "report_hash": "3b4287258e11c50c4202fdea684bab306428d4229a38fcd1af166bfb8b198bbc",
+    "sample_records": [
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": 0.0,
+        "net": 0.0,
+        "timestamp_ms": 1790510400000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": -0.0,
+        "net": -0.0,
+        "timestamp_ms": 1790514000000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": 0.0,
+        "net": 0.0,
+        "timestamp_ms": 1790521200000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": 0.0,
+        "net": 0.0,
+        "timestamp_ms": 1790524800000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": 0.0,
+        "net": 0.0,
+        "timestamp_ms": 1790528400000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": -0.0,
+        "net": -0.0,
+        "timestamp_ms": 1790542800000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": 0.0,
+        "net": 0.0,
+        "timestamp_ms": 1790546400000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": 0.0,
+        "net": 0.0,
+        "timestamp_ms": 1790550000000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": -0.0,
+        "net": -0.0,
+        "timestamp_ms": 1790553600000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": -0.0,
+        "net": -0.0,
+        "timestamp_ms": 1790557200000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": -0.0,
+        "net": -0.0,
+        "timestamp_ms": 1790560800000,
+        "turnover": 0.0
+      },
+      {
+        "decision_timestamp_ms": null,
+        "fill_timestamp_ms": null,
+        "gross": -0.0,
+        "net": -0.0,
+        "timestamp_ms": 1790564400000,
+        "turnover": 0.0
+      }
+    ],
+    "split_timestamp": "2026-08-29T04:00:00+00:00",
+    "trial_number": 4
+  },
+  "generated_at": "2026-09-28T05:33:03.909419+00:00",
+  "lifecycle": {
+    "action": "REVISE",
+    "reason": "The factor is syntactically valid and has coverage, but it produced zero fills, zero net return, and failed the baseline gate. The current 0.5 / -0.5 entry and exit thresholds are too restrictive, leaving the hypothesis untested.",
+    "revision_intent": "Reduce or adapt the entry and exit thresholds, or replace the fixed 0.5 relative-return divergence cutoff with a normalized or regime-aware threshold, so the strategy can generate fills and produce evaluable trade-level evidence."
+  },
+  "manifest": {
+    "aggregate": "REJECTED",
+    "cycle_number": 4,
+    "factor_hash": "6b401254e7aec8036506a5eaf595f3f88ae3c3755e6bffcd5413e5dd555ba5ec",
+    "manifest_hash": "83a22c3e5016f675bf54adca108e2ff212ce6fa579436f9dffe6f89420f9fca8",
+    "protocol_hash": "d91a2020851dd9f4d4d51b760c6c65d316433499a97bea3b9fbe7630e1247cb9",
+    "report_hash": "3b4287258e11c50c4202fdea684bab306428d4229a38fcd1af166bfb8b198bbc",
+    "snapshot_hash": "8aaa02dfb0f61c9a676290aeb851f2fabd8c7f4068c99577f58276830ca77b27",
+    "trial_number": 4
+  },
+  "proposal": {
+    "direction": "long_flat",
+    "entry_condition": {
+      "args": [
+        {
+          "args": [],
+          "field": null,
+          "lookback": null,
+          "op": "signal",
+          "sessions": null,
+          "symbol": null,
+          "threshold": null
+        }
+      ],
+      "field": null,
+      "lookback": null,
+      "op": "gt",
+      "sessions": null,
+      "symbol": null,
+      "threshold": 0.5
+    },
+    "exit_condition": {
+      "args": [
+        {
+          "args": [],
+          "field": null,
+          "lookback": null,
+          "op": "signal",
+          "sessions": null,
+          "symbol": null,
+          "threshold": null
+        }
+      ],
+      "field": null,
+      "lookback": null,
+      "op": "lte",
+      "sessions": null,
+      "symbol": null,
+      "threshold": -0.5
+    },
+    "horizon_bars": 6,
+    "name": "Semiconductor after-hours relative momentum divergence",
+    "rationale": "Autonomous cycle 4 proposal. Tests whether after-hours relative return divergence between RAMDUSDT and RNVDAUSDT carries predictive information for short-horizon directional moves. No performance claim is made; this is a falsifiable hypothesis for schema validation and factor exploration.",
+    "rebalance_bars": 3,
+    "session_filter": [
+      "after_hours"
+    ],
+    "signal": {
+      "args": [
+        {
+          "args": [
+            {
+              "args": [],
+              "field": "close",
+              "lookback": null,
+              "op": "source",
+              "sessions": null,
+              "symbol": "RAMDUSDT",
+              "threshold": null
+            }
+          ],
+          "field": null,
+          "lookback": 6,
+          "op": "ret",
+          "sessions": null,
+          "symbol": null,
+          "threshold": null
+        },
+        {
+          "args": [
+            {
+              "args": [],
+              "field": "close",
+              "lookback": null,
+              "op": "source",
+              "sessions": null,
+              "symbol": "RNVDAUSDT",
+              "threshold": null
+            }
+          ],
+          "field": null,
+          "lookback": 6,
+          "op": "ret",
+          "sessions": null,
+          "symbol": null,
+          "threshold": null
+        }
+      ],
+      "field": null,
+      "lookback": null,
+      "op": "sub",
+      "sessions": null,
+      "symbol": null,
+      "threshold": null
+    },
+    "thesis": "When RAMDUSDT after-hours close return diverges positively from RNVDAUSDT over a 6-bar lookback, it signals short-term relative strength in AMD that mean-reverts or extends depending on regime; we test the extension hypothesis using only OHLC price data in the after_hours session.",
+    "universe": [
+      "RAMDUSDT",
+      "RNVDAUSDT"
+    ]
+  },
+  "resumed": false
+}

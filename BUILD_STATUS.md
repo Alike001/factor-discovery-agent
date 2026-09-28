@@ -22,7 +22,7 @@
 
 ## Stop point
 
-Phase 2 has not started. Awaiting review.
+Phase 2 is complete. Phase 3/4 and paper trading await review.
 
 ## Phase 1.5 — complete, Phase 2 GO
 
@@ -34,4 +34,15 @@ Phase 2 has not started. Awaiting review.
 - PostgreSQL 16 persistence gate passes locally with migrations, concurrent trial allocation, deduplication, idempotency, and append-only lifecycle tests.
 - Qwen final runtime gate passes 3/3 with zero repairs. FactorProposal uses `/chat/completions` with low reasoning and JSON object mode; lifecycle and portfolio keep `/responses`.
 - Fees remain assumed; Demo remains unverified; execution remains `local_paper`.
-- Phase 2 has not started and remains awaiting explicit review.
+- Phase 2 subsequently completed in its own implementation commit; paper trading remains unstarted.
+
+## Phase 2 — complete, paper trading not started
+
+- Frozen immutable research protocol: `fdp-v1`.
+- Five autonomous Qwen cycles produced five unique committed trials on real Bitget Reality data.
+- Outcomes: 5 rejected, 0 inconclusive, 0 candidate, 0 certified.
+- Qwen usage: 10 logical runs, 11 HTTP attempts, 18,224 measured tokens; one failed repair attempt is `UNMEASURED` and budgeted conservatively.
+- Evidence hash chain: PASS across 107 events.
+- Resume/idempotency: PASS; a post-commit cycle recovery did not recall the proposer.
+- Lab, Factors/Graveyard, and factor proof pages render the real Phase-2 evidence.
+- Paper portfolio, portfolio actor, orders, fills, and paper execution remain unstarted pending review.

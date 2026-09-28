@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./styles.css";
 
 export const metadata: Metadata = {
-  title: "rToken Research Lab",
-  description: "Evidence-first Bitget Reality factor research tracer",
+  title: "Autonomous rToken Research Lab",
+  description: "Qwen proposes session factors; deterministic evidence gates reject weak ideas.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -13,4 +13,3 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     </html>
   );
 }
-

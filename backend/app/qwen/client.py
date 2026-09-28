@@ -131,6 +131,13 @@ def _validate(schema: type[T], raw_text: str) -> tuple[bool, str | None]:
     return True, None
 
 
+def _parsed(schema: type[T], raw_text: str) -> dict[str, Any] | None:
+    try:
+        return schema.model_validate_json(raw_text).model_dump(mode="json")
+    except (ValidationError, ValueError):
+        return None
+
+
 async def probe_schema(
     client: httpx.AsyncClient,
     *,
@@ -185,6 +192,8 @@ async def probe_schema(
         "http_status": final_response.status_code,
         "observed_model": final_payload.get("model"),
         "provider_error": final_payload.get("error") or final_payload.get("non_json_response"),
+        "final_text": raw_text,
+        "parsed_json": _parsed(schema, raw_text),
         "response_metadata": metadata,
         "error_code": _failure_code(
             status_code=final_response.status_code,
@@ -197,7 +206,7 @@ async def probe_schema(
     }
 
 
-def factor_proposal_prompt(schema: type[BaseModel]) -> str:
+def factor_proposal_prompt(schema: type[BaseModel], research_mandate: str = "") -> str:
     example = {
         "name": "Overnight relative return probe",
         "thesis": "A transport-only price hypothesis for validating the proposal schema.",
@@ -218,10 +227,11 @@ def factor_proposal_prompt(schema: type[BaseModel]) -> str:
         "rationale": "Transport probe only; this is not discovered alpha.",
     }
     return (
-        "Create one FactorProposal schema transport probe, not a research result. "
-        "Use only RNVDAUSDT and RQQQUSDT, overnight, and price/close features; volume is forbidden. "
+        "Create one falsifiable rToken session FactorProposal. "
+        "Use only symbols and sessions named by the research mandate and only OHLC price features; volume is forbidden. "
         "Use only operators, lookbacks, thresholds, and fields allowed by the schema. "
         f"JSON schema:{json.dumps(schema.model_json_schema(), separators=(',', ':'))}. "
+        f"Research mandate:{research_mandate or 'schema transport probe; do not claim discovered alpha'}. "
         f"Minimal shape example:{json.dumps(example, separators=(',', ':'))}. "
         "Return one JSON object and nothing else."
     )
@@ -234,9 +244,10 @@ async def probe_factor_proposal_compat(
     api_key: str,
     schema: type[T],
     max_repair_attempts: int = 0,
+    research_mandate: str = "",
 ) -> dict[str, Any]:
     """Use the dedicated low-reasoning Chat Completions compatibility profile."""
-    prompt = factor_proposal_prompt(schema)
+    prompt = factor_proposal_prompt(schema, research_mandate)
     max_tokens = 2400
 
     def body_for(user_prompt: str) -> dict[str, Any]:
@@ -292,6 +303,8 @@ async def probe_factor_proposal_compat(
         "http_status": final_response.status_code,
         "observed_model": final_payload.get("model"),
         "provider_error": final_payload.get("error") or final_payload.get("non_json_response"),
+        "final_text": raw_text,
+        "parsed_json": _parsed(schema, raw_text),
         "response_metadata": metadata,
         "error_code": _failure_code(
             status_code=final_response.status_code,

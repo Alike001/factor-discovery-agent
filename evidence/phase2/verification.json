@@ -1,0 +1,59 @@
+{
+  "autonomous_cycles": 5,
+  "duplicate_suppression": {
+    "canonical_equivalence_test": "PASS",
+    "database_duplicate_experiment_test": "PASS",
+    "live_duplicate_proposals": 0
+  },
+  "evidence_chain": {
+    "event_count": 107,
+    "head_hash": "6b4362e6a48a8794ab3c7c6783286ccc7c008f30aa35798c05b7c7eae03b3252",
+    "status": "PASS"
+  },
+  "gate_distribution": {
+    "FAIL": 10,
+    "INCONCLUSIVE": 19,
+    "PASS": 21
+  },
+  "lifecycle_counts": {
+    "CANDIDATE": 0,
+    "CERTIFIED": 0,
+    "INCONCLUSIVE": 0,
+    "REJECTED": 5
+  },
+  "qwen": {
+    "logical_runs": 10,
+    "live_http_attempts": 11,
+    "measured_total_tokens": 18224,
+    "budget_charged_tokens": 19124,
+    "unmeasured_attempts": 1,
+    "roles": {
+      "lifecycle": {
+        "attempts": 6,
+        "endpoint": "/responses",
+        "input_tokens": 4898,
+        "model": "qwen3.8-max",
+        "output_tokens": 2565,
+        "reasoning_tokens": 2126,
+        "total_tokens": 7463,
+        "unmeasured_repair_attempts": 1
+      },
+      "proposer": {
+        "attempts": 5,
+        "endpoint": "/chat/completions",
+        "input_tokens": 4875,
+        "model": "qwen3.8-max",
+        "output_tokens": 5886,
+        "reasoning_tokens": 4454,
+        "total_tokens": 10761
+      }
+    }
+  },
+  "resume_idempotency": {
+    "cycle": 1,
+    "manifest_hash": "2bca4982b4a3085555705fa012a6cbe3ff5af3327dd6b5f7c1ca4911c827726e",
+    "proposer_recalled": false,
+    "status": "PASS"
+  },
+  "trial_count": 5
+}

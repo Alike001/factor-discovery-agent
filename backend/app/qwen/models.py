@@ -4,25 +4,15 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from app.research.dsl.models import AllowedLookback, Expression
+from app.research.dsl.models import FactorSpec
 
 
 class StrictModel(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
 
-class FactorProposal(StrictModel):
-    name: str = Field(min_length=3, max_length=120)
-    thesis: str = Field(min_length=10, max_length=600)
-    universe: list[str] = Field(min_length=1, max_length=12)
-    session_filter: list[Literal["pre_market", "regular", "after_hours", "overnight", "weekend"]]
-    signal: Expression
-    entry_condition: Expression
-    exit_condition: Expression
-    horizon_bars: AllowedLookback
-    rebalance_bars: AllowedLookback
-    direction: Literal["long_flat"]
-    rationale: str
+class FactorProposal(FactorSpec):
+    """The proposer contract is exactly the executable safe FactorSpec contract."""
 
 
 class LifecycleDecision(StrictModel):
