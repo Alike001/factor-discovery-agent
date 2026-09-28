@@ -1,8 +1,65 @@
 {
-  "base_url": "https://hackathon.bitgetops.com/v1",
-  "generated_at": "2026-09-27T21:31:16.560446+00:00",
-  "probes": [],
+  "authorization_logged": false,
+  "credential_persisted": false,
+  "credential_source": "environment",
+  "endpoint": "https://hackathon.bitgetops.com/v1/responses",
+  "generated_at": "2026-09-28T04:11:41.112717+00:00",
+  "observed_models": [
+    "qwen3.8-max"
+  ],
+  "probe_count": 3,
+  "probes": [
+    {
+      "error_code": "EMPTY_FINAL_CONTENT",
+      "http_status": 200,
+      "latency_ms": 44951,
+      "observed_model": "qwen3.8-max",
+      "provider_error": null,
+      "purpose": "FactorProposal",
+      "raw_text": "",
+      "repair_attempts": 1,
+      "repair_required": true,
+      "request_hash": "7196b1fd4050566bd40f3cb8aa2d52fd318fa3abb70ac28a3a0ef5986594d556",
+      "response_hash": "a26626964f0286a291b0bdb11cc020d6f481ecc53d31e3cba4c2da44ace8ba4b",
+      "validation": {
+        "error": "1 validation error for FactorProposal\n  Invalid JSON: EOF while parsing a value at line 1 column 0 [type=json_invalid, input_value='', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/json_invalid",
+        "valid": false
+      }
+    },
+    {
+      "http_status": 200,
+      "latency_ms": 3659,
+      "observed_model": "qwen3.8-max",
+      "provider_error": null,
+      "purpose": "LifecycleDecision",
+      "raw_text": "{\n  \"action\": \"ABANDON\",\n  \"reason\": \"Schema transport probe requires abandonment.\",\n  \"revision_intent\": null\n}",
+      "repair_attempts": 0,
+      "repair_required": false,
+      "request_hash": "de065b81eafc93a4a1102f511c75bcddcfea6a601473be0bf7342f7ae8533062",
+      "response_hash": "1fa6113f37be9a14af8a07a777a943459941ef72f4eaab32321d125f8652a6ba",
+      "validation": {
+        "error": null,
+        "valid": true
+      }
+    },
+    {
+      "http_status": 200,
+      "latency_ms": 5942,
+      "observed_model": "qwen3.8-max",
+      "provider_error": null,
+      "purpose": "PortfolioDecision",
+      "raw_text": "{\n  \"action\": \"HOLD\",\n  \"symbol\": null,\n  \"factor_version_id\": null,\n  \"target_weight\": 0,\n  \"reason\": \"Schema transport probe: maintain current exposure.\",\n  \"invalidation\": \"Probe context changes or a non-default portfolio decision is required.\"\n}",
+      "repair_attempts": 0,
+      "repair_required": false,
+      "request_hash": "d37d88f68402224515d26ce727784e9bc2d7e72169c7e14dd18c0d3368d5f314",
+      "response_hash": "1ef89dd8520dde369df7fa70a892f7175dae4ef4e6695b6755261a0c515f3b5d",
+      "validation": {
+        "error": null,
+        "valid": true
+      }
+    }
+  ],
   "requested_model": "qwen3.8-max",
-  "secret_persisted": false,
-  "status": "BLOCKED_KEY"
+  "status": "FAIL",
+  "valid_probe_count": 2
 }

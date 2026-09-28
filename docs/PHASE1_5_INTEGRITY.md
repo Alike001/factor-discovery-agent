@@ -1,10 +1,10 @@
 # Phase 1.5 Integrity Gate
 
-Snapshot: 2026-09-27
+Snapshot: 2026-09-28
 
 ## Decision
 
-**Phase 2: NO-GO.** Public-data integrity and PostgreSQL persistence pass, but Qwen is `BLOCKED_KEY`. Autonomous factor generation has not started.
+**Phase 2: GO.** Public-data integrity, PostgreSQL persistence, and the final Qwen 3/3 runtime gate pass. Autonomous factor generation has not started.
 
 ## Reality universe
 
@@ -59,7 +59,7 @@ Decision: **volume/turnover operators remain disabled**. Phase 2 proposals, once
 
 ## Qwen, database, fees, and Demo
 
-- Qwen: `BLOCKED_KEY`; zero probes were fabricated. Phase 2 remains blocked.
+- Qwen: `PASS`; the final live gate validated FactorProposal, LifecycleDecision, and PortfolioDecision with zero repairs. FactorProposal uses the dedicated `/chat/completions` compatibility profile (`reasoning_effort=low`, JSON object mode, `max_tokens=2400`, `temperature=0`). LifecycleDecision and PortfolioDecision retain their passing `/responses` profile. Every call records latency and token usage; absent fields are `UNMEASURED`, never zero.
 - PostgreSQL: PASS on isolated PostgreSQL 16.15 at localhost port 55432 with a persistent named volume. Migration `001_phase2_minimum.sql` created only the ten Phase-2 tables.
 - Database checks: concurrent trial numbers unique and contiguous; cycle rerun idempotent; duplicate canonical factor returns the same experiment; lifecycle/evidence tables are append-only.
 - Fee: `ACCOUNT_FEE_UNVERIFIED`; 0.05% per fill remains `ASSUMED_PUBLISHED_BASELINE`.
@@ -92,4 +92,4 @@ Both versions remain failing/inconclusive architecture evidence, not alpha.
 - Renamed fail-closed anchor result to `MISSING_EXPECTED_ANCHOR`.
 - Made Qwen PASS and persistent PostgreSQL PASS mandatory before Phase 2.
 
-Machine-readable evidence is under `evidence/preflight-v2/` and `evidence/tracer-v2/`. Complete raw API responses are gitignored under `evidence/raw/`.
+Machine-readable integrity evidence is under `evidence/preflight-v2/`, the Qwen unblock evidence is under `evidence/preflight-v3/`, and tracer evidence is under `evidence/tracer-v2/`. Complete raw API responses are gitignored under `evidence/raw/`.

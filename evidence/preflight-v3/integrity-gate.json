@@ -1,0 +1,17 @@
+{
+  "database": "PASS",
+  "demo": "UNVERIFIED_NO_CREDENTIALS",
+  "execution_mode": "local_paper",
+  "fee": "ACCOUNT_FEE_UNVERIFIED",
+  "fee_basis": "ASSUMED_PUBLISHED_BASELINE",
+  "gap_semantics": "PASS_WITH_MISSING_BARS",
+  "generated_at": "2026-09-28T04:26:24.018866+00:00",
+  "history_provenance": "PASS_WITH_AMBIGUOUS_PRE_CERTIFICATION_HISTORY",
+  "phase2_blockers": [],
+  "qwen": "PASS_3_OF_3",
+  "qwen_evidence": "evidence/preflight-v3/qwen.json",
+  "reality_count_audit": "PASS",
+  "status": "GO",
+  "tracer_v2": "PASS_ARCHITECTURE_ONLY",
+  "volume": "DISABLED_UNPROVEN_PROVENANCE"
+}

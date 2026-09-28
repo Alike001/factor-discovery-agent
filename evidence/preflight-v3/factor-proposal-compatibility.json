@@ -1,0 +1,64 @@
+{
+  "authorization_logged": false,
+  "credential_persisted": false,
+  "credential_source": "environment",
+  "endpoint": "https://hackathon.bitgetops.com/v1/chat/completions",
+  "generated_at": "2026-09-28T04:25:51.035533+00:00",
+  "observed_models": [
+    "qwen3.8-max"
+  ],
+  "probe_count": 1,
+  "probes": [
+    {
+      "endpoint_path": "/chat/completions",
+      "error_code": null,
+      "http_status": 200,
+      "latency_ms": 21192,
+      "observed_model": "qwen3.8-max",
+      "profile": {
+        "max_tokens": 2400,
+        "reasoning_effort": "low",
+        "response_format": "json_object",
+        "temperature": 0
+      },
+      "provider_error": null,
+      "purpose": "FactorProposal",
+      "repair_attempts": 0,
+      "repair_required": false,
+      "request_hash": "6d4a44023059e31c885159289de2691acdc2dda55715d14caa28a47b8e6406c0",
+      "response_hash": "0625c9eeeb5fd7abda69f41af884f0d110ed26b38d9644fef03262303ebd173e",
+      "response_metadata": {
+        "configured_max_tokens": 2400,
+        "final_content_length": 667,
+        "finish_reason": "stop",
+        "incomplete_details": "UNMEASURED",
+        "output_item_types": [
+          "message"
+        ],
+        "reasoning_length": 3033,
+        "response_top_level_keys": [
+          "choices",
+          "created",
+          "id",
+          "model",
+          "object",
+          "usage"
+        ],
+        "status": "UNMEASURED",
+        "usage": {
+          "input_tokens": 927,
+          "output_tokens": 1152,
+          "reasoning_tokens": 961,
+          "total_tokens": 2079
+        }
+      },
+      "validation": {
+        "error": null,
+        "valid": true
+      }
+    }
+  ],
+  "requested_model": "qwen3.8-max",
+  "status": "PASS",
+  "valid_probe_count": 1
+}

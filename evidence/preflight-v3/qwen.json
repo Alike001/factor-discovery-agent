@@ -1,0 +1,184 @@
+{
+  "authorization_logged": false,
+  "credential_persisted": false,
+  "credential_source": "environment",
+  "endpoints": {
+    "FactorProposal": "https://hackathon.bitgetops.com/v1/chat/completions",
+    "LifecycleDecision": "https://hackathon.bitgetops.com/v1/responses",
+    "PortfolioDecision": "https://hackathon.bitgetops.com/v1/responses"
+  },
+  "generated_at": "2026-09-28T04:26:24.018866+00:00",
+  "observed_models": [
+    "qwen3.8-max"
+  ],
+  "probe_count": 3,
+  "probes": [
+    {
+      "endpoint_path": "/chat/completions",
+      "error_code": null,
+      "http_status": 200,
+      "latency_ms": 13929,
+      "observed_model": "qwen3.8-max",
+      "profile": {
+        "max_tokens": 2400,
+        "reasoning_effort": "low",
+        "response_format": "json_object",
+        "temperature": 0
+      },
+      "provider_error": null,
+      "purpose": "FactorProposal",
+      "repair_attempts": 0,
+      "repair_required": false,
+      "request_hash": "6d4a44023059e31c885159289de2691acdc2dda55715d14caa28a47b8e6406c0",
+      "response_hash": "26909dd0b53f7764805a4f24d52d3fcbe114feda9343c6891ef746281f653859",
+      "response_metadata": {
+        "configured_max_tokens": 2400,
+        "final_content_length": 667,
+        "finish_reason": "stop",
+        "incomplete_details": "UNMEASURED",
+        "output_item_types": [
+          "message"
+        ],
+        "reasoning_length": 1508,
+        "response_top_level_keys": [
+          "choices",
+          "created",
+          "id",
+          "model",
+          "object",
+          "usage"
+        ],
+        "status": "UNMEASURED",
+        "usage": {
+          "input_tokens": 927,
+          "output_tokens": 686,
+          "reasoning_tokens": 495,
+          "total_tokens": 1613
+        }
+      },
+      "validation": {
+        "error": null,
+        "valid": true
+      }
+    },
+    {
+      "endpoint_path": "/responses",
+      "error_code": null,
+      "http_status": 200,
+      "latency_ms": 4381,
+      "observed_model": "qwen3.8-max",
+      "provider_error": null,
+      "purpose": "LifecycleDecision",
+      "repair_attempts": 0,
+      "repair_required": false,
+      "request_hash": "de065b81eafc93a4a1102f511c75bcddcfea6a601473be0bf7342f7ae8533062",
+      "response_hash": "15866b77924ae9dcc6748b47efca4aac38d25846f28fcf80232074d041e04099",
+      "response_metadata": {
+        "configured_max_output_tokens": 900,
+        "final_content_length": 114,
+        "finish_reason": "UNMEASURED",
+        "incomplete_details": "UNMEASURED",
+        "output_item_types": [
+          "reasoning",
+          "message"
+        ],
+        "reasoning_length": "UNMEASURED",
+        "response_top_level_keys": [
+          "background",
+          "completed_at",
+          "created_at",
+          "frequency_penalty",
+          "id",
+          "max_output_tokens",
+          "metadata",
+          "model",
+          "object",
+          "output",
+          "parallel_tool_calls",
+          "presence_penalty",
+          "service_tier",
+          "status",
+          "store",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_logprobs",
+          "top_p",
+          "usage"
+        ],
+        "status": "completed",
+        "usage": {
+          "input_tokens": 205,
+          "output_tokens": 143,
+          "reasoning_tokens": 108,
+          "total_tokens": 348
+        }
+      },
+      "validation": {
+        "error": null,
+        "valid": true
+      }
+    },
+    {
+      "endpoint_path": "/responses",
+      "error_code": null,
+      "http_status": 200,
+      "latency_ms": 5865,
+      "observed_model": "qwen3.8-max",
+      "provider_error": null,
+      "purpose": "PortfolioDecision",
+      "repair_attempts": 0,
+      "repair_required": false,
+      "request_hash": "d37d88f68402224515d26ce727784e9bc2d7e72169c7e14dd18c0d3368d5f314",
+      "response_hash": "499156a0fb22e269b6c39f3515975299ddf462635aeb6b3aba81ceb007fd9036",
+      "response_metadata": {
+        "configured_max_output_tokens": 900,
+        "final_content_length": 241,
+        "finish_reason": "UNMEASURED",
+        "incomplete_details": "UNMEASURED",
+        "output_item_types": [
+          "reasoning",
+          "message"
+        ],
+        "reasoning_length": "UNMEASURED",
+        "response_top_level_keys": [
+          "background",
+          "completed_at",
+          "created_at",
+          "frequency_penalty",
+          "id",
+          "max_output_tokens",
+          "metadata",
+          "model",
+          "object",
+          "output",
+          "parallel_tool_calls",
+          "presence_penalty",
+          "service_tier",
+          "status",
+          "store",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_logprobs",
+          "top_p",
+          "usage"
+        ],
+        "status": "completed",
+        "usage": {
+          "input_tokens": 283,
+          "output_tokens": 226,
+          "reasoning_tokens": 150,
+          "total_tokens": 509
+        }
+      },
+      "validation": {
+        "error": null,
+        "valid": true
+      }
+    }
+  ],
+  "requested_model": "qwen3.8-max",
+  "status": "PASS",
+  "valid_probe_count": 3
+}
