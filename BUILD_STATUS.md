@@ -58,3 +58,14 @@ Phase 3 is complete. Further autonomous discovery and paper trading await review
 - Research diversity audit covers 2 families, 5 targets, and 5 sessions; 4 trials repeat one operator pattern.
 - Recommendation: `TARGETED_DISCOVERY_BATCH` after review, not paper probation.
 - Paper portfolio, orders, fills, and all paper execution remain unstarted.
+
+## Targeted fdp-v2 batch — stopped at hard budget, paper trading not started
+
+- Frozen `BATCH_PLAN.json` before the first Qwen request; immutable `fdp-v2` belongs to global search program `rtoken-session-alpha-v1` with `fdp-v1`.
+- Slot A became search trial 6 and Slot B became search trial 7; both remained structurally invalid after their single permitted repair and were rejected at Syntax.
+- Two proposer calls plus repairs consumed 4 HTTP attempts and 26,090 measured tokens. The second atomic response crossed the 25,000-token cap by 1,090.
+- Slot C was recorded as `NO_RUN_BUDGET_EXHAUSTED`; no hypothesis or replacement trial was fabricated.
+- Search N advanced honestly from 5 to 7, not the planned 8.
+- Outcomes: 2 rejected, 0 candidate, 0 certified; diversity acceptance failed.
+- Final recommendation: `RESEARCH_PROTOCOL_REVIEW`.
+- No lifecycle Qwen calls, paper portfolio, orders, fills, or paper execution occurred after the hard-budget stop.

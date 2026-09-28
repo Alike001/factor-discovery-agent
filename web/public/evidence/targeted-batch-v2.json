@@ -1,0 +1,473 @@
+{
+  "budget": {
+    "conservative_tokens": 26090,
+    "http_attempts": 4,
+    "logical_calls": 2,
+    "measured_tokens": 26090,
+    "search_n_after": 7,
+    "search_n_before": 5
+  },
+  "decision": {
+    "budget": {
+      "conservative_tokens": 26090,
+      "http_attempts": 4,
+      "logical_calls": 2,
+      "measured_tokens": 26090
+    },
+    "candidate_count": 0,
+    "certified_count": 0,
+    "committed_trials": 2,
+    "completed_at": "2026-09-28T09:11:24.253180+00:00",
+    "contradiction": "Two repaired proposer calls exceeded the frozen measured-token cap before Slot C.",
+    "diversity_accepted": false,
+    "gate_distribution": {
+      "FAIL": 2,
+      "INCONCLUSIVE": 18
+    },
+    "no_run_slots": [
+      "C"
+    ],
+    "paper_trading_started": false,
+    "planned_trials": 3,
+    "protocol": "fdp-v2",
+    "recommendation": "RESEARCH_PROTOCOL_REVIEW",
+    "search_n_after": 7,
+    "search_n_before": 5,
+    "search_program_id": "rtoken-session-alpha-v1",
+    "status": "ABORTED_BUDGET"
+  },
+  "diversity": {
+    "accepted": false,
+    "families_planned": [
+      "cross_sectional",
+      "session_transition",
+      "residual"
+    ],
+    "old_fingerprint_clone": null,
+    "performance_fields_used_for_diversity": false,
+    "reason": "Only two invalid structural proposals were committed; Slot C was blocked by budget.",
+    "valid_families_observed": [],
+    "valid_sessions_observed": []
+  },
+  "gate_summary": {
+    "first_hard_fail": {
+      "A": "Syntax",
+      "B": "Syntax",
+      "C": null
+    },
+    "gate_distribution": {
+      "FAIL": 2,
+      "INCONCLUSIVE": 18
+    },
+    "outcomes": {
+      "A": "REJECTED",
+      "B": "REJECTED",
+      "C": "NO_RUN_BUDGET_EXHAUSTED"
+    }
+  },
+  "plan": {
+    "aggregate_feedback": "Previous batch overused pairwise divergence patterns and all five were non-promotable after costs.",
+    "automatic_revision_children": false,
+    "batch": "targeted-batch-v2",
+    "budget": {
+      "max_additional_measured_tokens": 25000,
+      "max_live_http_attempts": 8,
+      "max_logical_calls": 6,
+      "max_repairs_per_request": 1,
+      "trials": 3
+    },
+    "cost_model": {
+      "fee_basis": "ASSUMED_PUBLISHED_BASELINE",
+      "fee_per_fill": 0.0005,
+      "slippage_per_fill": 0.00025,
+      "version": "rtoken-cost-v1"
+    },
+    "expected_search_n_after": 8,
+    "frozen_at": "2026-09-28T06:33:41.248479+00:00",
+    "gate_policy": {
+      "candidate_permutation_p": 0.1,
+      "certification_permutation_p": 0.05,
+      "dsr_probability": 0.9,
+      "history_days": 60,
+      "oos_days": 30,
+      "oos_trade_events": 20,
+      "permutations": 2000
+    },
+    "git_commit_before_batch": "161a0bbcd353aa90dea7a5be069e40b619193717",
+    "is_oos_rule": "latest closed aligned bar minus 30 calendar days",
+    "performance_feedback_allowed": false,
+    "planned_unique_trials": 3,
+    "prior_structural_fingerprints": [
+      {
+        "direction": "long_flat",
+        "family": "mean_reversion",
+        "horizon": 24,
+        "lookbacks": [
+          24,
+          120
+        ],
+        "operator_multiset": {
+          "gt": 1,
+          "lte": 1,
+          "ret": 2,
+          "signal": 2,
+          "source": 2,
+          "sub": 1,
+          "zscore": 2
+        },
+        "references": [
+          "RQQQUSDT"
+        ],
+        "sessions": [
+          "overnight"
+        ],
+        "targets": [
+          "RNVDAUSDT"
+        ]
+      },
+      {
+        "direction": "long_flat",
+        "family": "mean_reversion",
+        "horizon": 6,
+        "lookbacks": [
+          6
+        ],
+        "operator_multiset": {
+          "gt": 1,
+          "lte": 1,
+          "ret": 2,
+          "signal": 2,
+          "source": 2,
+          "sub": 1
+        },
+        "references": [
+          "RQQQUSDT"
+        ],
+        "sessions": [
+          "weekend"
+        ],
+        "targets": [
+          "RAAPLUSDT"
+        ]
+      },
+      {
+        "direction": "long_flat",
+        "family": "mean_reversion",
+        "horizon": 24,
+        "lookbacks": [
+          24
+        ],
+        "operator_multiset": {
+          "gt": 1,
+          "lte": 1,
+          "ret": 2,
+          "signal": 2,
+          "source": 2,
+          "sub": 1
+        },
+        "references": [
+          "RQQQUSDT"
+        ],
+        "sessions": [
+          "regular"
+        ],
+        "targets": [
+          "RTSLAUSDT"
+        ]
+      },
+      {
+        "direction": "long_flat",
+        "family": "mean_reversion",
+        "horizon": 6,
+        "lookbacks": [
+          6
+        ],
+        "operator_multiset": {
+          "gt": 1,
+          "lte": 1,
+          "ret": 2,
+          "signal": 2,
+          "source": 2,
+          "sub": 1
+        },
+        "references": [
+          "RNVDAUSDT"
+        ],
+        "sessions": [
+          "after_hours"
+        ],
+        "targets": [
+          "RAMDUSDT"
+        ]
+      },
+      {
+        "direction": "long_flat",
+        "family": "continuation",
+        "horizon": 6,
+        "lookbacks": [
+          6
+        ],
+        "operator_multiset": {
+          "gt": 1,
+          "lte": 1,
+          "ret": 2,
+          "signal": 2,
+          "source": 2,
+          "sub": 1
+        },
+        "references": [
+          "RQQQUSDT"
+        ],
+        "sessions": [
+          "pre_market"
+        ],
+        "targets": [
+          "RMSFTUSDT"
+        ]
+      }
+    ],
+    "protocol_hash": "42fdd630f01da9a2efef2435b1e69ea4b7c3f0407cacb5f8874b431d368092ca",
+    "protocol_version": "fdp-v2",
+    "search_n_before": 5,
+    "search_program_id": "rtoken-session-alpha-v1",
+    "slot_order": [
+      "A",
+      "B",
+      "C"
+    ],
+    "slots": {
+      "A": {
+        "family": "cross_sectional",
+        "required_session": "regular",
+        "requirements": [
+          ">=4 rTokens",
+          "rank or group_mean",
+          "horizon 12/24/48",
+          "rebalance >=6"
+        ],
+        "title": "Cross-sectional ranking"
+      },
+      "B": {
+        "family": "session_transition",
+        "required_session": "overnight",
+        "requirements": [
+          ">=3 rTokens",
+          "after_hours -> overnight",
+          "horizon 6/12/24",
+          "one entry per transition"
+        ],
+        "title": "Session transition",
+        "transition": [
+          "after_hours",
+          "overnight"
+        ]
+      },
+      "C": {
+        "family": "residual",
+        "required_session": "pre_market",
+        "requirements": [
+          ">=3 rTokens",
+          "rolling_beta/residual/dispersion",
+          "horizon 12/24/48",
+          "rebalance >=6"
+        ],
+        "title": "Beta/residual or dispersion"
+      }
+    }
+  },
+  "trials": [
+    {
+      "factor_version_id": "72f229e9-a92b-4a52-ac2c-7176e113d9bd",
+      "family": "cross_sectional",
+      "lifecycle": {
+        "automatic_revision_child": false,
+        "status": "BLOCKED_BUDGET"
+      },
+      "operator_fingerprint": {
+        "invalid": 1
+      },
+      "proposal": {
+        "raw_response_hash": "3a0a7bb301b7e739e81ca1b13eed2f703ccc54e16af2dd0d8f0afac8554aa851",
+        "slot": "A",
+        "validation_error": "7 validation errors for FactorProposalV2\nsignal.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nsignal.args.0.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.1.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+      },
+      "report": {
+        "aggregate": "REJECTED",
+        "data_contract": {},
+        "dataset_hash": "6072cb9bce971d21cf7c1b13f051ce6b258c27122b10e385db79970e7d9a2f18",
+        "factor": {
+          "raw_response_hash": "3a0a7bb301b7e739e81ca1b13eed2f703ccc54e16af2dd0d8f0afac8554aa851",
+          "slot": "A",
+          "validation_error": "7 validation errors for FactorProposalV2\nsignal.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nsignal.args.0.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.1.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        "first_hard_fail": "Syntax",
+        "gates": [
+          {
+            "name": "Syntax",
+            "outcome": "FAIL",
+            "reason": "REJECTED_STRUCTURAL_MODEL_OUTPUT,7 validation errors for FactorProposalV2\nsignal.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nsignal.args.0.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.1.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+          },
+          {
+            "name": "Coverage",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "Point-in-time",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "Mechanics",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "Costs",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "OOS",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "Stability",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "Permutation",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "Multiple testing",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "Baseline",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          }
+        ],
+        "metrics": {},
+        "protocol": "fdp-v2",
+        "report_hash": "35b0e53ad13c78e6c914cfc164708ea2591021ea07ffac51120dd45cac835700",
+        "search_program_id": "rtoken-session-alpha-v1",
+        "slot": "A",
+        "structural_errors": [
+          "REJECTED_STRUCTURAL_MODEL_OUTPUT",
+          "7 validation errors for FactorProposalV2\nsignal.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nsignal.args.0.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.1.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        ],
+        "trial_number": 6
+      },
+      "slot": "A",
+      "trial_number": 6
+    },
+    {
+      "factor_version_id": "068bce8a-7266-4325-8c16-ef4cc9b9f10e",
+      "family": "session_transition",
+      "lifecycle": {
+        "automatic_revision_child": false,
+        "status": "BLOCKED_BUDGET"
+      },
+      "operator_fingerprint": {
+        "invalid": 1
+      },
+      "proposal": {
+        "raw_response_hash": "4151a1430e7fa8f72e1075188f1ce270756aac75d71b4eb7202c292eda83644b",
+        "slot": "B",
+        "validation_error": "3 validation errors for FactorProposalV2\nsignal\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.0.args.0\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+      },
+      "report": {
+        "aggregate": "REJECTED",
+        "data_contract": {},
+        "dataset_hash": "362718ef48f5568b20e0c81567ef4a5e9d2b2511f11d3a952e3fe5f6a3d81d77",
+        "factor": {
+          "raw_response_hash": "4151a1430e7fa8f72e1075188f1ce270756aac75d71b4eb7202c292eda83644b",
+          "slot": "B",
+          "validation_error": "3 validation errors for FactorProposalV2\nsignal\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.0.args.0\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        "first_hard_fail": "Syntax",
+        "gates": [
+          {
+            "name": "Syntax",
+            "outcome": "FAIL",
+            "reason": "REJECTED_STRUCTURAL_MODEL_OUTPUT,3 validation errors for FactorProposalV2\nsignal\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.0.args.0\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+          },
+          {
+            "name": "Coverage",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "Point-in-time",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "Mechanics",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "Costs",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "OOS",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "Stability",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "Permutation",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "Multiple testing",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          },
+          {
+            "name": "Baseline",
+            "outcome": "INCONCLUSIVE",
+            "reason": "Not evaluated after structural rejection."
+          }
+        ],
+        "metrics": {},
+        "protocol": "fdp-v2",
+        "report_hash": "32c534a04d5b4ca269f6c1de260578935df624b06bd46e94ecb6f67b203757d8",
+        "search_program_id": "rtoken-session-alpha-v1",
+        "slot": "B",
+        "structural_errors": [
+          "REJECTED_STRUCTURAL_MODEL_OUTPUT",
+          "3 validation errors for FactorProposalV2\nsignal\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.0.args.0\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        ],
+        "trial_number": 7
+      },
+      "slot": "B",
+      "trial_number": 7
+    },
+    {
+      "family": "residual",
+      "lifecycle": {
+        "status": "NOT_CALLED_BUDGET"
+      },
+      "proposal": null,
+      "report": null,
+      "slot": "C",
+      "state": "NO_RUN_BUDGET_EXHAUSTED",
+      "trial_number": null
+    }
+  ]
+}

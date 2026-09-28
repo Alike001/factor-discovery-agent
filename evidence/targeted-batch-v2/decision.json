@@ -1,0 +1,29 @@
+{
+  "budget": {
+    "conservative_tokens": 26090,
+    "http_attempts": 4,
+    "logical_calls": 2,
+    "measured_tokens": 26090
+  },
+  "candidate_count": 0,
+  "certified_count": 0,
+  "committed_trials": 2,
+  "completed_at": "2026-09-28T09:11:24.253180+00:00",
+  "contradiction": "Two repaired proposer calls exceeded the frozen measured-token cap before Slot C.",
+  "diversity_accepted": false,
+  "gate_distribution": {
+    "FAIL": 2,
+    "INCONCLUSIVE": 18
+  },
+  "no_run_slots": [
+    "C"
+  ],
+  "paper_trading_started": false,
+  "planned_trials": 3,
+  "protocol": "fdp-v2",
+  "recommendation": "RESEARCH_PROTOCOL_REVIEW",
+  "search_n_after": 7,
+  "search_n_before": 5,
+  "search_program_id": "rtoken-session-alpha-v1",
+  "status": "ABORTED_BUDGET"
+}

@@ -1,0 +1,13 @@
+{
+  "accepted": false,
+  "families_planned": [
+    "cross_sectional",
+    "session_transition",
+    "residual"
+  ],
+  "old_fingerprint_clone": null,
+  "performance_fields_used_for_diversity": false,
+  "reason": "Only two invalid structural proposals were committed; Slot C was blocked by budget.",
+  "valid_families_observed": [],
+  "valid_sessions_observed": []
+}

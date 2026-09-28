@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 import time
-from typing import Any, TypeVar
+from typing import Any, Callable, TypeVar
 
 import httpx
 from pydantic import BaseModel, ValidationError
@@ -313,5 +313,67 @@ async def probe_factor_proposal_compat(
         ),
         "validation": {"valid": valid, "error": error},
         "repair_required": repair_attempts > 0,
+        "repair_attempts": repair_attempts,
+    }
+
+
+async def probe_json_chat(
+    client: httpx.AsyncClient,
+    *,
+    model: str,
+    api_key: str,
+    schema: type[T],
+    purpose: str,
+    prompt: str,
+    max_tokens: int,
+    max_repair_attempts: int = 1,
+    semantic_validator: Callable[[T], list[str]] | None = None,
+) -> dict[str, Any]:
+    """Strict JSON-object chat profile with per-attempt usage retained for hard budgets."""
+    def body_for(value: str) -> dict[str, Any]:
+        return {"model": model, "messages": [{"role": "user", "content": value}], "temperature": 0,
+                "response_format": {"type": "json_object"}, "reasoning_effort": "low", "max_tokens": max_tokens}
+
+    body = body_for(prompt)
+    response, payload, latency_ms = await _post(client, path="/chat/completions", api_key=api_key, body=body)
+    payloads = [payload]
+    raw_text = _chat_text(payload)
+    def validate(value: str) -> tuple[bool, str | None]:
+        valid, error = _validate(schema, value)
+        if not valid or semantic_validator is None:
+            return valid, error
+        parsed = schema.model_validate_json(value)
+        semantic_errors = semantic_validator(parsed)
+        return (False, ",".join(semantic_errors)) if semantic_errors else (True, None)
+
+    valid, error = validate(raw_text)
+    repair_attempts = 0
+    if not valid and max_repair_attempts:
+        repair_attempts = 1
+        repair = (f"Repair this invalid {purpose}. Return JSON only. Validation error: {error}. "
+                  f"Invalid response: {raw_text}. Original requirements: {prompt}")
+        response, payload, repair_latency = await _post(
+            client, path="/chat/completions", api_key=api_key, body=body_for(repair)
+        )
+        latency_ms += repair_latency
+        payloads.append(payload)
+        raw_text = _chat_text(payload)
+        valid, error = validate(raw_text)
+    metadata = _chat_metadata(payload, raw_text, max_tokens)
+    attempt_usage = [_usage(item) for item in payloads]
+    measured_total = sum(int(item["total_tokens"]) for item in attempt_usage if isinstance(item["total_tokens"], int))
+    unmeasured_attempts = sum(not isinstance(item["total_tokens"], int) for item in attempt_usage)
+    metadata["attempt_usage"] = attempt_usage
+    metadata["usage"]["measured_all_attempts_total_tokens"] = measured_total
+    metadata["usage"]["unmeasured_attempts"] = unmeasured_attempts
+    metadata["usage"]["conservative_budget_tokens"] = measured_total + unmeasured_attempts * max_tokens
+    return {
+        "purpose": purpose, "endpoint_path": "/chat/completions", "request_hash": canonical_hash(body),
+        "response_hash": canonical_hash(payload), "latency_ms": latency_ms, "http_status": response.status_code,
+        "observed_model": payload.get("model"), "provider_error": payload.get("error") or payload.get("non_json_response"),
+        "final_text": raw_text, "parsed_json": _parsed(schema, raw_text), "response_metadata": metadata,
+        "error_code": _failure_code(status_code=response.status_code, final_text=raw_text,
+                                     finish_reason=metadata["finish_reason"] if isinstance(metadata["finish_reason"], str) else None),
+        "validation": {"valid": valid, "error": error}, "repair_required": bool(repair_attempts),
         "repair_attempts": repair_attempts,
     }

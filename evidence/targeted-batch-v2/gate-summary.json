@@ -1,0 +1,16 @@
+{
+  "first_hard_fail": {
+    "A": "Syntax",
+    "B": "Syntax",
+    "C": null
+  },
+  "gate_distribution": {
+    "FAIL": 2,
+    "INCONCLUSIVE": 18
+  },
+  "outcomes": {
+    "A": "REJECTED",
+    "B": "REJECTED",
+    "C": "NO_RUN_BUDGET_EXHAUSTED"
+  }
+}

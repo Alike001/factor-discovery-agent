@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 from concurrent.futures import ThreadPoolExecutor
 from datetime import UTC, datetime
+from uuid import uuid4
 
 import psycopg
 from psycopg.errors import RaiseException
@@ -88,3 +89,16 @@ def test_lifecycle_events_are_append_only(repository: ResearchRepository) -> Non
                 (factor,),
             ).fetchone()
             connection.execute("UPDATE factor_lifecycle_events SET reason = 'mutated' WHERE id = %s", (event[0],))
+
+
+def test_search_program_counter_spans_protocol_versions(repository: ResearchRepository) -> None:
+    suffix = uuid4().hex
+    first = repository.ensure_protocol(f"pytest-fdp-v1-{suffix}")
+    second = repository.ensure_protocol(f"pytest-fdp-v2-{suffix}")
+    key = f"pytest-search-program-{suffix}"
+    program = repository.ensure_search_program(key, [first, second], starting_trial=101)
+    assert repository.allocate_search_trial(program) == 101
+    assert repository.allocate_search_trial(program) == 102
+    same = repository.ensure_search_program(key, [first, second], starting_trial=101)
+    assert same == program
+    assert repository.allocate_search_trial(program) == 103

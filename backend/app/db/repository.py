@@ -55,6 +55,57 @@ class ResearchRepository:
             raise KeyError("unknown protocol")
         return row[0]
 
+    def ensure_search_program(self, program_key: str, protocol_ids: list[UUID], *, starting_trial: int) -> UUID:
+        with psycopg.connect(self.database_url) as connection:
+            row = connection.execute(
+                """
+                INSERT INTO research_programs (program_key, next_trial_number)
+                VALUES (%s, %s)
+                ON CONFLICT (program_key) DO UPDATE SET program_key = EXCLUDED.program_key
+                RETURNING id, next_trial_number
+                """,
+                (program_key, starting_trial),
+            ).fetchone()
+            assert row
+            if row[1] < starting_trial:
+                raise ValueError("search program counter predates frozen starting trial")
+            for protocol_id in protocol_ids:
+                connection.execute(
+                    """INSERT INTO research_program_protocols (program_id, protocol_id)
+                       VALUES (%s, %s) ON CONFLICT (protocol_id) DO NOTHING""",
+                    (row[0], protocol_id),
+                )
+        return row[0]
+
+    def allocate_search_trial(self, program_id: UUID) -> int:
+        with psycopg.connect(self.database_url) as connection:
+            row = connection.execute(
+                """UPDATE research_programs SET next_trial_number = next_trial_number + 1
+                   WHERE id = %s RETURNING next_trial_number - 1""",
+                (program_id,),
+            ).fetchone()
+        if row is None:
+            raise KeyError("unknown search program")
+        return int(row[0])
+
+    def search_program_n(self, program_id: UUID) -> int:
+        with psycopg.connect(self.database_url) as connection:
+            row = connection.execute(
+                """SELECT count(DISTINCT h.canonical_identity_hash)
+                   FROM hypotheses h
+                   JOIN research_program_protocols spp ON spp.protocol_id = h.protocol_id
+                   WHERE spp.program_id = %s AND h.duplicate_of IS NULL""",
+                (program_id,),
+            ).fetchone()
+        return int(row[0])
+
+    def set_cycle_search_program(self, cycle_id: UUID, program_id: UUID, slot: str) -> None:
+        with psycopg.connect(self.database_url) as connection:
+            connection.execute(
+                """UPDATE research_cycles SET search_program_id=%s, research_slot=%s WHERE id=%s""",
+                (program_id, slot, cycle_id),
+            )
+
     def upsert_cycle(self, protocol_id: UUID, cycle_number: int, idempotency_key: str, as_of: datetime) -> UUID:
         with psycopg.connect(self.database_url) as connection:
             row = connection.execute(
@@ -232,6 +283,29 @@ class ResearchRepository:
         assert factor
         return hypothesis[0], factor[0], False
 
+    def commit_invalid_hypothesis(self, *, protocol_id: UUID, cycle_id: UUID, trial_number: int,
+                                  proposer_run_id: UUID, slot: str, response_hash: str,
+                                  validation_error: str) -> tuple[UUID, UUID]:
+        proposal = {"slot": slot, "raw_response_hash": response_hash, "validation_error": validation_error}
+        with psycopg.connect(self.database_url) as connection:
+            hypothesis = connection.execute(
+                """INSERT INTO hypotheses
+                   (protocol_id,cycle_id,trial_number,name,thesis,canonical_identity_hash,proposer_run_id,proposal_json)
+                   VALUES (%s,%s,%s,%s,%s,%s,%s,%s::jsonb) RETURNING id""",
+                (protocol_id, cycle_id, trial_number, f"Invalid Slot {slot} proposal",
+                 "Qwen output remained structurally invalid after the single permitted repair.",
+                 response_hash, proposer_run_id, json.dumps(proposal)),
+            ).fetchone()
+            assert hypothesis
+            factor = connection.execute(
+                """INSERT INTO factor_versions
+                   (protocol_id,hypothesis_id,version,canonical_spec_json,canonical_hash,lifecycle_state)
+                   VALUES (%s,%s,1,%s::jsonb,%s,'COMMITTED') RETURNING id""",
+                (protocol_id, hypothesis[0], json.dumps(proposal), response_hash),
+            ).fetchone()
+        assert factor
+        return hypothesis[0], factor[0]
+
     def hypothesis_for_cycle(self, cycle_id: UUID) -> dict[str, Any] | None:
         with psycopg.connect(self.database_url) as connection:
             row = connection.execute(
@@ -249,17 +323,18 @@ class ResearchRepository:
                 "duplicate_of": row[4], "factor_version_id": row[5] or row[4]}
 
     def save_experiment(self, *, factor_version_id: UUID, dataset_hash: str,
-                        data_contract: dict[str, Any], metrics: dict[str, Any], report_hash: str) -> UUID:
+                        data_contract: dict[str, Any], metrics: dict[str, Any], report_hash: str,
+                        protocol_version: str = "fdp-v1") -> UUID:
         with psycopg.connect(self.database_url) as connection:
             row = connection.execute(
                 """
                 INSERT INTO experiments
                     (factor_version_id, dataset_hash, protocol_version, data_contract_json, metrics_json, report_hash)
-                VALUES (%s, %s, 'fdp-v1', %s::jsonb, %s::jsonb, %s)
+                VALUES (%s, %s, %s, %s::jsonb, %s::jsonb, %s)
                 ON CONFLICT (factor_version_id, dataset_hash) DO UPDATE SET report_hash = experiments.report_hash
                 RETURNING id
                 """,
-                (factor_version_id, dataset_hash, json.dumps(data_contract), json.dumps(metrics), report_hash),
+                (factor_version_id, dataset_hash, protocol_version, json.dumps(data_contract), json.dumps(metrics), report_hash),
             ).fetchone()
         assert row
         return row[0]
