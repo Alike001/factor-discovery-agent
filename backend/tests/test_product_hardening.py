@@ -25,6 +25,11 @@ def test_rationale_never_drives_execution_and_mismatch_is_visible():
     assert "RATIONALE_RECIPE_DIRECTION_MISMATCH" in semantic_lint(trial["recipe"])
 
 
+def test_invalid_recipe_never_gets_fabricated_executable_description():
+    recipe = {"family": "session_transition", "invalid": True}
+    assert executable_hypothesis(recipe) == "Executable hypothesis unavailable because no valid structured recipe compiled."
+
+
 def test_public_package_is_sanitized_and_frozen():
     files = {path.name: json.loads(path.read_text()) for path in PUBLIC.glob("*.json") if path.name != "MANIFEST.json"}
     assert public_package_errors(files) == []

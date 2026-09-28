@@ -4,7 +4,7 @@
   "data_contract": {},
   "dataset_hash": "43ab70c1315cc7e5d54b5edf3499b2b9ffd17f590d1b47f8b8865fa8f2782288",
   "dsr": null,
-  "executable_hypothesis": "The None transition_return across unknown transition is tested as a None signal with a None-bar holding horizon.",
+  "executable_hypothesis": "Executable hypothesis unavailable because no valid structured recipe compiled.",
   "family": "session_transition",
   "first_hard_fail": "Syntax",
   "gates": [

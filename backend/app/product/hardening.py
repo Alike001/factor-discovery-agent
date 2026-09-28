@@ -29,6 +29,8 @@ def sha256_json(value: Any) -> str:
 
 def executable_hypothesis(recipe: Mapping[str, Any]) -> str:
     """Describe executable semantics using structured fields only."""
+    if recipe.get("invalid") is True or not isinstance(recipe.get("recipe"), Mapping):
+        return "Executable hypothesis unavailable because no valid structured recipe compiled."
     family = recipe.get("family")
     details = recipe.get("recipe") or {}
     session = (recipe.get("session_contract") or {}).get("session", "all supported sessions")
