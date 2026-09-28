@@ -1,0 +1,76 @@
+{
+  "baseline": {
+    "method": "factor net return must exceed same-window primary-symbol buy-and-hold",
+    "version": "same-window-buy-hold-v1"
+  },
+  "block_definitions": {
+    "count": 4,
+    "evaluable": "at least one completed fill/event and eligible observations",
+    "partition": "four contiguous approximately equal calendar-time OOS intervals"
+  },
+  "cost_model": {
+    "fee_basis": "ASSUMED_PUBLISHED_BASELINE",
+    "fee_per_fill": 0.0005,
+    "slippage_per_fill": 0.00025,
+    "version": "rtoken-cost-v1"
+  },
+  "data_reconstruction": {
+    "defect": "Phase 2 did not persist its normalized 1000-bar recent-candle merge",
+    "exactness_gate": "all five reconstructed records hashes must equal their immutable Phase-2 records hashes",
+    "recovery_audit": "evidence/phase3/recovery-audit.json",
+    "recovery_source": "Bitget UTA v3 recent closed 1H candles bounded to each Phase-2 contract end",
+    "version": "phase2-dataset-recovery-v1"
+  },
+  "diversity": {
+    "performance_fields_permitted": false,
+    "version": "structural-fingerprint-v1"
+  },
+  "dsr": {
+    "equations": "Bailey-Lopez_de_Prado_2014_expected_maximum_SR_plus_PSR",
+    "expected_mean_sr": 0.0,
+    "flat_trial_search_sharpe": 0.0,
+    "formula_version": "published-equations-2014",
+    "kurtosis": "unbiased adjusted sample non-excess kurtosis",
+    "search_hurdle": "SR_star = 0 + sample_sigma_SR * ((1-gamma)*Phi^-1(1-1/N) + gamma*Phi^-1(1-1/(N*e)))",
+    "skew": "adjusted Fisher-Pearson sample skewness",
+    "threshold": 0.9,
+    "zero_variance_individual_result": "INCONCLUSIVE_DSR_NUMERICS"
+  },
+  "frozen_at": "2026-09-28T05:57:08Z",
+  "git_commit_before_results": "3518e5baa255abda46c41335bff7bf5d6b263517",
+  "implementation_worktree_frozen_before_results": true,
+  "method_version": "phase3-evidence-v2",
+  "permutation": {
+    "draws": 2000,
+    "method": "deterministic sign flip of strategy payoff events",
+    "seed": "persisted Phase-2 trial number",
+    "threshold_candidate": 0.1,
+    "version": "sign-flip-v1"
+  },
+  "search_population": {
+    "duplicates_excluded": true,
+    "expected_n": 5,
+    "policy": "all unique evaluated autonomous hypotheses committed under fdp-v1; Phase-1 tracers excluded",
+    "trial_numbers": [1, 2, 3, 4, 5]
+  },
+  "sharpe_frequency": {
+    "annualization_inside_dsr": false,
+    "eligible_flat_bars_included": true,
+    "frequency": "one-hour evaluation bars",
+    "return_series": "full costed strategy bar returns"
+  },
+  "stability": {
+    "maximum_single_block_absolute_pnl_contribution": 0.6,
+    "minimum_evaluable_blocks": 3,
+    "required_matching_full_oos_sign_share": 0.6,
+    "scope_aware": true,
+    "session_purity_required": true,
+    "temporal_halves_must_agree": true,
+    "version": "scope-aware-stability-v1"
+  },
+  "supersedes": {
+    "method_version": "phase3-evidence-v1",
+    "methods_hash": "6fa6257429e9a7f5af0ae9092fd94d6b8d6fa2d159c08c209d3a74100b9e9f69",
+    "reason": "No replay result was produced because the exact Phase-2 normalized candle merge was not persisted. Statistical methods and thresholds are unchanged."
+  }
+}

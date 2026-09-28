@@ -1,0 +1,212 @@
+{
+  "factor_count": 5,
+  "factors": [
+    {
+      "fingerprint": {
+        "direction": "long_flat",
+        "family": "mean_reversion",
+        "horizon": 24,
+        "lookbacks": [
+          24,
+          120
+        ],
+        "operator_multiset": {
+          "gt": 1,
+          "lte": 1,
+          "ret": 2,
+          "signal": 2,
+          "source": 2,
+          "sub": 1,
+          "zscore": 2
+        },
+        "references": [
+          "RQQQUSDT"
+        ],
+        "sessions": [
+          "overnight"
+        ],
+        "targets": [
+          "RNVDAUSDT"
+        ]
+      },
+      "name": "Overnight relative mean reversion RNVDA vs RQQQ",
+      "trial_number": 1
+    },
+    {
+      "fingerprint": {
+        "direction": "long_flat",
+        "family": "mean_reversion",
+        "horizon": 6,
+        "lookbacks": [
+          6
+        ],
+        "operator_multiset": {
+          "gt": 1,
+          "lte": 1,
+          "ret": 2,
+          "signal": 2,
+          "source": 2,
+          "sub": 1
+        },
+        "references": [
+          "RQQQUSDT"
+        ],
+        "sessions": [
+          "weekend"
+        ],
+        "targets": [
+          "RAAPLUSDT"
+        ]
+      },
+      "name": "Weekend close-return reversal RAAPLUSDT vs RQQQUSDT",
+      "trial_number": 2
+    },
+    {
+      "fingerprint": {
+        "direction": "long_flat",
+        "family": "mean_reversion",
+        "horizon": 24,
+        "lookbacks": [
+          24
+        ],
+        "operator_multiset": {
+          "gt": 1,
+          "lte": 1,
+          "ret": 2,
+          "signal": 2,
+          "source": 2,
+          "sub": 1
+        },
+        "references": [
+          "RQQQUSDT"
+        ],
+        "sessions": [
+          "regular"
+        ],
+        "targets": [
+          "RTSLAUSDT"
+        ]
+      },
+      "name": "Cross-rToken close divergence mean-reversion",
+      "trial_number": 3
+    },
+    {
+      "fingerprint": {
+        "direction": "long_flat",
+        "family": "mean_reversion",
+        "horizon": 6,
+        "lookbacks": [
+          6
+        ],
+        "operator_multiset": {
+          "gt": 1,
+          "lte": 1,
+          "ret": 2,
+          "signal": 2,
+          "source": 2,
+          "sub": 1
+        },
+        "references": [
+          "RNVDAUSDT"
+        ],
+        "sessions": [
+          "after_hours"
+        ],
+        "targets": [
+          "RAMDUSDT"
+        ]
+      },
+      "name": "Semiconductor after-hours relative momentum divergence",
+      "trial_number": 4
+    },
+    {
+      "fingerprint": {
+        "direction": "long_flat",
+        "family": "continuation",
+        "horizon": 6,
+        "lookbacks": [
+          6
+        ],
+        "operator_multiset": {
+          "gt": 1,
+          "lte": 1,
+          "ret": 2,
+          "signal": 2,
+          "source": 2,
+          "sub": 1
+        },
+        "references": [
+          "RQQQUSDT"
+        ],
+        "sessions": [
+          "pre_market"
+        ],
+        "targets": [
+          "RMSFTUSDT"
+        ]
+      },
+      "name": "Pre-market relative momentum divergence RMSFT vs RQQQ",
+      "trial_number": 5
+    }
+  ],
+  "method_version": "structural-fingerprint-v1",
+  "nearest_neighbors": [
+    {
+      "jaccard_similarity": 0.6470588235294118,
+      "nearest_trial": 3,
+      "trial_number": 1
+    },
+    {
+      "jaccard_similarity": 0.625,
+      "nearest_trial": 5,
+      "trial_number": 2
+    },
+    {
+      "jaccard_similarity": 0.6470588235294118,
+      "nearest_trial": 1,
+      "trial_number": 3
+    },
+    {
+      "jaccard_similarity": 0.625,
+      "nearest_trial": 2,
+      "trial_number": 4
+    },
+    {
+      "jaccard_similarity": 0.625,
+      "nearest_trial": 2,
+      "trial_number": 5
+    }
+  ],
+  "performance_fields_used": false,
+  "repeated_operator_patterns": [
+    {
+      "count": 4,
+      "pattern": {
+        "gt": 1,
+        "lte": 1,
+        "ret": 2,
+        "signal": 2,
+        "source": 2,
+        "sub": 1
+      }
+    }
+  ],
+  "unique_families": [
+    "continuation",
+    "mean_reversion"
+  ],
+  "unique_sessions": [
+    "after_hours",
+    "overnight",
+    "pre_market",
+    "regular",
+    "weekend"
+  ],
+  "unique_targets": [
+    "RAAPLUSDT",
+    "RAMDUSDT",
+    "RMSFTUSDT",
+    "RNVDAUSDT",
+    "RTSLAUSDT"
+  ]
+}

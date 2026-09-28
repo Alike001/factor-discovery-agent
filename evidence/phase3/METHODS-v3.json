@@ -1,0 +1,13 @@
+{
+  "frozen_at": "2026-09-28T05:59:00Z",
+  "inherits_complete_methods_from": {
+    "file": "evidence/phase3/METHODS-v2.json",
+    "methods_hash": "ca0a099f96982ef0db045577247c8506103318f35ac8a80c92b5b88956f3f50a"
+  },
+  "method_version": "phase3-evidence-v3",
+  "statistical_methods_or_thresholds_changed": false,
+  "supersedes": {
+    "method_version": "phase3-evidence-v2",
+    "reason": "No replay result was produced because a diagnostic parser included trailing punctuation in a persisted permutation p-value. The parser was corrected; statistical methods and thresholds are unchanged."
+  }
+}

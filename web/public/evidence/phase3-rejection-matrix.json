@@ -1,0 +1,1416 @@
+{
+  "factors": [
+    {
+      "diagnostic_only": true,
+      "dsr": {
+        "benchmark_sharpe": 0.00271115516762,
+        "kurtosis": 181.9148689296254,
+        "method_version": "phase3-evidence-v1",
+        "observations": 2544,
+        "observed_sharpe": -0.005083311879138809,
+        "probability": 0.3456345261395824,
+        "reason_code": "DSR_THRESHOLD_NOT_MET",
+        "search_n": 5,
+        "sigma_sr": 0.002273326182517314,
+        "skew": -4.244156702629981,
+        "status": "FAIL",
+        "threshold": 0.9
+      },
+      "first_hard_fail": "Costs",
+      "gates": [
+        {
+          "measured_value": {
+            "schema_valid": true
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Syntax",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_SYNTAX_PASS",
+          "threshold": {
+            "schema_valid": true
+          }
+        },
+        {
+          "measured_value": {
+            "calendar_days": 118.16666666666667
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Coverage",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_COVERAGE_PASS",
+          "threshold": {
+            "minimum_calendar_days": 60
+          }
+        },
+        {
+          "measured_value": {
+            "certified_closed_ohlc_only": true
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Point-in-time",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_POINT_IN_TIME_PASS",
+          "threshold": {
+            "leakage": false
+          }
+        },
+        {
+          "measured_value": {
+            "records_hash": "557ccd7a9ce28a8220f81fe5c49cbd4fb14e2d658147e75db8c76c34020df635"
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Mechanics",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_MECHANICS_PASS",
+          "threshold": {
+            "same_candle_fills": 0
+          }
+        },
+        {
+          "measured_value": {
+            "net_return": -0.028733040227228446
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Costs",
+          "outcome": "FAIL",
+          "reason_code": "PHASE2_COSTS_FAIL",
+          "threshold": {
+            "net_return_greater_than": 0
+          }
+        },
+        {
+          "measured_value": {
+            "fills": 4,
+            "net_return": -0.05289316100428931
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "OOS",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "PHASE2_OOS_INCONCLUSIVE",
+          "threshold": {
+            "minimum_fills": 20,
+            "net_return_greater_than": 0
+          }
+        },
+        {
+          "measured_value": {
+            "blocks": [
+              {
+                "absolute_pnl_contribution": 0.0,
+                "end": "2026-09-05T16:15:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 181,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-08-29T04:00:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": 0.43870615023526477,
+                "end": "2026-09-13T04:30:00+00:00",
+                "evaluable": true,
+                "fills": 1,
+                "max_drawdown": -0.03858911985846958,
+                "net_return": -0.027272638635760127,
+                "observations": 180,
+                "payoff_sign": -1,
+                "sharpe": -6.486975366301251,
+                "start": "2026-09-05T16:15:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": 0.49142230228989436,
+                "end": "2026-09-20T16:45:00+00:00",
+                "evaluable": true,
+                "fills": 1,
+                "max_drawdown": -0.040310077519380094,
+                "net_return": -0.030549794801641772,
+                "observations": 177,
+                "payoff_sign": -1,
+                "sharpe": -8.487653275253134,
+                "start": "2026-09-13T04:30:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": 0.06987154747484085,
+                "end": "2026-09-28T05:00:00+00:00",
+                "evaluable": true,
+                "fills": 2,
+                "max_drawdown": -0.007508892109076348,
+                "net_return": 0.004343639732838911,
+                "observations": 177,
+                "payoff_sign": 1,
+                "sharpe": 2.6658867270303483,
+                "start": "2026-09-20T16:45:00+00:00"
+              }
+            ],
+            "evaluable_blocks": 3,
+            "reason_code": "STABILITY_THRESHOLDS_MET",
+            "scope_method": "scope-aware-stability-v1",
+            "session_purity": true,
+            "status": "PASS",
+            "thresholds": {
+              "halves_must_agree": true,
+              "maximum_absolute_pnl_contribution": 0.6,
+              "minimum_evaluable_blocks": 3,
+              "sign_agreement": 0.6
+            }
+          },
+          "method_version": "scope-aware-stability-v1",
+          "name": "Stability",
+          "outcome": "PASS",
+          "reason_code": "STABILITY_THRESHOLDS_MET",
+          "threshold": {
+            "halves_must_agree": true,
+            "maximum_absolute_pnl_contribution": 0.6,
+            "minimum_evaluable_blocks": 3,
+            "sign_agreement": 0.6
+          }
+        },
+        {
+          "measured_value": {
+            "draws": 2000,
+            "p_value": 0.5952
+          },
+          "method_version": "sign-flip-v1",
+          "name": "Permutation",
+          "outcome": "FAIL",
+          "reason_code": "PERMUTATION_THRESHOLD_NOT_MET",
+          "threshold": {
+            "candidate_p_max": 0.1
+          }
+        },
+        {
+          "measured_value": {
+            "benchmark_sharpe": 0.00271115516762,
+            "kurtosis": 181.9148689296254,
+            "method_version": "phase3-evidence-v1",
+            "observations": 2544,
+            "observed_sharpe": -0.005083311879138809,
+            "probability": 0.3456345261395824,
+            "reason_code": "DSR_THRESHOLD_NOT_MET",
+            "search_n": 5,
+            "sigma_sr": 0.002273326182517314,
+            "skew": -4.244156702629981,
+            "status": "FAIL",
+            "threshold": 0.9
+          },
+          "method_version": "phase3-evidence-v3",
+          "name": "Multiple testing",
+          "outcome": "FAIL",
+          "reason_code": "DSR_THRESHOLD_NOT_MET",
+          "threshold": {
+            "probability_minimum": 0.9
+          }
+        },
+        {
+          "measured_value": {
+            "buy_hold": -0.0008439421475425757,
+            "factor_net": -0.028733040227228446
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Baseline",
+          "outcome": "FAIL",
+          "reason_code": "PHASE2_BASELINE_FAIL",
+          "threshold": {
+            "factor_net_greater_than_buy_hold": true
+          }
+        }
+      ],
+      "name": "Overnight relative mean reversion RNVDA vs RQQQ",
+      "phase2_records_hash": "557ccd7a9ce28a8220f81fe5c49cbd4fb14e2d658147e75db8c76c34020df635",
+      "replay_records_hash": "557ccd7a9ce28a8220f81fe5c49cbd4fb14e2d658147e75db8c76c34020df635",
+      "scope": "PAIR_RELATIVE_SESSION",
+      "stability": {
+        "blocks": [
+          {
+            "absolute_pnl_contribution": 0.0,
+            "end": "2026-09-05T16:15:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 181,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-08-29T04:00:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": 0.43870615023526477,
+            "end": "2026-09-13T04:30:00+00:00",
+            "evaluable": true,
+            "fills": 1,
+            "max_drawdown": -0.03858911985846958,
+            "net_return": -0.027272638635760127,
+            "observations": 180,
+            "payoff_sign": -1,
+            "sharpe": -6.486975366301251,
+            "start": "2026-09-05T16:15:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": 0.49142230228989436,
+            "end": "2026-09-20T16:45:00+00:00",
+            "evaluable": true,
+            "fills": 1,
+            "max_drawdown": -0.040310077519380094,
+            "net_return": -0.030549794801641772,
+            "observations": 177,
+            "payoff_sign": -1,
+            "sharpe": -8.487653275253134,
+            "start": "2026-09-13T04:30:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": 0.06987154747484085,
+            "end": "2026-09-28T05:00:00+00:00",
+            "evaluable": true,
+            "fills": 2,
+            "max_drawdown": -0.007508892109076348,
+            "net_return": 0.004343639732838911,
+            "observations": 177,
+            "payoff_sign": 1,
+            "sharpe": 2.6658867270303483,
+            "start": "2026-09-20T16:45:00+00:00"
+          }
+        ],
+        "evaluable_blocks": 3,
+        "reason_code": "STABILITY_THRESHOLDS_MET",
+        "scope_method": "scope-aware-stability-v1",
+        "session_purity": true,
+        "status": "PASS",
+        "thresholds": {
+          "halves_must_agree": true,
+          "maximum_absolute_pnl_contribution": 0.6,
+          "minimum_evaluable_blocks": 3,
+          "sign_agreement": 0.6
+        }
+      },
+      "terminal_phase2_state": "REJECTED",
+      "trial_number": 1
+    },
+    {
+      "diagnostic_only": true,
+      "dsr": {
+        "method_version": "phase3-evidence-v1",
+        "observations": 2364,
+        "observed_sharpe": null,
+        "probability": null,
+        "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+        "search_n": 5,
+        "sigma_sr": 0.002273326182517314,
+        "status": "INCONCLUSIVE",
+        "threshold": 0.9
+      },
+      "first_hard_fail": "Costs",
+      "gates": [
+        {
+          "measured_value": {
+            "schema_valid": true
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Syntax",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_SYNTAX_PASS",
+          "threshold": {
+            "schema_valid": true
+          }
+        },
+        {
+          "measured_value": {
+            "calendar_days": 118.16666666666667
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Coverage",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_COVERAGE_PASS",
+          "threshold": {
+            "minimum_calendar_days": 60
+          }
+        },
+        {
+          "measured_value": {
+            "certified_closed_ohlc_only": true
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Point-in-time",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_POINT_IN_TIME_PASS",
+          "threshold": {
+            "leakage": false
+          }
+        },
+        {
+          "measured_value": {
+            "records_hash": "44486f0ce9549c41eb05e2a137b132c801eabc0a5afcbea67c2164558ccc084c"
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Mechanics",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_MECHANICS_PASS",
+          "threshold": {
+            "same_candle_fills": 0
+          }
+        },
+        {
+          "measured_value": {
+            "net_return": 0.0
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Costs",
+          "outcome": "FAIL",
+          "reason_code": "PHASE2_COSTS_FAIL",
+          "threshold": {
+            "net_return_greater_than": 0
+          }
+        },
+        {
+          "measured_value": {
+            "fills": 0,
+            "net_return": 0.0
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "OOS",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "PHASE2_OOS_INCONCLUSIVE",
+          "threshold": {
+            "minimum_fills": 20,
+            "net_return_greater_than": 0
+          }
+        },
+        {
+          "measured_value": {
+            "blocks": [
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-05T16:15:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 169,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-08-29T04:00:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-13T04:30:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 160,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-05T16:15:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-20T16:45:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 166,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-13T04:30:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-28T05:00:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 157,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-20T16:45:00+00:00"
+              }
+            ],
+            "evaluable_blocks": 0,
+            "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+            "scope_method": "scope-aware-stability-v1",
+            "session_purity": true,
+            "status": "INCONCLUSIVE",
+            "thresholds": {
+              "halves_must_agree": true,
+              "maximum_absolute_pnl_contribution": 0.6,
+              "minimum_evaluable_blocks": 3,
+              "sign_agreement": 0.6
+            }
+          },
+          "method_version": "scope-aware-stability-v1",
+          "name": "Stability",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+          "threshold": {
+            "halves_must_agree": true,
+            "maximum_absolute_pnl_contribution": 0.6,
+            "minimum_evaluable_blocks": 3,
+            "sign_agreement": 0.6
+          }
+        },
+        {
+          "measured_value": {
+            "draws": 2000,
+            "p_value": null
+          },
+          "method_version": "sign-flip-v1",
+          "name": "Permutation",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "INCONCLUSIVE_PERMUTATION_SAMPLE",
+          "threshold": {
+            "candidate_p_max": 0.1
+          }
+        },
+        {
+          "measured_value": {
+            "method_version": "phase3-evidence-v1",
+            "observations": 2364,
+            "observed_sharpe": null,
+            "probability": null,
+            "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+            "search_n": 5,
+            "sigma_sr": 0.002273326182517314,
+            "status": "INCONCLUSIVE",
+            "threshold": 0.9
+          },
+          "method_version": "phase3-evidence-v3",
+          "name": "Multiple testing",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+          "threshold": {
+            "probability_minimum": 0.9
+          }
+        },
+        {
+          "measured_value": {
+            "buy_hold": 0.10194693705659419,
+            "factor_net": 0.0
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Baseline",
+          "outcome": "FAIL",
+          "reason_code": "PHASE2_BASELINE_FAIL",
+          "threshold": {
+            "factor_net_greater_than_buy_hold": true
+          }
+        }
+      ],
+      "name": "Weekend close-return reversal RAAPLUSDT vs RQQQUSDT",
+      "phase2_records_hash": "44486f0ce9549c41eb05e2a137b132c801eabc0a5afcbea67c2164558ccc084c",
+      "replay_records_hash": "44486f0ce9549c41eb05e2a137b132c801eabc0a5afcbea67c2164558ccc084c",
+      "scope": "PAIR_RELATIVE_SESSION",
+      "stability": {
+        "blocks": [
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-05T16:15:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 169,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-08-29T04:00:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-13T04:30:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 160,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-05T16:15:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-20T16:45:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 166,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-13T04:30:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-28T05:00:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 157,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-20T16:45:00+00:00"
+          }
+        ],
+        "evaluable_blocks": 0,
+        "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+        "scope_method": "scope-aware-stability-v1",
+        "session_purity": true,
+        "status": "INCONCLUSIVE",
+        "thresholds": {
+          "halves_must_agree": true,
+          "maximum_absolute_pnl_contribution": 0.6,
+          "minimum_evaluable_blocks": 3,
+          "sign_agreement": 0.6
+        }
+      },
+      "terminal_phase2_state": "REJECTED",
+      "trial_number": 2
+    },
+    {
+      "diagnostic_only": true,
+      "dsr": {
+        "method_version": "phase3-evidence-v1",
+        "observations": 2455,
+        "observed_sharpe": null,
+        "probability": null,
+        "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+        "search_n": 5,
+        "sigma_sr": 0.002273326182517314,
+        "status": "INCONCLUSIVE",
+        "threshold": 0.9
+      },
+      "first_hard_fail": "Costs",
+      "gates": [
+        {
+          "measured_value": {
+            "schema_valid": true
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Syntax",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_SYNTAX_PASS",
+          "threshold": {
+            "schema_valid": true
+          }
+        },
+        {
+          "measured_value": {
+            "calendar_days": 118.16666666666667
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Coverage",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_COVERAGE_PASS",
+          "threshold": {
+            "minimum_calendar_days": 60
+          }
+        },
+        {
+          "measured_value": {
+            "certified_closed_ohlc_only": true
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Point-in-time",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_POINT_IN_TIME_PASS",
+          "threshold": {
+            "leakage": false
+          }
+        },
+        {
+          "measured_value": {
+            "records_hash": "3aae2778c2a7eeda2a93a9d44630aac6dc6f1a97600f2ff603c32d208948aaac"
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Mechanics",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_MECHANICS_PASS",
+          "threshold": {
+            "same_candle_fills": 0
+          }
+        },
+        {
+          "measured_value": {
+            "net_return": 0.0
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Costs",
+          "outcome": "FAIL",
+          "reason_code": "PHASE2_COSTS_FAIL",
+          "threshold": {
+            "net_return_greater_than": 0
+          }
+        },
+        {
+          "measured_value": {
+            "fills": 0,
+            "net_return": 0.0
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "OOS",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "PHASE2_OOS_INCONCLUSIVE",
+          "threshold": {
+            "minimum_fills": 20,
+            "net_return_greater_than": 0
+          }
+        },
+        {
+          "measured_value": {
+            "blocks": [
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-05T16:15:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 174,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-08-29T04:00:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-13T04:30:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 171,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-05T16:15:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-20T16:45:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 166,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-13T04:30:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-28T05:00:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 170,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-20T16:45:00+00:00"
+              }
+            ],
+            "evaluable_blocks": 0,
+            "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+            "scope_method": "scope-aware-stability-v1",
+            "session_purity": true,
+            "status": "INCONCLUSIVE",
+            "thresholds": {
+              "halves_must_agree": true,
+              "maximum_absolute_pnl_contribution": 0.6,
+              "minimum_evaluable_blocks": 3,
+              "sign_agreement": 0.6
+            }
+          },
+          "method_version": "scope-aware-stability-v1",
+          "name": "Stability",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+          "threshold": {
+            "halves_must_agree": true,
+            "maximum_absolute_pnl_contribution": 0.6,
+            "minimum_evaluable_blocks": 3,
+            "sign_agreement": 0.6
+          }
+        },
+        {
+          "measured_value": {
+            "draws": 2000,
+            "p_value": null
+          },
+          "method_version": "sign-flip-v1",
+          "name": "Permutation",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "INCONCLUSIVE_PERMUTATION_SAMPLE",
+          "threshold": {
+            "candidate_p_max": 0.1
+          }
+        },
+        {
+          "measured_value": {
+            "method_version": "phase3-evidence-v1",
+            "observations": 2455,
+            "observed_sharpe": null,
+            "probability": null,
+            "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+            "search_n": 5,
+            "sigma_sr": 0.002273326182517314,
+            "status": "INCONCLUSIVE",
+            "threshold": 0.9
+          },
+          "method_version": "phase3-evidence-v3",
+          "name": "Multiple testing",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+          "threshold": {
+            "probability_minimum": 0.9
+          }
+        },
+        {
+          "measured_value": {
+            "buy_hold": -0.10611002391824309,
+            "factor_net": 0.0
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Baseline",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_BASELINE_PASS",
+          "threshold": {
+            "factor_net_greater_than_buy_hold": true
+          }
+        }
+      ],
+      "name": "Cross-rToken close divergence mean-reversion",
+      "phase2_records_hash": "3aae2778c2a7eeda2a93a9d44630aac6dc6f1a97600f2ff603c32d208948aaac",
+      "replay_records_hash": "3aae2778c2a7eeda2a93a9d44630aac6dc6f1a97600f2ff603c32d208948aaac",
+      "scope": "PAIR_RELATIVE_SESSION",
+      "stability": {
+        "blocks": [
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-05T16:15:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 174,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-08-29T04:00:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-13T04:30:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 171,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-05T16:15:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-20T16:45:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 166,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-13T04:30:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-28T05:00:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 170,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-20T16:45:00+00:00"
+          }
+        ],
+        "evaluable_blocks": 0,
+        "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+        "scope_method": "scope-aware-stability-v1",
+        "session_purity": true,
+        "status": "INCONCLUSIVE",
+        "thresholds": {
+          "halves_must_agree": true,
+          "maximum_absolute_pnl_contribution": 0.6,
+          "minimum_evaluable_blocks": 3,
+          "sign_agreement": 0.6
+        }
+      },
+      "terminal_phase2_state": "REJECTED",
+      "trial_number": 3
+    },
+    {
+      "diagnostic_only": true,
+      "dsr": {
+        "method_version": "phase3-evidence-v1",
+        "observations": 2298,
+        "observed_sharpe": null,
+        "probability": null,
+        "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+        "search_n": 5,
+        "sigma_sr": 0.002273326182517314,
+        "status": "INCONCLUSIVE",
+        "threshold": 0.9
+      },
+      "first_hard_fail": "Costs",
+      "gates": [
+        {
+          "measured_value": {
+            "schema_valid": true
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Syntax",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_SYNTAX_PASS",
+          "threshold": {
+            "schema_valid": true
+          }
+        },
+        {
+          "measured_value": {
+            "calendar_days": 117.875
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Coverage",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_COVERAGE_PASS",
+          "threshold": {
+            "minimum_calendar_days": 60
+          }
+        },
+        {
+          "measured_value": {
+            "certified_closed_ohlc_only": true
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Point-in-time",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_POINT_IN_TIME_PASS",
+          "threshold": {
+            "leakage": false
+          }
+        },
+        {
+          "measured_value": {
+            "records_hash": "0cd9a83b714ede840987b4993095cad364c28f31824db3a47b9ddb4728351621"
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Mechanics",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_MECHANICS_PASS",
+          "threshold": {
+            "same_candle_fills": 0
+          }
+        },
+        {
+          "measured_value": {
+            "net_return": 0.0
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Costs",
+          "outcome": "FAIL",
+          "reason_code": "PHASE2_COSTS_FAIL",
+          "threshold": {
+            "net_return_greater_than": 0
+          }
+        },
+        {
+          "measured_value": {
+            "fills": 0,
+            "net_return": 0.0
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "OOS",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "PHASE2_OOS_INCONCLUSIVE",
+          "threshold": {
+            "minimum_fills": 20,
+            "net_return_greater_than": 0
+          }
+        },
+        {
+          "measured_value": {
+            "blocks": [
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-05T16:15:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 148,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-08-29T04:00:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-13T04:30:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 157,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-05T16:15:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-20T16:45:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 165,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-13T04:30:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-28T05:00:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 162,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-20T16:45:00+00:00"
+              }
+            ],
+            "evaluable_blocks": 0,
+            "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+            "scope_method": "scope-aware-stability-v1",
+            "session_purity": true,
+            "status": "INCONCLUSIVE",
+            "thresholds": {
+              "halves_must_agree": true,
+              "maximum_absolute_pnl_contribution": 0.6,
+              "minimum_evaluable_blocks": 3,
+              "sign_agreement": 0.6
+            }
+          },
+          "method_version": "scope-aware-stability-v1",
+          "name": "Stability",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+          "threshold": {
+            "halves_must_agree": true,
+            "maximum_absolute_pnl_contribution": 0.6,
+            "minimum_evaluable_blocks": 3,
+            "sign_agreement": 0.6
+          }
+        },
+        {
+          "measured_value": {
+            "draws": 2000,
+            "p_value": null
+          },
+          "method_version": "sign-flip-v1",
+          "name": "Permutation",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "INCONCLUSIVE_PERMUTATION_SAMPLE",
+          "threshold": {
+            "candidate_p_max": 0.1
+          }
+        },
+        {
+          "measured_value": {
+            "method_version": "phase3-evidence-v1",
+            "observations": 2298,
+            "observed_sharpe": null,
+            "probability": null,
+            "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+            "search_n": 5,
+            "sigma_sr": 0.002273326182517314,
+            "status": "INCONCLUSIVE",
+            "threshold": 0.9
+          },
+          "method_version": "phase3-evidence-v3",
+          "name": "Multiple testing",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+          "threshold": {
+            "probability_minimum": 0.9
+          }
+        },
+        {
+          "measured_value": {
+            "buy_hold": 0.2242831042974025,
+            "factor_net": 0.0
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Baseline",
+          "outcome": "FAIL",
+          "reason_code": "PHASE2_BASELINE_FAIL",
+          "threshold": {
+            "factor_net_greater_than_buy_hold": true
+          }
+        }
+      ],
+      "name": "Semiconductor after-hours relative momentum divergence",
+      "phase2_records_hash": "0cd9a83b714ede840987b4993095cad364c28f31824db3a47b9ddb4728351621",
+      "replay_records_hash": "0cd9a83b714ede840987b4993095cad364c28f31824db3a47b9ddb4728351621",
+      "scope": "PAIR_RELATIVE_SESSION",
+      "stability": {
+        "blocks": [
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-05T16:15:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 148,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-08-29T04:00:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-13T04:30:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 157,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-05T16:15:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-20T16:45:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 165,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-13T04:30:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-28T05:00:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 162,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-20T16:45:00+00:00"
+          }
+        ],
+        "evaluable_blocks": 0,
+        "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+        "scope_method": "scope-aware-stability-v1",
+        "session_purity": true,
+        "status": "INCONCLUSIVE",
+        "thresholds": {
+          "halves_must_agree": true,
+          "maximum_absolute_pnl_contribution": 0.6,
+          "minimum_evaluable_blocks": 3,
+          "sign_agreement": 0.6
+        }
+      },
+      "terminal_phase2_state": "REJECTED",
+      "trial_number": 4
+    },
+    {
+      "diagnostic_only": true,
+      "dsr": {
+        "method_version": "phase3-evidence-v1",
+        "observations": 2270,
+        "observed_sharpe": null,
+        "probability": null,
+        "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+        "search_n": 5,
+        "sigma_sr": 0.002273326182517314,
+        "status": "INCONCLUSIVE",
+        "threshold": 0.9
+      },
+      "first_hard_fail": "Costs",
+      "gates": [
+        {
+          "measured_value": {
+            "schema_valid": true
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Syntax",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_SYNTAX_PASS",
+          "threshold": {
+            "schema_valid": true
+          }
+        },
+        {
+          "measured_value": {
+            "calendar_days": 118.16666666666667
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Coverage",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_COVERAGE_PASS",
+          "threshold": {
+            "minimum_calendar_days": 60
+          }
+        },
+        {
+          "measured_value": {
+            "certified_closed_ohlc_only": true
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Point-in-time",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_POINT_IN_TIME_PASS",
+          "threshold": {
+            "leakage": false
+          }
+        },
+        {
+          "measured_value": {
+            "records_hash": "3f641fda302bd46e62e9f48097200791cc262d1680cc84b4ab4fe1635a7af642"
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Mechanics",
+          "outcome": "PASS",
+          "reason_code": "PHASE2_MECHANICS_PASS",
+          "threshold": {
+            "same_candle_fills": 0
+          }
+        },
+        {
+          "measured_value": {
+            "net_return": 0.0
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Costs",
+          "outcome": "FAIL",
+          "reason_code": "PHASE2_COSTS_FAIL",
+          "threshold": {
+            "net_return_greater_than": 0
+          }
+        },
+        {
+          "measured_value": {
+            "fills": 0,
+            "net_return": 0.0
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "OOS",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "PHASE2_OOS_INCONCLUSIVE",
+          "threshold": {
+            "minimum_fills": 20,
+            "net_return_greater_than": 0
+          }
+        },
+        {
+          "measured_value": {
+            "blocks": [
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-05T16:15:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 152,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-08-29T04:00:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-13T04:30:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 131,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-05T16:15:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-20T16:45:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 152,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-13T04:30:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-28T05:00:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 152,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-20T16:45:00+00:00"
+              }
+            ],
+            "evaluable_blocks": 0,
+            "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+            "scope_method": "scope-aware-stability-v1",
+            "session_purity": true,
+            "status": "INCONCLUSIVE",
+            "thresholds": {
+              "halves_must_agree": true,
+              "maximum_absolute_pnl_contribution": 0.6,
+              "minimum_evaluable_blocks": 3,
+              "sign_agreement": 0.6
+            }
+          },
+          "method_version": "scope-aware-stability-v1",
+          "name": "Stability",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+          "threshold": {
+            "halves_must_agree": true,
+            "maximum_absolute_pnl_contribution": 0.6,
+            "minimum_evaluable_blocks": 3,
+            "sign_agreement": 0.6
+          }
+        },
+        {
+          "measured_value": {
+            "draws": 2000,
+            "p_value": null
+          },
+          "method_version": "sign-flip-v1",
+          "name": "Permutation",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "INCONCLUSIVE_PERMUTATION_SAMPLE",
+          "threshold": {
+            "candidate_p_max": 0.1
+          }
+        },
+        {
+          "measured_value": {
+            "method_version": "phase3-evidence-v1",
+            "observations": 2270,
+            "observed_sharpe": null,
+            "probability": null,
+            "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+            "search_n": 5,
+            "sigma_sr": 0.002273326182517314,
+            "status": "INCONCLUSIVE",
+            "threshold": 0.9
+          },
+          "method_version": "phase3-evidence-v3",
+          "name": "Multiple testing",
+          "outcome": "INCONCLUSIVE",
+          "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+          "threshold": {
+            "probability_minimum": 0.9
+          }
+        },
+        {
+          "measured_value": {
+            "buy_hold": 0.141121639829479,
+            "factor_net": 0.0
+          },
+          "method_version": "fdp-v1-phase2",
+          "name": "Baseline",
+          "outcome": "FAIL",
+          "reason_code": "PHASE2_BASELINE_FAIL",
+          "threshold": {
+            "factor_net_greater_than_buy_hold": true
+          }
+        }
+      ],
+      "name": "Pre-market relative momentum divergence RMSFT vs RQQQ",
+      "phase2_records_hash": "3f641fda302bd46e62e9f48097200791cc262d1680cc84b4ab4fe1635a7af642",
+      "replay_records_hash": "3f641fda302bd46e62e9f48097200791cc262d1680cc84b4ab4fe1635a7af642",
+      "scope": "PAIR_RELATIVE_SESSION",
+      "stability": {
+        "blocks": [
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-05T16:15:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 152,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-08-29T04:00:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-13T04:30:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 131,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-05T16:15:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-20T16:45:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 152,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-13T04:30:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-28T05:00:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 152,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-20T16:45:00+00:00"
+          }
+        ],
+        "evaluable_blocks": 0,
+        "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+        "scope_method": "scope-aware-stability-v1",
+        "session_purity": true,
+        "status": "INCONCLUSIVE",
+        "thresholds": {
+          "halves_must_agree": true,
+          "maximum_absolute_pnl_contribution": 0.6,
+          "minimum_evaluable_blocks": 3,
+          "sign_agreement": 0.6
+        }
+      },
+      "terminal_phase2_state": "REJECTED",
+      "trial_number": 5
+    }
+  ],
+  "method_version": "phase3-evidence-v3"
+}

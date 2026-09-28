@@ -1,0 +1,39 @@
+{
+  "checks": [
+    {
+      "expected_records_hash": "557ccd7a9ce28a8220f81fe5c49cbd4fb14e2d658147e75db8c76c34020df635",
+      "match": true,
+      "recovered_records_hash": "557ccd7a9ce28a8220f81fe5c49cbd4fb14e2d658147e75db8c76c34020df635",
+      "trial_number": 1
+    },
+    {
+      "expected_records_hash": "44486f0ce9549c41eb05e2a137b132c801eabc0a5afcbea67c2164558ccc084c",
+      "match": true,
+      "recovered_records_hash": "44486f0ce9549c41eb05e2a137b132c801eabc0a5afcbea67c2164558ccc084c",
+      "trial_number": 2
+    },
+    {
+      "expected_records_hash": "3aae2778c2a7eeda2a93a9d44630aac6dc6f1a97600f2ff603c32d208948aaac",
+      "match": true,
+      "recovered_records_hash": "3aae2778c2a7eeda2a93a9d44630aac6dc6f1a97600f2ff603c32d208948aaac",
+      "trial_number": 3
+    },
+    {
+      "expected_records_hash": "0cd9a83b714ede840987b4993095cad364c28f31824db3a47b9ddb4728351621",
+      "match": true,
+      "recovered_records_hash": "0cd9a83b714ede840987b4993095cad364c28f31824db3a47b9ddb4728351621",
+      "trial_number": 4
+    },
+    {
+      "expected_records_hash": "3f641fda302bd46e62e9f48097200791cc262d1680cc84b4ab4fe1635a7af642",
+      "match": true,
+      "recovered_records_hash": "3f641fda302bd46e62e9f48097200791cc262d1680cc84b4ab4fe1635a7af642",
+      "trial_number": 5
+    }
+  ],
+  "recovered_raw_hash": "e2586c0f7f0eb38697e52974dec4f41ed6f723b224161e3338d4f2da7a2aa8db",
+  "recovered_raw_path": "evidence/raw/phase3-phase2-recovery.json (gitignored)",
+  "retrieved_at": "2026-09-28T05:56:52.787251+00:00",
+  "source": "Bitget UTA v3 recent closed 1H candles",
+  "status": "PASS"
+}

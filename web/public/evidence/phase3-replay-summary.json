@@ -1,0 +1,434 @@
+{
+  "factors": [
+    {
+      "dsr": {
+        "benchmark_sharpe": 0.00271115516762,
+        "kurtosis": 181.9148689296254,
+        "method_version": "phase3-evidence-v1",
+        "observations": 2544,
+        "observed_sharpe": -0.005083311879138809,
+        "probability": 0.3456345261395824,
+        "reason_code": "DSR_THRESHOLD_NOT_MET",
+        "search_n": 5,
+        "sigma_sr": 0.002273326182517314,
+        "skew": -4.244156702629981,
+        "status": "FAIL",
+        "threshold": 0.9
+      },
+      "first_hard_fail": "Costs",
+      "name": "Overnight relative mean reversion RNVDA vs RQQQ",
+      "scope": "PAIR_RELATIVE_SESSION",
+      "stability": {
+        "blocks": [
+          {
+            "absolute_pnl_contribution": 0.0,
+            "end": "2026-09-05T16:15:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 181,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-08-29T04:00:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": 0.43870615023526477,
+            "end": "2026-09-13T04:30:00+00:00",
+            "evaluable": true,
+            "fills": 1,
+            "max_drawdown": -0.03858911985846958,
+            "net_return": -0.027272638635760127,
+            "observations": 180,
+            "payoff_sign": -1,
+            "sharpe": -6.486975366301251,
+            "start": "2026-09-05T16:15:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": 0.49142230228989436,
+            "end": "2026-09-20T16:45:00+00:00",
+            "evaluable": true,
+            "fills": 1,
+            "max_drawdown": -0.040310077519380094,
+            "net_return": -0.030549794801641772,
+            "observations": 177,
+            "payoff_sign": -1,
+            "sharpe": -8.487653275253134,
+            "start": "2026-09-13T04:30:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": 0.06987154747484085,
+            "end": "2026-09-28T05:00:00+00:00",
+            "evaluable": true,
+            "fills": 2,
+            "max_drawdown": -0.007508892109076348,
+            "net_return": 0.004343639732838911,
+            "observations": 177,
+            "payoff_sign": 1,
+            "sharpe": 2.6658867270303483,
+            "start": "2026-09-20T16:45:00+00:00"
+          }
+        ],
+        "evaluable_blocks": 3,
+        "reason_code": "STABILITY_THRESHOLDS_MET",
+        "scope_method": "scope-aware-stability-v1",
+        "session_purity": true,
+        "status": "PASS",
+        "thresholds": {
+          "halves_must_agree": true,
+          "maximum_absolute_pnl_contribution": 0.6,
+          "minimum_evaluable_blocks": 3,
+          "sign_agreement": 0.6
+        }
+      },
+      "terminal_phase2_state": "REJECTED",
+      "trial_number": 1
+    },
+    {
+      "dsr": {
+        "method_version": "phase3-evidence-v1",
+        "observations": 2364,
+        "observed_sharpe": null,
+        "probability": null,
+        "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+        "search_n": 5,
+        "sigma_sr": 0.002273326182517314,
+        "status": "INCONCLUSIVE",
+        "threshold": 0.9
+      },
+      "first_hard_fail": "Costs",
+      "name": "Weekend close-return reversal RAAPLUSDT vs RQQQUSDT",
+      "scope": "PAIR_RELATIVE_SESSION",
+      "stability": {
+        "blocks": [
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-05T16:15:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 169,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-08-29T04:00:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-13T04:30:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 160,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-05T16:15:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-20T16:45:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 166,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-13T04:30:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-28T05:00:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 157,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-20T16:45:00+00:00"
+          }
+        ],
+        "evaluable_blocks": 0,
+        "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+        "scope_method": "scope-aware-stability-v1",
+        "session_purity": true,
+        "status": "INCONCLUSIVE",
+        "thresholds": {
+          "halves_must_agree": true,
+          "maximum_absolute_pnl_contribution": 0.6,
+          "minimum_evaluable_blocks": 3,
+          "sign_agreement": 0.6
+        }
+      },
+      "terminal_phase2_state": "REJECTED",
+      "trial_number": 2
+    },
+    {
+      "dsr": {
+        "method_version": "phase3-evidence-v1",
+        "observations": 2455,
+        "observed_sharpe": null,
+        "probability": null,
+        "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+        "search_n": 5,
+        "sigma_sr": 0.002273326182517314,
+        "status": "INCONCLUSIVE",
+        "threshold": 0.9
+      },
+      "first_hard_fail": "Costs",
+      "name": "Cross-rToken close divergence mean-reversion",
+      "scope": "PAIR_RELATIVE_SESSION",
+      "stability": {
+        "blocks": [
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-05T16:15:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 174,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-08-29T04:00:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-13T04:30:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 171,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-05T16:15:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-20T16:45:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 166,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-13T04:30:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-28T05:00:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 170,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-20T16:45:00+00:00"
+          }
+        ],
+        "evaluable_blocks": 0,
+        "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+        "scope_method": "scope-aware-stability-v1",
+        "session_purity": true,
+        "status": "INCONCLUSIVE",
+        "thresholds": {
+          "halves_must_agree": true,
+          "maximum_absolute_pnl_contribution": 0.6,
+          "minimum_evaluable_blocks": 3,
+          "sign_agreement": 0.6
+        }
+      },
+      "terminal_phase2_state": "REJECTED",
+      "trial_number": 3
+    },
+    {
+      "dsr": {
+        "method_version": "phase3-evidence-v1",
+        "observations": 2298,
+        "observed_sharpe": null,
+        "probability": null,
+        "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+        "search_n": 5,
+        "sigma_sr": 0.002273326182517314,
+        "status": "INCONCLUSIVE",
+        "threshold": 0.9
+      },
+      "first_hard_fail": "Costs",
+      "name": "Semiconductor after-hours relative momentum divergence",
+      "scope": "PAIR_RELATIVE_SESSION",
+      "stability": {
+        "blocks": [
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-05T16:15:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 148,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-08-29T04:00:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-13T04:30:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 157,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-05T16:15:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-20T16:45:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 165,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-13T04:30:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-28T05:00:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 162,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-20T16:45:00+00:00"
+          }
+        ],
+        "evaluable_blocks": 0,
+        "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+        "scope_method": "scope-aware-stability-v1",
+        "session_purity": true,
+        "status": "INCONCLUSIVE",
+        "thresholds": {
+          "halves_must_agree": true,
+          "maximum_absolute_pnl_contribution": 0.6,
+          "minimum_evaluable_blocks": 3,
+          "sign_agreement": 0.6
+        }
+      },
+      "terminal_phase2_state": "REJECTED",
+      "trial_number": 4
+    },
+    {
+      "dsr": {
+        "method_version": "phase3-evidence-v1",
+        "observations": 2270,
+        "observed_sharpe": null,
+        "probability": null,
+        "reason_code": "INCONCLUSIVE_DSR_NUMERICS",
+        "search_n": 5,
+        "sigma_sr": 0.002273326182517314,
+        "status": "INCONCLUSIVE",
+        "threshold": 0.9
+      },
+      "first_hard_fail": "Costs",
+      "name": "Pre-market relative momentum divergence RMSFT vs RQQQ",
+      "scope": "PAIR_RELATIVE_SESSION",
+      "stability": {
+        "blocks": [
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-05T16:15:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 152,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-08-29T04:00:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-13T04:30:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 131,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-05T16:15:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-20T16:45:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 152,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-13T04:30:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-28T05:00:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 152,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-20T16:45:00+00:00"
+          }
+        ],
+        "evaluable_blocks": 0,
+        "reason_code": "INCONCLUSIVE_STABILITY_SAMPLE",
+        "scope_method": "scope-aware-stability-v1",
+        "session_purity": true,
+        "status": "INCONCLUSIVE",
+        "thresholds": {
+          "halves_must_agree": true,
+          "maximum_absolute_pnl_contribution": 0.6,
+          "minimum_evaluable_blocks": 3,
+          "sign_agreement": 0.6
+        }
+      },
+      "terminal_phase2_state": "REJECTED",
+      "trial_number": 5
+    }
+  ],
+  "first_hard_fail_distribution": {
+    "Costs": 5
+  },
+  "gate_distribution": {
+    "FAIL": 11,
+    "INCONCLUSIVE": 17,
+    "PASS": 22
+  },
+  "method_version": "phase3-evidence-v3",
+  "methods_hash": "4cadae3586196b315836f26651085ec73249e7ed6c6a086b5b69b676afe604ce",
+  "old_terminal_states_rewritten": false,
+  "qwen_http_attempts_phase3": 0,
+  "recommendation": "TARGETED_DISCOVERY_BATCH",
+  "search_hurdle": {
+    "expected_mean_sr": 0.0,
+    "max_z": 1.192594001014789,
+    "search_n": 5,
+    "sigma_sr": 0.002273326182517314,
+    "sr_star": 0.00271115516762,
+    "status": "OK"
+  },
+  "search_n": 5
+}

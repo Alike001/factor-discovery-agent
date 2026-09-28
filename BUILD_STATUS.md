@@ -22,7 +22,7 @@
 
 ## Stop point
 
-Phase 2 is complete. Phase 3/4 and paper trading await review.
+Phase 3 is complete. Further autonomous discovery and paper trading await review.
 
 ## Phase 1.5 — complete, Phase 2 GO
 
@@ -46,3 +46,15 @@ Phase 2 is complete. Phase 3/4 and paper trading await review.
 - Resume/idempotency: PASS; a post-commit cycle recovery did not recall the proposer.
 - Lab, Factors/Graveyard, and factor proof pages render the real Phase-2 evidence.
 - Paper portfolio, portfolio actor, orders, fills, and paper execution remain unstarted pending review.
+
+## Phase 3 — complete, paper trading not started
+
+- Frozen evidence method: `phase3-evidence-v3`; all statistical thresholds remained unchanged after results.
+- DSR implemented from published equations across all 5 unique committed `fdp-v1` trials; search hurdle SR*=0.00271115516762 at N=5.
+- Scope-aware four-block OOS stability and session-purity checks completed.
+- Outcomes remain 5 rejected, 0 candidate, 0 certified; every FIRST_HARD_FAIL is Costs.
+- Hardened gates: 22 PASS, 11 FAIL, 17 INCONCLUSIVE.
+- Qwen HTTP attempts in Phase 3: 0. No new factor was generated.
+- Research diversity audit covers 2 families, 5 targets, and 5 sessions; 4 trials repeat one operator pattern.
+- Recommendation: `TARGETED_DISCOVERY_BATCH` after review, not paper probation.
+- Paper portfolio, orders, fills, and all paper execution remain unstarted.
