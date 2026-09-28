@@ -1,0 +1,12 @@
+{
+  "admission": "charged + outstanding + reservation <= hard_limit",
+  "concurrency": "PostgreSQL advisory transaction lock plus account row lock",
+  "estimated_input": "ceil(characters / 4 * 1.25)",
+  "example_estimated_input_tokens": 464,
+  "example_reserved_tokens": 2683,
+  "repair": "new independently admitted reservation",
+  "reservation": "reserved_input + max_completion_tokens",
+  "reserved_input": "max(estimated_input, UTF-8 byte length)",
+  "unmeasured_charge": "full reservation",
+  "version": "postgres-conservative-pre-call-reservation-v1"
+}

@@ -1,0 +1,353 @@
+{
+  "capability_matrix": [
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "source",
+      "reason": "Compiler emits validated closed-OHLC source nodes; Qwen never emits nodes.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "ret",
+      "reason": "Compiler emits close-return nodes and evaluator supports them.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "sma",
+      "reason": "Safe AST and evaluator support it; no READY recipe currently requires it.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "zscore",
+      "reason": "beta_residual compiler emits it deterministically.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": false,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": false,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "rank",
+      "reason": "No cross-sectional selection/portfolio evaluator.",
+      "status": "NOT_READY"
+    },
+    {
+      "COMPILABLE": false,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": false,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "group_mean",
+      "reason": "Scalar helper exists but basket semantics and attribution do not.",
+      "status": "NOT_READY"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "rolling_beta",
+      "reason": "Rolling beta is deterministically embedded by residual evaluation.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": true,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "residual",
+      "reason": "Full recipe/compiler/evaluator/data/UI path passes golden fixtures.",
+      "status": "READY"
+    },
+    {
+      "COMPILABLE": false,
+      "DATA_AVAILABLE": false,
+      "EVALUATABLE": false,
+      "PROMPTED": false,
+      "SCHEMA_VALID": false,
+      "UI_RENDERABLE": false,
+      "capability": "spread_bps",
+      "reason": "No point-in-time reference-price adapter or evaluator node.",
+      "status": "NOT_READY"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "abs",
+      "reason": "Safe AST and evaluator support it; hidden from recipe menu.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "sign",
+      "reason": "Safe AST and evaluator support it; hidden from recipe menu.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "clip",
+      "reason": "Safe AST and evaluator support it; hidden from recipe menu.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "add/sub/mul/div",
+      "reason": "Safe arithmetic exists but Qwen cannot compose raw nodes.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": true,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "session_filter",
+      "reason": "Single America/New_York session contract compiles and evaluates.",
+      "status": "READY"
+    },
+    {
+      "COMPILABLE": false,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": false,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "session_transition",
+      "reason": "Exact expected anchors and fail-closed transition evaluator are missing.",
+      "status": "NOT_READY"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": true,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "multi_symbol_references",
+      "reason": "Target plus one reference is supported for beta residual; generic graphs are hidden.",
+      "status": "READY_LIMITED"
+    },
+    {
+      "COMPILABLE": false,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": false,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "universe_basket",
+      "reason": "No cross-sectional holdings, attribution, or leave-one-out implementation.",
+      "status": "NOT_READY"
+    },
+    {
+      "COMPILABLE": false,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": false,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "dispersion",
+      "reason": "Scalar dispersion does not provide executable basket semantics.",
+      "status": "NOT_READY"
+    }
+  ],
+  "draft_protocol": {
+    "active": false,
+    "allowed_lookbacks": [
+      1,
+      3,
+      6,
+      12,
+      24,
+      48,
+      120,
+      168
+    ],
+    "approved_thresholds": [
+      -2.0,
+      -1.5,
+      -1.0,
+      -0.5,
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "budget": {
+      "max_additional_measured_tokens": 25000,
+      "max_live_http_attempts": 8,
+      "max_logical_calls": 6,
+      "max_repairs_per_request": 1,
+      "trials": 3
+    },
+    "certification_floor": "2026-06-02T00:00:00Z",
+    "compiler_version": "factor-recipe-compiler-v1",
+    "cost_model": {
+      "fee_basis": "ASSUMED_PUBLISHED_BASELINE",
+      "fee_per_fill": 0.0005,
+      "slippage_per_fill": 0.00025,
+      "version": "rtoken-cost-v1"
+    },
+    "current_global_search_n": 7,
+    "enabled_fields": [
+      "open",
+      "high",
+      "low",
+      "close",
+      "session"
+    ],
+    "enabled_symbols": [
+      "RNVDAUSDT",
+      "RAAPLUSDT",
+      "RTSLAUSDT",
+      "RMSFTUSDT",
+      "RAMZNUSDT",
+      "RMETAUSDT",
+      "RAMDUSDT",
+      "RQQQUSDT"
+    ],
+    "factor_recipe_schema": "factor-recipe-v1",
+    "gate_policy": {
+      "candidate_permutation_p": 0.1,
+      "certification_permutation_p": 0.05,
+      "dsr_probability": 0.9,
+      "history_days": 60,
+      "oos_days": 30,
+      "oos_trade_events": 20,
+      "permutations": 2000
+    },
+    "prompt_schema_version": "factor-recipe-prompt-v1",
+    "ready_recipe_families": [
+      "beta_residual"
+    ],
+    "search_program_id": "rtoken-session-alpha-v1",
+    "search_space_changes": {
+      "allowed_horizons": [
+        6,
+        12,
+        24,
+        48
+      ],
+      "automatic_revision_children": false,
+      "expected_signal_frequency": [
+        "low",
+        "medium"
+      ],
+      "minimum_rebalance_bars": 6,
+      "slots": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "session_classifier": "america-new-york-v1",
+    "split_rule": "latest closed aligned bar minus 30 calendar days",
+    "token_budget_policy": "postgres-conservative-pre-call-reservation-v1",
+    "trial_semantics": "global monotonic trial in rtoken-session-alpha-v1; every committed proposal counts; no hidden replacement",
+    "version": "fdp-v3-draft",
+    "volume_enabled": false
+  },
+  "golden_fixtures": [
+    {
+      "ast_hash": "36efc8be568d4ad49776a5dc7092dc5e5021ab002fb00d2472166914a306dae6",
+      "compiler_version": "factor-recipe-compiler-v1",
+      "deterministic": true,
+      "evaluation_status": "PASS",
+      "family": "beta_residual",
+      "fixture": 1,
+      "observations": 399,
+      "recipe_hash": "83a3f4b3fdb2dadf3d34e228965eae40e63e42a051b1fc2ee09652ee4d2ccea7",
+      "report_hash": "d4aed1e2618a7b2561ac33654f1afede93e5d1891c2bf166cf42735957d0b947"
+    },
+    {
+      "ast_hash": "b270d002345218000b1eea3b50526a34c1681762c94675679c90788137bcb63c",
+      "compiler_version": "factor-recipe-compiler-v1",
+      "deterministic": true,
+      "evaluation_status": "PASS",
+      "family": "beta_residual",
+      "fixture": 2,
+      "observations": 399,
+      "recipe_hash": "43edeaef4712270b675f85b34a1fbc8494e4bb7ff2d80870d3c65003853abe11",
+      "report_hash": "a8d8d990868675a5e125e67c3cef1b1db3d9235305e01b55369df67522207d73"
+    },
+    {
+      "ast_hash": "f96efa56365e925793d0d152dc372839aef00508efe6b40eebf19f241a485163",
+      "compiler_version": "factor-recipe-compiler-v1",
+      "deterministic": true,
+      "evaluation_status": "PASS",
+      "family": "beta_residual",
+      "fixture": 3,
+      "observations": 399,
+      "recipe_hash": "f89499a34aa21512780c9c51532a1f51b6c895b1afe3c3c859427c4f8562238a",
+      "report_hash": "c3c15c8a551b0168a53d7d881728a93ebd04eb6b66bd0ca6efe038d1198ae569"
+    }
+  ],
+  "review": {
+    "compiler_version": "factor-recipe-compiler-v1",
+    "completed_at": "2026-09-28T09:36:16.744652+00:00",
+    "fdp_v3_draft_active": false,
+    "generated_prompt_estimated_tokens": 464,
+    "golden_fixtures_passed": 3,
+    "paper_trading_started": false,
+    "prompt_schema_version": "factor-recipe-prompt-v1",
+    "qwen_http_attempts_phase": 0,
+    "ready_families": [
+      "beta_residual"
+    ],
+    "reason": "Only beta_residual is READY; cross-sectional portfolios and fail-closed session anchors remain unsupported, and live FactorRecipe transport is unproven.",
+    "recipe_schema_version": "factor-recipe-v1",
+    "recommendation": "PROTOCOL_CAPABILITY_GAP_REMAINS",
+    "search_n_after": 7,
+    "search_n_before": 7,
+    "status": "COMPLETE"
+  }
+}

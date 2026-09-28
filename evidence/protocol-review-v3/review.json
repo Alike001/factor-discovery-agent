@@ -1,0 +1,19 @@
+{
+  "compiler_version": "factor-recipe-compiler-v1",
+  "completed_at": "2026-09-28T09:36:16.744652+00:00",
+  "fdp_v3_draft_active": false,
+  "generated_prompt_estimated_tokens": 464,
+  "golden_fixtures_passed": 3,
+  "paper_trading_started": false,
+  "prompt_schema_version": "factor-recipe-prompt-v1",
+  "qwen_http_attempts_phase": 0,
+  "ready_families": [
+    "beta_residual"
+  ],
+  "reason": "Only beta_residual is READY; cross-sectional portfolios and fail-closed session anchors remain unsupported, and live FactorRecipe transport is unproven.",
+  "recipe_schema_version": "factor-recipe-v1",
+  "recommendation": "PROTOCOL_CAPABILITY_GAP_REMAINS",
+  "search_n_after": 7,
+  "search_n_before": 7,
+  "status": "COMPLETE"
+}

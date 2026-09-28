@@ -1,0 +1,9 @@
+{
+  "characters": 1483,
+  "conservative_reserved_tokens": 2683,
+  "estimated_input_tokens": 464,
+  "live_transport_demonstrated": false,
+  "max_completion_tokens_draft": 1200,
+  "prompt": "Return one JSON FactorRecipe factor-recipe-v1; never return AST nodes. READY registry:{'beta_residual': {'parameters': {'beta_lookback': [24, 48, 120], 'signal_lookback': [24, 48, 120], 'residual_transform': ['zscore'], 'entry_side': ['negative_reversion', 'positive_continuation'], 'sessions': ['pre_market', 'regular', 'after_hours', 'overnight', 'weekend'], 'horizon_bars': [12, 24, 48], 'rebalance_bars': [6, 12, 24, 48]}, 'example': {'schema_version': 'factor-recipe-v1', 'name': 'Residual reversion probe', 'thesis': 'A target residual may normalize after beta-adjusted dislocation.', 'family': 'beta_residual', 'universe': ['RNVDAUSDT', 'RQQQUSDT'], 'session_contract': {'kind': 'single_session', 'session': 'pre_market'}, 'recipe': {'kind': 'beta_residual', 'target': 'RNVDAUSDT', 'reference': 'RQQQUSDT', 'beta_lookback': 48, 'residual_transform': 'zscore', 'signal_lookback': 48, 'entry_side': 'negative_reversion'}, 'horizon_bars': 24, 'rebalance_bars': 6, 'direction': 'long_flat', 'expected_signal_frequency': 'low', 'economic_mechanism': 'Beta-adjusted dislocations may normalize.', 'why_not_duplicate': 'Uses rolling residual rather than a raw pair-return difference.', 'why_costs_should_not_dominate': 'Six-hour rebalance and a twenty-four-hour horizon bound turnover.'}}}. Slot:beta_residual using two eligible rTokens. Avoid fingerprints:['prior-structure-hashes-only']. Use only a READY family and its legal enums. Return one JSON object; do not claim performance.",
+  "prompt_schema_version": "factor-recipe-prompt-v1"
+}

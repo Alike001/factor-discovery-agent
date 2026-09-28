@@ -1,0 +1,343 @@
+{
+  "schema": {
+    "$defs": {
+      "BetaResidualRecipe": {
+        "additionalProperties": false,
+        "properties": {
+          "beta_lookback": {
+            "enum": [
+              24,
+              48,
+              120
+            ],
+            "title": "Beta Lookback",
+            "type": "integer"
+          },
+          "entry_side": {
+            "enum": [
+              "negative_reversion",
+              "positive_continuation"
+            ],
+            "title": "Entry Side",
+            "type": "string"
+          },
+          "kind": {
+            "const": "beta_residual",
+            "title": "Kind",
+            "type": "string"
+          },
+          "reference": {
+            "title": "Reference",
+            "type": "string"
+          },
+          "residual_transform": {
+            "const": "zscore",
+            "title": "Residual Transform",
+            "type": "string"
+          },
+          "signal_lookback": {
+            "enum": [
+              24,
+              48,
+              120
+            ],
+            "title": "Signal Lookback",
+            "type": "integer"
+          },
+          "target": {
+            "title": "Target",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "target",
+          "reference",
+          "beta_lookback",
+          "residual_transform",
+          "signal_lookback",
+          "entry_side"
+        ],
+        "title": "BetaResidualRecipe",
+        "type": "object"
+      },
+      "CrossSectionalRankRecipe": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "cross_sectional_rank",
+            "title": "Kind",
+            "type": "string"
+          },
+          "lookback": {
+            "enum": [
+              12,
+              24,
+              48
+            ],
+            "title": "Lookback",
+            "type": "integer"
+          },
+          "metric": {
+            "enum": [
+              "return",
+              "residual"
+            ],
+            "title": "Metric",
+            "type": "string"
+          },
+          "select_side": {
+            "enum": [
+              "leader",
+              "laggard"
+            ],
+            "title": "Select Side",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "metric",
+          "lookback",
+          "select_side"
+        ],
+        "title": "CrossSectionalRankRecipe",
+        "type": "object"
+      },
+      "SessionContract": {
+        "additionalProperties": false,
+        "properties": {
+          "from_session": {
+            "anyOf": [
+              {
+                "enum": [
+                  "pre_market",
+                  "regular",
+                  "after_hours",
+                  "overnight",
+                  "weekend"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "From Session"
+          },
+          "kind": {
+            "enum": [
+              "single_session",
+              "transition"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "session": {
+            "anyOf": [
+              {
+                "enum": [
+                  "pre_market",
+                  "regular",
+                  "after_hours",
+                  "overnight",
+                  "weekend"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Session"
+          },
+          "to_session": {
+            "anyOf": [
+              {
+                "enum": [
+                  "pre_market",
+                  "regular",
+                  "after_hours",
+                  "overnight",
+                  "weekend"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "To Session"
+          }
+        },
+        "required": [
+          "kind"
+        ],
+        "title": "SessionContract",
+        "type": "object"
+      },
+      "SessionTransitionRecipe": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "session_transition",
+            "title": "Kind",
+            "type": "string"
+          },
+          "lookback": {
+            "enum": [
+              6,
+              12,
+              24
+            ],
+            "title": "Lookback",
+            "type": "integer"
+          },
+          "normalization": {
+            "enum": [
+              "raw",
+              "zscore"
+            ],
+            "title": "Normalization",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "lookback",
+          "normalization"
+        ],
+        "title": "SessionTransitionRecipe",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "direction": {
+        "const": "long_flat",
+        "title": "Direction",
+        "type": "string"
+      },
+      "economic_mechanism": {
+        "maxLength": 600,
+        "minLength": 10,
+        "title": "Economic Mechanism",
+        "type": "string"
+      },
+      "expected_signal_frequency": {
+        "enum": [
+          "low",
+          "medium"
+        ],
+        "title": "Expected Signal Frequency",
+        "type": "string"
+      },
+      "family": {
+        "enum": [
+          "cross_sectional_rank",
+          "session_transition",
+          "beta_residual"
+        ],
+        "title": "Family",
+        "type": "string"
+      },
+      "horizon_bars": {
+        "enum": [
+          6,
+          12,
+          24,
+          48
+        ],
+        "title": "Horizon Bars",
+        "type": "integer"
+      },
+      "name": {
+        "maxLength": 120,
+        "minLength": 3,
+        "title": "Name",
+        "type": "string"
+      },
+      "rebalance_bars": {
+        "enum": [
+          6,
+          12,
+          24,
+          48
+        ],
+        "title": "Rebalance Bars",
+        "type": "integer"
+      },
+      "recipe": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/CrossSectionalRankRecipe"
+          },
+          {
+            "$ref": "#/$defs/SessionTransitionRecipe"
+          },
+          {
+            "$ref": "#/$defs/BetaResidualRecipe"
+          }
+        ],
+        "title": "Recipe"
+      },
+      "schema_version": {
+        "const": "factor-recipe-v1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "session_contract": {
+        "$ref": "#/$defs/SessionContract"
+      },
+      "thesis": {
+        "maxLength": 600,
+        "minLength": 10,
+        "title": "Thesis",
+        "type": "string"
+      },
+      "universe": {
+        "items": {
+          "type": "string"
+        },
+        "maxItems": 8,
+        "minItems": 2,
+        "title": "Universe",
+        "type": "array"
+      },
+      "why_costs_should_not_dominate": {
+        "maxLength": 600,
+        "minLength": 10,
+        "title": "Why Costs Should Not Dominate",
+        "type": "string"
+      },
+      "why_not_duplicate": {
+        "maxLength": 600,
+        "minLength": 10,
+        "title": "Why Not Duplicate",
+        "type": "string"
+      }
+    },
+    "required": [
+      "schema_version",
+      "name",
+      "thesis",
+      "family",
+      "universe",
+      "session_contract",
+      "recipe",
+      "horizon_bars",
+      "rebalance_bars",
+      "direction",
+      "expected_signal_frequency",
+      "economic_mechanism",
+      "why_not_duplicate",
+      "why_costs_should_not_dominate"
+    ],
+    "title": "FactorRecipe",
+    "type": "object"
+  },
+  "version": "factor-recipe-v1"
+}

@@ -1,0 +1,13 @@
+{
+  "not_ready_families": [
+    "rank",
+    "group_mean",
+    "spread_bps",
+    "session_transition",
+    "universe_basket",
+    "dispersion"
+  ],
+  "ready_families": [
+    "beta_residual"
+  ]
+}

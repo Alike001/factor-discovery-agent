@@ -69,3 +69,15 @@ Phase 3 is complete. Further autonomous discovery and paper trading await review
 - Outcomes: 2 rejected, 0 candidate, 0 certified; diversity acceptance failed.
 - Final recommendation: `RESEARCH_PROTOCOL_REVIEW`.
 - No lifecycle Qwen calls, paper portfolio, orders, fills, or paper execution occurred after the hard-budget stop.
+
+## Research protocol review — complete, fdp-v3 remains inactive
+
+- Replaced Qwen-authored raw ASTs with `factor-recipe-v1` plus deterministic `factor-recipe-compiler-v1`.
+- Capability registry and generated prompt expose only end-to-end READY recipes.
+- READY: `beta_residual`; three compile/evaluate golden fixtures pass.
+- NOT_READY: cross-sectional rank/baskets, session transitions, dispersion, and spread-bps reference semantics.
+- Added persistent conservative pre-call reservations with projected-overspend refusal and concurrent admission locking.
+- Generated proposer prompt is estimated at 464 tokens; draft completion cap is 1,200 tokens but remains live-unverified.
+- `fdp-v3-draft` is not active. Global search N remains 7.
+- Qwen HTTP attempts in this review: 0. Paper trading remains unstarted.
+- Recommendation: `PROTOCOL_CAPABILITY_GAP_REMAINS`.

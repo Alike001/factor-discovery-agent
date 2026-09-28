@@ -1,0 +1,39 @@
+{
+  "fixture_count": 3,
+  "results": [
+    {
+      "ast_hash": "36efc8be568d4ad49776a5dc7092dc5e5021ab002fb00d2472166914a306dae6",
+      "compiler_version": "factor-recipe-compiler-v1",
+      "deterministic": true,
+      "evaluation_status": "PASS",
+      "family": "beta_residual",
+      "fixture": 1,
+      "observations": 399,
+      "recipe_hash": "83a3f4b3fdb2dadf3d34e228965eae40e63e42a051b1fc2ee09652ee4d2ccea7",
+      "report_hash": "d4aed1e2618a7b2561ac33654f1afede93e5d1891c2bf166cf42735957d0b947"
+    },
+    {
+      "ast_hash": "b270d002345218000b1eea3b50526a34c1681762c94675679c90788137bcb63c",
+      "compiler_version": "factor-recipe-compiler-v1",
+      "deterministic": true,
+      "evaluation_status": "PASS",
+      "family": "beta_residual",
+      "fixture": 2,
+      "observations": 399,
+      "recipe_hash": "43edeaef4712270b675f85b34a1fbc8494e4bb7ff2d80870d3c65003853abe11",
+      "report_hash": "a8d8d990868675a5e125e67c3cef1b1db3d9235305e01b55369df67522207d73"
+    },
+    {
+      "ast_hash": "f96efa56365e925793d0d152dc372839aef00508efe6b40eebf19f241a485163",
+      "compiler_version": "factor-recipe-compiler-v1",
+      "deterministic": true,
+      "evaluation_status": "PASS",
+      "family": "beta_residual",
+      "fixture": 3,
+      "observations": 399,
+      "recipe_hash": "f89499a34aa21512780c9c51532a1f51b6c895b1afe3c3c859427c4f8562238a",
+      "report_hash": "c3c15c8a551b0168a53d7d881728a93ebd04eb6b66bd0ca6efe038d1198ae569"
+    }
+  ],
+  "search_trials_created": 0
+}

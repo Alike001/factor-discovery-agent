@@ -152,7 +152,7 @@ def _permutation(values: list[float], seed: int, draws: int = 2000) -> float | N
     return (exceed + 1) / (draws + 1)
 
 
-def evaluate_targeted_factor(proposal: FactorProposalV2, candles: dict[str, list[Candle]], *, trial_number: int,
+def evaluate_targeted_factor(proposal: Any, candles: dict[str, list[Candle]], *, trial_number: int,
                              field_valid_from_ms: dict[str, int]) -> TargetedEvaluation:
     symbols = sorted(set(proposal.universe))
     common = set.intersection(*(set(item.timestamp_ms for item in candles[symbol]) for symbol in symbols))
@@ -247,10 +247,10 @@ def evaluate_targeted_factor(proposal: FactorProposalV2, candles: dict[str, list
 
 def finalize_evaluation(evaluation: TargetedEvaluation, *, benchmark_sharpe: float, search_n: int, sigma_sr: float) -> dict[str, Any]:
     report = dict(evaluation.report)
-    proposal = FactorProposalV2.model_validate(report["factor"])
+    proposal = report["factor"]
     split_ms = int(datetime.fromisoformat(report["split_timestamp"]).timestamp() * 1000)
     end_ms = int(datetime.fromisoformat(report["data_contract"]["end"]).timestamp() * 1000)
-    purity = all(row["decision_session"] in proposal.session_filter for row in evaluation.rows if row["decision_timestamp_ms"] is not None)
+    purity = all(row["decision_session"] in proposal["session_filter"] for row in evaluation.rows if row["decision_timestamp_ms"] is not None)
     stability = temporal_stability(evaluation.rows, split_ms, end_ms, session_purity=purity)
     dsr = deflated_sharpe([row["net"] for row in evaluation.rows], benchmark_sharpe=benchmark_sharpe,
                           search_n=search_n, sigma_sr=sigma_sr, threshold=PROTOCOL_V2["gate_policy"]["dsr_probability"])

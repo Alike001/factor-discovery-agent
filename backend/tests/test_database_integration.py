@@ -11,6 +11,7 @@ import pytest
 
 from app.db.migrate import apply_migrations
 from app.db.repository import ResearchRepository
+from app.qwen.budget import PostgresTokenBudget, ProjectedBudgetExhausted
 
 
 DATABASE_URL = os.getenv("TEST_DATABASE_URL")
@@ -102,3 +103,45 @@ def test_search_program_counter_spans_protocol_versions(repository: ResearchRepo
     same = repository.ensure_search_program(key, [first, second], starting_trial=101)
     assert same == program
     assert repository.allocate_search_trial(program) == 103
+
+
+def test_token_reservation_normal_max_unmeasured_and_repair(repository: ResearchRepository) -> None:
+    assert DATABASE_URL
+    scope = f"pytest-budget-{uuid4().hex}"
+    budget = PostgresTokenBudget(DATABASE_URL, scope, 5000)
+    normal = budget.reserve("normal", "short prompt", 500)
+    assert budget.settle(normal, 200) == 200
+    unmeasured = budget.reserve("unmeasured", "another prompt", 500)
+    assert budget.settle(unmeasured, None) == unmeasured.reserved_tokens
+    repair = budget.reserve("repair-1", "invalid response repair", 500)
+    budget.settle(repair, 300)
+    maximum = budget.reserve("max", "x" * 100, 500)
+    assert budget.settle(maximum, maximum.reserved_tokens) == maximum.reserved_tokens
+    usage = budget.usage()
+    assert usage["charged_tokens"] <= usage["hard_limit"]
+    with pytest.raises(ProjectedBudgetExhausted):
+        budget.reserve("too-large-repair", "x" * 5000, 1000)
+
+
+def test_concurrent_token_reservations_cannot_exceed_hard_limit(repository: ResearchRepository) -> None:
+    assert DATABASE_URL
+    budget = PostgresTokenBudget(DATABASE_URL, f"pytest-concurrent-budget-{uuid4().hex}", 2200)
+    def attempt(index: int) -> int:
+        try:
+            return budget.reserve(f"call-{index}", "x" * 500, 500).reserved_tokens
+        except ProjectedBudgetExhausted:
+            return 0
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        reservations = list(pool.map(attempt, range(8)))
+    usage = budget.usage()
+    assert sum(reservations) == usage["outstanding_reservations"]
+    assert usage["charged_tokens"] + usage["outstanding_reservations"] <= usage["hard_limit"]
+
+
+def test_protocol_review_does_not_change_global_search_n(repository: ResearchRepository) -> None:
+    assert DATABASE_URL
+    with psycopg.connect(DATABASE_URL) as connection:
+        program = connection.execute(
+            "SELECT id FROM research_programs WHERE program_key='rtoken-session-alpha-v1'"
+        ).fetchone()
+    assert program and repository.search_program_n(program[0]) == 7
