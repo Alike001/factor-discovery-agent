@@ -1,0 +1,206 @@
+{
+  "ready_families": [
+    "beta_residual",
+    "session_transition"
+  ],
+  "rows": [
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "source",
+      "reason": "Compiler emits validated closed-OHLC source nodes; Qwen never emits nodes.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "ret",
+      "reason": "Compiler emits close-return nodes and evaluator supports them.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "sma",
+      "reason": "Safe AST and evaluator support it; no READY recipe currently requires it.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "zscore",
+      "reason": "beta_residual compiler emits it deterministically.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": false,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": false,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "rank",
+      "reason": "No cross-sectional selection/portfolio evaluator.",
+      "status": "NOT_READY"
+    },
+    {
+      "COMPILABLE": false,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": false,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "group_mean",
+      "reason": "Scalar helper exists but basket semantics and attribution do not.",
+      "status": "NOT_READY"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "rolling_beta",
+      "reason": "Rolling beta is deterministically embedded by residual evaluation.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": true,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "residual",
+      "reason": "Full recipe/compiler/evaluator/data/UI path passes golden fixtures.",
+      "status": "READY"
+    },
+    {
+      "COMPILABLE": false,
+      "DATA_AVAILABLE": false,
+      "EVALUATABLE": false,
+      "PROMPTED": false,
+      "SCHEMA_VALID": false,
+      "UI_RENDERABLE": false,
+      "capability": "spread_bps",
+      "reason": "No point-in-time reference-price adapter or evaluator node.",
+      "status": "NOT_READY"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "abs",
+      "reason": "Safe AST and evaluator support it; hidden from recipe menu.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "sign",
+      "reason": "Safe AST and evaluator support it; hidden from recipe menu.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "clip",
+      "reason": "Safe AST and evaluator support it; hidden from recipe menu.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "add/sub/mul/div",
+      "reason": "Safe arithmetic exists but Qwen cannot compose raw nodes.",
+      "status": "READY_INTERNAL"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": true,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "session_filter",
+      "reason": "Single America/New_York session contract compiles and evaluates.",
+      "status": "READY"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": true,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "session_transition",
+      "reason": "Frozen 15m exact-anchor contract, deterministic compiler, fail-closed evaluator, data path, and UI evidence pass.",
+      "status": "READY"
+    },
+    {
+      "COMPILABLE": true,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": true,
+      "PROMPTED": true,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "multi_symbol_references",
+      "reason": "Target plus one reference is supported for beta residual; generic graphs are hidden.",
+      "status": "READY_LIMITED"
+    },
+    {
+      "COMPILABLE": false,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": false,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "universe_basket",
+      "reason": "No cross-sectional holdings, attribution, or leave-one-out implementation.",
+      "status": "NOT_READY"
+    },
+    {
+      "COMPILABLE": false,
+      "DATA_AVAILABLE": true,
+      "EVALUATABLE": false,
+      "PROMPTED": false,
+      "SCHEMA_VALID": true,
+      "UI_RENDERABLE": true,
+      "capability": "dispersion",
+      "reason": "Scalar dispersion does not provide executable basket semantics.",
+      "status": "NOT_READY"
+    }
+  ]
+}

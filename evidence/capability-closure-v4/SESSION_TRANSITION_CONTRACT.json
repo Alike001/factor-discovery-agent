@@ -1,0 +1,57 @@
+{
+  "contract": {
+    "anchor_interval_ms": 900000,
+    "anchor_resolution": "15m",
+    "anchor_rules": {
+      "fallback": "forbidden",
+      "from_anchor_close_offset_ms": 0,
+      "from_anchor_open_offset_ms": -900000,
+      "price_field": "close",
+      "timestamp_semantics": "candle open timestamp",
+      "to_anchor_close_offset_ms": 900000,
+      "to_anchor_open_offset_ms": 0,
+      "tolerance_ms": 0
+    },
+    "boundaries_local": {
+      "after_hours_to_overnight": "20:00:00",
+      "overnight_to_pre_market": "04:00:00",
+      "pre_market_to_regular": "09:30:00",
+      "regular_to_after_hours": "16:00:00"
+    },
+    "calendar_source": "Bitget Reality market calendar",
+    "closures": "weekends and specificConfig intervals make affected transitions unavailable",
+    "cost_model": {
+      "fee_basis": "ASSUMED_PUBLISHED_BASELINE",
+      "fee_per_fill": 0.0005,
+      "slippage_per_fill": 0.00025,
+      "version": "rtoken-cost-v1"
+    },
+    "execution": {
+      "earliest_fill": "next exact 15m bar open after observable_at",
+      "horizon_unit": "1H",
+      "same_anchor_fill": "forbidden"
+    },
+    "failure_statuses": [
+      "MISSING_EXPECTED_ANCHOR",
+      "STALE_TRANSITION_DATA",
+      "SESSION_CALENDAR_UNAVAILABLE"
+    ],
+    "feature": {
+      "formula": "to_anchor.close / from_anchor.close - 1",
+      "observable_at": "to_anchor close timestamp",
+      "operator": "transition_return"
+    },
+    "research_resolution": "15m for transition architecture tracer",
+    "split_rule": "latest closed aligned bar minus 30 calendar days",
+    "supported_transitions": [
+      "after_hours_to_overnight",
+      "overnight_to_pre_market",
+      "pre_market_to_regular",
+      "regular_to_after_hours"
+    ],
+    "timezone": "America/New_York",
+    "version": "session-transition-v1"
+  },
+  "contract_hash": "3663cf1d7cd843b9a630d4d8c9c9ad7dc6f3f788270e97474b3e6ab2def687fa",
+  "frozen_before_golden_or_real_replay": true
+}

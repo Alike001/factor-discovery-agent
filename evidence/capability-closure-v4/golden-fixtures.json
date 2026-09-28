@@ -1,0 +1,127 @@
+{
+  "invalid": [
+    {
+      "expected": "MISSING_EXPECTED_ANCHOR",
+      "fixture": "missing_from_anchor",
+      "observed": "MISSING_EXPECTED_ANCHOR",
+      "status": "PASS"
+    },
+    {
+      "expected": "MISSING_EXPECTED_ANCHOR",
+      "fixture": "missing_to_anchor",
+      "observed": "MISSING_EXPECTED_ANCHOR",
+      "status": "PASS"
+    },
+    {
+      "expected": "TRANSITION_UNAVAILABLE",
+      "fixture": "holiday_closure",
+      "observed": "TRANSITION_UNAVAILABLE",
+      "status": "PASS"
+    },
+    {
+      "expected": "TRANSITION_UNAVAILABLE",
+      "fixture": "weekend_unavailable",
+      "observed": "TRANSITION_UNAVAILABLE",
+      "status": "PASS"
+    },
+    {
+      "expected": "READY",
+      "fixture": "dst_transition_week",
+      "observed": "READY",
+      "status": "PASS"
+    },
+    {
+      "expected": "FORMING_TO_ANCHOR",
+      "fixture": "forming_to_anchor",
+      "observed": "FORMING_TO_ANCHOR",
+      "status": "PASS"
+    },
+    {
+      "expected": "SESSION_CALENDAR_UNAVAILABLE",
+      "fixture": "stale_calendar",
+      "observed": "SESSION_CALENDAR_UNAVAILABLE",
+      "status": "PASS"
+    },
+    {
+      "expected": "MISSING_EXPECTED_ANCHOR",
+      "fixture": "exact_boundary_absent",
+      "observed": "MISSING_EXPECTED_ANCHOR",
+      "status": "PASS"
+    },
+    {
+      "expected": "NO_NEXT_EXECUTABLE_BAR",
+      "fixture": "no_next_executable_bar",
+      "observed": "NO_NEXT_EXECUTABLE_BAR",
+      "status": "PASS"
+    }
+  ],
+  "invalid_passed": 9,
+  "search_trials_created": 0,
+  "valid": [
+    {
+      "ast_hash": "ec02c68a31b28255e29cf28beb16119a049969fce4aae09659ad37c86f61b7bb",
+      "dst_regime": "EST",
+      "recipe_hash": "544051a0a8b63953c00b23900e7bbcfe4bdf96f27530b6d8991d08f262713698",
+      "report_hash": "e4f8852d35fbfa58a7e185b4a56f0a5ab21b5b8ad5e31ab5e99ab1d69ce15067",
+      "status": "PASS",
+      "transition": "after_hours_to_overnight"
+    },
+    {
+      "ast_hash": "ec02c68a31b28255e29cf28beb16119a049969fce4aae09659ad37c86f61b7bb",
+      "dst_regime": "EDT",
+      "recipe_hash": "544051a0a8b63953c00b23900e7bbcfe4bdf96f27530b6d8991d08f262713698",
+      "report_hash": "d8a97bc2870dc256ffa0d26c4f12c3bbabf2f6cc2ce117f239a972e7a8bf4229",
+      "status": "PASS",
+      "transition": "after_hours_to_overnight"
+    },
+    {
+      "ast_hash": "5c9bd2f308a50c4bc65b90a0b5e80f9bbe785da20d1414fdb9579de877ed3a1a",
+      "dst_regime": "EST",
+      "recipe_hash": "ec120a97eb1490cf7855d26224dc542a82dd960def09543267e9420c7b5e8f64",
+      "report_hash": "839aaa09ee2b49c83926a67293e8728004c102c65811e2b6e6966a7a11da3f48",
+      "status": "PASS",
+      "transition": "overnight_to_pre_market"
+    },
+    {
+      "ast_hash": "5c9bd2f308a50c4bc65b90a0b5e80f9bbe785da20d1414fdb9579de877ed3a1a",
+      "dst_regime": "EDT",
+      "recipe_hash": "ec120a97eb1490cf7855d26224dc542a82dd960def09543267e9420c7b5e8f64",
+      "report_hash": "dc3c4ddb7d6ff7ece24e3bda7fac00dd50b4f145c3a3182f9223ab0de1b9a8ab",
+      "status": "PASS",
+      "transition": "overnight_to_pre_market"
+    },
+    {
+      "ast_hash": "98ab812a912a5703acb7c9d36e7da0c74c21d9f0b1e8e6864bed1ca294efea30",
+      "dst_regime": "EST",
+      "recipe_hash": "b0f30367e2042f7869f05b43fc288d75b6a564bfbb1a184bb0849fddd886ba22",
+      "report_hash": "47fe0671b7ea71b127fab20bee9440a73e760159a897d09405328d6c7a22c7ae",
+      "status": "PASS",
+      "transition": "pre_market_to_regular"
+    },
+    {
+      "ast_hash": "98ab812a912a5703acb7c9d36e7da0c74c21d9f0b1e8e6864bed1ca294efea30",
+      "dst_regime": "EDT",
+      "recipe_hash": "b0f30367e2042f7869f05b43fc288d75b6a564bfbb1a184bb0849fddd886ba22",
+      "report_hash": "897fa2c4b4ef907e5c114584ac46c27cc5558917b0bbd3a8624082b81785d856",
+      "status": "PASS",
+      "transition": "pre_market_to_regular"
+    },
+    {
+      "ast_hash": "fd184853161101d9cf9cec0cf7db64497f76f0dec6f02cae983ac0e2f56c3afc",
+      "dst_regime": "EST",
+      "recipe_hash": "949ecfacb2a9672017b3e440604afe91f1590b030663e9f95fffbc325c5cdc6d",
+      "report_hash": "0d436f5d5131359762237cfbc075c895ef574c449c65264b02e1136d227e3f01",
+      "status": "PASS",
+      "transition": "regular_to_after_hours"
+    },
+    {
+      "ast_hash": "fd184853161101d9cf9cec0cf7db64497f76f0dec6f02cae983ac0e2f56c3afc",
+      "dst_regime": "EDT",
+      "recipe_hash": "949ecfacb2a9672017b3e440604afe91f1590b030663e9f95fffbc325c5cdc6d",
+      "report_hash": "cbb59bf3b844ba954be36f81914a408769320f8c67760723c9976a2aa161aca0",
+      "status": "PASS",
+      "transition": "regular_to_after_hours"
+    }
+  ],
+  "valid_passed": 8
+}

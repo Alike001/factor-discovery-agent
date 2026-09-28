@@ -7,9 +7,10 @@ from pydantic import ConfigDict, Field, model_validator
 
 from app.evidence import canonical_hash
 from app.research.targeted import ExpressionV2, StrictModel
+from app.research.session_transition import CONTRACT_VERSION, SUPPORTED_TRANSITIONS
 
 RECIPE_SCHEMA_VERSION = "factor-recipe-v1"
-COMPILER_VERSION = "factor-recipe-compiler-v1"
+COMPILER_VERSION = "factor-recipe-compiler-v2"
 PROMPT_SCHEMA_VERSION = "factor-recipe-prompt-v1"
 Session = Literal["pre_market", "regular", "after_hours", "overnight", "weekend"]
 Family = Literal["cross_sectional_rank", "session_transition", "beta_residual"]
@@ -39,8 +40,29 @@ class CrossSectionalRankRecipe(StrictModel):
 
 class SessionTransitionRecipe(StrictModel):
     kind: Literal["session_transition"]
-    lookback: Literal[6, 12, 24]
-    normalization: Literal["raw", "zscore"]
+    transition: Literal[
+        "after_hours_to_overnight", "overnight_to_pre_market",
+        "pre_market_to_regular", "regular_to_after_hours",
+    ]
+    feature: Literal["transition_return", "transition_return_zscore"]
+    normalization: Literal["none", "zscore"]
+    feature_lookback: Literal[6, 12, 24] | None = None
+    threshold: Literal[-2.0, -1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0]
+    direction: Literal["continuation", "reversion"]
+
+    @model_validator(mode="after")
+    def valid_feature(self) -> "SessionTransitionRecipe":
+        if self.normalization == "zscore" and self.feature_lookback is None:
+            raise ValueError("zscore requires feature_lookback")
+        if self.normalization == "none" and self.feature_lookback is not None:
+            raise ValueError("unnormalized transition return cannot declare feature_lookback")
+        if self.feature == "transition_return_zscore" and self.normalization != "zscore":
+            raise ValueError("transition_return_zscore requires zscore normalization")
+        if self.feature == "transition_return" and self.normalization != "none":
+            raise ValueError("transition_return requires none normalization")
+        if self.threshold < 0:
+            raise ValueError("transition threshold is a non-negative magnitude")
+        return self
 
 
 class BetaResidualRecipe(StrictModel):
@@ -59,7 +81,7 @@ class FactorRecipe(StrictModel):
     name: str = Field(min_length=3, max_length=120)
     thesis: str = Field(min_length=10, max_length=600)
     family: Family
-    universe: list[str] = Field(min_length=2, max_length=8)
+    universe: list[str] = Field(min_length=1, max_length=8)
     session_contract: SessionContract
     recipe: CrossSectionalRankRecipe | SessionTransitionRecipe | BetaResidualRecipe
     horizon_bars: Literal[6, 12, 24, 48]
@@ -76,22 +98,30 @@ class FactorRecipe(StrictModel):
             raise ValueError("family must equal recipe.kind")
         if self.rebalance_bars < 6:
             raise ValueError("rebalance must be at least 6 bars")
+        if isinstance(self.recipe, SessionTransitionRecipe):
+            from_session, to_session = self.recipe.transition.split("_to_")
+            if self.session_contract.kind != "transition" or (
+                self.session_contract.from_session, self.session_contract.to_session
+            ) != (from_session, to_session):
+                raise ValueError("session contract must match the approved transition")
+            if len(self.universe) != 1 or self.horizon_bars not in {6, 12, 24}:
+                raise ValueError("session_transition requires one symbol and a 6/12/24 horizon")
         return self
 
 
 class CompiledFactorSpec(StrictModel):
-    compiler_version: Literal["factor-recipe-compiler-v1"]
-    slot: Literal["C"] = "C"
+    compiler_version: Literal["factor-recipe-compiler-v2"]
+    slot: Literal["B", "C"] = "C"
     name: str
     thesis: str
     universe: list[str]
     session_filter: list[Session]
-    transition_from: None = None
-    transition_to: None = None
+    transition_from: Session | None = None
+    transition_to: Session | None = None
     signal: ExpressionV2
     entry_condition: ExpressionV2
     exit_condition: ExpressionV2
-    horizon_bars: Literal[12, 24, 48]
+    horizon_bars: Literal[6, 12, 24, 48]
     rebalance_bars: Literal[6, 12, 24, 48]
     direction: Literal["long_flat"]
     rationale: str
@@ -107,8 +137,31 @@ REGISTRY: dict[str, dict[str, Any]] = {
         "reason": "Evaluator has no cross-sectional portfolio selection, per-symbol attribution, or leave-one-symbol-out path.",
     },
     "session_transition": {
-        "status": "NOT_READY",
-        "reason": "Exact phase anchors and MISSING_EXPECTED_ANCHOR fail-closed semantics are not implemented.",
+        "status": "READY",
+        "compiler": COMPILER_VERSION,
+        "contract_version": CONTRACT_VERSION,
+        "parameters": {
+            "transition": list(SUPPORTED_TRANSITIONS),
+            "feature": ["transition_return", "transition_return_zscore"],
+            "normalization": ["none", "zscore"],
+            "feature_lookback": [6, 12, 24],
+            "threshold": [0.0, 0.5, 1.0, 1.5, 2.0],
+            "direction": ["continuation", "reversion"],
+            "horizon_bars": [6, 12, 24], "rebalance_bars": [6, 12, 24, 48],
+        },
+        "example": {
+            "schema_version": RECIPE_SCHEMA_VERSION, "name": "Pre-market transition probe",
+            "thesis": "A large pre-market transition may persist after the exact regular-session boundary.",
+            "family": "session_transition", "universe": ["RNVDAUSDT"],
+            "session_contract": {"kind": "transition", "from_session": "pre_market", "to_session": "regular"},
+            "recipe": {"kind": "session_transition", "transition": "pre_market_to_regular",
+                       "feature": "transition_return_zscore", "normalization": "zscore",
+                       "feature_lookback": 6, "threshold": 1.0, "direction": "continuation"},
+            "horizon_bars": 6, "rebalance_bars": 6, "direction": "long_flat",
+            "expected_signal_frequency": "low", "economic_mechanism": "Boundary repricing may persist briefly.",
+            "why_not_duplicate": "Uses exact cross-session anchors rather than rolling beta residuals.",
+            "why_costs_should_not_dominate": "At most one transition decision per eligible market day.",
+        },
     },
     "beta_residual": {
         "status": "READY",
@@ -148,8 +201,27 @@ def compile_recipe(recipe: FactorRecipe) -> CompiledFactorSpec:
     registry = REGISTRY.get(recipe.family)
     if not registry or registry["status"] != "READY":
         raise ValueError(f"RECIPE_NOT_READY:{recipe.family}")
+    if isinstance(recipe.recipe, SessionTransitionRecipe):
+        from_session, to_session = recipe.recipe.transition.split("_to_")
+        signal = ExpressionV2(op="transition_return", symbol=recipe.universe[0], transition=recipe.recipe.transition)
+        if recipe.recipe.normalization == "zscore":
+            signal = ExpressionV2(op="zscore", lookback=recipe.recipe.feature_lookback, args=[signal])
+        comparison = "gt" if recipe.recipe.direction == "continuation" else "lt"
+        threshold = recipe.recipe.threshold if comparison == "gt" else -recipe.recipe.threshold
+        entry = ExpressionV2(op=comparison, threshold=threshold, args=[ExpressionV2(op="signal")])
+        exit_comparison = "lte" if comparison == "gt" else "gte"
+        exit_condition = ExpressionV2(op=exit_comparison, threshold=0.0, args=[ExpressionV2(op="signal")])
+        return CompiledFactorSpec(
+            compiler_version=COMPILER_VERSION, slot="B", name=recipe.name, thesis=recipe.thesis,
+            universe=recipe.universe, session_filter=[to_session], transition_from=from_session,
+            transition_to=to_session, signal=signal, entry_condition=entry, exit_condition=exit_condition,
+            horizon_bars=recipe.horizon_bars, rebalance_bars=recipe.rebalance_bars, direction=recipe.direction,
+            rationale=f"Compiled deterministically from {RECIPE_SCHEMA_VERSION}; recipe={recipe_hash(recipe)}; contract={CONTRACT_VERSION}",
+            expected_signal_frequency=recipe.expected_signal_frequency, economic_mechanism=recipe.economic_mechanism,
+            why_not_duplicate=recipe.why_not_duplicate, why_costs_should_not_dominate=recipe.why_costs_should_not_dominate,
+        )
     if not isinstance(recipe.recipe, BetaResidualRecipe):
-        raise ValueError("compiler only accepts registered beta_residual recipe")
+        raise ValueError("compiler only accepts registered recipes")
     if recipe.session_contract.kind != "single_session" or not recipe.session_contract.session:
         raise ValueError("beta_residual requires a single session")
     if recipe.recipe.target == recipe.recipe.reference:

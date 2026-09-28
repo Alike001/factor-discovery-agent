@@ -20,11 +20,12 @@ from app.research.recipes import (
 
 def test_prompt_capabilities_equal_ready_registry() -> None:
     prompt = generate_proposer_prompt("beta residual slot", [])
-    assert ready_families() == [name for name, value in REGISTRY.items() if value["status"] == "READY"]
+    assert ready_families() == sorted(name for name, value in REGISTRY.items() if value["status"] == "READY")
     for family in ready_families():
         assert family in prompt
-    for forbidden in ("cross_sectional_rank", "session_transition", "rank", "group_mean", "dispersion", '"op"', "source"):
+    for forbidden in ("cross_sectional_rank", "rank", "group_mean", "dispersion", '"op"', "source"):
         assert forbidden not in prompt
+    assert "session_transition" in prompt
 
 
 def test_unknown_recipe_and_raw_ast_are_rejected() -> None:
@@ -45,7 +46,7 @@ def test_recipe_and_ast_hashes_are_stable() -> None:
 
 
 def test_every_ready_recipe_evaluates_on_three_golden_fixtures() -> None:
-    assert ready_families() == ["beta_residual"]
+    assert ready_families() == ["beta_residual", "session_transition"]
     candles = {"RNVDAUSDT": _candles("RNVDAUSDT", phase=.1), "RAMDUSDT": _candles("RAMDUSDT", phase=.7),
                "RMSFTUSDT": _candles("RMSFTUSDT", phase=1.2), "RQQQUSDT": _candles("RQQQUSDT", phase=2.1)}
     for index, recipe in enumerate(golden_recipes()):
@@ -58,7 +59,7 @@ def test_every_ready_recipe_evaluates_on_three_golden_fixtures() -> None:
 def test_missing_expected_anchor_fails_closed() -> None:
     from datetime import date
     assert validate_expected_anchor(date(2026, 9, 25), {date(2026, 9, 24)}) == AnchorStatus.MISSING_EXPECTED_ANCHOR
-    assert REGISTRY["session_transition"]["status"] == "NOT_READY"
+    assert REGISTRY["session_transition"]["status"] == "READY"
 
 
 def test_cross_sectional_recipe_not_ready_without_portfolio_evaluator() -> None:

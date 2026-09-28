@@ -1,0 +1,58 @@
+{
+  "anchor_resolution": "15m",
+  "chain_before_completion": {
+    "event_count": 151,
+    "head_hash": "92a1b6cf37c3217132dd515b28c8e1adc5a711a98084291d5c8b6bd191946c8c",
+    "status": "PASS"
+  },
+  "compiler_version": "factor-recipe-compiler-v2",
+  "completed_at": "2026-09-28T09:53:17.647381+00:00",
+  "completion_event_hash": "a5ce6e68eca2452bbbebd6085d7d4d57a23ef9f76304c9dae62f90c954872d1d",
+  "contract_hash": "3663cf1d7cd843b9a630d4d8c9c9ad7dc6f3f788270e97474b3e6ab2def687fa",
+  "contract_version": "session-transition-v1",
+  "evidence_chain": {
+    "event_count": 152,
+    "head_hash": "a5ce6e68eca2452bbbebd6085d7d4d57a23ef9f76304c9dae62f90c954872d1d",
+    "status": "PASS"
+  },
+  "fdp_v3_draft_active": false,
+  "golden_invalid_passed": 9,
+  "golden_valid_passed": 8,
+  "not_ready_families": [
+    "cross_sectional_rank",
+    "dispersion",
+    "spread_bps",
+    "generic_baskets"
+  ],
+  "paper_trading_started": false,
+  "prompt_estimated_input_tokens": 886,
+  "prompt_schema_version": "factor-recipe-prompt-v1",
+  "qwen_http_attempts_phase": 0,
+  "qwen_http_attempts_total_after": 15,
+  "qwen_http_attempts_total_before": 15,
+  "ready_families": [
+    "beta_residual",
+    "session_transition"
+  ],
+  "recipe_schema_version": "factor-recipe-v1",
+  "recommendation": "READY_FOR_FDP_V3_BATCH",
+  "search_n_after": 7,
+  "search_n_before": 7,
+  "status": "COMPLETE",
+  "supported_transitions": [
+    "after_hours_to_overnight",
+    "overnight_to_pre_market",
+    "pre_market_to_regular",
+    "regular_to_after_hours"
+  ],
+  "token_reservation_policy": "postgres-conservative-pre-call-reservation-v1",
+  "tracer_metrics": {
+    "costs": 0.0,
+    "expected_transition_events": 7,
+    "fills": 0,
+    "missing_anchors": 0,
+    "no_lookahead_violations": 0,
+    "signals": 0,
+    "valid_anchors": 7
+  }
+}

@@ -25,7 +25,7 @@ def capability_matrix() -> list[dict[str, Any]]:
         row("clip", "READY_INTERNAL", "Safe AST and evaluator support it; hidden from recipe menu."),
         row("add/sub/mul/div", "READY_INTERNAL", "Safe arithmetic exists but Qwen cannot compose raw nodes."),
         row("session_filter", "READY", "Single America/New_York session contract compiles and evaluates.", prompted=True),
-        row("session_transition", "NOT_READY", "Exact expected anchors and fail-closed transition evaluator are missing.", schema=True, compileable=False, evaluatable=False),
+        row("session_transition", "READY", "Frozen 15m exact-anchor contract, deterministic compiler, fail-closed evaluator, data path, and UI evidence pass.", prompted=True),
         row("multi_symbol_references", "READY_LIMITED", "Target plus one reference is supported for beta residual; generic graphs are hidden.", prompted=True),
         row("universe_basket", "NOT_READY", "No cross-sectional holdings, attribution, or leave-one-out implementation.", compileable=False, evaluatable=False),
         row("dispersion", "NOT_READY", "Scalar dispersion does not provide executable basket semantics.", compileable=False, evaluatable=False),

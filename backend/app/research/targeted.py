@@ -15,6 +15,7 @@ V2Operator = Literal[
     "source", "signal", "ret", "vol", "sma", "zscore", "add", "sub", "mul", "div",
     "abs", "sign", "clip", "gt", "gte", "lt", "lte", "and", "or", "not", "session_in",
     "data_available", "rank", "group_mean", "rolling_beta", "residual", "dispersion",
+    "transition_return",
 ]
 
 
@@ -26,6 +27,10 @@ class ExpressionV2(StrictModel):
     lookback: AllowedLookback | None = None
     threshold: AllowedThreshold | None = None
     sessions: list[Session] | None = None
+    transition: Literal[
+        "after_hours_to_overnight", "overnight_to_pre_market",
+        "pre_market_to_regular", "regular_to_after_hours",
+    ] | None = None
 
     @model_validator(mode="after")
     def validate_shape(self) -> "ExpressionV2":
@@ -36,8 +41,11 @@ class ExpressionV2(StrictModel):
             if self.args or not self.symbol or not self.field:
                 raise ValueError("source requires symbol and field, with no args")
         elif self.op == "signal":
-            if self.args or self.symbol or self.field:
+            if self.args or self.symbol or self.field or self.transition:
                 raise ValueError("signal accepts no fields or arguments")
+        elif self.op == "transition_return":
+            if self.args or not self.symbol or not self.transition or self.field or self.lookback:
+                raise ValueError("transition_return requires only symbol and approved transition")
         elif self.op in unary and len(self.args) != 1:
             raise ValueError(f"{self.op} requires one argument")
         elif self.op in binary and len(self.args) != 2:

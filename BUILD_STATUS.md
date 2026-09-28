@@ -81,3 +81,14 @@ Phase 3 is complete. Further autonomous discovery and paper trading await review
 - `fdp-v3-draft` is not active. Global search N remains 7.
 - Qwen HTTP attempts in this review: 0. Paper trading remains unstarted.
 - Recommendation: `PROTOCOL_CAPABILITY_GAP_REMAINS`.
+
+## Session-transition capability closure — complete, fdp-v3 remains inactive
+
+- Frozen `session-transition-v1` before evaluation; exact 15-minute, DST-aware `America/New_York` anchors have zero timestamp tolerance and no fallback.
+- `factor-recipe-compiler-v2` compiles safe `session_transition` recipes; READY families are now `beta_residual` and `session_transition`.
+- Eight valid EST/EDT fixtures and nine fail-closed fixtures pass.
+- Real RNVDA architecture tracer: 7 expected events, 7 valid anchors, 0 missing anchors, 0 signals/fills, and 0 lookahead violations; the fixed threshold was not tuned.
+- Qwen HTTP attempts in this phase: 0. Global search N remains 7. The tracer created no trial and is excluded from promotion and DSR.
+- Cross-sectional rank/baskets, dispersion, and spread-bps remain NOT_READY.
+- `fdp-v3-draft` is not active. Paper trading remains unstarted.
+- Recommendation: `READY_FOR_FDP_V3_BATCH`.
