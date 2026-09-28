@@ -2,6 +2,8 @@
 
 An autonomous Bitget rToken research system where Qwen proposes hypotheses and deterministic evidence decides whether capital is allowed.
 
+Open source under the MIT License.
+
 [Live App](https://factor-discovery-agent.vercel.app) · [Research Proof](https://factor-discovery-agent.vercel.app/proof) · [Research Lab](https://factor-discovery-agent.vercel.app/lab) · [GitHub](https://github.com/Alike001/factor-discovery-agent)
 
 ## Why this exists
@@ -114,4 +116,4 @@ Built for Bitget AI Genesis S2. Track: **Agentic Trading**. Direction: **Factor 
 
 ## License
 
-No license file is included in this repository.
+This project is open source under the [MIT License](LICENSE).
