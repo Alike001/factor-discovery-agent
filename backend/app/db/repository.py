@@ -283,6 +283,50 @@ class ResearchRepository:
         assert factor
         return hypothesis[0], factor[0], False
 
+    def commit_recipe_hypothesis(
+        self,
+        *,
+        protocol_id: UUID,
+        program_id: UUID,
+        cycle_id: UUID,
+        trial_number: int,
+        proposer_run_id: UUID,
+        recipe: dict[str, Any],
+        compiled_spec: dict[str, Any],
+        canonical_identity_hash: str,
+        compiled_hash: str,
+    ) -> tuple[UUID, UUID, bool]:
+        """Commit immutable model recipe evidence and deterministic compiled executable spec."""
+        with psycopg.connect(self.database_url) as connection:
+            existing = connection.execute(
+                """SELECT f.id FROM hypotheses h
+                   JOIN factor_versions f ON f.hypothesis_id=h.id
+                   JOIN research_program_protocols spp ON spp.protocol_id=h.protocol_id
+                   WHERE spp.program_id=%s AND h.canonical_identity_hash=%s
+                     AND h.duplicate_of IS NULL
+                   ORDER BY h.created_at LIMIT 1""",
+                (program_id, canonical_identity_hash),
+            ).fetchone()
+            hypothesis = connection.execute(
+                """INSERT INTO hypotheses
+                   (protocol_id,cycle_id,trial_number,name,thesis,canonical_identity_hash,
+                    proposer_run_id,proposal_json,duplicate_of)
+                   VALUES (%s,%s,%s,%s,%s,%s,%s,%s::jsonb,%s) RETURNING id""",
+                (protocol_id, cycle_id, trial_number, recipe["name"], recipe["thesis"],
+                 canonical_identity_hash, proposer_run_id, json.dumps(recipe), existing[0] if existing else None),
+            ).fetchone()
+            assert hypothesis
+            if existing:
+                return hypothesis[0], existing[0], True
+            factor = connection.execute(
+                """INSERT INTO factor_versions
+                   (protocol_id,hypothesis_id,version,canonical_spec_json,canonical_hash,lifecycle_state)
+                   VALUES (%s,%s,1,%s::jsonb,%s,'COMMITTED') RETURNING id""",
+                (protocol_id, hypothesis[0], json.dumps(compiled_spec), compiled_hash),
+            ).fetchone()
+        assert factor
+        return hypothesis[0], factor[0], False
+
     def commit_invalid_hypothesis(self, *, protocol_id: UUID, cycle_id: UUID, trial_number: int,
                                   proposer_run_id: UUID, slot: str, response_hash: str,
                                   validation_error: str) -> tuple[UUID, UUID]:

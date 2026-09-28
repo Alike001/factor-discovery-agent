@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import math
+import random
 import statistics
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, time, timedelta
@@ -10,7 +11,9 @@ from typing import Any, Iterable, Literal
 from app.bitget.models import Candle
 from app.bitget.session import NEW_YORK
 from app.evidence import canonical_hash
+from app.research.phase3 import temporal_stability
 from app.research.protocol_v2 import PROTOCOL_V2, PROTOCOL_V2_HASH, SEARCH_PROGRAM_ID
+from app.research.statistics import deflated_sharpe
 
 ANCHOR_INTERVAL_MS = 900_000
 CONTRACT_VERSION = "session-transition-v1"
@@ -222,6 +225,15 @@ def _metrics(values: list[float], fills: int) -> dict[str, Any]:
     }
 
 
+def _permutation(values: list[float], seed: int, draws: int = 2000) -> float | None:
+    if len(values) < 8:
+        return None
+    observed = sum(values)
+    generator = random.Random(seed)
+    exceed = sum(sum(value * generator.choice((-1, 1)) for value in values) >= observed for _ in range(draws))
+    return (exceed + 1) / (draws + 1)
+
+
 def evaluate_transition_recipe(
     recipe: Any,
     compiled: Any,
@@ -230,6 +242,7 @@ def evaluate_transition_recipe(
     calendar: CalendarWindow,
     as_of_ms: int,
     architecture_tracer: bool = False,
+    trial_number: int | None = None,
 ) -> dict[str, Any]:
     if not candles:
         raise ValueError("STALE_TRANSITION_DATA")
@@ -287,24 +300,32 @@ def evaluate_transition_recipe(
     split_ms = closed[-1].timestamp_ms - 30 * 86_400_000
     is_values = [row["net"] for row in rows if row["fill_timestamp_ms"] and row["fill_timestamp_ms"] < split_ms]
     oos_values = [row["net"] for row in rows if row["fill_timestamp_ms"] and row["fill_timestamp_ms"] >= split_ms]
+    days = (closed[-1].timestamp_ms - closed[0].timestamp_ms) / 86_400_000
+    buy_hold = float(closed[-1].close / closed[0].open - 1)
+    p_value = _permutation(net_returns, trial_number or 0)
+    net_metrics = _metrics(net_returns, fills)
+    search_evaluation = trial_number is not None and not architecture_tracer
     gates = [
         {"name": "Syntax", "outcome": "PASS", "reason": "Compiled safe transition recipe."},
-        {"name": "Coverage", "outcome": "PASS" if valid else "INCONCLUSIVE", "reason": f"{len(valid)} exact transition anchors."},
+        {"name": "Coverage", "outcome": "PASS" if days >= 60 else "INCONCLUSIVE", "reason": f"{days:.1f} days and {len(valid)} exact transition anchors."},
         {"name": "Point-in-time", "outcome": "PASS", "reason": "Closed exact 15m anchors only; no fallback."},
         {"name": "Mechanics", "outcome": "PASS" if no_lookahead_violations == 0 else "FAIL", "reason": "Feature is observed at to-anchor close; fills are next-bar only."},
-        {"name": "Costs", "outcome": "PASS" if net_returns and sum(net_returns) > 0 else "FAIL", "reason": "Unchanged fee/slippage applied to both fills."},
+        {"name": "Costs", "outcome": "PASS" if net_returns and net_metrics["total_return"] > 0 else "FAIL", "reason": "Unchanged fee/slippage applied to both fills."},
         {"name": "OOS", "outcome": "INCONCLUSIVE" if len(oos_values) < 20 else ("PASS" if sum(oos_values) > 0 else "FAIL"), "reason": f"{len(oos_values)} OOS trades."},
-        {"name": "Permutation", "outcome": "INCONCLUSIVE", "reason": "Architecture tracer is outside the search population."},
-        {"name": "Baseline", "outcome": "INCONCLUSIVE", "reason": "Architecture tracer is not a promotion experiment."},
+        {"name": "Permutation", "outcome": "INCONCLUSIVE" if not search_evaluation or p_value is None else ("PASS" if p_value <= .10 else "FAIL"),
+         "reason": "Fixture/tracer is outside the search population." if not search_evaluation else ("Insufficient independent payoff events." if p_value is None else f"Deterministic 2,000 sign-flip p={p_value:.4f}.")},
+        {"name": "Baseline", "outcome": "INCONCLUSIVE" if not search_evaluation else ("PASS" if net_metrics["total_return"] > buy_hold else "FAIL"),
+         "reason": "Fixture/tracer is not a promotion experiment." if not search_evaluation else f"Factor net {net_metrics['total_return']:.4%} versus same-window buy-and-hold {buy_hold:.4%}."},
     ]
     report = {
-        "label": "SESSION_TRANSITION_ARCHITECTURE_TRACER" if architecture_tracer else "SESSION_TRANSITION_GOLDEN_FIXTURE",
+        "label": ("SESSION_TRANSITION_ARCHITECTURE_TRACER" if architecture_tracer else
+                  ("FDP_V3_SESSION_TRANSITION_DISCOVERY" if search_evaluation else "SESSION_TRANSITION_GOLDEN_FIXTURE")),
         "protocol_version": "fdp-v3-draft",
         "protocol_hash": PROTOCOL_V2_HASH,
         "search_program_id": SEARCH_PROGRAM_ID,
-        "search_trial_number": None,
-        "dsr_population_member": False,
-        "promotion_eligible": False,
+        "search_trial_number": trial_number,
+        "dsr_population_member": search_evaluation,
+        "promotion_eligible": search_evaluation,
         "candidate": False,
         "certified": False,
         "contract_version": CONTRACT_VERSION,
@@ -323,9 +344,10 @@ def evaluate_transition_recipe(
         "no_lookahead_violations": no_lookahead_violations,
         "metrics": {
             "gross": _metrics(gross_returns, fills),
-            "net": _metrics(net_returns, fills),
+            "net": net_metrics,
             "is_net": _metrics(is_values, len(is_values) * 2),
             "oos_net": _metrics(oos_values, len(oos_values) * 2),
+            "buy_hold": buy_hold,
         },
         "gates": gates,
         "anchor_results": resolved,
@@ -333,3 +355,45 @@ def evaluate_transition_recipe(
     }
     report["report_hash"] = canonical_hash(report)
     return report
+
+
+def finalize_transition_evaluation(
+    report: dict[str, Any], *, benchmark_sharpe: float, search_n: int, sigma_sr: float
+) -> dict[str, Any]:
+    if report["label"] == "SESSION_TRANSITION_ARCHITECTURE_TRACER":
+        raise ValueError("architecture tracer cannot enter discovery finalization")
+    output = dict(report)
+    split_ms = int(datetime.fromisoformat(output["split_timestamp"]).timestamp() * 1000)
+    stability_rows = [
+        {"timestamp_ms": row["fill_timestamp_ms"] or row["observable_timestamp_ms"],
+         "gross": row["gross"], "net": row["net"],
+         "turnover": 1.0 if row["fill_timestamp_ms"] else 0.0}
+        for row in output["records"]
+    ]
+    end_ms = max((row["timestamp_ms"] for row in stability_rows), default=split_ms)
+    stability = temporal_stability(stability_rows, split_ms, end_ms, session_purity=True)
+    dsr = deflated_sharpe([row["net"] for row in stability_rows], benchmark_sharpe=benchmark_sharpe,
+                          search_n=search_n, sigma_sr=sigma_sr,
+                          threshold=PROTOCOL_V2["gate_policy"]["dsr_probability"])
+    gates = list(output["gates"])
+    gates.extend([
+        {"name": "Stability", "outcome": stability["status"], "reason": stability["reason_code"], "value": stability},
+        {"name": "Multiple testing", "outcome": dsr["status"], "reason": dsr["reason_code"], "value": dsr},
+    ])
+    order = ["Syntax", "Coverage", "Point-in-time", "Mechanics", "Costs", "OOS", "Stability",
+             "Permutation", "Multiple testing", "Baseline"]
+    gates.sort(key=lambda gate: order.index(gate["name"]))
+    hard = {"Syntax", "Point-in-time", "Mechanics", "Costs", "OOS", "Stability", "Permutation", "Baseline"}
+    first_hard_fail = next((gate["name"] for gate in gates if gate["name"] in hard and gate["outcome"] == "FAIL"), None)
+    required = {"Coverage", "Costs", "OOS", "Permutation", "Baseline"}
+    candidate = first_hard_fail is None and all(next(g for g in gates if g["name"] == name)["outcome"] == "PASS" for name in required)
+    certified = candidate and all(gate["outcome"] == "PASS" for gate in gates)
+    output["gates"] = gates
+    output["stability"] = stability
+    output["dsr"] = dsr
+    output["first_hard_fail"] = first_hard_fail
+    output["candidate"] = candidate
+    output["certified"] = certified
+    output["aggregate"] = "CERTIFIED" if certified else ("CANDIDATE" if candidate else ("REJECTED" if first_hard_fail else "INCONCLUSIVE"))
+    output["report_hash"] = canonical_hash({key: value for key, value in output.items() if key != "report_hash"})
+    return output

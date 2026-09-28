@@ -2,11 +2,13 @@ import Link from "next/link";
 import { expressionText, pct, readPhase2 } from "../../lib/phase2";
 import { readTargetedBatch } from "../../lib/targeted";
 import { readSessionTransitionClosure } from "../../lib/session-transition";
+import { readFdpV3 } from "../../lib/fdp-v3";
 
 export default function LabPage() {
   const data = readPhase2();
   const targeted = readTargetedBatch();
   const transitionClosure = readSessionTransitionClosure();
+  const controlled = readFdpV3();
   const factor = data.factors.at(-1)!;
   const report = factor.metrics_json!;
   const cycle = data.cycles.at(-1)!;
@@ -18,9 +20,10 @@ export default function LabPage() {
     <div className="app-shell">
       <aside className="rail"><Link className="brand" href="/lab">R/</Link><nav><Link className="active" href="/lab">Lab</Link><Link href="/factors">Factors</Link><span>Paper</span><span>Ledger</span><span>System</span></nav></aside>
       <main>
-        <header className="system-strip"><span><i className="pulse" /> BITGET REALITY</span><span>8/8 RESEARCH UNIVERSE</span><span>PROTOCOL REVIEW</span><strong>RESEARCH ONLY · NO PAPER POSITIONS</strong></header>
+        <header className="system-strip"><span><i className="pulse" /> BITGET REALITY</span><span>8/8 RESEARCH UNIVERSE</span><span>FDP-V3 · BATCH CLOSED</span><strong>RESEARCH ONLY · NO PAPER POSITIONS</strong></header>
         <section className="hero"><div><p className="eyebrow">AUTONOMOUS RESEARCH CYCLE #{String(cycle.cycle_number).padStart(4, "0")}</p><h1>{factor.name}</h1><p className="thesis">{factor.thesis}</p></div><div className="source-time"><span>LATEST INCLUDED BAR</span><strong>{new Date(report.data_contract.latest_included_timestamp).toISOString()}</strong><small>Trial {factor.trial_number} · {cycle.status}</small></div></section>
-        <div className="notice"><strong>{targeted.decision.recommendation} · SEARCH N {targeted.budget.search_n_before}→{targeted.budget.search_n_after}.</strong> The hard token budget stopped Slot C; no paper trading has started.</div>
+        <div className="notice"><strong>{controlled.decision.recommendation} · SEARCH N {controlled.decision.search_n_after}.</strong> Both pre-registered FDP-v3 slots are closed; no paper trading or follow-on research batch has started.</div>
+        <section className="panel targeted-status"><div className="panel-head"><span>CONTROLLED FDP-V3 DISCOVERY</span><span>{controlled.decision.charged_tokens.toLocaleString()} / {controlled.budget.hard_limit.toLocaleString()} TOKENS</span></div><div className="slot-grid">{controlled.trials.map((trial) => <div key={trial.slot}><span>SLOT {trial.slot} · {trial.family} · TRIAL {trial.trial_number ?? "—"}</span><strong>{trial.report?.aggregate ?? "NO RUN"}</strong><p>{String(trial.recipe?.thesis ?? "No valid FactorRecipe compiled for this slot.")}</p><code>{trial.compiled?.signal ? JSON.stringify(trial.compiled.signal) : "STRUCTURAL FAILURE · NO COMPILED AST"}</code><small>FIRST HARD FAIL · {trial.report?.first_hard_fail ?? "—"}</small></div>)}</div></section>
         <section className="panel compiler-card"><div className="panel-head"><span>RESEARCH COMPILER</span><span>{transitionClosure.closure.recommendation}</span></div><div><p><strong>Recipes compile to deterministic safe ASTs.</strong> Exact 15-minute session-transition anchors now fail closed on missing data and remain research-only.</p><dl><div><dt>Recipe schema</dt><dd>{transitionClosure.closure.recipe_schema_version}</dd></div><div><dt>Compiler</dt><dd>{transitionClosure.closure.compiler_version}</dd></div><div><dt>READY families</dt><dd>{transitionClosure.closure.ready_families.join(" · ")}</dd></div><div><dt>Transition contract</dt><dd>{transitionClosure.closure.contract_version}</dd></div><div><dt>Golden fixtures</dt><dd>{transitionClosure.closure.golden_valid_passed + transitionClosure.closure.golden_invalid_passed}/17 PASS</dd></div><div><dt>Search N</dt><dd>{transitionClosure.closure.search_n_after}</dd></div><div><dt>Qwen calls this phase</dt><dd>{transitionClosure.closure.qwen_http_attempts_phase}</dd></div><div><dt>Still NOT_READY</dt><dd>{transitionClosure.closure.not_ready_families.join(" · ")}</dd></div></dl></div></section>
         <section className="panel targeted-status"><div className="panel-head"><span>TARGETED FDP-V2 BATCH</span><span>{targeted.decision.status}</span></div><div className="slot-grid">{targeted.trials.map((trial) => <div key={trial.slot}><span>SLOT {trial.slot} · {targeted.plan.slots[trial.slot].title}</span><strong>{trial.report?.aggregate ?? trial.state}</strong><p>{trial.proposal?.economic_mechanism ?? "Ex-ante mechanism unavailable: proposal failed structural validation or was not called."}</p><small>COST GATE · {trial.report?.gates.find((gate) => gate.name === "Costs")?.outcome ?? "NOT EVALUATED"}</small></div>)}</div></section>
         <section className="workspace">

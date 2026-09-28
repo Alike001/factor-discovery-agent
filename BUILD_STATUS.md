@@ -92,3 +92,13 @@ Phase 3 is complete. Further autonomous discovery and paper trading await review
 - Cross-sectional rank/baskets, dispersion, and spread-bps remain NOT_READY.
 - `fdp-v3-draft` is not active. Paper trading remains unstarted.
 - Recommendation: `READY_FOR_FDP_V3_BATCH`.
+
+## FDP-v3 controlled discovery — complete, no paper trading
+
+- Activated immutable `fdp-v3` and froze exactly two slots before Qwen traffic; protocol hash `08c088b3f366b2a269a3193e3b8671e0480b6f351f967c3f554a86d37c2d6d46`.
+- Global search N advanced honestly from 7 to 9 without resetting earlier protocols.
+- Slot A produced a valid compiled beta-residual recipe and was rejected: FIRST_HARD_FAIL Stability; DSR FAIL at 0.629643, permutation FAIL, baseline FAIL, and zero OOS fills.
+- Slot B was rejected at Syntax. Its initial session-transition response was invalid, and the repair was refused before HTTP because its projected reservation could not fit the hard budget.
+- Qwen accounting: 3 logical calls, 5 HTTP attempts, 8,804 measured/charged tokens against 14,000; every attempt was pre-reserved.
+- Outcomes: 0 candidates, 0 certified. No hidden replacement, revision child, third slot, paper activity, or follow-on research batch occurred.
+- Recommendation: `PRODUCT_HARDENING_NO_CANDIDATE`.

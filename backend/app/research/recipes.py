@@ -73,6 +73,7 @@ class BetaResidualRecipe(StrictModel):
     residual_transform: Literal["zscore"]
     signal_lookback: Literal[24, 48, 120]
     entry_side: Literal["negative_reversion", "positive_continuation"]
+    threshold: Literal[0.0, 0.5, 1.0, 1.5, 2.0] = 1.0
 
 
 class FactorRecipe(StrictModel):
@@ -169,6 +170,7 @@ REGISTRY: dict[str, dict[str, Any]] = {
         "parameters": {
             "beta_lookback": [24, 48, 120], "signal_lookback": [24, 48, 120],
             "residual_transform": ["zscore"], "entry_side": ["negative_reversion", "positive_continuation"],
+            "threshold": [0.0, 0.5, 1.0, 1.5, 2.0],
             "sessions": ["pre_market", "regular", "after_hours", "overnight", "weekend"],
             "horizon_bars": [12, 24, 48], "rebalance_bars": [6, 12, 24, 48],
         },
@@ -179,7 +181,7 @@ REGISTRY: dict[str, dict[str, Any]] = {
             "session_contract": {"kind": "single_session", "session": "pre_market"},
             "recipe": {"kind": "beta_residual", "target": "RNVDAUSDT", "reference": "RQQQUSDT",
                        "beta_lookback": 48, "residual_transform": "zscore", "signal_lookback": 48,
-                       "entry_side": "negative_reversion"},
+                       "entry_side": "negative_reversion", "threshold": 1.0},
             "horizon_bars": 24, "rebalance_bars": 6, "direction": "long_flat",
             "expected_signal_frequency": "low", "economic_mechanism": "Beta-adjusted dislocations may normalize.",
             "why_not_duplicate": "Uses rolling residual rather than a raw pair-return difference.",
@@ -235,10 +237,10 @@ def compile_recipe(recipe: FactorRecipe) -> CompiledFactorSpec:
     residual = ExpressionV2(op="residual", lookback=recipe.recipe.beta_lookback, args=[target_return, reference_return])
     signal = ExpressionV2(op="zscore", lookback=recipe.recipe.signal_lookback, args=[residual])
     if recipe.recipe.entry_side == "negative_reversion":
-        entry = ExpressionV2(op="lt", threshold=-1.0, args=[ExpressionV2(op="signal")])
+        entry = ExpressionV2(op="lt", threshold=-recipe.recipe.threshold, args=[ExpressionV2(op="signal")])
         exit_condition = ExpressionV2(op="gte", threshold=0.0, args=[ExpressionV2(op="signal")])
     else:
-        entry = ExpressionV2(op="gt", threshold=1.0, args=[ExpressionV2(op="signal")])
+        entry = ExpressionV2(op="gt", threshold=recipe.recipe.threshold, args=[ExpressionV2(op="signal")])
         exit_condition = ExpressionV2(op="lte", threshold=0.0, args=[ExpressionV2(op="signal")])
     return CompiledFactorSpec(
         compiler_version=COMPILER_VERSION, name=recipe.name, thesis=recipe.thesis,

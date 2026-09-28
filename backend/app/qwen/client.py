@@ -138,6 +138,61 @@ def _parsed(schema: type[T], raw_text: str) -> dict[str, Any] | None:
         return None
 
 
+async def json_chat_attempt(
+    client: httpx.AsyncClient,
+    *,
+    model: str,
+    api_key: str,
+    schema: type[T],
+    purpose: str,
+    prompt: str,
+    max_tokens: int,
+    semantic_validator: Callable[[T], list[str]] | None = None,
+) -> dict[str, Any]:
+    """Perform exactly one reservable Chat Completions HTTP attempt."""
+    body = {
+        "model": model,
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0,
+        "response_format": {"type": "json_object"},
+        "reasoning_effort": "low",
+        "max_tokens": max_tokens,
+    }
+    response, payload, latency_ms = await _post(
+        client, path="/chat/completions", api_key=api_key, body=body
+    )
+    raw_text = _chat_text(payload)
+    valid, error = _validate(schema, raw_text)
+    parsed = _parsed(schema, raw_text)
+    if valid and semantic_validator is not None:
+        assert parsed is not None
+        semantic_errors = semantic_validator(schema.model_validate(parsed))
+        if semantic_errors:
+            valid, error = False, ",".join(semantic_errors)
+    metadata = _chat_metadata(payload, raw_text, max_tokens)
+    return {
+        "purpose": purpose,
+        "endpoint_path": "/chat/completions",
+        "profile": {"reasoning_effort": "low", "response_format": "json_object",
+                    "temperature": 0, "max_tokens": max_tokens},
+        "request_hash": canonical_hash(body),
+        "response_hash": canonical_hash(payload),
+        "latency_ms": latency_ms,
+        "http_status": response.status_code,
+        "observed_model": payload.get("model"),
+        "provider_error": payload.get("error") or payload.get("non_json_response"),
+        "final_text": raw_text,
+        "parsed_json": parsed,
+        "response_metadata": metadata,
+        "error_code": _failure_code(
+            status_code=response.status_code,
+            final_text=raw_text,
+            finish_reason=metadata["finish_reason"] if isinstance(metadata["finish_reason"], str) else None,
+        ),
+        "validation": {"valid": valid, "error": error},
+    }
+
+
 async def probe_schema(
     client: httpx.AsyncClient,
     *,

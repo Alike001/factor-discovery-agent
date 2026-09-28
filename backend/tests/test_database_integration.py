@@ -138,10 +138,45 @@ def test_concurrent_token_reservations_cannot_exceed_hard_limit(repository: Rese
     assert usage["charged_tokens"] + usage["outstanding_reservations"] <= usage["hard_limit"]
 
 
-def test_protocol_review_does_not_change_global_search_n(repository: ResearchRepository) -> None:
+def test_controlled_fdp_v3_batch_advances_global_search_n_to_nine(repository: ResearchRepository) -> None:
     assert DATABASE_URL
     with psycopg.connect(DATABASE_URL) as connection:
         program = connection.execute(
             "SELECT id FROM research_programs WHERE program_key='rtoken-session-alpha-v1'"
         ).fetchone()
-    assert program and repository.search_program_n(program[0]) == 7
+    assert program and repository.search_program_n(program[0]) == 9
+
+
+def test_fdp_v3_freeze_reservation_and_two_slot_controls(repository: ResearchRepository) -> None:
+    assert DATABASE_URL
+    with psycopg.connect(DATABASE_URL) as connection:
+        protocol = connection.execute("SELECT id FROM research_protocols WHERE version='fdp-v3'").fetchone()
+        assert protocol
+        events = connection.execute(
+            """SELECT seq,event_type FROM evidence_events
+               WHERE event_type IN ('FDP_V3_PROTOCOL_ACTIVATED','FDP_V3_BATCH_PLAN_FROZEN',
+                                    'FDP_V3_QWEN_REQUEST_RESERVED') ORDER BY seq"""
+        ).fetchall()
+        cycles = connection.execute(
+            """SELECT research_slot,status FROM research_cycles WHERE protocol_id=%s ORDER BY cycle_number""",
+            (protocol[0],),
+        ).fetchall()
+        roles = connection.execute(
+            """SELECT c.research_slot,array_agg(q.role ORDER BY q.created_at)
+               FROM research_cycles c JOIN qwen_runs q ON q.cycle_id=c.id
+               WHERE c.protocol_id=%s GROUP BY c.research_slot ORDER BY c.research_slot""",
+            (protocol[0],),
+        ).fetchall()
+        account = connection.execute(
+            "SELECT charged_tokens,hard_limit_tokens FROM qwen_budget_accounts WHERE scope='fdp-v3-controlled-batch'"
+        ).fetchone()
+        active = connection.execute(
+            """SELECT COALESCE(sum(reserved_tokens),0) FROM qwen_token_reservations
+               WHERE scope='fdp-v3-controlled-batch' AND status='RESERVED'"""
+        ).fetchone()[0]
+    assert events[0][1] == "FDP_V3_PROTOCOL_ACTIVATED"
+    assert events[1][1] == "FDP_V3_BATCH_PLAN_FROZEN"
+    assert all(seq > events[1][0] for seq, kind in events if kind == "FDP_V3_QWEN_REQUEST_RESERVED")
+    assert cycles == [("A", "COMPLETE"), ("B", "COMPLETE")]
+    assert roles == [("A", ["proposer", "lifecycle"]), ("B", ["proposer"])]
+    assert account and account[0] + active <= account[1] == 14_000

@@ -1,0 +1,27 @@
+{
+  "another_batch_started": false,
+  "candidates": 0,
+  "certified": 0,
+  "charged_tokens": 8804,
+  "completed_at": "2026-09-28T10:19:01.888554+00:00",
+  "evidence_chain": {
+    "event_count": 190,
+    "head_hash": "3393199128eccbffc99ff9554b205179202412c1eef4a484711390aec5fb216b",
+    "status": "PASS"
+  },
+  "http_attempts": 5,
+  "logical_calls": 3,
+  "measured_tokens": 8804,
+  "paper_trading_started": false,
+  "protocol_hash": "08c088b3f366b2a269a3193e3b8671e0480b6f351f967c3f554a86d37c2d6d46",
+  "protocol_version": "fdp-v3",
+  "recommendation": "PRODUCT_HARDENING_NO_CANDIDATE",
+  "reserved_tokens": 21292,
+  "search_n_after": 9,
+  "search_n_before": 7,
+  "slots_closed": [
+    "A",
+    "B"
+  ],
+  "status": "COMPLETE"
+}

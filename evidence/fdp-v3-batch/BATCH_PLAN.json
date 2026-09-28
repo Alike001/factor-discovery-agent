@@ -1,0 +1,61 @@
+{
+  "automatic_revision_children": false,
+  "batch": "fdp-v3-controlled-two-slot",
+  "budget": {
+    "hard_reserved_or_charged_tokens": 14000,
+    "max_http_attempts": 6,
+    "max_logical_calls": 4,
+    "max_repairs_per_request": 1
+  },
+  "cost_model": {
+    "fee_basis": "ASSUMED_PUBLISHED_BASELINE",
+    "fee_per_fill": 0.0005,
+    "slippage_per_fill": 0.00025,
+    "version": "rtoken-cost-v1"
+  },
+  "gate_policy": {
+    "candidate_permutation_p": 0.1,
+    "certification_permutation_p": 0.05,
+    "dsr_probability": 0.9,
+    "history_days": 60,
+    "oos_days": 30,
+    "oos_trade_events": 20,
+    "permutations": 2000
+  },
+  "hidden_replacements": false,
+  "maximum_slots": 2,
+  "model_context_fact": "Earlier raw-AST proposals caused structural failures, so this protocol uses deterministic FactorRecipe compilation. Prior economic performance is intentionally hidden.",
+  "performance_feedback_allowed": false,
+  "prior_structural_fingerprint_hashes": [
+    "1dacde8a534be016704ddf0b1a8882b2bbd5c29af5acab1c5d9ab91a644393b1",
+    "310d541db873b185f5f605f3921e84bb27af13ad1f2278f3afd9344f88eb3fec",
+    "8beb8545341d28cf9c94259a1043c1c0f69289e7f94e076e2209f0d2cac9bdc7",
+    "b27b3fd35ac1e2f4b40c3148fcac13c8e8dd6a0139a1822f3b2b17646401f00c",
+    "b72d3842941d028fb756cc0090764e0b60c87aefc4f6a054ee8ef90448396a06",
+    "c44b853dc2b1441dffc23ab322c6cb9d3a43f33a52c2f02ca4df6b1bcd989cc7"
+  ],
+  "protocol_hash": "08c088b3f366b2a269a3193e3b8671e0480b6f351f967c3f554a86d37c2d6d46",
+  "protocol_version": "fdp-v3",
+  "ready_families": [
+    "beta_residual",
+    "session_transition"
+  ],
+  "search_n_before": 7,
+  "search_program_id": "rtoken-session-alpha-v1",
+  "session_transition_contract": "session-transition-v1",
+  "slot_order": [
+    "A",
+    "B"
+  ],
+  "slots": {
+    "A": {
+      "family": "beta_residual",
+      "title": "Beta residual"
+    },
+    "B": {
+      "family": "session_transition",
+      "title": "Session transition"
+    }
+  },
+  "split_rule": "latest closed aligned bar minus 30 calendar days"
+}
