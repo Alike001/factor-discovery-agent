@@ -1,0 +1,232 @@
+{
+  "label": "EVIDENCE REPLAY",
+  "network_calls": 0,
+  "qwen_calls": 0,
+  "steps": [
+    {
+      "detail": {
+        "cost_model_version": "rtoken-cost-v1",
+        "end": "2026-09-28T09:00:00+00:00",
+        "field_valid_from_ms": {
+          "RAMDUSDT.close": 1780383311140,
+          "RQQQUSDT.close": 1780358400000
+        },
+        "latest_included_timestamp": "2026-09-28T09:00:00+00:00",
+        "protocol_hash": "42fdd630f01da9a2efef2435b1e69ea4b7c3f0407cacb5f8874b431d368092ca",
+        "protocol_version": "fdp-v2",
+        "search_program_id": "rtoken-session-alpha-v1",
+        "session_classification_version": "america-new-york-v1",
+        "start": "2026-06-02T07:00:00+00:00",
+        "symbols": [
+          "RAMDUSDT",
+          "RQQQUSDT"
+        ]
+      },
+      "name": "Snapshot",
+      "status": "AVAILABLE"
+    },
+    {
+      "detail": {
+        "direction": "long_flat",
+        "economic_mechanism": "AMD's high-beta linkage to the broad tech index means that a positive residual spike often reflects transient retail or flow-driven overpricing in the name relative to the basket; as informed participants rebalance or the transient demand exhausts, the residual compresses back toward zero, making a long-flat position on the target profitable over a two-day horizon.",
+        "expected_signal_frequency": "low",
+        "family": "beta_residual",
+        "horizon_bars": 48,
+        "name": "Semiconductor beta-residual mean reversion",
+        "rebalance_bars": 12,
+        "recipe": {
+          "beta_lookback": 120,
+          "entry_side": "positive_continuation",
+          "kind": "beta_residual",
+          "reference": "RQQQUSDT",
+          "residual_transform": "zscore",
+          "signal_lookback": 48,
+          "target": "RAMDUSDT",
+          "threshold": 1.5
+        },
+        "schema_version": "factor-recipe-v1",
+        "session_contract": {
+          "from_session": null,
+          "kind": "single_session",
+          "session": "regular",
+          "to_session": null
+        },
+        "thesis": "When a semiconductor name's residual to QQQ diverges positively beyond its rolling norm, the dislocation tends to decay as sector-specific overpricing unwinds.",
+        "universe": [
+          "RAMDUSDT",
+          "RQQQUSDT"
+        ],
+        "why_costs_should_not_dominate": "A twelve-bar rebalance cadence combined with a forty-eight-bar horizon limits turnover to roughly one reposition per two days, and the 1.5 z-score threshold ensures entries occur only on statistically meaningful dislocations, keeping spread and fee drag well below the expected residual compression.",
+        "why_not_duplicate": "This recipe pairs AMD against QQQ with a 120-bar beta window and a 48-bar signal window under positive_continuation entry, a combination not present in any prior submission; the long beta estimation window captures a slower-moving structural relationship while the shorter signal window isolates recent dislocations."
+      },
+      "name": "Qwen recipe",
+      "status": "AVAILABLE"
+    },
+    {
+      "detail": {
+        "recipe_hash": "694abe979059b11ac80085334b74b155192a650733d59b9bdbd266af51f1b396"
+      },
+      "name": "Commit before evaluation",
+      "status": "AVAILABLE"
+    },
+    {
+      "detail": {
+        "ast_hash": "067a68319b1378e07abd66fcfa4106b6436cea0959aba4ef74afc84495aa4c3c",
+        "compiler_version": "factor-recipe-compiler-v2"
+      },
+      "name": "Deterministic compiler",
+      "status": "AVAILABLE"
+    },
+    {
+      "detail": [
+        {
+          "name": "Syntax",
+          "outcome": "PASS",
+          "reason": "Strict fdp-v2 safe AST and slot validation passed."
+        },
+        {
+          "name": "Coverage",
+          "outcome": "PASS",
+          "reason": "118.1 certified days and 2270 aligned bars."
+        },
+        {
+          "name": "Point-in-time",
+          "outcome": "PASS",
+          "reason": "Certified closed OHLC only; volume disabled."
+        },
+        {
+          "name": "Mechanics",
+          "outcome": "PASS",
+          "reason": "Next-bar execution and rebalance controls enforced."
+        },
+        {
+          "name": "Costs",
+          "outcome": "PASS",
+          "reason": "Net return after unchanged fee/slippage is 7.8369%."
+        },
+        {
+          "name": "OOS",
+          "outcome": "INCONCLUSIVE",
+          "reason": "0 OOS fills; net OOS 0.0000%."
+        },
+        {
+          "name": "Stability",
+          "outcome": "FAIL",
+          "reason": "SESSION_PURITY_FAIL",
+          "value": {
+            "blocks": [
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-05T21:15:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 148,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-08-29T09:00:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-13T09:30:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 160,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-05T21:15:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-20T21:45:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 160,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-13T09:30:00+00:00"
+              },
+              {
+                "absolute_pnl_contribution": null,
+                "end": "2026-09-28T10:00:00+00:00",
+                "evaluable": false,
+                "fills": 0,
+                "max_drawdown": 0.0,
+                "net_return": 0.0,
+                "observations": 163,
+                "payoff_sign": 0,
+                "sharpe": null,
+                "start": "2026-09-20T21:45:00+00:00"
+              }
+            ],
+            "evaluable_blocks": 0,
+            "reason_code": "SESSION_PURITY_FAIL",
+            "scope_method": "scope-aware-stability-v1",
+            "session_purity": false,
+            "status": "FAIL",
+            "thresholds": {
+              "halves_must_agree": true,
+              "maximum_absolute_pnl_contribution": 0.6,
+              "minimum_evaluable_blocks": 3,
+              "sign_agreement": 0.6
+            }
+          }
+        },
+        {
+          "name": "Permutation",
+          "outcome": "FAIL",
+          "reason": "Deterministic 2,000 sign-flip p=0.2029."
+        },
+        {
+          "name": "Multiple testing",
+          "outcome": "FAIL",
+          "reason": "DSR_THRESHOLD_NOT_MET",
+          "value": {
+            "benchmark_sharpe": 0.008764851553099553,
+            "kurtosis": 128.45129622853455,
+            "method_version": "phase3-evidence-v1",
+            "observations": 2269,
+            "observed_sharpe": 0.015902863040016788,
+            "probability": 0.6296432562911781,
+            "reason_code": "DSR_THRESHOLD_NOT_MET",
+            "search_n": 9,
+            "sigma_sr": 0.005763399032602534,
+            "skew": -2.971469458624275,
+            "status": "FAIL",
+            "threshold": 0.9
+          }
+        },
+        {
+          "name": "Baseline",
+          "outcome": "FAIL",
+          "reason": "Factor net 7.8369% versus same-window primary buy-and-hold 22.0073%."
+        }
+      ],
+      "name": "Evidence gates",
+      "status": "AVAILABLE"
+    },
+    {
+      "detail": {
+        "action": "ABANDON",
+        "reason": "Multiple deterministic gates failed (Stability, Permutation, Multiple testing, Baseline) with aggregate REJECTED. Deterministic gates cannot be overridden and no revision child is allowed for beta_residual family.",
+        "revision_intent": null
+      },
+      "name": "Lifecycle",
+      "status": "AVAILABLE"
+    },
+    {
+      "detail": {
+        "chain_head": "3393199128eccbffc99ff9554b205179202412c1eef4a484711390aec5fb216b",
+        "report_hash": "33aceed4929c50d594490db72f991f5da64ed8bf86b34ea6da9d4568dd195d10"
+      },
+      "name": "Evidence close",
+      "status": "AVAILABLE"
+    }
+  ],
+  "trial_number": 8
+}

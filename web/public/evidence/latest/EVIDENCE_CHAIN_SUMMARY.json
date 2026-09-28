@@ -1,0 +1,8 @@
+{
+  "event_count": 190,
+  "events_exported": 190,
+  "head_hash": "3393199128eccbffc99ff9554b205179202412c1eef4a484711390aec5fb216b",
+  "source": "persistent PostgreSQL append-only ledger",
+  "status": "PASS",
+  "verified_at": "2026-09-28T14:17:55.931505+00:00"
+}

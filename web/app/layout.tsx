@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./styles.css";
 
 export const metadata: Metadata = {
-  title: "Autonomous rToken Research Lab",
-  description: "Qwen proposes session factors; deterministic evidence gates reject weak ideas.",
+  title: { default: "R/ Autonomous rToken Research", template: "%s · R/" },
+  description: "Autonomous Qwen factor research with deterministic falsification before capital.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

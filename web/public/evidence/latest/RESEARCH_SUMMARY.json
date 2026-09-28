@@ -1,0 +1,30 @@
+{
+  "additional_discovery": "STOPPED",
+  "candidates": 0,
+  "certified": 0,
+  "controlled_batch": {
+    "http_attempts": 5,
+    "logical_calls": 3
+  },
+  "discovery_reason": "No factor passed the frozen evidence gates. Further hypothesis generation is disabled for this build.",
+  "discovery_status": "CLOSED",
+  "execution_mode": "RESEARCH_ONLY",
+  "generated_at": "2026-09-28T14:17:55.931505+00:00",
+  "global_search_n": 9,
+  "latest_verified_source_timestamp": "2026-09-28T09:00:00+00:00",
+  "live_execution": "DISABLED",
+  "paper": {
+    "capital_usdt": 0,
+    "fills": 0,
+    "orders": 0,
+    "positions": 0
+  },
+  "paper_eligible": 0,
+  "paper_engine": "LOCKED_NO_CANDIDATE",
+  "protocol": "fdp-v3",
+  "qwen_http_attempts_total": 20,
+  "search_program": "rtoken-session-alpha-v1",
+  "source_commit": "9f41481290ce94276815ad6fcbb9de0cdf682a1c",
+  "trials": 9,
+  "truth_line": "The AI is allowed to have bad ideas. It is not allowed to turn bad evidence into a trade."
+}

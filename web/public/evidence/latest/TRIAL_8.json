@@ -1,0 +1,526 @@
+{
+  "ast_hash": "067a68319b1378e07abd66fcfa4106b6436cea0959aba4ef74afc84495aa4c3c",
+  "compiled": {
+    "compiler_version": "factor-recipe-compiler-v2",
+    "direction": "long_flat",
+    "economic_mechanism": "AMD's high-beta linkage to the broad tech index means that a positive residual spike often reflects transient retail or flow-driven overpricing in the name relative to the basket; as informed participants rebalance or the transient demand exhausts, the residual compresses back toward zero, making a long-flat position on the target profitable over a two-day horizon.",
+    "entry_condition": {
+      "args": [
+        {
+          "args": [],
+          "field": null,
+          "lookback": null,
+          "op": "signal",
+          "sessions": null,
+          "symbol": null,
+          "threshold": null,
+          "transition": null
+        }
+      ],
+      "field": null,
+      "lookback": null,
+      "op": "gt",
+      "sessions": null,
+      "symbol": null,
+      "threshold": 1.5,
+      "transition": null
+    },
+    "exit_condition": {
+      "args": [
+        {
+          "args": [],
+          "field": null,
+          "lookback": null,
+          "op": "signal",
+          "sessions": null,
+          "symbol": null,
+          "threshold": null,
+          "transition": null
+        }
+      ],
+      "field": null,
+      "lookback": null,
+      "op": "lte",
+      "sessions": null,
+      "symbol": null,
+      "threshold": 0.0,
+      "transition": null
+    },
+    "expected_signal_frequency": "low",
+    "horizon_bars": 48,
+    "name": "Semiconductor beta-residual mean reversion",
+    "rationale": "Compiled deterministically from factor-recipe-v1; recipe=694abe979059b11ac80085334b74b155192a650733d59b9bdbd266af51f1b396",
+    "rebalance_bars": 12,
+    "session_filter": [
+      "regular"
+    ],
+    "signal": {
+      "args": [
+        {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [],
+                  "field": "close",
+                  "lookback": null,
+                  "op": "source",
+                  "sessions": null,
+                  "symbol": "RAMDUSDT",
+                  "threshold": null,
+                  "transition": null
+                }
+              ],
+              "field": null,
+              "lookback": 1,
+              "op": "ret",
+              "sessions": null,
+              "symbol": null,
+              "threshold": null,
+              "transition": null
+            },
+            {
+              "args": [
+                {
+                  "args": [],
+                  "field": "close",
+                  "lookback": null,
+                  "op": "source",
+                  "sessions": null,
+                  "symbol": "RQQQUSDT",
+                  "threshold": null,
+                  "transition": null
+                }
+              ],
+              "field": null,
+              "lookback": 1,
+              "op": "ret",
+              "sessions": null,
+              "symbol": null,
+              "threshold": null,
+              "transition": null
+            }
+          ],
+          "field": null,
+          "lookback": 120,
+          "op": "residual",
+          "sessions": null,
+          "symbol": null,
+          "threshold": null,
+          "transition": null
+        }
+      ],
+      "field": null,
+      "lookback": 48,
+      "op": "zscore",
+      "sessions": null,
+      "symbol": null,
+      "threshold": null,
+      "transition": null
+    },
+    "slot": "C",
+    "thesis": "When a semiconductor name's residual to QQQ diverges positively beyond its rolling norm, the dislocation tends to decay as sector-specific overpricing unwinds.",
+    "transition_from": null,
+    "transition_to": null,
+    "universe": [
+      "RAMDUSDT",
+      "RQQQUSDT"
+    ],
+    "why_costs_should_not_dominate": "A twelve-bar rebalance cadence combined with a forty-eight-bar horizon limits turnover to roughly one reposition per two days, and the 1.5 z-score threshold ensures entries occur only on statistically meaningful dislocations, keeping spread and fee drag well below the expected residual compression.",
+    "why_not_duplicate": "This recipe pairs AMD against QQQ with a 120-bar beta window and a 48-bar signal window under positive_continuation entry, a combination not present in any prior submission; the long beta estimation window captures a slower-moving structural relationship while the shorter signal window isolates recent dislocations."
+  },
+  "data_contract": {
+    "cost_model_version": "rtoken-cost-v1",
+    "end": "2026-09-28T09:00:00+00:00",
+    "field_valid_from_ms": {
+      "RAMDUSDT.close": 1780383311140,
+      "RQQQUSDT.close": 1780358400000
+    },
+    "latest_included_timestamp": "2026-09-28T09:00:00+00:00",
+    "protocol_hash": "42fdd630f01da9a2efef2435b1e69ea4b7c3f0407cacb5f8874b431d368092ca",
+    "protocol_version": "fdp-v2",
+    "search_program_id": "rtoken-session-alpha-v1",
+    "session_classification_version": "america-new-york-v1",
+    "start": "2026-06-02T07:00:00+00:00",
+    "symbols": [
+      "RAMDUSDT",
+      "RQQQUSDT"
+    ]
+  },
+  "dataset_hash": "8ac2e216ce770607238b57477ec1a479c0745d16e8f6e0b89ba3e21fc6fd3c18",
+  "dsr": {
+    "benchmark_sharpe": 0.008764851553099553,
+    "kurtosis": 128.45129622853455,
+    "method_version": "phase3-evidence-v1",
+    "observations": 2269,
+    "observed_sharpe": 0.015902863040016788,
+    "probability": 0.6296432562911781,
+    "reason_code": "DSR_THRESHOLD_NOT_MET",
+    "search_n": 9,
+    "sigma_sr": 0.005763399032602534,
+    "skew": -2.971469458624275,
+    "status": "FAIL",
+    "threshold": 0.9
+  },
+  "executable_hypothesis": "Positive RAMDUSDT residual versus RQQQUSDT, estimated over a 120-bar beta window and measured over a 48-bar zscore window, is tested as a continuation signal above 1.5 during the regular session with a 48-bar holding horizon.",
+  "family": "beta_residual",
+  "first_hard_fail": "Stability",
+  "gates": [
+    {
+      "name": "Syntax",
+      "outcome": "PASS",
+      "reason": "Strict fdp-v2 safe AST and slot validation passed."
+    },
+    {
+      "name": "Coverage",
+      "outcome": "PASS",
+      "reason": "118.1 certified days and 2270 aligned bars."
+    },
+    {
+      "name": "Point-in-time",
+      "outcome": "PASS",
+      "reason": "Certified closed OHLC only; volume disabled."
+    },
+    {
+      "name": "Mechanics",
+      "outcome": "PASS",
+      "reason": "Next-bar execution and rebalance controls enforced."
+    },
+    {
+      "name": "Costs",
+      "outcome": "PASS",
+      "reason": "Net return after unchanged fee/slippage is 7.8369%."
+    },
+    {
+      "name": "OOS",
+      "outcome": "INCONCLUSIVE",
+      "reason": "0 OOS fills; net OOS 0.0000%."
+    },
+    {
+      "name": "Stability",
+      "outcome": "FAIL",
+      "reason": "SESSION_PURITY_FAIL",
+      "value": {
+        "blocks": [
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-05T21:15:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 148,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-08-29T09:00:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-13T09:30:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 160,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-05T21:15:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-20T21:45:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 160,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-13T09:30:00+00:00"
+          },
+          {
+            "absolute_pnl_contribution": null,
+            "end": "2026-09-28T10:00:00+00:00",
+            "evaluable": false,
+            "fills": 0,
+            "max_drawdown": 0.0,
+            "net_return": 0.0,
+            "observations": 163,
+            "payoff_sign": 0,
+            "sharpe": null,
+            "start": "2026-09-20T21:45:00+00:00"
+          }
+        ],
+        "evaluable_blocks": 0,
+        "reason_code": "SESSION_PURITY_FAIL",
+        "scope_method": "scope-aware-stability-v1",
+        "session_purity": false,
+        "status": "FAIL",
+        "thresholds": {
+          "halves_must_agree": true,
+          "maximum_absolute_pnl_contribution": 0.6,
+          "minimum_evaluable_blocks": 3,
+          "sign_agreement": 0.6
+        }
+      }
+    },
+    {
+      "name": "Permutation",
+      "outcome": "FAIL",
+      "reason": "Deterministic 2,000 sign-flip p=0.2029."
+    },
+    {
+      "name": "Multiple testing",
+      "outcome": "FAIL",
+      "reason": "DSR_THRESHOLD_NOT_MET",
+      "value": {
+        "benchmark_sharpe": 0.008764851553099553,
+        "kurtosis": 128.45129622853455,
+        "method_version": "phase3-evidence-v1",
+        "observations": 2269,
+        "observed_sharpe": 0.015902863040016788,
+        "probability": 0.6296432562911781,
+        "reason_code": "DSR_THRESHOLD_NOT_MET",
+        "search_n": 9,
+        "sigma_sr": 0.005763399032602534,
+        "skew": -2.971469458624275,
+        "status": "FAIL",
+        "threshold": 0.9
+      }
+    },
+    {
+      "name": "Baseline",
+      "outcome": "FAIL",
+      "reason": "Factor net 7.8369% versus same-window primary buy-and-hold 22.0073%."
+    }
+  ],
+  "lifecycle": {
+    "action": "ABANDON",
+    "reason": "Multiple deterministic gates failed (Stability, Permutation, Multiple testing, Baseline) with aggregate REJECTED. Deterministic gates cannot be overridden and no revision child is allowed for beta_residual family.",
+    "revision_intent": null
+  },
+  "metrics": {
+    "buy_hold": 0.22007307967273015,
+    "gross": {
+      "fills": 10,
+      "max_drawdown": -0.06838688968936113,
+      "observations": 2269,
+      "sharpe": 1.6242738645434762,
+      "total_return": 0.08647612445680442
+    },
+    "is_net": {
+      "fills": 10,
+      "max_drawdown": -0.0690855995220947,
+      "observations": 1638,
+      "sharpe": 1.7517492916597404,
+      "total_return": 0.07836929851731833
+    },
+    "net": {
+      "fills": 10,
+      "max_drawdown": -0.0690855995220947,
+      "observations": 2269,
+      "sharpe": 1.488426425167566,
+      "total_return": 0.07836929851731833
+    },
+    "oos_net": {
+      "fills": 0,
+      "max_drawdown": 0.0,
+      "observations": 631,
+      "sharpe": null,
+      "total_return": 0.0
+    }
+  },
+  "outcome": "REJECTED",
+  "permutation": {
+    "reason": "Deterministic 2,000 sign-flip p=0.2029.",
+    "status": "FAIL"
+  },
+  "protocol": "fdp-v3",
+  "qwen_metadata": {
+    "calls": [
+      {
+        "actual_charged": 1986,
+        "attempt": 1,
+        "endpoint_path": "/chat/completions",
+        "latency_ms": 30244,
+        "model": "qwen3.8-max",
+        "request_hash": "d0ae577534f9733fab4b97e381470df489f562b15405987ecf657c8e7c5684bc",
+        "reservation": 3557,
+        "response_hash": "e08723e0bc41244560cb748eacc060e03e5a27ddae1abf1895f73db8f9ed697f",
+        "role": "proposer",
+        "slot": "A",
+        "usage": {
+          "input_tokens": 903,
+          "output_tokens": 1083,
+          "reasoning_tokens": 704,
+          "total_tokens": 1986
+        },
+        "valid": false
+      },
+      {
+        "actual_charged": 3900,
+        "attempt": 2,
+        "endpoint_path": "/chat/completions",
+        "latency_ms": 22871,
+        "model": "qwen3.8-max",
+        "request_hash": "97fe19d893a643abbbef6761485e6b1177c328a950cc9cc8a53a3879b132313d",
+        "reservation": 11744,
+        "response_hash": "638cace95bc45711f74741dc0f2b7a0a7eb7ce95d486cf97664f374b6392d8a5",
+        "role": "proposer",
+        "slot": "A",
+        "usage": {
+          "input_tokens": 2845,
+          "output_tokens": 1055,
+          "reasoning_tokens": 681,
+          "total_tokens": 3900
+        },
+        "valid": true
+      },
+      {
+        "actual_charged": 382,
+        "attempt": 1,
+        "endpoint_path": "/chat/completions",
+        "latency_ms": 10328,
+        "model": "qwen3.8-max",
+        "request_hash": "f9908bbb8313b0410da15026d988f51cdc8095272a4772641a2020b1ff5c151a",
+        "reservation": 987,
+        "response_hash": "9ca3ee963333c04b8ab143178578e812ee58f5d39b11ba0e48ac7cb57e45c3c6",
+        "role": "lifecycle",
+        "slot": "A",
+        "usage": {
+          "input_tokens": 167,
+          "output_tokens": 215,
+          "reasoning_tokens": 205,
+          "total_tokens": 382
+        },
+        "valid": false
+      },
+      {
+        "actual_charged": 502,
+        "attempt": 2,
+        "endpoint_path": "/chat/completions",
+        "latency_ms": 7918,
+        "model": "qwen3.8-max",
+        "request_hash": "5071e5d73c86678d7b9a7c6cb987ef21488b53eb14c086269446b39d479083be",
+        "reservation": 1348,
+        "response_hash": "561034ed9cd1eff8ce6099dde213ea949d96672e73403aa70460d40982d4a92a",
+        "role": "lifecycle",
+        "slot": "A",
+        "usage": {
+          "input_tokens": 250,
+          "output_tokens": 252,
+          "reasoning_tokens": 200,
+          "total_tokens": 502
+        },
+        "valid": true
+      }
+    ],
+    "content_persisted": false,
+    "reasoning_persisted": false
+  },
+  "qwen_rationale": "When a semiconductor name's residual to QQQ diverges positively beyond its rolling norm, the dislocation tends to decay as sector-specific overpricing unwinds.",
+  "recipe": {
+    "direction": "long_flat",
+    "economic_mechanism": "AMD's high-beta linkage to the broad tech index means that a positive residual spike often reflects transient retail or flow-driven overpricing in the name relative to the basket; as informed participants rebalance or the transient demand exhausts, the residual compresses back toward zero, making a long-flat position on the target profitable over a two-day horizon.",
+    "expected_signal_frequency": "low",
+    "family": "beta_residual",
+    "horizon_bars": 48,
+    "name": "Semiconductor beta-residual mean reversion",
+    "rebalance_bars": 12,
+    "recipe": {
+      "beta_lookback": 120,
+      "entry_side": "positive_continuation",
+      "kind": "beta_residual",
+      "reference": "RQQQUSDT",
+      "residual_transform": "zscore",
+      "signal_lookback": 48,
+      "target": "RAMDUSDT",
+      "threshold": 1.5
+    },
+    "schema_version": "factor-recipe-v1",
+    "session_contract": {
+      "from_session": null,
+      "kind": "single_session",
+      "session": "regular",
+      "to_session": null
+    },
+    "thesis": "When a semiconductor name's residual to QQQ diverges positively beyond its rolling norm, the dislocation tends to decay as sector-specific overpricing unwinds.",
+    "universe": [
+      "RAMDUSDT",
+      "RQQQUSDT"
+    ],
+    "why_costs_should_not_dominate": "A twelve-bar rebalance cadence combined with a forty-eight-bar horizon limits turnover to roughly one reposition per two days, and the 1.5 z-score threshold ensures entries occur only on statistically meaningful dislocations, keeping spread and fee drag well below the expected residual compression.",
+    "why_not_duplicate": "This recipe pairs AMD against QQQ with a 120-bar beta window and a 48-bar signal window under positive_continuation entry, a combination not present in any prior submission; the long beta estimation window captures a slower-moving structural relationship while the shorter signal window isolates recent dislocations."
+  },
+  "recipe_hash": "694abe979059b11ac80085334b74b155192a650733d59b9bdbd266af51f1b396",
+  "report_hash": "33aceed4929c50d594490db72f991f5da64ed8bf86b34ea6da9d4568dd195d10",
+  "search_n": 9,
+  "semantic_lint": [
+    "RATIONALE_RECIPE_DIRECTION_MISMATCH"
+  ],
+  "slot": "A",
+  "stability": {
+    "blocks": [
+      {
+        "absolute_pnl_contribution": null,
+        "end": "2026-09-05T21:15:00+00:00",
+        "evaluable": false,
+        "fills": 0,
+        "max_drawdown": 0.0,
+        "net_return": 0.0,
+        "observations": 148,
+        "payoff_sign": 0,
+        "sharpe": null,
+        "start": "2026-08-29T09:00:00+00:00"
+      },
+      {
+        "absolute_pnl_contribution": null,
+        "end": "2026-09-13T09:30:00+00:00",
+        "evaluable": false,
+        "fills": 0,
+        "max_drawdown": 0.0,
+        "net_return": 0.0,
+        "observations": 160,
+        "payoff_sign": 0,
+        "sharpe": null,
+        "start": "2026-09-05T21:15:00+00:00"
+      },
+      {
+        "absolute_pnl_contribution": null,
+        "end": "2026-09-20T21:45:00+00:00",
+        "evaluable": false,
+        "fills": 0,
+        "max_drawdown": 0.0,
+        "net_return": 0.0,
+        "observations": 160,
+        "payoff_sign": 0,
+        "sharpe": null,
+        "start": "2026-09-13T09:30:00+00:00"
+      },
+      {
+        "absolute_pnl_contribution": null,
+        "end": "2026-09-28T10:00:00+00:00",
+        "evaluable": false,
+        "fills": 0,
+        "max_drawdown": 0.0,
+        "net_return": 0.0,
+        "observations": 163,
+        "payoff_sign": 0,
+        "sharpe": null,
+        "start": "2026-09-20T21:45:00+00:00"
+      }
+    ],
+    "evaluable_blocks": 0,
+    "reason_code": "SESSION_PURITY_FAIL",
+    "scope_method": "scope-aware-stability-v1",
+    "session_purity": false,
+    "status": "FAIL",
+    "thresholds": {
+      "halves_must_agree": true,
+      "maximum_absolute_pnl_contribution": 0.6,
+      "minimum_evaluable_blocks": 3,
+      "sign_agreement": 0.6
+    }
+  },
+  "trial_number": 8
+}

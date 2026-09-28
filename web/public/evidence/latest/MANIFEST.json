@@ -1,0 +1,39 @@
+{
+  "files": {
+    "CAPABILITY_REGISTRY.json": {
+      "sha256": "3f328bbf441da9ac2318b47da6b6a78971d22450dfb1f2430f994251883fbaad"
+    },
+    "EVIDENCE_CHAIN_SUMMARY.json": {
+      "sha256": "3020c04e2cf74abf352110aac94f29b3faa4f757c26550d1b3fd34a862d557a8"
+    },
+    "GATE_SUMMARY.json": {
+      "sha256": "45177c50eb93a1dc0fe04dc1376437723b39b2dfeaf92b77285162874c34788a"
+    },
+    "LEDGER.json": {
+      "sha256": "4156f24a01cbd5864fc9b7f548ef0123f1fe67b1af20f538daf99536266495fc"
+    },
+    "REPLAY_TRIAL_8.json": {
+      "sha256": "d0902dbaa0e7235987e9d5a403893ed8aa3aef44c335c568e7ce6983f7e97e1d"
+    },
+    "RESEARCH_SUMMARY.json": {
+      "sha256": "0ffaeb18a908ba5090bac3db16a749fcb64fa90e7cf865c7ff347ba5863a2084"
+    },
+    "SEARCH_BUDGET.json": {
+      "sha256": "8f87d628b64674fc13fd73d41687e32518d677a08289cf451c4c66f09fae4f84"
+    },
+    "SOURCE_HEALTH.json": {
+      "sha256": "d21af1b422ecf380d7e59657aa7e2d345d44c56676379c4fcf35906d600b204f"
+    },
+    "TRIAL_8.json": {
+      "sha256": "4870c9ccf49dfce8a0c3e5b5ef8d5bb524006ce90c5d127a9f90b196cf83922d"
+    },
+    "TRIAL_9.json": {
+      "sha256": "93e76996b2157d52df7dec54bcfd257b55621a5136200696fcba1d63c6fe64b5"
+    }
+  },
+  "generated_at": "2026-09-28T14:17:55.931505+00:00",
+  "git_commit": "9f41481290ce94276815ad6fcbb9de0cdf682a1c",
+  "protocol": "fdp-v3",
+  "public_mode": "READ_ONLY_EVIDENCE_SNAPSHOT",
+  "sanitization": "PASS"
+}

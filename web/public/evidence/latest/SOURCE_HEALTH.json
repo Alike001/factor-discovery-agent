@@ -1,0 +1,51 @@
+{
+  "bitget_reality": {
+    "core_universe": [
+      "RAAPLUSDT",
+      "RAMDUSDT",
+      "RAMZNUSDT",
+      "RMETAUSDT",
+      "RMSFTUSDT",
+      "RNVDAUSDT",
+      "RQQQUSDT",
+      "RTSLAUSDT"
+    ],
+    "online_reality": 2587,
+    "reality": 2587,
+    "status": "PASS",
+    "total_spot": 3169
+  },
+  "database": {
+    "mode": "exported snapshot; no public live database claim",
+    "status": "PASS"
+  },
+  "demo": {
+    "execution_mode": "local_paper",
+    "generated_at": "2026-09-27T20:43:25.330997+00:00",
+    "probe_attempted": false,
+    "status": "UNVERIFIED_NO_CREDENTIALS"
+  },
+  "fee": {
+    "basis": "ASSUMED_PUBLISHED_BASELINE",
+    "fee_per_fill": 0.0005,
+    "generated_at": "2026-09-27T20:43:25.330986+00:00",
+    "status": "ACCOUNT_FEE_UNVERIFIED",
+    "stress_fee_per_fill": 0.001,
+    "symbol": "RNVDAUSDT"
+  },
+  "generated_at": "2026-09-28T14:17:55.931505+00:00",
+  "historical_data": {
+    "expected_open_gap_policy": "PASS_WITH_MISSING_BARS",
+    "forward_fill": false,
+    "provenance": "PASS",
+    "trusted_valid_from_policy": "max(public launch floor, instrument launchTime)",
+    "volume": "Volume and turnover are populated before July 9, but the values are not proven rToken trade volume."
+  },
+  "mode": "COMMITTED_EVIDENCE_SNAPSHOT",
+  "qwen": {
+    "credential_persisted": false,
+    "key_configured_at_probe": true,
+    "model": "qwen3.8-max",
+    "status": "PASS"
+  }
+}

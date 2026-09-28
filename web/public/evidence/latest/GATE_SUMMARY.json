@@ -1,0 +1,15 @@
+{
+  "first_hard_fail": {
+    "A": "Stability",
+    "B": "Syntax"
+  },
+  "gate_distribution": {
+    "FAIL": 5,
+    "INCONCLUSIVE": 10,
+    "PASS": 5
+  },
+  "outcomes": {
+    "A": "REJECTED",
+    "B": "REJECTED"
+  }
+}

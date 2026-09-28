@@ -102,3 +102,12 @@ Phase 3 is complete. Further autonomous discovery and paper trading await review
 - Qwen accounting: 3 logical calls, 5 HTTP attempts, 8,804 measured/charged tokens against 14,000; every attempt was pre-reserved.
 - Outcomes: 0 candidates, 0 certified. No hidden replacement, revision child, third slot, paper activity, or follow-on research batch occurred.
 - Recommendation: `PRODUCT_HARDENING_NO_CANDIDATE`.
+
+## Product hardening — complete, frozen evidence product
+
+- Final navigation: Lab, Factors, Paper, Ledger, System; judge story at `/proof`; Trial 8 stored-evidence replay at `/replay`.
+- Search N remains 9; discovery is CLOSED; Candidate and Certified counts remain zero.
+- Paper engine is `LOCKED_NO_CANDIDATE`; capital, positions, orders, and fills remain zero.
+- Public evidence includes required summaries, Trial 8/9 proof, search budget, capabilities, source health, a sanitized 190-event ledger, replay, and hashed manifest.
+- Trial 8's rationale/recipe mismatch is preserved; structured recipe fields alone define execution.
+- Public mode is `READ_ONLY_EVIDENCE_SNAPSHOT`; live execution is disabled and no managed database is claimed.

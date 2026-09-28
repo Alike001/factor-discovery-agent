@@ -1,0 +1,114 @@
+{
+  "ast_hash": null,
+  "compiled": null,
+  "data_contract": {},
+  "dataset_hash": "43ab70c1315cc7e5d54b5edf3499b2b9ffd17f590d1b47f8b8865fa8f2782288",
+  "dsr": null,
+  "executable_hypothesis": "The None transition_return across unknown transition is tested as a None signal with a None-bar holding horizon.",
+  "family": "session_transition",
+  "first_hard_fail": "Syntax",
+  "gates": [
+    {
+      "name": "Syntax",
+      "outcome": "FAIL",
+      "reason": "NO_RUN_PROJECTED_BUDGET_EXHAUSTED_AFTER_INVALID_OUTPUT"
+    },
+    {
+      "name": "Coverage",
+      "outcome": "INCONCLUSIVE",
+      "reason": "Not evaluated after structural rejection."
+    },
+    {
+      "name": "Point-in-time",
+      "outcome": "INCONCLUSIVE",
+      "reason": "Not evaluated after structural rejection."
+    },
+    {
+      "name": "Mechanics",
+      "outcome": "INCONCLUSIVE",
+      "reason": "Not evaluated after structural rejection."
+    },
+    {
+      "name": "Costs",
+      "outcome": "INCONCLUSIVE",
+      "reason": "Not evaluated after structural rejection."
+    },
+    {
+      "name": "OOS",
+      "outcome": "INCONCLUSIVE",
+      "reason": "Not evaluated after structural rejection."
+    },
+    {
+      "name": "Stability",
+      "outcome": "INCONCLUSIVE",
+      "reason": "Not evaluated after structural rejection."
+    },
+    {
+      "name": "Permutation",
+      "outcome": "INCONCLUSIVE",
+      "reason": "Not evaluated after structural rejection."
+    },
+    {
+      "name": "Multiple testing",
+      "outcome": "INCONCLUSIVE",
+      "reason": "Not evaluated after structural rejection."
+    },
+    {
+      "name": "Baseline",
+      "outcome": "INCONCLUSIVE",
+      "reason": "Not evaluated after structural rejection."
+    }
+  ],
+  "lifecycle": null,
+  "metrics": {},
+  "outcome": "REJECTED",
+  "permutation": {
+    "reason": "Not evaluated after structural rejection.",
+    "status": "INCONCLUSIVE"
+  },
+  "protocol": "fdp-v3",
+  "qwen_metadata": {
+    "calls": [
+      {
+        "actual_charged": 2034,
+        "attempt": 1,
+        "endpoint_path": "/chat/completions",
+        "latency_ms": 30525,
+        "model": "qwen3.8-max",
+        "request_hash": "a9b487921aa9012407e7bcccfd6a7d4a2dc9f380dfde6df2dbef2040c520b302",
+        "reservation": 3656,
+        "response_hash": "68a329a94507a183f024d49d9ff944b3857fb8b21dc0075a87a74ca3492b4d11",
+        "role": "proposer",
+        "slot": "B",
+        "usage": {
+          "input_tokens": 885,
+          "output_tokens": 1149,
+          "reasoning_tokens": 644,
+          "total_tokens": 2034
+        },
+        "valid": false
+      },
+      {
+        "attempt": 2,
+        "reason": "NO_RUN_PROJECTED_BUDGET_EXHAUSTED",
+        "recorded_after_batch_as_integrity_audit": true,
+        "role": "proposer",
+        "slot": "B"
+      }
+    ],
+    "content_persisted": false,
+    "reasoning_persisted": false
+  },
+  "qwen_rationale": "Unavailable: no valid recipe compiled.",
+  "recipe": {
+    "family": "session_transition",
+    "invalid": true
+  },
+  "recipe_hash": null,
+  "report_hash": "59987cc317e52a4281b34a514afda98335d07442a3d96a35db0bb08c59989e31",
+  "search_n": 9,
+  "semantic_lint": [],
+  "slot": "B",
+  "stability": null,
+  "trial_number": 9
+}

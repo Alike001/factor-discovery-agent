@@ -1,0 +1,3459 @@
+{
+  "events": [
+    {
+      "current_hash": "295d1984481a64e4c8853fc7b2ab34caaf28bc9dba57856572775d0da5963de1",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "cycle_created",
+      "payload": {
+        "cycle_number": 1,
+        "protocol": "fdp-v1"
+      },
+      "payload_hash": "61cf370227c2a5601a9f23d593a1d3d059ee65efd39156ce711f4e05dafb913b",
+      "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "sequence": 1,
+      "timestamp": "2026-09-28T05:27:16.284099+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "30f6cc0ec92250602306393b6edb01b42e1fa3fd07495e26e48762bab9ac05f4",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "snapshot_committed",
+      "payload": {
+        "latest": {
+          "RAAPLUSDT": 1790568000000,
+          "RAMDUSDT": 1790568000000,
+          "RAMZNUSDT": 1790568000000,
+          "RMETAUSDT": 1790568000000,
+          "RMSFTUSDT": 1790568000000,
+          "RNVDAUSDT": 1790568000000,
+          "RQQQUSDT": 1790568000000,
+          "RTSLAUSDT": 1790568000000
+        },
+        "snapshot_hash": "1ed218dc62fa1f6a0a407b69bad191927054cb8b86abc15f2c9a7686d5d915ff"
+      },
+      "payload_hash": "5f738d2f600ad211d0b13560ec7da18c1c99086dcd7bddcef77b9f074487b966",
+      "previous_hash": "295d1984481a64e4c8853fc7b2ab34caaf28bc9dba57856572775d0da5963de1",
+      "sequence": 2,
+      "timestamp": "2026-09-28T05:27:19.041788+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "38a3746f49b66224f7f4a088d1e0ab1d2d6e9a7300153e74a094970d14051290",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_request",
+      "payload": {
+        "prompt_hash": "b1deb97ecc2b8e063d902066935da1b2b57a6420d430a94314764235e27eb173",
+        "role": "proposer"
+      },
+      "payload_hash": "460326cb7b58dc1a7f012ebf4af2a247aa9382dd9e0804232f2f5e9e5d1fbbdc",
+      "previous_hash": "30f6cc0ec92250602306393b6edb01b42e1fa3fd07495e26e48762bab9ac05f4",
+      "sequence": 3,
+      "timestamp": "2026-09-28T05:27:19.064598+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "5e3417641d61f7ed91e8d706c6310a5ae8f9bb273eba84287e1e92c59d02a251",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_response",
+      "payload": {
+        "response_hash": "e5573c4f59cfde71a45c1a171615c5a152f59da19d5f70d64c7a668a301aac5b",
+        "role": "proposer",
+        "valid": true
+      },
+      "payload_hash": "c7c96155c646f97d65bedfc3e8d4779e126a097f72f3c50620e9c717cf83baea",
+      "previous_hash": "38a3746f49b66224f7f4a088d1e0ab1d2d6e9a7300153e74a094970d14051290",
+      "sequence": 4,
+      "timestamp": "2026-09-28T05:27:54.406232+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "26242cae73958b6e50df6211337de6b45cc18043fe42883db6ae57f43e02d515",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "hypothesis_committed",
+      "payload": {
+        "canonical_hash": "ee48b0b6756bc2f59315b31c72722afdef44b42857569a1b69ef387b44d67a17",
+        "duplicate": false,
+        "trial_number": 1
+      },
+      "payload_hash": "f12e7c02eed38ccc0202e01dd379619ae1fcdfdd722aa940d38359a8ff2596a6",
+      "previous_hash": "5e3417641d61f7ed91e8d706c6310a5ae8f9bb273eba84287e1e92c59d02a251",
+      "sequence": 5,
+      "timestamp": "2026-09-28T05:27:54.438124+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "e94683cdb240ded0f5d645c0f8939c7686bf3f24caff19716e8dd7362d78e680",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "dsl_formalized",
+      "payload": {
+        "canonical_hash": "ee48b0b6756bc2f59315b31c72722afdef44b42857569a1b69ef387b44d67a17"
+      },
+      "payload_hash": "ca700b281313b1c1598b87cace293ddb03eeedffe27269d5a7ce1c4f4848b887",
+      "previous_hash": "26242cae73958b6e50df6211337de6b45cc18043fe42883db6ae57f43e02d515",
+      "sequence": 6,
+      "timestamp": "2026-09-28T05:27:54.448452+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "cf0b20df4f7aac0e2a042af1a1bd94ad90233110f144b0446c0846153df45300",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "snapshot_committed",
+      "payload": {
+        "latest": {
+          "RAAPLUSDT": 1790568000000,
+          "RAMDUSDT": 1790568000000,
+          "RAMZNUSDT": 1790568000000,
+          "RMETAUSDT": 1790568000000,
+          "RMSFTUSDT": 1790568000000,
+          "RNVDAUSDT": 1790568000000,
+          "RQQQUSDT": 1790568000000,
+          "RTSLAUSDT": 1790568000000
+        },
+        "snapshot_hash": "e8e7c384747cab88731553da23e2d1777f601dea7000364733dcecffe1849bd8"
+      },
+      "payload_hash": "77268dc378e25819c8bfe2fa2d537607a9c5d540ef07f2494a861019689416ad",
+      "previous_hash": "e94683cdb240ded0f5d645c0f8939c7686bf3f24caff19716e8dd7362d78e680",
+      "sequence": 7,
+      "timestamp": "2026-09-28T05:28:30.825506+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "f447b8e7285262daf3be7b0810041c956afa5d1d978a77afb2c826c51b492198",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "dsl_formalized",
+      "payload": {
+        "canonical_hash": "ee48b0b6756bc2f59315b31c72722afdef44b42857569a1b69ef387b44d67a17"
+      },
+      "payload_hash": "ca700b281313b1c1598b87cace293ddb03eeedffe27269d5a7ce1c4f4848b887",
+      "previous_hash": "cf0b20df4f7aac0e2a042af1a1bd94ad90233110f144b0446c0846153df45300",
+      "sequence": 8,
+      "timestamp": "2026-09-28T05:28:30.852243+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "91ba6f1f2c793e20edd8f326d48aaa16049effcfc2e9a2de14c9da4e6f28cbfa",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "experiment_completed",
+      "payload": {
+        "experiment_id": "89a87fc9-9e55-4ceb-825e-b2f9a1e42982",
+        "report_hash": "a8077fddc09fb05a71b54b1bb70808846bf85f721e2713f849d8785331bea4c4"
+      },
+      "payload_hash": "6438bd570dbb7fe0af57bd759a8433a6dec59e3909349c5ff89a887fb3939d21",
+      "previous_hash": "f447b8e7285262daf3be7b0810041c956afa5d1d978a77afb2c826c51b492198",
+      "sequence": 9,
+      "timestamp": "2026-09-28T05:28:37.937222+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "81ec23326e08f5c20de878b4d4daea850ff6d5d0e206af48526ff0b93bf85eea",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "89a87fc9-9e55-4ceb-825e-b2f9a1e42982",
+        "name": "Syntax",
+        "outcome": "PASS",
+        "reason": "Strict FactorSpec and safe AST validation passed."
+      },
+      "payload_hash": "75457fff4d0cd6643f86428ad587883ca3b25b42dbfa6e481da2cdd0735eebb0",
+      "previous_hash": "91ba6f1f2c793e20edd8f326d48aaa16049effcfc2e9a2de14c9da4e6f28cbfa",
+      "sequence": 10,
+      "timestamp": "2026-09-28T05:28:37.946957+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "d1f6ed585f5e6849baf20c51d1633e4f078eb56136239d03b097ec53ef732adf",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "89a87fc9-9e55-4ceb-825e-b2f9a1e42982",
+        "name": "Coverage",
+        "outcome": "PASS",
+        "reason": "118.2 certified calendar days and 2545 aligned closed bars."
+      },
+      "payload_hash": "298d0fd2db658d467cb1e6f94bdf202dcba1632dd36ecbc3a47288dec94ca991",
+      "previous_hash": "81ec23326e08f5c20de878b4d4daea850ff6d5d0e206af48526ff0b93bf85eea",
+      "sequence": 11,
+      "timestamp": "2026-09-28T05:28:37.957766+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "d64831aef6aedc24ac94ff7c1da3381080c9fce7a45c06e009401c4d564e76c5",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "89a87fc9-9e55-4ceb-825e-b2f9a1e42982",
+        "name": "Point-in-time",
+        "outcome": "PASS",
+        "reason": "Only certified closed OHLC fields were used; volume remains disabled."
+      },
+      "payload_hash": "80f46e9b63a26395f061b3f3b3db29463dea8ab55d16499bd8c5b57d63d41a11",
+      "previous_hash": "d1f6ed585f5e6849baf20c51d1633e4f078eb56136239d03b097ec53ef732adf",
+      "sequence": 12,
+      "timestamp": "2026-09-28T05:28:37.974979+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "a25a7fc25c10bc7694df3085bba5208ccac68031db1be373c459193e8bed6b88",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "89a87fc9-9e55-4ceb-825e-b2f9a1e42982",
+        "name": "Mechanics",
+        "outcome": "PASS",
+        "reason": "Signals execute no earlier than the next aligned bar."
+      },
+      "payload_hash": "dffb440e9749c978e91dcc07054e8828d86b3e878a5e3e3141b3acaf857ac686",
+      "previous_hash": "d64831aef6aedc24ac94ff7c1da3381080c9fce7a45c06e009401c4d564e76c5",
+      "sequence": 13,
+      "timestamp": "2026-09-28T05:28:37.99691+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "0bb3beb890ede8d516b2cac1787434decd3ff042cdb5dc0fd58bfd09bd8f06a6",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "89a87fc9-9e55-4ceb-825e-b2f9a1e42982",
+        "name": "Costs",
+        "outcome": "FAIL",
+        "reason": "Net return after fee and slippage is -2.8733%."
+      },
+      "payload_hash": "825b17c337d27f2e8223c586a967fa35afca6a1dd916a89f4be9efcd282959f7",
+      "previous_hash": "a25a7fc25c10bc7694df3085bba5208ccac68031db1be373c459193e8bed6b88",
+      "sequence": 14,
+      "timestamp": "2026-09-28T05:28:38.014072+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "b164a38e98651f85efef9a148329ea98e441ef25bec42d5b135e2b42825e1a89",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "89a87fc9-9e55-4ceb-825e-b2f9a1e42982",
+        "name": "OOS",
+        "outcome": "INCONCLUSIVE",
+        "reason": "4 OOS fills; net OOS return -5.2893%."
+      },
+      "payload_hash": "90ea45a497a2806703b4af2ac9e4c96331abe3dec87c83047ae4e67c62ef5e4c",
+      "previous_hash": "0bb3beb890ede8d516b2cac1787434decd3ff042cdb5dc0fd58bfd09bd8f06a6",
+      "sequence": 15,
+      "timestamp": "2026-09-28T05:28:38.025693+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "795edfedb4abc373698a336dab2a5ec14271b8f7ed0c127ac7ca0f56991895c1",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "89a87fc9-9e55-4ceb-825e-b2f9a1e42982",
+        "name": "Stability",
+        "outcome": "INCONCLUSIVE",
+        "reason": "INCONCLUSIVE_NOT_IMPLEMENTED: full symbol/session replication is deferred; certification blocked."
+      },
+      "payload_hash": "ecea9c431514ba45c9944812990d2354d7ca6926cab3c89adf91e37c4eba23b1",
+      "previous_hash": "b164a38e98651f85efef9a148329ea98e441ef25bec42d5b135e2b42825e1a89",
+      "sequence": 16,
+      "timestamp": "2026-09-28T05:28:38.036505+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "3f0cd4ac0c7773ce7dd8aa8f1ffa857a04d3bb6306129f2503314a1605bc650a",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "89a87fc9-9e55-4ceb-825e-b2f9a1e42982",
+        "name": "Permutation",
+        "outcome": "FAIL",
+        "reason": "Deterministic 2,000 sign-flip p=0.5952."
+      },
+      "payload_hash": "fdf9a62e4fd6b73ec1f73e6e4d673b82d171b28209538670fb870a1850c4ff2f",
+      "previous_hash": "795edfedb4abc373698a336dab2a5ec14271b8f7ed0c127ac7ca0f56991895c1",
+      "sequence": 17,
+      "timestamp": "2026-09-28T05:28:38.047258+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "b51f4a0526c4a0faa998ccda1fb7b540ba705688f743014958eff475828dedcb",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "89a87fc9-9e55-4ceb-825e-b2f9a1e42982",
+        "name": "Multiple testing",
+        "outcome": "INCONCLUSIVE",
+        "reason": "INCONCLUSIVE_NOT_IMPLEMENTED: exact Deflated Sharpe is not claimed; certification blocked."
+      },
+      "payload_hash": "4af777cb0c5a97426446f774e7937be304743a45c339119cbfa1424051bc6004",
+      "previous_hash": "3f0cd4ac0c7773ce7dd8aa8f1ffa857a04d3bb6306129f2503314a1605bc650a",
+      "sequence": 18,
+      "timestamp": "2026-09-28T05:28:38.057509+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "6e5ab66884bb99eb3c2bc4f7f2ca1a8af86a489c709167ffb09ecc5d9b2d8515",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "89a87fc9-9e55-4ceb-825e-b2f9a1e42982",
+        "name": "Baseline",
+        "outcome": "FAIL",
+        "reason": "Factor net -2.8733% versus same-window buy-and-hold -0.0844%."
+      },
+      "payload_hash": "f1fe21ade7ef5e3b607b9ecdfa939ef0498807e4787efdf5fb43c0d0fe4be0c7",
+      "previous_hash": "b51f4a0526c4a0faa998ccda1fb7b540ba705688f743014958eff475828dedcb",
+      "sequence": 19,
+      "timestamp": "2026-09-28T05:28:38.075984+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "72cd88caf1f6c8695d80d411e012b0f038dd8c7dcdd65853815cd3671f146f50",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_request",
+      "payload": {
+        "prompt_hash": "b55356de0ec300208495218635ae978759a88970be229c068d3b0835710a1068",
+        "role": "lifecycle"
+      },
+      "payload_hash": "0c4f153da3bb5aa109e43b98eaa0ad7d6b9574e0a6967442cedb3e8b00d55ae0",
+      "previous_hash": "6e5ab66884bb99eb3c2bc4f7f2ca1a8af86a489c709167ffb09ecc5d9b2d8515",
+      "sequence": 20,
+      "timestamp": "2026-09-28T05:28:38.100038+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "126f97612c485245b650960db819d6026798b1567b9566096ff5b49116e1f675",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_response",
+      "payload": {
+        "response_hash": "9e1d69bb9d8f78d3f4f3549571ff2ec0c9dc26c3387abb4a831e8a0b42490440",
+        "role": "lifecycle",
+        "valid": true
+      },
+      "payload_hash": "731ff4f526b98ec63312dcdf1a015d7038ed7bbd92afaab88a0ea19694c26872",
+      "previous_hash": "72cd88caf1f6c8695d80d411e012b0f038dd8c7dcdd65853815cd3671f146f50",
+      "sequence": 21,
+      "timestamp": "2026-09-28T05:28:48.60211+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "265f025f3ddc679eadbd8e6fc7e36b23a26962d541ebe4b55d5c6b50aa67ec13",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "lifecycle_transition",
+      "payload": {
+        "qwen_action": "ABANDON",
+        "to_state": "REJECTED"
+      },
+      "payload_hash": "9cb4c1a5a97af898f4d4ab2ce427463f617c18faa22d87a47d546808058086f1",
+      "previous_hash": "126f97612c485245b650960db819d6026798b1567b9566096ff5b49116e1f675",
+      "sequence": 22,
+      "timestamp": "2026-09-28T05:28:48.628407+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "d60998c8f1e82b4084304d0b3c6e19f5bdf11d947710a9be1b38ee65f2b12838",
+      "entity_id": "cbf045eb-3773-41f0-8ec5-463451b7e520",
+      "entity_type": "research_cycle",
+      "event_type": "cycle_complete",
+      "payload": {
+        "aggregate": "REJECTED",
+        "cycle_number": 1,
+        "factor_hash": "ee48b0b6756bc2f59315b31c72722afdef44b42857569a1b69ef387b44d67a17",
+        "manifest_hash": "2bca4982b4a3085555705fa012a6cbe3ff5af3327dd6b5f7c1ca4911c827726e",
+        "protocol_hash": "d91a2020851dd9f4d4d51b760c6c65d316433499a97bea3b9fbe7630e1247cb9",
+        "report_hash": "a8077fddc09fb05a71b54b1bb70808846bf85f721e2713f849d8785331bea4c4",
+        "snapshot_hash": "e8e7c384747cab88731553da23e2d1777f601dea7000364733dcecffe1849bd8",
+        "trial_number": 1
+      },
+      "payload_hash": "d3701a41c784ac3d0b3fbefe0807df761d0ce9531e23ad0c8301abdd460d85c5",
+      "previous_hash": "265f025f3ddc679eadbd8e6fc7e36b23a26962d541ebe4b55d5c6b50aa67ec13",
+      "sequence": 23,
+      "timestamp": "2026-09-28T05:28:48.645032+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "f4ee6e51c17f96c2dfc5833dfd1c46994482c4e7f4918f08248809f4d88368f5",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "cycle_created",
+      "payload": {
+        "cycle_number": 2,
+        "protocol": "fdp-v1"
+      },
+      "payload_hash": "04419a9b151b3d10ca8c14ae2c8b5da717c071975c0756e1fb6670283d21b1cc",
+      "previous_hash": "d60998c8f1e82b4084304d0b3c6e19f5bdf11d947710a9be1b38ee65f2b12838",
+      "sequence": 24,
+      "timestamp": "2026-09-28T05:29:27.458975+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "cf30623a8641bde69105d2096179f7ff893fcfcc35e8266488ad2870314e99ca",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "snapshot_committed",
+      "payload": {
+        "latest": {
+          "RAAPLUSDT": 1790568000000,
+          "RAMDUSDT": 1790568000000,
+          "RAMZNUSDT": 1790568000000,
+          "RMETAUSDT": 1790568000000,
+          "RMSFTUSDT": 1790568000000,
+          "RNVDAUSDT": 1790568000000,
+          "RQQQUSDT": 1790568000000,
+          "RTSLAUSDT": 1790568000000
+        },
+        "snapshot_hash": "38974a1c87342ee83921c59f16ac8d6fe960f2c420ab595f55a3ac226fae3579"
+      },
+      "payload_hash": "129b657573b9ff81edfd42c1e6094480ab227177bd1cfce06785c3f6d0e23967",
+      "previous_hash": "f4ee6e51c17f96c2dfc5833dfd1c46994482c4e7f4918f08248809f4d88368f5",
+      "sequence": 25,
+      "timestamp": "2026-09-28T05:29:30.796811+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "8298ada34ca517e0c7d41870269e449e8263a6627c24cfcb9017030218f6e791",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_request",
+      "payload": {
+        "prompt_hash": "5e57bc19c4fcc72c0fe6a60d20574e97d6f89d1aa262b98fe3192212a0c15b8f",
+        "role": "proposer"
+      },
+      "payload_hash": "7752c57908d6d4eda2e3ee743468a27084c09df7a1cdd5bdcff36e7b76790a7e",
+      "previous_hash": "cf30623a8641bde69105d2096179f7ff893fcfcc35e8266488ad2870314e99ca",
+      "sequence": 26,
+      "timestamp": "2026-09-28T05:29:30.831389+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "702dc82318af3597f614b122580daf927715c594b2c10d04a11dc183b9138724",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_response",
+      "payload": {
+        "response_hash": "b8cc4f3ae8fc48260d8caf4da264470005188f164c6193fd8230b6aebfb0cd77",
+        "role": "proposer",
+        "valid": true
+      },
+      "payload_hash": "429015025eda1542b3bbe0e6d6d20342032cf02bbf3762489aedcc5fdaade28a",
+      "previous_hash": "8298ada34ca517e0c7d41870269e449e8263a6627c24cfcb9017030218f6e791",
+      "sequence": 27,
+      "timestamp": "2026-09-28T05:30:07.511804+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "f7c7a5300ca10dc76057279f8b05802bf144ccb567dfa6a67cd32d4beffc4c56",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "hypothesis_committed",
+      "payload": {
+        "canonical_hash": "607bec3501374f677c901d29a770a18bc1d9138b9f2b2f4a61f781ecafbcbf5b",
+        "duplicate": false,
+        "trial_number": 2
+      },
+      "payload_hash": "11bd59b452ec2a42f25b17c4bb9b7e7ae35860cbd3b3df2a32c8b968be6d9924",
+      "previous_hash": "702dc82318af3597f614b122580daf927715c594b2c10d04a11dc183b9138724",
+      "sequence": 28,
+      "timestamp": "2026-09-28T05:30:07.546663+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "416be034674ca4db3f6e630374280b1e5a2d96388668de8f0be3fd93380a56ac",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "dsl_formalized",
+      "payload": {
+        "canonical_hash": "607bec3501374f677c901d29a770a18bc1d9138b9f2b2f4a61f781ecafbcbf5b"
+      },
+      "payload_hash": "eb224db5487bec2913b6094645e79e2417752b42f5b902e83ba6061463bf3818",
+      "previous_hash": "f7c7a5300ca10dc76057279f8b05802bf144ccb567dfa6a67cd32d4beffc4c56",
+      "sequence": 29,
+      "timestamp": "2026-09-28T05:30:07.557015+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "7d4f756cf2ed41ee8c7055d7dc519ddafab75257972b9e27a72a4f0692c98ee9",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "experiment_completed",
+      "payload": {
+        "experiment_id": "6ca34535-896f-4895-ba82-80f1fe9df6b3",
+        "report_hash": "c690580c2a17f770a1ae368264c17ba5110db676331b68d3a5beb2fbb0d0186b"
+      },
+      "payload_hash": "b21b1bb761d596605c6ffd4b31f9bdc1250beb999e3e845ec4b32ce1d5e793c9",
+      "previous_hash": "416be034674ca4db3f6e630374280b1e5a2d96388668de8f0be3fd93380a56ac",
+      "sequence": 30,
+      "timestamp": "2026-09-28T05:30:12.34324+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "a93700ad48c9f800b9c4e65ba7a2304eb81346bc5a5bd4a9aa17b33f82aaf390",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "6ca34535-896f-4895-ba82-80f1fe9df6b3",
+        "name": "Syntax",
+        "outcome": "PASS",
+        "reason": "Strict FactorSpec and safe AST validation passed."
+      },
+      "payload_hash": "f5514134040f0a60fb1d3181ec430ff1fc28db223dabec1c93aa2beea6e0f58b",
+      "previous_hash": "7d4f756cf2ed41ee8c7055d7dc519ddafab75257972b9e27a72a4f0692c98ee9",
+      "sequence": 31,
+      "timestamp": "2026-09-28T05:30:12.35296+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "cda4c1cf503ccf75002dad55bdea79483d25919532ce2188b6fe11d545aa746b",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "6ca34535-896f-4895-ba82-80f1fe9df6b3",
+        "name": "Coverage",
+        "outcome": "PASS",
+        "reason": "118.2 certified calendar days and 2365 aligned closed bars."
+      },
+      "payload_hash": "6472b436e8bc66e18a71714a1a6562a2801e97ab9e75a10978bd8cb7baaa3507",
+      "previous_hash": "a93700ad48c9f800b9c4e65ba7a2304eb81346bc5a5bd4a9aa17b33f82aaf390",
+      "sequence": 32,
+      "timestamp": "2026-09-28T05:30:12.363061+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "639ecd6d00025d5d07eb20b2a57fcb215861a9456b5bcc18e328a53f1bfffca7",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "6ca34535-896f-4895-ba82-80f1fe9df6b3",
+        "name": "Point-in-time",
+        "outcome": "PASS",
+        "reason": "Only certified closed OHLC fields were used; volume remains disabled."
+      },
+      "payload_hash": "c06f8819dacc15fe6d1e6fadf918a9b078b02bfb4e05fb4fd8ee53ca33e60da0",
+      "previous_hash": "cda4c1cf503ccf75002dad55bdea79483d25919532ce2188b6fe11d545aa746b",
+      "sequence": 33,
+      "timestamp": "2026-09-28T05:30:12.372837+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "33e3fd0686c0f77f0d7b6d22bcea7622c7f13a0959400510988e7d54599ffa87",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "6ca34535-896f-4895-ba82-80f1fe9df6b3",
+        "name": "Mechanics",
+        "outcome": "PASS",
+        "reason": "Signals execute no earlier than the next aligned bar."
+      },
+      "payload_hash": "6c03bcf5c6e9275d3164489bb966a9e205c1796e74375f70ee2e38ddee6d0485",
+      "previous_hash": "639ecd6d00025d5d07eb20b2a57fcb215861a9456b5bcc18e328a53f1bfffca7",
+      "sequence": 34,
+      "timestamp": "2026-09-28T05:30:12.382771+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "5d06a798c6c8d8d78d27e75902c2e3d54c31ec9e15f816138a41c433d5a5ed0c",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "6ca34535-896f-4895-ba82-80f1fe9df6b3",
+        "name": "Costs",
+        "outcome": "FAIL",
+        "reason": "Net return after fee and slippage is 0.0000%."
+      },
+      "payload_hash": "0c8006164e10ea672674733aee48e3fdd739e4f2cb3b7e473c1638fa291d0edb",
+      "previous_hash": "33e3fd0686c0f77f0d7b6d22bcea7622c7f13a0959400510988e7d54599ffa87",
+      "sequence": 35,
+      "timestamp": "2026-09-28T05:30:12.39268+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "d6226ad1c55a3dcee6e08041c010dfb3b9da2250216c17f6b08ccc310b7527fa",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "6ca34535-896f-4895-ba82-80f1fe9df6b3",
+        "name": "OOS",
+        "outcome": "INCONCLUSIVE",
+        "reason": "0 OOS fills; net OOS return 0.0000%."
+      },
+      "payload_hash": "bd2ed3ad5f37757feec11c9d31e8bbd36c0b7756801a5d424474c00d47f4ad76",
+      "previous_hash": "5d06a798c6c8d8d78d27e75902c2e3d54c31ec9e15f816138a41c433d5a5ed0c",
+      "sequence": 36,
+      "timestamp": "2026-09-28T05:30:12.403138+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "87ae5e46e12ab8e41d4169cadc29f339fe67e5673826b8f71742dd41a4736c9e",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "6ca34535-896f-4895-ba82-80f1fe9df6b3",
+        "name": "Stability",
+        "outcome": "INCONCLUSIVE",
+        "reason": "INCONCLUSIVE_NOT_IMPLEMENTED: full symbol/session replication is deferred; certification blocked."
+      },
+      "payload_hash": "fe5f9a6b81c4cbf32d2a8393106fa38f732229b8000c35a3fc77d694bd907b63",
+      "previous_hash": "d6226ad1c55a3dcee6e08041c010dfb3b9da2250216c17f6b08ccc310b7527fa",
+      "sequence": 37,
+      "timestamp": "2026-09-28T05:30:12.412415+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "afaa4727190711f778a56470a0dd3f95e77e42e23b63eee78e81ce47ef228210",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "6ca34535-896f-4895-ba82-80f1fe9df6b3",
+        "name": "Permutation",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Insufficient independent trade returns."
+      },
+      "payload_hash": "76c003e27b654ca53902ab69526bee787d0ddd51fca5ee2b4b80406291cf53d1",
+      "previous_hash": "87ae5e46e12ab8e41d4169cadc29f339fe67e5673826b8f71742dd41a4736c9e",
+      "sequence": 38,
+      "timestamp": "2026-09-28T05:30:12.422553+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "1572e0941acd0b0adb05cf3f0db42efa88838841a2d18e83f5e953d3cc8b8e82",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "6ca34535-896f-4895-ba82-80f1fe9df6b3",
+        "name": "Multiple testing",
+        "outcome": "INCONCLUSIVE",
+        "reason": "INCONCLUSIVE_NOT_IMPLEMENTED: exact Deflated Sharpe is not claimed; certification blocked."
+      },
+      "payload_hash": "87cdd9ff5f90ebeececb0506fe18a2959e9d5540167eb170ada8e2e9bbe24f9a",
+      "previous_hash": "afaa4727190711f778a56470a0dd3f95e77e42e23b63eee78e81ce47ef228210",
+      "sequence": 39,
+      "timestamp": "2026-09-28T05:30:12.432945+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "f69dd62c6e2bc7bdc21b44a44013bfb0baf567044380f49cfb7450d0081ce052",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "6ca34535-896f-4895-ba82-80f1fe9df6b3",
+        "name": "Baseline",
+        "outcome": "FAIL",
+        "reason": "Factor net 0.0000% versus same-window buy-and-hold 10.1947%."
+      },
+      "payload_hash": "b39df037e529640b09a68d53dd87f095bdac1bfaa5313813fd41558f348f501c",
+      "previous_hash": "1572e0941acd0b0adb05cf3f0db42efa88838841a2d18e83f5e953d3cc8b8e82",
+      "sequence": 40,
+      "timestamp": "2026-09-28T05:30:12.444077+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "492fedd2e1ebee61c466f76e7b7b4eedf43817387cb809ef3a197a5eff07775d",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_request",
+      "payload": {
+        "prompt_hash": "28a4b7c4f67cef29f05133a5d69be3872c05a19c420c97dbf79a2b370f98218a",
+        "role": "lifecycle"
+      },
+      "payload_hash": "de7b8888a340d5fed86caf89ff6d7902850a5240e6c2c70cfdb1f73a4d732422",
+      "previous_hash": "f69dd62c6e2bc7bdc21b44a44013bfb0baf567044380f49cfb7450d0081ce052",
+      "sequence": 41,
+      "timestamp": "2026-09-28T05:30:12.465073+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "98bfb38613cc9bf2df54e780aeb21165f070b3f696f20a436e18fe85f5f4d07a",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_response",
+      "payload": {
+        "response_hash": "4ec7cf0d13a9126b1032c066cf85d2df34309d4440f7775d1996ed01e8f65cc2",
+        "role": "lifecycle",
+        "valid": true
+      },
+      "payload_hash": "793eb85746d5dc11f093108b5f53cf19bdaab4348cdb2bbadafef8c296ddba12",
+      "previous_hash": "492fedd2e1ebee61c466f76e7b7b4eedf43817387cb809ef3a197a5eff07775d",
+      "sequence": 42,
+      "timestamp": "2026-09-28T05:30:52.293244+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "fb900e3c46d5912b73551b30cdda435c3a5e1a18f83773d74d11de94472acdaf",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "lifecycle_transition",
+      "payload": {
+        "qwen_action": "REVISE",
+        "to_state": "REJECTED"
+      },
+      "payload_hash": "b65c05a0f44ff87f72209d97e51ab39f267743a83a85b85754084209e79ff19f",
+      "previous_hash": "98bfb38613cc9bf2df54e780aeb21165f070b3f696f20a436e18fe85f5f4d07a",
+      "sequence": 43,
+      "timestamp": "2026-09-28T05:30:52.320617+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "b03e0f530b81fba6ef3fcc313170ba66a8744917307e8ded73c700a98cd293f0",
+      "entity_id": "2b6b8a8d-6fef-496c-83c6-506d48476b3b",
+      "entity_type": "research_cycle",
+      "event_type": "cycle_complete",
+      "payload": {
+        "aggregate": "REJECTED",
+        "cycle_number": 2,
+        "factor_hash": "607bec3501374f677c901d29a770a18bc1d9138b9f2b2f4a61f781ecafbcbf5b",
+        "manifest_hash": "9035a78e3019efe5dca3d265dc31073a94e917fbdd79bf6ca0ecd0922c348032",
+        "protocol_hash": "d91a2020851dd9f4d4d51b760c6c65d316433499a97bea3b9fbe7630e1247cb9",
+        "report_hash": "c690580c2a17f770a1ae368264c17ba5110db676331b68d3a5beb2fbb0d0186b",
+        "snapshot_hash": "38974a1c87342ee83921c59f16ac8d6fe960f2c420ab595f55a3ac226fae3579",
+        "trial_number": 2
+      },
+      "payload_hash": "703838678da9947221265379fe91481df43014cf0da3b047e595c95d6333e66a",
+      "previous_hash": "fb900e3c46d5912b73551b30cdda435c3a5e1a18f83773d74d11de94472acdaf",
+      "sequence": 44,
+      "timestamp": "2026-09-28T05:30:52.334396+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "5161bcc798d6f792cc5026b6124a7c9b8db476a32a725e7bf4575d7dc25547e7",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "cycle_created",
+      "payload": {
+        "cycle_number": 3,
+        "protocol": "fdp-v1"
+      },
+      "payload_hash": "8671519be84ba5e25763396c92b28eddb08f569f14e105af6e612f07369d26ac",
+      "previous_hash": "b03e0f530b81fba6ef3fcc313170ba66a8744917307e8ded73c700a98cd293f0",
+      "sequence": 45,
+      "timestamp": "2026-09-28T05:30:53.229804+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "cf2d70a51c8127951fe0fb3b7d5e4daba516dee3ef5cf1a9a37c3d208df9949c",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "snapshot_committed",
+      "payload": {
+        "latest": {
+          "RAAPLUSDT": 1790568000000,
+          "RAMDUSDT": 1790568000000,
+          "RAMZNUSDT": 1790568000000,
+          "RMETAUSDT": 1790568000000,
+          "RMSFTUSDT": 1790568000000,
+          "RNVDAUSDT": 1790568000000,
+          "RQQQUSDT": 1790568000000,
+          "RTSLAUSDT": 1790568000000
+        },
+        "snapshot_hash": "2a5d05202d345546a26b2459f6247a13421f7225c4b6c725d44c99363529e275"
+      },
+      "payload_hash": "2d9b51df514a6df92d609a7be27d00fa53a703383f99f7b851191f90c5017cc8",
+      "previous_hash": "5161bcc798d6f792cc5026b6124a7c9b8db476a32a725e7bf4575d7dc25547e7",
+      "sequence": 46,
+      "timestamp": "2026-09-28T05:30:57.010183+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "e54ffa95fb0435550eb33d9aac35d4953d5bdd0a3bcee8a27f04c847ba665b6a",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_request",
+      "payload": {
+        "prompt_hash": "95dc7d26d468b2b5585513891918bdaa45ca0179e090638914a61ec1f1996cd3",
+        "role": "proposer"
+      },
+      "payload_hash": "d3425bb7b5e273f5b7e1fa89e08058108893a03b29e4a486f343c5f1b0d49265",
+      "previous_hash": "cf2d70a51c8127951fe0fb3b7d5e4daba516dee3ef5cf1a9a37c3d208df9949c",
+      "sequence": 47,
+      "timestamp": "2026-09-28T05:30:57.033983+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "be1b97f27ec2ce3e51d76cdac47951216c717b5c0f341d0b7ee76bf04fb8774a",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_response",
+      "payload": {
+        "response_hash": "807d25790c63c52dfd0a15626da6825132dae91d9e895fb3bd11ac84231372fc",
+        "role": "proposer",
+        "valid": true
+      },
+      "payload_hash": "1c290d2197c12c370cd7a78d33b7c71bad0047f92006da743537a0a6961d7a5c",
+      "previous_hash": "e54ffa95fb0435550eb33d9aac35d4953d5bdd0a3bcee8a27f04c847ba665b6a",
+      "sequence": 48,
+      "timestamp": "2026-09-28T05:31:32.657464+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "33c88e9f083a1725e6107255c4272175459bdc729d37f4195280263701f548a0",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "hypothesis_committed",
+      "payload": {
+        "canonical_hash": "00771dea66f67e3153815d84ed6f5e0c3722bcd63f26c8cfed1c28d638c27fb5",
+        "duplicate": false,
+        "trial_number": 3
+      },
+      "payload_hash": "c7574acf7944a1fb72fbf55097d4493000a0e4bd96a4ddc1cdf97dc7fbb49fb6",
+      "previous_hash": "be1b97f27ec2ce3e51d76cdac47951216c717b5c0f341d0b7ee76bf04fb8774a",
+      "sequence": 49,
+      "timestamp": "2026-09-28T05:31:32.700291+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "2ae2f192cf6ff5e49e4e3048d5bcf9dcfc79ad705e786924f5c0e1567e76e7c8",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "dsl_formalized",
+      "payload": {
+        "canonical_hash": "00771dea66f67e3153815d84ed6f5e0c3722bcd63f26c8cfed1c28d638c27fb5"
+      },
+      "payload_hash": "ce5470f9ff1d59d001970f2f87e18ba275866028f823de77e9776f7e5bfa09fd",
+      "previous_hash": "33c88e9f083a1725e6107255c4272175459bdc729d37f4195280263701f548a0",
+      "sequence": 50,
+      "timestamp": "2026-09-28T05:31:32.717394+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "5fdc24f4ff8ba90d654bc756e3f30fe488fe01b657d02db8068eec1ab10812d1",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "experiment_completed",
+      "payload": {
+        "experiment_id": "bc775a18-fe00-4d96-a6e7-d7f71b6a6abe",
+        "report_hash": "6d984894770f5cd2378889db12784741d9100eafaa7be63a8e4bbf15779c54ca"
+      },
+      "payload_hash": "5b9aec65479d0b1b8f0483e0634caa757d7f54e0b0f475072c2c41f9406d3d9b",
+      "previous_hash": "2ae2f192cf6ff5e49e4e3048d5bcf9dcfc79ad705e786924f5c0e1567e76e7c8",
+      "sequence": 51,
+      "timestamp": "2026-09-28T05:31:37.719326+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "b84bff936410ef5fd1ef9b0146629559a578ebf952db809efa49842492820c89",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "bc775a18-fe00-4d96-a6e7-d7f71b6a6abe",
+        "name": "Syntax",
+        "outcome": "PASS",
+        "reason": "Strict FactorSpec and safe AST validation passed."
+      },
+      "payload_hash": "cac3205e3484f31499d899ac38f55c2230f341a053434881702141e3f9758412",
+      "previous_hash": "5fdc24f4ff8ba90d654bc756e3f30fe488fe01b657d02db8068eec1ab10812d1",
+      "sequence": 52,
+      "timestamp": "2026-09-28T05:31:37.730444+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "93a3ac07f7fad6a57f1e878bd258ef2336e0a078353269624eac1f0ced6eebb3",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "bc775a18-fe00-4d96-a6e7-d7f71b6a6abe",
+        "name": "Coverage",
+        "outcome": "PASS",
+        "reason": "118.2 certified calendar days and 2456 aligned closed bars."
+      },
+      "payload_hash": "eef690cc9266e434c277450ab042d6fa44cd4fdd028f68f8a8ddbfb261e83d08",
+      "previous_hash": "b84bff936410ef5fd1ef9b0146629559a578ebf952db809efa49842492820c89",
+      "sequence": 53,
+      "timestamp": "2026-09-28T05:31:37.747828+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "e9345414d1286ce0316098a097949ced671e3437d1b45374e9fae3629f8921eb",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "bc775a18-fe00-4d96-a6e7-d7f71b6a6abe",
+        "name": "Point-in-time",
+        "outcome": "PASS",
+        "reason": "Only certified closed OHLC fields were used; volume remains disabled."
+      },
+      "payload_hash": "11c2db251dbd9c3da2557eb2141118795a0c71c81055a07489a87ec0263488fb",
+      "previous_hash": "93a3ac07f7fad6a57f1e878bd258ef2336e0a078353269624eac1f0ced6eebb3",
+      "sequence": 54,
+      "timestamp": "2026-09-28T05:31:37.762119+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "c0899a8242ad44887d8c6abe7ea7f7a21bbd13816d8114c24adbd1b5c22d1365",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "bc775a18-fe00-4d96-a6e7-d7f71b6a6abe",
+        "name": "Mechanics",
+        "outcome": "PASS",
+        "reason": "Signals execute no earlier than the next aligned bar."
+      },
+      "payload_hash": "efa2fecf55dda07ca8310927a811053f3be273aacb9a47b8e62e6351b757eaf5",
+      "previous_hash": "e9345414d1286ce0316098a097949ced671e3437d1b45374e9fae3629f8921eb",
+      "sequence": 55,
+      "timestamp": "2026-09-28T05:31:37.772468+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "6bb79f6b390caf00392c8e3698af63e75d26b1d35911b37f0f2aa9f651a2c2b3",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "bc775a18-fe00-4d96-a6e7-d7f71b6a6abe",
+        "name": "Costs",
+        "outcome": "FAIL",
+        "reason": "Net return after fee and slippage is 0.0000%."
+      },
+      "payload_hash": "d8f1b3a2578d77704d1b2d0e1a63ade6f7724ecf22e7eee33901e30a8faa9e83",
+      "previous_hash": "c0899a8242ad44887d8c6abe7ea7f7a21bbd13816d8114c24adbd1b5c22d1365",
+      "sequence": 56,
+      "timestamp": "2026-09-28T05:31:37.783428+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "65de7e2de5b8bd84edc781c45398d11f24e84825a828822afd75b918d73bcdcf",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "bc775a18-fe00-4d96-a6e7-d7f71b6a6abe",
+        "name": "OOS",
+        "outcome": "INCONCLUSIVE",
+        "reason": "0 OOS fills; net OOS return 0.0000%."
+      },
+      "payload_hash": "61db8380aff8f05309895706f0674972b55e47cc218635ee2d097206a555ec35",
+      "previous_hash": "6bb79f6b390caf00392c8e3698af63e75d26b1d35911b37f0f2aa9f651a2c2b3",
+      "sequence": 57,
+      "timestamp": "2026-09-28T05:31:37.793878+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "217c005e4d6ea805ead6f76c6e5d6d4495e555cf7eb71fe6732d7004f805b5dc",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "bc775a18-fe00-4d96-a6e7-d7f71b6a6abe",
+        "name": "Stability",
+        "outcome": "INCONCLUSIVE",
+        "reason": "INCONCLUSIVE_NOT_IMPLEMENTED: full symbol/session replication is deferred; certification blocked."
+      },
+      "payload_hash": "b26f73d3acaf25298c5111b51f0f5c86e4aef859327f812e00c31cd9d7dbd7c0",
+      "previous_hash": "65de7e2de5b8bd84edc781c45398d11f24e84825a828822afd75b918d73bcdcf",
+      "sequence": 58,
+      "timestamp": "2026-09-28T05:31:37.80415+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "6b995c3c9c7a6716971890da86ce0a8f06220500da0a3cc47b3341980c15b275",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "bc775a18-fe00-4d96-a6e7-d7f71b6a6abe",
+        "name": "Permutation",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Insufficient independent trade returns."
+      },
+      "payload_hash": "8636ae339e7bace7b9316aeef767e5d2c4099b66270a8cfffb9f5c7f48f187d2",
+      "previous_hash": "217c005e4d6ea805ead6f76c6e5d6d4495e555cf7eb71fe6732d7004f805b5dc",
+      "sequence": 59,
+      "timestamp": "2026-09-28T05:31:37.81444+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "9987d850d22820167e4dcc8d67efbefca97e948b4137a4693c5c633ab8c28cb3",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "bc775a18-fe00-4d96-a6e7-d7f71b6a6abe",
+        "name": "Multiple testing",
+        "outcome": "INCONCLUSIVE",
+        "reason": "INCONCLUSIVE_NOT_IMPLEMENTED: exact Deflated Sharpe is not claimed; certification blocked."
+      },
+      "payload_hash": "cd57e37f269c084b25577055e94e473c2b43c6fc9d9934e610763d23e159ec6d",
+      "previous_hash": "6b995c3c9c7a6716971890da86ce0a8f06220500da0a3cc47b3341980c15b275",
+      "sequence": 60,
+      "timestamp": "2026-09-28T05:31:37.827806+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "890ca155a74317b84e860518de078e35be9847e2e5585e2794e8eaca8f2f476e",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "bc775a18-fe00-4d96-a6e7-d7f71b6a6abe",
+        "name": "Baseline",
+        "outcome": "PASS",
+        "reason": "Factor net 0.0000% versus same-window buy-and-hold -10.6110%."
+      },
+      "payload_hash": "1143aeeb315bc13408842214366f8dc623e871eb8bd104c3f82734e622f88a9f",
+      "previous_hash": "9987d850d22820167e4dcc8d67efbefca97e948b4137a4693c5c633ab8c28cb3",
+      "sequence": 61,
+      "timestamp": "2026-09-28T05:31:37.83836+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "442bfe0207384a3722c6129a5b6ae5db95731cf5c75a30dbfe8e98e9fbf3080e",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_request",
+      "payload": {
+        "prompt_hash": "05c2a3cd7a68e9bdb6ccbdefbf3236501e3c54765f2a42b62bd35f95a83e2d96",
+        "role": "lifecycle"
+      },
+      "payload_hash": "120eb6a998917c37f6dd37b7409242e3d9d50363b3c8f02585072c6ef2eaff83",
+      "previous_hash": "890ca155a74317b84e860518de078e35be9847e2e5585e2794e8eaca8f2f476e",
+      "sequence": 62,
+      "timestamp": "2026-09-28T05:31:37.860516+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "7e4cd4cf4ec7ca7744b52249ba7463568ac7a34a485730a4412dcd8046582e96",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_response",
+      "payload": {
+        "response_hash": "806808a2ab435d6cfb11754ec1c368c467aea300041bba25030a159b147771f0",
+        "role": "lifecycle",
+        "valid": true
+      },
+      "payload_hash": "77792a1f1eb0f930f792980216bba96577bd1b028ac5cbfefc3e3e46b13cef11",
+      "previous_hash": "442bfe0207384a3722c6129a5b6ae5db95731cf5c75a30dbfe8e98e9fbf3080e",
+      "sequence": 63,
+      "timestamp": "2026-09-28T05:32:05.982097+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "6296da25e2715d74b6af348364350d603204d593c656819ce11ea46668f52a15",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "lifecycle_transition",
+      "payload": {
+        "qwen_action": "REVISE",
+        "to_state": "REJECTED"
+      },
+      "payload_hash": "b65c05a0f44ff87f72209d97e51ab39f267743a83a85b85754084209e79ff19f",
+      "previous_hash": "7e4cd4cf4ec7ca7744b52249ba7463568ac7a34a485730a4412dcd8046582e96",
+      "sequence": 64,
+      "timestamp": "2026-09-28T05:32:06.004136+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "3429a1b91d17ce33969fed093dcd7c1e9c2e6dfb73d7c2c9b6dccbd66b838687",
+      "entity_id": "293e4dc2-3a3e-459a-8697-629fdc3e3551",
+      "entity_type": "research_cycle",
+      "event_type": "cycle_complete",
+      "payload": {
+        "aggregate": "REJECTED",
+        "cycle_number": 3,
+        "factor_hash": "00771dea66f67e3153815d84ed6f5e0c3722bcd63f26c8cfed1c28d638c27fb5",
+        "manifest_hash": "ea6b0dbfeb27d66a1c1cbfa1a75f306e299d5b7ff0a640eb57883c9790ad1b17",
+        "protocol_hash": "d91a2020851dd9f4d4d51b760c6c65d316433499a97bea3b9fbe7630e1247cb9",
+        "report_hash": "6d984894770f5cd2378889db12784741d9100eafaa7be63a8e4bbf15779c54ca",
+        "snapshot_hash": "2a5d05202d345546a26b2459f6247a13421f7225c4b6c725d44c99363529e275",
+        "trial_number": 3
+      },
+      "payload_hash": "7bc77cfd5832405f7271aa09fee55e9898ceb9e3d95918dbbc6178806c4df948",
+      "previous_hash": "6296da25e2715d74b6af348364350d603204d593c656819ce11ea46668f52a15",
+      "sequence": 65,
+      "timestamp": "2026-09-28T05:32:06.01423+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "0f9886f20e2afc49b849164d8fec7bb2acf6596e38bf810eec5de6609c7a9cd8",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "cycle_created",
+      "payload": {
+        "cycle_number": 4,
+        "protocol": "fdp-v1"
+      },
+      "payload_hash": "842eda303ca7f389eb6fd6f17715b586a0d03533bad1e83e05b80467ada0574c",
+      "previous_hash": "3429a1b91d17ce33969fed093dcd7c1e9c2e6dfb73d7c2c9b6dccbd66b838687",
+      "sequence": 66,
+      "timestamp": "2026-09-28T05:32:06.925835+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "c2d05c3273423b5575413364bd56421c14af6e002e98118402c8b48882484e58",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "snapshot_committed",
+      "payload": {
+        "latest": {
+          "RAAPLUSDT": 1790568000000,
+          "RAMDUSDT": 1790568000000,
+          "RAMZNUSDT": 1790568000000,
+          "RMETAUSDT": 1790568000000,
+          "RMSFTUSDT": 1790568000000,
+          "RNVDAUSDT": 1790568000000,
+          "RQQQUSDT": 1790568000000,
+          "RTSLAUSDT": 1790568000000
+        },
+        "snapshot_hash": "8aaa02dfb0f61c9a676290aeb851f2fabd8c7f4068c99577f58276830ca77b27"
+      },
+      "payload_hash": "7cc8e897fbe95871f18fbc250f1df94d3581926946771fb1f0c5b36931cdbf94",
+      "previous_hash": "0f9886f20e2afc49b849164d8fec7bb2acf6596e38bf810eec5de6609c7a9cd8",
+      "sequence": 67,
+      "timestamp": "2026-09-28T05:32:09.067647+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "d116ef663693ccf659d9b1e095e83c4c0cb246dbe73578a4997997c014eee389",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_request",
+      "payload": {
+        "prompt_hash": "9b1917379be2bca35a7a72cd708740f515ac0dc1760d33bda0360fa0d532c8e6",
+        "role": "proposer"
+      },
+      "payload_hash": "5edaf57c6338bb649fcf9ffa9e856c1feb70096a22f0f022d33d84a726d0c815",
+      "previous_hash": "c2d05c3273423b5575413364bd56421c14af6e002e98118402c8b48882484e58",
+      "sequence": 68,
+      "timestamp": "2026-09-28T05:32:09.091815+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "5415f5ef79c66b7fb34c510b242696373b2f7e482d6a31297f544eb40db5854f",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_response",
+      "payload": {
+        "response_hash": "fe8ad441633b6e78b84c07e927f485f80f9e3aacdc599c7638c40adedc71925f",
+        "role": "proposer",
+        "valid": true
+      },
+      "payload_hash": "632b4850709478789a7a4e0022e43b5f818c22dce08c109dd8679238abbf80cc",
+      "previous_hash": "d116ef663693ccf659d9b1e095e83c4c0cb246dbe73578a4997997c014eee389",
+      "sequence": 69,
+      "timestamp": "2026-09-28T05:32:33.832625+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "78f662eb8510e150cca44eaac025c8a00f4ee5aa6beab7d2adb43067a65f31b2",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "hypothesis_committed",
+      "payload": {
+        "canonical_hash": "6b401254e7aec8036506a5eaf595f3f88ae3c3755e6bffcd5413e5dd555ba5ec",
+        "duplicate": false,
+        "trial_number": 4
+      },
+      "payload_hash": "5026aeb471abea58d586cddd121ed3b526b918efe9cdafe31630cafcdd45f0d7",
+      "previous_hash": "5415f5ef79c66b7fb34c510b242696373b2f7e482d6a31297f544eb40db5854f",
+      "sequence": 70,
+      "timestamp": "2026-09-28T05:32:33.878821+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "f3a0199e3ec6552eb61095e66823d9cc9d150ff24eadcb4954b2ca1afc2d1a14",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "dsl_formalized",
+      "payload": {
+        "canonical_hash": "6b401254e7aec8036506a5eaf595f3f88ae3c3755e6bffcd5413e5dd555ba5ec"
+      },
+      "payload_hash": "624de7cd855a3c00bab535bb1e6c06eaf96affcb6b566a1015f18a8625dea619",
+      "previous_hash": "78f662eb8510e150cca44eaac025c8a00f4ee5aa6beab7d2adb43067a65f31b2",
+      "sequence": 71,
+      "timestamp": "2026-09-28T05:32:33.890612+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "953a63510f548d4c39b5dd3a34c227442b213df7bf5bae0c4b9c45172c044908",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "experiment_completed",
+      "payload": {
+        "experiment_id": "2883ddb9-19e2-4e0f-a0ba-0082e5afc0b4",
+        "report_hash": "3b4287258e11c50c4202fdea684bab306428d4229a38fcd1af166bfb8b198bbc"
+      },
+      "payload_hash": "bccd2b4caa87c9ce5b251de6dbf97d0bf69908d4422031d8b5235bb4dc974ef9",
+      "previous_hash": "f3a0199e3ec6552eb61095e66823d9cc9d150ff24eadcb4954b2ca1afc2d1a14",
+      "sequence": 72,
+      "timestamp": "2026-09-28T05:32:39.532107+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "0a6ada55e63acde4392772971cc4d3f253f6c7e5622470433d1e538f6a0e979c",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "2883ddb9-19e2-4e0f-a0ba-0082e5afc0b4",
+        "name": "Syntax",
+        "outcome": "PASS",
+        "reason": "Strict FactorSpec and safe AST validation passed."
+      },
+      "payload_hash": "49ee1df3f08d6ad0042285bd3a4e73910ff84238cfb24f7bdf78134d8f930709",
+      "previous_hash": "953a63510f548d4c39b5dd3a34c227442b213df7bf5bae0c4b9c45172c044908",
+      "sequence": 73,
+      "timestamp": "2026-09-28T05:32:39.542533+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "3c475f66d204b9e9cf15ab7f2e2814dc6f232b85e9966fb6e1b176fe837bd68b",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "2883ddb9-19e2-4e0f-a0ba-0082e5afc0b4",
+        "name": "Coverage",
+        "outcome": "PASS",
+        "reason": "117.9 certified calendar days and 2299 aligned closed bars."
+      },
+      "payload_hash": "0287a8b343ba256d3a7cbbda58f23f1c6f77a2bc30afac392747ee02e20cbddf",
+      "previous_hash": "0a6ada55e63acde4392772971cc4d3f253f6c7e5622470433d1e538f6a0e979c",
+      "sequence": 74,
+      "timestamp": "2026-09-28T05:32:39.552326+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "013cb3aa1392e892db6ce6b25deb8d8168ea846b9f27eab9589d1381e5fa8847",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "2883ddb9-19e2-4e0f-a0ba-0082e5afc0b4",
+        "name": "Point-in-time",
+        "outcome": "PASS",
+        "reason": "Only certified closed OHLC fields were used; volume remains disabled."
+      },
+      "payload_hash": "afb7f34a95a0bd64104780def5f0037723de5197df7c461511896871592d845f",
+      "previous_hash": "3c475f66d204b9e9cf15ab7f2e2814dc6f232b85e9966fb6e1b176fe837bd68b",
+      "sequence": 75,
+      "timestamp": "2026-09-28T05:32:39.562828+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "309fea5ab3a861491a35ea34a69c75c194654d2e3dfd116106fc561c509848cc",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "2883ddb9-19e2-4e0f-a0ba-0082e5afc0b4",
+        "name": "Mechanics",
+        "outcome": "PASS",
+        "reason": "Signals execute no earlier than the next aligned bar."
+      },
+      "payload_hash": "d51005befec2d4e567df1058ee7d6ffef3d50afd8a1f9e6c399b9dc0bb26211a",
+      "previous_hash": "013cb3aa1392e892db6ce6b25deb8d8168ea846b9f27eab9589d1381e5fa8847",
+      "sequence": 76,
+      "timestamp": "2026-09-28T05:32:39.572847+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "db2e785c0fb52f2a9e3a342f0187a76405ad3c1e63d9f3f54a899c1b6ce01af3",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "2883ddb9-19e2-4e0f-a0ba-0082e5afc0b4",
+        "name": "Costs",
+        "outcome": "FAIL",
+        "reason": "Net return after fee and slippage is 0.0000%."
+      },
+      "payload_hash": "564755d8c3c81f36b1e9ef65a441c69d0a853accfbd52e3d7d1e6b9a77d80997",
+      "previous_hash": "309fea5ab3a861491a35ea34a69c75c194654d2e3dfd116106fc561c509848cc",
+      "sequence": 77,
+      "timestamp": "2026-09-28T05:32:39.58303+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "6b7607dc5049ee770875ff85002747f003e39914ec5ac49b4a73e2a7a920eff5",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "2883ddb9-19e2-4e0f-a0ba-0082e5afc0b4",
+        "name": "OOS",
+        "outcome": "INCONCLUSIVE",
+        "reason": "0 OOS fills; net OOS return 0.0000%."
+      },
+      "payload_hash": "eb6731e76bab19649dfe87065b89a2739e6f97ceba535e923080b1f28ff2f215",
+      "previous_hash": "db2e785c0fb52f2a9e3a342f0187a76405ad3c1e63d9f3f54a899c1b6ce01af3",
+      "sequence": 78,
+      "timestamp": "2026-09-28T05:32:39.593549+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "4c9afbf108525a9a0c572a5f73b0b60e00b1e1180e024ccb54c28736c8a1d0e2",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "2883ddb9-19e2-4e0f-a0ba-0082e5afc0b4",
+        "name": "Stability",
+        "outcome": "INCONCLUSIVE",
+        "reason": "INCONCLUSIVE_NOT_IMPLEMENTED: full symbol/session replication is deferred; certification blocked."
+      },
+      "payload_hash": "c2019f59a7550a2e9f4b98db0dacaa52254a6c0ae68009c51d10b2271bdf2b2f",
+      "previous_hash": "6b7607dc5049ee770875ff85002747f003e39914ec5ac49b4a73e2a7a920eff5",
+      "sequence": 79,
+      "timestamp": "2026-09-28T05:32:39.604367+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "ce1830da94258b588c1514144f449476d54c138e50678273ff086200c52f7bc8",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "2883ddb9-19e2-4e0f-a0ba-0082e5afc0b4",
+        "name": "Permutation",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Insufficient independent trade returns."
+      },
+      "payload_hash": "2d01548ca4be3cc7872950e8d3f6b3d51590fef62daebc2a4bb347eb70ad90be",
+      "previous_hash": "4c9afbf108525a9a0c572a5f73b0b60e00b1e1180e024ccb54c28736c8a1d0e2",
+      "sequence": 80,
+      "timestamp": "2026-09-28T05:32:39.615648+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "155cae84dd2649e71d4ad78dd5acc6e349366ac99e65b1dcf8e155dfffd1a936",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "2883ddb9-19e2-4e0f-a0ba-0082e5afc0b4",
+        "name": "Multiple testing",
+        "outcome": "INCONCLUSIVE",
+        "reason": "INCONCLUSIVE_NOT_IMPLEMENTED: exact Deflated Sharpe is not claimed; certification blocked."
+      },
+      "payload_hash": "37ea4a8025f3f64b318208e8696b148bce7939c338fa825881f4668924b318c7",
+      "previous_hash": "ce1830da94258b588c1514144f449476d54c138e50678273ff086200c52f7bc8",
+      "sequence": 81,
+      "timestamp": "2026-09-28T05:32:39.626693+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "44671c2402fd73996ce58e737d5d7675a1fc093141b0110e576fb87221b30b5a",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "2883ddb9-19e2-4e0f-a0ba-0082e5afc0b4",
+        "name": "Baseline",
+        "outcome": "FAIL",
+        "reason": "Factor net 0.0000% versus same-window buy-and-hold 22.4283%."
+      },
+      "payload_hash": "0a9730a1729f4a65dbdca4157c5978e2c74d3445c928f0eb4084f2149d9edaec",
+      "previous_hash": "155cae84dd2649e71d4ad78dd5acc6e349366ac99e65b1dcf8e155dfffd1a936",
+      "sequence": 82,
+      "timestamp": "2026-09-28T05:32:39.637678+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "400d7d25cfe4a3ca3092a4d98dcfeb5a5d59da4b735844347484061c707825d8",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_request",
+      "payload": {
+        "prompt_hash": "d4b55ce4b10371b98ebcd2a8189ba9e5360b674543097a053a9b8f1b948a50a4",
+        "role": "lifecycle"
+      },
+      "payload_hash": "4c82c9dc0d0a1c05ac43aeb656f261621ce5119e705a8596251c6c9e2b4b5731",
+      "previous_hash": "44671c2402fd73996ce58e737d5d7675a1fc093141b0110e576fb87221b30b5a",
+      "sequence": 83,
+      "timestamp": "2026-09-28T05:32:39.659323+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "21a1586d23ca6e74fc3395b7108cb3e88636b5bc9bb8e4f9074b114569670d5b",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_response",
+      "payload": {
+        "response_hash": "ba3912d048020fe0b460f5877dbda5dc8cdcde24af4007b6552b47e89bce2482",
+        "role": "lifecycle",
+        "valid": true
+      },
+      "payload_hash": "6c8a249babd84f5f5517baa59f488773228da073c9cdba870f673da39fc5b85d",
+      "previous_hash": "400d7d25cfe4a3ca3092a4d98dcfeb5a5d59da4b735844347484061c707825d8",
+      "sequence": 84,
+      "timestamp": "2026-09-28T05:32:59.042989+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "fc7af5a18addc6de945589c19bd0764454cb5373f594990682bdfc9b87397c50",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "lifecycle_transition",
+      "payload": {
+        "qwen_action": "REVISE",
+        "to_state": "REJECTED"
+      },
+      "payload_hash": "b65c05a0f44ff87f72209d97e51ab39f267743a83a85b85754084209e79ff19f",
+      "previous_hash": "21a1586d23ca6e74fc3395b7108cb3e88636b5bc9bb8e4f9074b114569670d5b",
+      "sequence": 85,
+      "timestamp": "2026-09-28T05:33:01.802053+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "74aa388490fe765d013627a4766a6a1dec27dfefcae0b873a7fafbd1cd8b7fc2",
+      "entity_id": "a50c73d7-f69a-40b7-8882-376d4ecd94a2",
+      "entity_type": "research_cycle",
+      "event_type": "cycle_complete",
+      "payload": {
+        "aggregate": "REJECTED",
+        "cycle_number": 4,
+        "factor_hash": "6b401254e7aec8036506a5eaf595f3f88ae3c3755e6bffcd5413e5dd555ba5ec",
+        "manifest_hash": "83a22c3e5016f675bf54adca108e2ff212ce6fa579436f9dffe6f89420f9fca8",
+        "protocol_hash": "d91a2020851dd9f4d4d51b760c6c65d316433499a97bea3b9fbe7630e1247cb9",
+        "report_hash": "3b4287258e11c50c4202fdea684bab306428d4229a38fcd1af166bfb8b198bbc",
+        "snapshot_hash": "8aaa02dfb0f61c9a676290aeb851f2fabd8c7f4068c99577f58276830ca77b27",
+        "trial_number": 4
+      },
+      "payload_hash": "7ddc3852ac1e639e973db94eba042414426a1ff609021ec13997ccf05b59d66f",
+      "previous_hash": "fc7af5a18addc6de945589c19bd0764454cb5373f594990682bdfc9b87397c50",
+      "sequence": 86,
+      "timestamp": "2026-09-28T05:33:03.830274+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "5979f9cc2fc44ede49e3d44055a0d6222b2656a17d3f2ae837c4893cba67a5b1",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "cycle_created",
+      "payload": {
+        "cycle_number": 5,
+        "protocol": "fdp-v1"
+      },
+      "payload_hash": "aa5f42c53a4179165b54ca4bf8c35adbd6805199dc6a5e09e5f9a47c895f7982",
+      "previous_hash": "74aa388490fe765d013627a4766a6a1dec27dfefcae0b873a7fafbd1cd8b7fc2",
+      "sequence": 87,
+      "timestamp": "2026-09-28T05:33:05.40744+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "1331a0a68dbbfa0522d6eef7998321d4268f29ec61d42d7fc9a4e0a001adc74f",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "snapshot_committed",
+      "payload": {
+        "latest": {
+          "RAAPLUSDT": 1790568000000,
+          "RAMDUSDT": 1790568000000,
+          "RAMZNUSDT": 1790568000000,
+          "RMETAUSDT": 1790568000000,
+          "RMSFTUSDT": 1790568000000,
+          "RNVDAUSDT": 1790568000000,
+          "RQQQUSDT": 1790568000000,
+          "RTSLAUSDT": 1790568000000
+        },
+        "snapshot_hash": "1ed77649fe22765b953bea19f6995af5273ab653c106c18f84f6e70cd595843d"
+      },
+      "payload_hash": "4dd878e43e1d9416abba2ffdfe533cd75783c6b5851d235fb30ec18d2ca9935c",
+      "previous_hash": "5979f9cc2fc44ede49e3d44055a0d6222b2656a17d3f2ae837c4893cba67a5b1",
+      "sequence": 88,
+      "timestamp": "2026-09-28T05:33:08.58292+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "0b8272b75c75e5c5d7877b29b53da115e17450d9f287ea26ebd6f67db31f0f65",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_request",
+      "payload": {
+        "prompt_hash": "b852bb9ceefcb174a6210a2c5bae669202590fd7567f4ee7a0a63a0c04403b06",
+        "role": "proposer"
+      },
+      "payload_hash": "892177379ffcc780a2b0ca9e5501287b41b846d603976cf9a0ea9f39e42bb720",
+      "previous_hash": "1331a0a68dbbfa0522d6eef7998321d4268f29ec61d42d7fc9a4e0a001adc74f",
+      "sequence": 89,
+      "timestamp": "2026-09-28T05:33:08.621468+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "6aff7d5d3fdc5cfa815bbfbbbf6065d495c2bdc49de1fe4fe733f5b7d3a5c770",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_response",
+      "payload": {
+        "response_hash": "14ff57a3ea7b2a215eeb3824f294f4ad776679917a1885bee8af9b3555dcda63",
+        "role": "proposer",
+        "valid": true
+      },
+      "payload_hash": "5a7a59bbd526692ebd1f80deb5e2fa70ba2aec95fab4733e9cd78adbb7a1b110",
+      "previous_hash": "0b8272b75c75e5c5d7877b29b53da115e17450d9f287ea26ebd6f67db31f0f65",
+      "sequence": 90,
+      "timestamp": "2026-09-28T05:33:25.956275+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "b72a824c982bea8387ac8801fa1d1ddde2172285994b1b807c7815e873943345",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "hypothesis_committed",
+      "payload": {
+        "canonical_hash": "c38a839517937cd38c73e366816b7882827413156c014b4aecb748e2c31901b7",
+        "duplicate": false,
+        "trial_number": 5
+      },
+      "payload_hash": "64bcb7e0c1a4d7b84d86b8df3f44c004b49c135e6a1b6243f7962c4ef9d9e3b5",
+      "previous_hash": "6aff7d5d3fdc5cfa815bbfbbbf6065d495c2bdc49de1fe4fe733f5b7d3a5c770",
+      "sequence": 91,
+      "timestamp": "2026-09-28T05:33:26.010108+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "5fb561b9a95f49695cced804500f6a01a4c2bad5168e922ba1be3d2ca1ae867f",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "dsl_formalized",
+      "payload": {
+        "canonical_hash": "c38a839517937cd38c73e366816b7882827413156c014b4aecb748e2c31901b7"
+      },
+      "payload_hash": "d38bd35676b176806787eee4572f38ab760d908662d16b227bc28ebabdecb2c4",
+      "previous_hash": "b72a824c982bea8387ac8801fa1d1ddde2172285994b1b807c7815e873943345",
+      "sequence": 92,
+      "timestamp": "2026-09-28T05:33:26.028035+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "de2775e2b17d52f5376adfca36a30d73a96359ed063363635b2fbba583640b8d",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "experiment_completed",
+      "payload": {
+        "experiment_id": "cdf9d6db-720e-47d1-9df7-0263e7a93d2e",
+        "report_hash": "7328c7a4bd7b470a190e56cd78a2c83d9057c7fa46417955574fe9e503582e48"
+      },
+      "payload_hash": "63e059b8e8d65a7f6c65b517340072daaec537219d4ff48a0b37d9ecfaf78e2a",
+      "previous_hash": "5fb561b9a95f49695cced804500f6a01a4c2bad5168e922ba1be3d2ca1ae867f",
+      "sequence": 93,
+      "timestamp": "2026-09-28T05:33:30.88404+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "86e74b16fbf33d87009c63b25c64118f032a878965ffd0a09435d37d56c82e98",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "cdf9d6db-720e-47d1-9df7-0263e7a93d2e",
+        "name": "Syntax",
+        "outcome": "PASS",
+        "reason": "Strict FactorSpec and safe AST validation passed."
+      },
+      "payload_hash": "2b351b8b8fc480c0b8caaaca2274ac4e58b92c7e71b8968f3822672b34b6f29a",
+      "previous_hash": "de2775e2b17d52f5376adfca36a30d73a96359ed063363635b2fbba583640b8d",
+      "sequence": 94,
+      "timestamp": "2026-09-28T05:33:30.896033+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "9bed30faf3599d32033f4546c86e63735904eaf3396fa761542f3947b4921c3a",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "cdf9d6db-720e-47d1-9df7-0263e7a93d2e",
+        "name": "Coverage",
+        "outcome": "PASS",
+        "reason": "118.2 certified calendar days and 2271 aligned closed bars."
+      },
+      "payload_hash": "6df771527c0daa370e0c601db655191919267cd42f971a0a5760d4fb4c15e2b0",
+      "previous_hash": "86e74b16fbf33d87009c63b25c64118f032a878965ffd0a09435d37d56c82e98",
+      "sequence": 95,
+      "timestamp": "2026-09-28T05:33:30.906843+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "91c04541c36f885f57b9cb32af518af5af0985690f4b1d1fb6aaabb5ecd1506e",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "cdf9d6db-720e-47d1-9df7-0263e7a93d2e",
+        "name": "Point-in-time",
+        "outcome": "PASS",
+        "reason": "Only certified closed OHLC fields were used; volume remains disabled."
+      },
+      "payload_hash": "e30275969d721544957a05f4427d9b904140609b901b5648e2e7649515aa19bf",
+      "previous_hash": "9bed30faf3599d32033f4546c86e63735904eaf3396fa761542f3947b4921c3a",
+      "sequence": 96,
+      "timestamp": "2026-09-28T05:33:30.919658+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "c7046365f515a70aa723ea50abe6ae3e65379bb2582d72de2ce44541076d3676",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "cdf9d6db-720e-47d1-9df7-0263e7a93d2e",
+        "name": "Mechanics",
+        "outcome": "PASS",
+        "reason": "Signals execute no earlier than the next aligned bar."
+      },
+      "payload_hash": "54bb895542671323e95f7092cfe26bc3fb61249d84aed2c023007185e1fc71af",
+      "previous_hash": "91c04541c36f885f57b9cb32af518af5af0985690f4b1d1fb6aaabb5ecd1506e",
+      "sequence": 97,
+      "timestamp": "2026-09-28T05:33:30.931708+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "bb118603185386d20ccda1807438e74728acb1c1221edd401f2cff05f4aa2fef",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "cdf9d6db-720e-47d1-9df7-0263e7a93d2e",
+        "name": "Costs",
+        "outcome": "FAIL",
+        "reason": "Net return after fee and slippage is 0.0000%."
+      },
+      "payload_hash": "07f4db7f462fad41684e39140e7d1e308e327199cd158a54140b665643db5928",
+      "previous_hash": "c7046365f515a70aa723ea50abe6ae3e65379bb2582d72de2ce44541076d3676",
+      "sequence": 98,
+      "timestamp": "2026-09-28T05:33:30.943513+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "5010cf9856bf11bb13e150f1e9f50e05e493c5b97898783e0d5509f1d48dada7",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "cdf9d6db-720e-47d1-9df7-0263e7a93d2e",
+        "name": "OOS",
+        "outcome": "INCONCLUSIVE",
+        "reason": "0 OOS fills; net OOS return 0.0000%."
+      },
+      "payload_hash": "5f330104e6b987ee2c072c153f1be72acfb6d227f49a6191f54db1f1b78235d0",
+      "previous_hash": "bb118603185386d20ccda1807438e74728acb1c1221edd401f2cff05f4aa2fef",
+      "sequence": 99,
+      "timestamp": "2026-09-28T05:33:30.95436+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "9998dd12c7dacfb277afcf571f59673f9181465c289f4619ca8adc108bfdc269",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "cdf9d6db-720e-47d1-9df7-0263e7a93d2e",
+        "name": "Stability",
+        "outcome": "INCONCLUSIVE",
+        "reason": "INCONCLUSIVE_NOT_IMPLEMENTED: full symbol/session replication is deferred; certification blocked."
+      },
+      "payload_hash": "12143575175a2b916d51e39ee7749bb822410f73037084b64b07f24d75bf2a7b",
+      "previous_hash": "5010cf9856bf11bb13e150f1e9f50e05e493c5b97898783e0d5509f1d48dada7",
+      "sequence": 100,
+      "timestamp": "2026-09-28T05:33:30.965977+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "3fdd72a0780d5df26e099f3a5e3700faf7bc7929e6d1f56a668ead6b5daae62c",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "cdf9d6db-720e-47d1-9df7-0263e7a93d2e",
+        "name": "Permutation",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Insufficient independent trade returns."
+      },
+      "payload_hash": "1484d8b65ae9031c11f8d76a050442c96b95c970fb810a7715086a751d91dff7",
+      "previous_hash": "9998dd12c7dacfb277afcf571f59673f9181465c289f4619ca8adc108bfdc269",
+      "sequence": 101,
+      "timestamp": "2026-09-28T05:33:30.97849+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "f1b0b23c59245bf05d18da9a42913ee19502cf27befec6b3500b562d58ea0595",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "cdf9d6db-720e-47d1-9df7-0263e7a93d2e",
+        "name": "Multiple testing",
+        "outcome": "INCONCLUSIVE",
+        "reason": "INCONCLUSIVE_NOT_IMPLEMENTED: exact Deflated Sharpe is not claimed; certification blocked."
+      },
+      "payload_hash": "8637a4c0ab82b79556b2c12c09aa3fbb6ee0214131c2d2d7d9f6fd228caf0ad7",
+      "previous_hash": "3fdd72a0780d5df26e099f3a5e3700faf7bc7929e6d1f56a668ead6b5daae62c",
+      "sequence": 102,
+      "timestamp": "2026-09-28T05:33:30.989049+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "01fad6af5e080b71665cb61266d8f4206ee79b55b857725f839d0750e8051bb1",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "gate_result",
+      "payload": {
+        "experiment_id": "cdf9d6db-720e-47d1-9df7-0263e7a93d2e",
+        "name": "Baseline",
+        "outcome": "FAIL",
+        "reason": "Factor net 0.0000% versus same-window buy-and-hold 14.1122%."
+      },
+      "payload_hash": "2d24df94ce69896396a54bc7e40135efbc55e742849c9ac59fa51a7275ec4c63",
+      "previous_hash": "f1b0b23c59245bf05d18da9a42913ee19502cf27befec6b3500b562d58ea0595",
+      "sequence": 103,
+      "timestamp": "2026-09-28T05:33:31.000543+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "bedbd73bd92dc64943a867123e9a72b001919492da00eb200df6cd52a854b7e3",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_request",
+      "payload": {
+        "prompt_hash": "0c44f6bbb5dbcb56ee0b25974ece86542c8b636e883e1e05460e743622db5f64",
+        "role": "lifecycle"
+      },
+      "payload_hash": "2107103da313913c0052e3248638729b0f5a3aa83903a500916148b9ab43f3d7",
+      "previous_hash": "01fad6af5e080b71665cb61266d8f4206ee79b55b857725f839d0750e8051bb1",
+      "sequence": 104,
+      "timestamp": "2026-09-28T05:33:31.021687+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "b0d63af9f842f32f12705c209e95c6ad8dcbae47001c9fca7ba91aded4cc2744",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "qwen_response",
+      "payload": {
+        "response_hash": "3c4ebe8d6db73b9d012d367c7324c1a54a0b2f63c08f2f69e98a05f47c58e4ff",
+        "role": "lifecycle",
+        "valid": true
+      },
+      "payload_hash": "032f62a489c1a9758e4f02f44d29cf74c099eb0fc149998681740967ad6a4824",
+      "previous_hash": "bedbd73bd92dc64943a867123e9a72b001919492da00eb200df6cd52a854b7e3",
+      "sequence": 105,
+      "timestamp": "2026-09-28T05:33:54.814177+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "5f2abd7deed003f89e255f2fd3876bb1dd6682c1c48b4711cae9297bac1f6ac3",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "lifecycle_transition",
+      "payload": {
+        "qwen_action": "ABANDON",
+        "to_state": "REJECTED"
+      },
+      "payload_hash": "9cb4c1a5a97af898f4d4ab2ce427463f617c18faa22d87a47d546808058086f1",
+      "previous_hash": "b0d63af9f842f32f12705c209e95c6ad8dcbae47001c9fca7ba91aded4cc2744",
+      "sequence": 106,
+      "timestamp": "2026-09-28T05:33:54.840605+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "6b4362e6a48a8794ab3c7c6783286ccc7c008f30aa35798c05b7c7eae03b3252",
+      "entity_id": "b7ad03fa-20c5-4aa6-852b-d3b735fb40e0",
+      "entity_type": "research_cycle",
+      "event_type": "cycle_complete",
+      "payload": {
+        "aggregate": "REJECTED",
+        "cycle_number": 5,
+        "factor_hash": "c38a839517937cd38c73e366816b7882827413156c014b4aecb748e2c31901b7",
+        "manifest_hash": "357c384dbd545e3c3900c96d8d1328cf2899df985a53819568098a01166a1ec2",
+        "protocol_hash": "d91a2020851dd9f4d4d51b760c6c65d316433499a97bea3b9fbe7630e1247cb9",
+        "report_hash": "7328c7a4bd7b470a190e56cd78a2c83d9057c7fa46417955574fe9e503582e48",
+        "snapshot_hash": "1ed77649fe22765b953bea19f6995af5273ab653c106c18f84f6e70cd595843d",
+        "trial_number": 5
+      },
+      "payload_hash": "6d44ff8e26650f4da9afaf86820a5ec87139d858bde4fd5cc3ed91559b165265",
+      "previous_hash": "5f2abd7deed003f89e255f2fd3876bb1dd6682c1c48b4711cae9297bac1f6ac3",
+      "sequence": 107,
+      "timestamp": "2026-09-28T05:33:54.850715+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "ac5eee6f604928a1d917ca65279c58e133f53b4eef6f578b7e69be67d49fc36a",
+      "entity_id": null,
+      "entity_type": "research_protocol",
+      "event_type": "PHASE3_METHODS_FROZEN",
+      "payload": {
+        "method_version": "phase3-evidence-v1",
+        "methods_hash": "6fa6257429e9a7f5af0ae9092fd94d6b8d6fa2d159c08c209d3a74100b9e9f69",
+        "protocol": "fdp-v1",
+        "qwen_attempts_at_freeze": 11
+      },
+      "payload_hash": "4a3516797fe04c96a5b2d656024904b3a4049deb92bb1ec74ae7bfef94bfac3e",
+      "previous_hash": "6b4362e6a48a8794ab3c7c6783286ccc7c008f30aa35798c05b7c7eae03b3252",
+      "sequence": 108,
+      "timestamp": "2026-09-28T05:54:56.951478+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "540367b13a23ffcb6de9d35e796b8dac6b8a592202d0917fde4e9bf2c8b5e55c",
+      "entity_id": null,
+      "entity_type": "research_protocol",
+      "event_type": "PHASE3_REPLAY_ABORTED",
+      "payload": {
+        "detail": "Phase-2 recent-candle merge extends beyond committed raw history; no replay result was produced.",
+        "error_code": "PHASE2_NORMALIZED_DATASET_NOT_PERSISTED",
+        "method_version": "phase3-evidence-v1",
+        "methods_hash": "6fa6257429e9a7f5af0ae9092fd94d6b8d6fa2d159c08c209d3a74100b9e9f69"
+      },
+      "payload_hash": "fcbbfc13f953640a27d0fdaf03c55335fcedb143f6f0b377f435fd2f29060540",
+      "previous_hash": "ac5eee6f604928a1d917ca65279c58e133f53b4eef6f578b7e69be67d49fc36a",
+      "sequence": 109,
+      "timestamp": "2026-09-28T05:56:12.721839+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "90675f1f3a81819487b5a7474dc4fdac0cb40ff5f196d96199b5060f4e5a2da4",
+      "entity_id": null,
+      "entity_type": "research_protocol",
+      "event_type": "PHASE3_METHODS_FROZEN",
+      "payload": {
+        "method_version": "phase3-evidence-v2",
+        "methods_hash": "ca0a099f96982ef0db045577247c8506103318f35ac8a80c92b5b88956f3f50a",
+        "protocol": "fdp-v1",
+        "qwen_attempts_at_freeze": 11,
+        "supersedes": {
+          "method_version": "phase3-evidence-v1",
+          "methods_hash": "6fa6257429e9a7f5af0ae9092fd94d6b8d6fa2d159c08c209d3a74100b9e9f69",
+          "reason": "No replay result was produced because the exact Phase-2 normalized candle merge was not persisted. Statistical methods and thresholds are unchanged."
+        }
+      },
+      "payload_hash": "753c89fb79f7f0b5610be126336d0cb776f71ed190679d67a1f3f96ae8828d3d",
+      "previous_hash": "540367b13a23ffcb6de9d35e796b8dac6b8a592202d0917fde4e9bf2c8b5e55c",
+      "sequence": 110,
+      "timestamp": "2026-09-28T05:57:48.941157+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "d5208b227e8f2588fb5bb392af72068d72058a012688154c779c361166ee3eab",
+      "entity_id": null,
+      "entity_type": "research_protocol",
+      "event_type": "PHASE3_REPLAY_ABORTED",
+      "payload": {
+        "detail": "Trailing punctuation was included in a diagnostic p-value parse; no replay artifact or factor event was written.",
+        "error_code": "PERMUTATION_REASON_PARSE_ERROR",
+        "method_version": "phase3-evidence-v2",
+        "methods_hash": "ca0a099f96982ef0db045577247c8506103318f35ac8a80c92b5b88956f3f50a"
+      },
+      "payload_hash": "d7b561b114d2de6fec69cf2e2959630830c682dce9e67451a98f7e4c4f7073f5",
+      "previous_hash": "90675f1f3a81819487b5a7474dc4fdac0cb40ff5f196d96199b5060f4e5a2da4",
+      "sequence": 111,
+      "timestamp": "2026-09-28T05:58:34.547058+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "4755f8a29a89769c451ff3e0c013f5fc04ea2657a10fb73daa33a7c1e854f063",
+      "entity_id": null,
+      "entity_type": "research_protocol",
+      "event_type": "PHASE3_METHODS_FROZEN",
+      "payload": {
+        "method_version": "phase3-evidence-v3",
+        "methods_hash": "4cadae3586196b315836f26651085ec73249e7ed6c6a086b5b69b676afe604ce",
+        "protocol": "fdp-v1",
+        "qwen_attempts_at_freeze": 11,
+        "supersedes": {
+          "method_version": "phase3-evidence-v2",
+          "reason": "No replay result was produced because a diagnostic parser included trailing punctuation in a persisted permutation p-value. The parser was corrected; statistical methods and thresholds are unchanged."
+        }
+      },
+      "payload_hash": "476d057b9e04ecdd7e1e86c41baee737dadfa9c3d027f29c3f038887e2c2881c",
+      "previous_hash": "d5208b227e8f2588fb5bb392af72068d72058a012688154c779c361166ee3eab",
+      "sequence": 112,
+      "timestamp": "2026-09-28T05:59:14.855883+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "415af504d824a6ebe81787c113582fc4b1af8be908f85dd25fa13780dcc60adb",
+      "entity_id": null,
+      "entity_type": "factor_version",
+      "event_type": "PHASE3_FACTOR_REPLAYED",
+      "payload": {
+        "diagnostic_only": true,
+        "methods_hash": "4cadae3586196b315836f26651085ec73249e7ed6c6a086b5b69b676afe604ce",
+        "result_hash": "606bf7a19790c0990a2c401d4ed558af30d2f7122a55586b554563b7b5c01d3a",
+        "trial_number": 1
+      },
+      "payload_hash": "43e99ff80e48af67c9a99fd9e59ba348fa8b44ee5aa9515e80ba2ad0e8bbedf9",
+      "previous_hash": "4755f8a29a89769c451ff3e0c013f5fc04ea2657a10fb73daa33a7c1e854f063",
+      "sequence": 113,
+      "timestamp": "2026-09-28T05:59:31.023711+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "e7467594589e153c5daf9af406df9f060467a3f283474257e38c4dc3939de48c",
+      "entity_id": null,
+      "entity_type": "factor_version",
+      "event_type": "PHASE3_FACTOR_REPLAYED",
+      "payload": {
+        "diagnostic_only": true,
+        "methods_hash": "4cadae3586196b315836f26651085ec73249e7ed6c6a086b5b69b676afe604ce",
+        "result_hash": "213b549aff29cd7c37ae076ca36d44a240831725744363e1b949ac13be7130d5",
+        "trial_number": 2
+      },
+      "payload_hash": "8fd5d5bf73714a55ad15bd341c170c6492735c0789541c5b2461421cd0dfd3f5",
+      "previous_hash": "415af504d824a6ebe81787c113582fc4b1af8be908f85dd25fa13780dcc60adb",
+      "sequence": 114,
+      "timestamp": "2026-09-28T05:59:31.048031+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "95bb5c4ca876c96bb74726a5d2504c786e80cddc54983bc6f70c58e84e2b6440",
+      "entity_id": null,
+      "entity_type": "factor_version",
+      "event_type": "PHASE3_FACTOR_REPLAYED",
+      "payload": {
+        "diagnostic_only": true,
+        "methods_hash": "4cadae3586196b315836f26651085ec73249e7ed6c6a086b5b69b676afe604ce",
+        "result_hash": "a1a7952ddb871661078e54ad6555fe27ba0355c0eac3f2669d9132fe351c5da8",
+        "trial_number": 3
+      },
+      "payload_hash": "b1d3c3155471e88ada0578e72768aa53c2f51a997948620b0409fd86b1471dcc",
+      "previous_hash": "e7467594589e153c5daf9af406df9f060467a3f283474257e38c4dc3939de48c",
+      "sequence": 115,
+      "timestamp": "2026-09-28T05:59:31.072583+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "28d812526dfafe91b268eaa4574cf959403e2ba150b865d878ea8a591a4af738",
+      "entity_id": null,
+      "entity_type": "factor_version",
+      "event_type": "PHASE3_FACTOR_REPLAYED",
+      "payload": {
+        "diagnostic_only": true,
+        "methods_hash": "4cadae3586196b315836f26651085ec73249e7ed6c6a086b5b69b676afe604ce",
+        "result_hash": "bd0e692e8aaea5ff2032732a89c7ebe1c27cb96077e6f783635d6900534b0a43",
+        "trial_number": 4
+      },
+      "payload_hash": "d7dc25ebcd03d9cded59701edd2b34e1a061ecc49793307e3d48b21eeeda4ef5",
+      "previous_hash": "95bb5c4ca876c96bb74726a5d2504c786e80cddc54983bc6f70c58e84e2b6440",
+      "sequence": 116,
+      "timestamp": "2026-09-28T05:59:31.094097+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "f0671cd31f511542d12d1f64e105601672a06d6830233fd8ff88aa208462b0f6",
+      "entity_id": null,
+      "entity_type": "factor_version",
+      "event_type": "PHASE3_FACTOR_REPLAYED",
+      "payload": {
+        "diagnostic_only": true,
+        "methods_hash": "4cadae3586196b315836f26651085ec73249e7ed6c6a086b5b69b676afe604ce",
+        "result_hash": "faf53c890f39f70179600a6f12138a614bc00f7c2eae3d26ba26c14ffcf754ef",
+        "trial_number": 5
+      },
+      "payload_hash": "f3fc51b37f36e5fcf2b373a084311490ad29df45e906547723f7adc819204dfc",
+      "previous_hash": "28d812526dfafe91b268eaa4574cf959403e2ba150b865d878ea8a591a4af738",
+      "sequence": 117,
+      "timestamp": "2026-09-28T05:59:31.12198+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "9b004c8217623c72a9cb1098614b4743f5ee807b2b326ac38cfee483d7faa1fa",
+      "entity_id": null,
+      "entity_type": "research_protocol",
+      "event_type": "PHASE3_REPLAY_COMPLETE",
+      "payload": {
+        "factor_count": 5,
+        "methods_hash": "4cadae3586196b315836f26651085ec73249e7ed6c6a086b5b69b676afe604ce",
+        "qwen_http_attempts": 0,
+        "summary_hash": "fe28c0ef2c9146d0142c60e519b02bd83f91772aeb88c2e0114769515142110e"
+      },
+      "payload_hash": "07805ef7dd777e830468709e5951b8b946e1fd0371b483e8fc7cb035969baf81",
+      "previous_hash": "f0671cd31f511542d12d1f64e105601672a06d6830233fd8ff88aa208462b0f6",
+      "sequence": 118,
+      "timestamp": "2026-09-28T05:59:31.146321+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "9605a98d41f7456c8cdb680f791958c9b4014cb81a26f99633654f13d0bc073d",
+      "entity_id": "c20bc013-5cf7-4e3d-8d39-12ce37ced528",
+      "entity_type": "research_program",
+      "event_type": "TARGETED_BATCH_PLAN_FROZEN",
+      "payload": {
+        "plan_hash": "8bc4a3924b835ce01933efcfb10867557f1c41747782b7833e8ec5cef3e33e5a",
+        "protocol_id": "b0c54029-bb8c-48d6-ad88-97e5b78cdb23",
+        "search_n": 5,
+        "search_program_id": "rtoken-session-alpha-v1"
+      },
+      "payload_hash": "2d66aff4030c96e9bcf1563ee245fb638faf85eb7390a5f10c33b20349c6cde0",
+      "previous_hash": "9b004c8217623c72a9cb1098614b4743f5ee807b2b326ac38cfee483d7faa1fa",
+      "sequence": 119,
+      "timestamp": "2026-09-28T06:33:41.266067+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "9b37802d588f33c86f2590c9177006b5d7ba25f5e7f8152e8de92c3546078b32",
+      "entity_id": "fa2617d0-2fba-4b1f-aede-418a57cbbb4e",
+      "entity_type": "research_cycle",
+      "event_type": "TARGETED_QWEN_REQUEST",
+      "payload": {
+        "prompt_hash": "5e57cc2d9d5e86b40f201ddd685d0129e84486499910ebc8fac647fe6ae336b7",
+        "role": "proposer",
+        "slot": "A"
+      },
+      "payload_hash": "17249a91a1abb1111cd547c3d25fd97ee4b33fecd3873b08cc97e348ed80b426",
+      "previous_hash": "9605a98d41f7456c8cdb680f791958c9b4014cb81a26f99633654f13d0bc073d",
+      "sequence": 120,
+      "timestamp": "2026-09-28T06:35:25.549881+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "4e61a36501a6ab393c22461a8114744c00979cedfa79445b5360c578310e15f8",
+      "entity_id": "fa2617d0-2fba-4b1f-aede-418a57cbbb4e",
+      "entity_type": "research_cycle",
+      "event_type": "TARGETED_QWEN_RESPONSE",
+      "payload": {
+        "attempts": 2,
+        "response_hash": "3a0a7bb301b7e739e81ca1b13eed2f703ccc54e16af2dd0d8f0afac8554aa851",
+        "role": "proposer",
+        "slot": "A",
+        "valid": false
+      },
+      "payload_hash": "2e0f2064169cfb31759acb3b1a10a197e8e0fa9c0550c74b56770bf7d7ff3fbb",
+      "previous_hash": "9b37802d588f33c86f2590c9177006b5d7ba25f5e7f8152e8de92c3546078b32",
+      "sequence": 121,
+      "timestamp": "2026-09-28T06:38:40.500775+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "3df0e3fcfd95dcfec38b25823cc915bc0554a0eb576ad794c67f6e766509a73f",
+      "entity_id": "72f229e9-a92b-4a52-ac2c-7176e113d9bd",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_HYPOTHESIS_COMMITTED",
+      "payload": {
+        "canonical_hash": "3a0a7bb301b7e739e81ca1b13eed2f703ccc54e16af2dd0d8f0afac8554aa851",
+        "search_n": 6,
+        "slot": "A",
+        "trial_number": 6
+      },
+      "payload_hash": "4324486144cf001a752f75cffe3ce5a81f3833311f42ce4a3be4ca8f55cdd0d9",
+      "previous_hash": "4e61a36501a6ab393c22461a8114744c00979cedfa79445b5360c578310e15f8",
+      "sequence": 122,
+      "timestamp": "2026-09-28T06:38:40.658577+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "8c84f5ce5399a41564846caf42034477c65760ced2a527ef8b1e455c21a712e3",
+      "entity_id": "6c658b80-556a-4f2d-963d-2b6d1c02de95",
+      "entity_type": "research_cycle",
+      "event_type": "TARGETED_QWEN_REQUEST",
+      "payload": {
+        "prompt_hash": "173a79c9a9086c9db665843d586a2c1de4a4fe18c29475977e5ff00ab43e4c6c",
+        "role": "proposer",
+        "slot": "B"
+      },
+      "payload_hash": "e0489ddb0cc6d06ab93802354d06308073cc1b46d6c4eda0b558d0afa2c7dae1",
+      "previous_hash": "3df0e3fcfd95dcfec38b25823cc915bc0554a0eb576ad794c67f6e766509a73f",
+      "sequence": 123,
+      "timestamp": "2026-09-28T06:38:40.88091+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "146eafeb71e284ae455c74e9559a2651e3e32d307232b7a6637f458dd6e0fe32",
+      "entity_id": "6c658b80-556a-4f2d-963d-2b6d1c02de95",
+      "entity_type": "research_cycle",
+      "event_type": "TARGETED_QWEN_RESPONSE",
+      "payload": {
+        "attempts": 2,
+        "response_hash": "4151a1430e7fa8f72e1075188f1ce270756aac75d71b4eb7202c292eda83644b",
+        "role": "proposer",
+        "slot": "B",
+        "valid": false
+      },
+      "payload_hash": "9cbb63371805178ee1932d7f955c415063b2f994cf3d53afab7d7b5391df4339",
+      "previous_hash": "8c84f5ce5399a41564846caf42034477c65760ced2a527ef8b1e455c21a712e3",
+      "sequence": 124,
+      "timestamp": "2026-09-28T06:40:56.805473+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "e7e1ddd786be9db3dd41aad06a488bd84edc9d0cffe07a07a6aa45451a87f260",
+      "entity_id": "068bce8a-7266-4325-8c16-ef4cc9b9f10e",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_HYPOTHESIS_COMMITTED",
+      "payload": {
+        "canonical_hash": "4151a1430e7fa8f72e1075188f1ce270756aac75d71b4eb7202c292eda83644b",
+        "search_n": 7,
+        "slot": "B",
+        "trial_number": 7
+      },
+      "payload_hash": "f1a3b40e792691f87ee0b41ccf2df8f1fa859d378a8c61cc1a54b2fe40707daf",
+      "previous_hash": "146eafeb71e284ae455c74e9559a2651e3e32d307232b7a6637f458dd6e0fe32",
+      "sequence": 125,
+      "timestamp": "2026-09-28T06:40:56.951425+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "d3800fff666d34228ffb34efbb783a27d7ed209e1fcf5ba45eb4cad18c6c4d6a",
+      "entity_id": "72f229e9-a92b-4a52-ac2c-7176e113d9bd",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Syntax",
+        "outcome": "FAIL",
+        "reason": "REJECTED_STRUCTURAL_MODEL_OUTPUT,7 validation errors for FactorProposalV2\nsignal.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nsignal.args.0.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.1\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.0.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.1.args.0\n  Value error, source requires symbol and field, with no args [type=value_error, input_value={'op': 'source', 'symbol'... None, 'sessions': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+        "slot": "A",
+        "trial_number": 6
+      },
+      "payload_hash": "fae2640743195445a836aa2435a092b9cc488fd891b237f29b1d238d25e9ac5b",
+      "previous_hash": "e7e1ddd786be9db3dd41aad06a488bd84edc9d0cffe07a07a6aa45451a87f260",
+      "sequence": 126,
+      "timestamp": "2026-09-28T09:11:23.728014+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "0a14f879f98c54cc437e61ad39eb25f3cdd6e3162705ce0388d9213e3f5af97a",
+      "entity_id": "72f229e9-a92b-4a52-ac2c-7176e113d9bd",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Coverage",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "A",
+        "trial_number": 6
+      },
+      "payload_hash": "43f151fd6203e353a43a4b946593a928bcc20ee52f15c4cfc4f6e5361230204e",
+      "previous_hash": "d3800fff666d34228ffb34efbb783a27d7ed209e1fcf5ba45eb4cad18c6c4d6a",
+      "sequence": 127,
+      "timestamp": "2026-09-28T09:11:23.744155+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "0ec1c0bc358be268d493e8993c544368ae17adccd627760485407f0c5b93df64",
+      "entity_id": "72f229e9-a92b-4a52-ac2c-7176e113d9bd",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Point-in-time",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "A",
+        "trial_number": 6
+      },
+      "payload_hash": "33260ffec83a5edbda25c2f4aa5649a71f1fa96cb1ccfc0d2bc36cd5871e9b05",
+      "previous_hash": "0a14f879f98c54cc437e61ad39eb25f3cdd6e3162705ce0388d9213e3f5af97a",
+      "sequence": 128,
+      "timestamp": "2026-09-28T09:11:23.756932+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "85c030cc9115b5a1f2446a2c1421f19ab1b89d5c1441dfb208f4fcfd900459a8",
+      "entity_id": "72f229e9-a92b-4a52-ac2c-7176e113d9bd",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Mechanics",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "A",
+        "trial_number": 6
+      },
+      "payload_hash": "d329d4b5f637233b2b68f9eca4e58700491af76ec0f1cf78b425bd6075b2f526",
+      "previous_hash": "0ec1c0bc358be268d493e8993c544368ae17adccd627760485407f0c5b93df64",
+      "sequence": 129,
+      "timestamp": "2026-09-28T09:11:23.769321+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "db0f7f42cba6a94fd63d74b943af78d9de01a8c8ba8a955231284e06b4ee9fcf",
+      "entity_id": "72f229e9-a92b-4a52-ac2c-7176e113d9bd",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Costs",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "A",
+        "trial_number": 6
+      },
+      "payload_hash": "8785593a10a7b5994584eb15c1636b514753226c6ec6b5e5bd5ffad0170ffafb",
+      "previous_hash": "85c030cc9115b5a1f2446a2c1421f19ab1b89d5c1441dfb208f4fcfd900459a8",
+      "sequence": 130,
+      "timestamp": "2026-09-28T09:11:23.786359+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "7a2d5be55f39d305eba2cb8bbe2a0bf2ff1155c1890d62fa4db918c41f62fa8e",
+      "entity_id": "72f229e9-a92b-4a52-ac2c-7176e113d9bd",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "OOS",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "A",
+        "trial_number": 6
+      },
+      "payload_hash": "6fc58cd159e78cd6c32c78869402a3a7582cefaa2f49a89816cbbaf60b8ee937",
+      "previous_hash": "db0f7f42cba6a94fd63d74b943af78d9de01a8c8ba8a955231284e06b4ee9fcf",
+      "sequence": 131,
+      "timestamp": "2026-09-28T09:11:23.801765+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "3adb911fd85441467bea49fc287eb7322c79585b2f9da8b7e8ab952f378b92c5",
+      "entity_id": "72f229e9-a92b-4a52-ac2c-7176e113d9bd",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Stability",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "A",
+        "trial_number": 6
+      },
+      "payload_hash": "464361d6b19899ffff028d6647204bfb581db708ab765700f6ecc32995129109",
+      "previous_hash": "7a2d5be55f39d305eba2cb8bbe2a0bf2ff1155c1890d62fa4db918c41f62fa8e",
+      "sequence": 132,
+      "timestamp": "2026-09-28T09:11:23.816165+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "1d3f0734ae8b37fb08b46893811e08b287a9ef8c00dbf65c03a0106919fe43be",
+      "entity_id": "72f229e9-a92b-4a52-ac2c-7176e113d9bd",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Permutation",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "A",
+        "trial_number": 6
+      },
+      "payload_hash": "d811a804ccd05a2ab12786b9de33ee51fe49c67aa72af2dece9b3e3cf83f31c3",
+      "previous_hash": "3adb911fd85441467bea49fc287eb7322c79585b2f9da8b7e8ab952f378b92c5",
+      "sequence": 133,
+      "timestamp": "2026-09-28T09:11:23.832032+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "8e0e8ab66220dd2fb476abee4db10aa6a9f2d402fec4fb51a19c1ded24d36da2",
+      "entity_id": "72f229e9-a92b-4a52-ac2c-7176e113d9bd",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Multiple testing",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "A",
+        "trial_number": 6
+      },
+      "payload_hash": "e096e878c1dc2dc8108014c946784fe3b88cf925967b966a6df39fdd3fe7ef2a",
+      "previous_hash": "1d3f0734ae8b37fb08b46893811e08b287a9ef8c00dbf65c03a0106919fe43be",
+      "sequence": 134,
+      "timestamp": "2026-09-28T09:11:23.851694+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "e7fb4538a548f924f456f808938eb9b6a9dbf27d0728879777add2144c381a77",
+      "entity_id": "72f229e9-a92b-4a52-ac2c-7176e113d9bd",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Baseline",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "A",
+        "trial_number": 6
+      },
+      "payload_hash": "c37b6a5822e8dd8797ceb5730804a382d58325acfa3b97c509cc8f8a0a980279",
+      "previous_hash": "8e0e8ab66220dd2fb476abee4db10aa6a9f2d402fec4fb51a19c1ded24d36da2",
+      "sequence": 135,
+      "timestamp": "2026-09-28T09:11:23.868963+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "771ead0faab659082c3ee500b178d1f9ec2488bc1db7e181ec7c85ce01a2def4",
+      "entity_id": "fa2617d0-2fba-4b1f-aede-418a57cbbb4e",
+      "entity_type": "research_cycle",
+      "event_type": "TARGETED_CYCLE_COMPLETE",
+      "payload": {
+        "aggregate": "REJECTED",
+        "automatic_revision_child": false,
+        "factor_hash": "3a0a7bb301b7e739e81ca1b13eed2f703ccc54e16af2dd0d8f0afac8554aa851",
+        "lifecycle_call": "BLOCKED_BUDGET",
+        "manifest_hash": "a6431ae03ee867ab601d13f14ffd9b47a2d9f750924fa1c0a0facfa1dc921986",
+        "protocol_hash": "42fdd630f01da9a2efef2435b1e69ea4b7c3f0407cacb5f8874b431d368092ca",
+        "report_hash": "35b0e53ad13c78e6c914cfc164708ea2591021ea07ffac51120dd45cac835700",
+        "search_n": 7,
+        "slot": "A",
+        "trial_number": 6
+      },
+      "payload_hash": "06a19ab2cc865379ee4c82c910ec32a6abeaf820d6ef5fe072aa9135b2240318",
+      "previous_hash": "e7fb4538a548f924f456f808938eb9b6a9dbf27d0728879777add2144c381a77",
+      "sequence": 136,
+      "timestamp": "2026-09-28T09:11:23.904541+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "5a8fe5be6c559ca0beeb91408424a57bedeaf8b66ae44979760fbdd0007564e8",
+      "entity_id": "068bce8a-7266-4325-8c16-ef4cc9b9f10e",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Syntax",
+        "outcome": "FAIL",
+        "reason": "REJECTED_STRUCTURAL_MODEL_OUTPUT,3 validation errors for FactorProposalV2\nsignal\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nentry_condition.args.0.args.0\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error\nexit_condition.args.0.args.0\n  Value error, dispersion requires at least three cross-sectional arguments [type=value_error, input_value={'op': 'dispersion', 'arg...ck': 6}], 'lookback': 6}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+        "slot": "B",
+        "trial_number": 7
+      },
+      "payload_hash": "ef34335cb5e09a38f0bdcfdd44336f8d0a818852df0972969a524a3f906ca014",
+      "previous_hash": "771ead0faab659082c3ee500b178d1f9ec2488bc1db7e181ec7c85ce01a2def4",
+      "sequence": 137,
+      "timestamp": "2026-09-28T09:11:24.008193+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "b985a1be91bae61462222bb116c11bd476f83794eed7d84cb18f2e9d42e9d12c",
+      "entity_id": "068bce8a-7266-4325-8c16-ef4cc9b9f10e",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Coverage",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 7
+      },
+      "payload_hash": "c3e835fa99823e4490012eec5db679ddce689644e9cd88e732b2a44653c5b7fd",
+      "previous_hash": "5a8fe5be6c559ca0beeb91408424a57bedeaf8b66ae44979760fbdd0007564e8",
+      "sequence": 138,
+      "timestamp": "2026-09-28T09:11:24.022706+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "0088634889a03efadc520fc91123480f446b89dcda75921bfcf7ccfa2363c074",
+      "entity_id": "068bce8a-7266-4325-8c16-ef4cc9b9f10e",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Point-in-time",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 7
+      },
+      "payload_hash": "bc988b972b367ba36ef9e6154df580c8f57bcbbbbf1a2e009f54a87e96c7ff8d",
+      "previous_hash": "b985a1be91bae61462222bb116c11bd476f83794eed7d84cb18f2e9d42e9d12c",
+      "sequence": 139,
+      "timestamp": "2026-09-28T09:11:24.036952+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "b5aaebe4369a620a1a0e9378babe77badf603ad61430d76c2eeb3c96a47c4061",
+      "entity_id": "068bce8a-7266-4325-8c16-ef4cc9b9f10e",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Mechanics",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 7
+      },
+      "payload_hash": "c36ce06a69ce6f436832e707f59eb1056fb285bb26955c0f3aafa9b128c3767e",
+      "previous_hash": "0088634889a03efadc520fc91123480f446b89dcda75921bfcf7ccfa2363c074",
+      "sequence": 140,
+      "timestamp": "2026-09-28T09:11:24.051194+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "b71df1d74f538cd2f497c0bb4e6b8a76692370f7e66ad6e43d45ec739b6ef78f",
+      "entity_id": "068bce8a-7266-4325-8c16-ef4cc9b9f10e",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Costs",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 7
+      },
+      "payload_hash": "1aee2f6d38b431c1a2f960a1c1f590b5b595601becaea57d4bee5626b3a5bcf2",
+      "previous_hash": "b5aaebe4369a620a1a0e9378babe77badf603ad61430d76c2eeb3c96a47c4061",
+      "sequence": 141,
+      "timestamp": "2026-09-28T09:11:24.07114+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "d4295dfdafa7aaddc18526e2d9606b9f0394a6ba01c7937b252f8381f83aa388",
+      "entity_id": "068bce8a-7266-4325-8c16-ef4cc9b9f10e",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "OOS",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 7
+      },
+      "payload_hash": "92b7c5194fb560fcd5a66929130fae1bfd126880bb7f326247c5110e324227b6",
+      "previous_hash": "b71df1d74f538cd2f497c0bb4e6b8a76692370f7e66ad6e43d45ec739b6ef78f",
+      "sequence": 142,
+      "timestamp": "2026-09-28T09:11:24.090088+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "80d252ec939c9bef5503512cdb3fc9ace51feaaca5a55d7fafd3fbf7b326415e",
+      "entity_id": "068bce8a-7266-4325-8c16-ef4cc9b9f10e",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Stability",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 7
+      },
+      "payload_hash": "7cb2fd5f887a37a8e3e81b3e397cba7db80f8ec5d0dbaeca44876b88ace26cd3",
+      "previous_hash": "d4295dfdafa7aaddc18526e2d9606b9f0394a6ba01c7937b252f8381f83aa388",
+      "sequence": 143,
+      "timestamp": "2026-09-28T09:11:24.104631+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "9923f0571b4af5ef631627e9409aa63455913abaa1fffdd39e412f400d3ef6d5",
+      "entity_id": "068bce8a-7266-4325-8c16-ef4cc9b9f10e",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Permutation",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 7
+      },
+      "payload_hash": "2ee488029badc52413da412fe4bc4fd9c5e2873432eb7283cf33add6fc551fd3",
+      "previous_hash": "80d252ec939c9bef5503512cdb3fc9ace51feaaca5a55d7fafd3fbf7b326415e",
+      "sequence": 144,
+      "timestamp": "2026-09-28T09:11:24.116797+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "37bf835cf394787946afab091caa6aa333abb4a8020e67b239ad59e29eabcaa3",
+      "entity_id": "068bce8a-7266-4325-8c16-ef4cc9b9f10e",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Multiple testing",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 7
+      },
+      "payload_hash": "8bcd0456313e88dff7a82fb6a51b8390510a5449046b2d2894afcad0e02a6648",
+      "previous_hash": "9923f0571b4af5ef631627e9409aa63455913abaa1fffdd39e412f400d3ef6d5",
+      "sequence": 145,
+      "timestamp": "2026-09-28T09:11:24.129053+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "4deadbc82fecfcabc9c0ce40c5fa3a847b78aa611a183ce968b4e94dedb76ce3",
+      "entity_id": "068bce8a-7266-4325-8c16-ef4cc9b9f10e",
+      "entity_type": "factor_version",
+      "event_type": "TARGETED_GATE_RESULT",
+      "payload": {
+        "name": "Baseline",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 7
+      },
+      "payload_hash": "f3e0640d060825698dc3463a25b716d646b3016de0ef34cb22474f4eae3793c5",
+      "previous_hash": "37bf835cf394787946afab091caa6aa333abb4a8020e67b239ad59e29eabcaa3",
+      "sequence": 146,
+      "timestamp": "2026-09-28T09:11:24.141762+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "772cb1b8dfc6f277ee4af64f0f6a8e592bcc1269784809123ff195b233fa0879",
+      "entity_id": "6c658b80-556a-4f2d-963d-2b6d1c02de95",
+      "entity_type": "research_cycle",
+      "event_type": "TARGETED_CYCLE_COMPLETE",
+      "payload": {
+        "aggregate": "REJECTED",
+        "automatic_revision_child": false,
+        "factor_hash": "4151a1430e7fa8f72e1075188f1ce270756aac75d71b4eb7202c292eda83644b",
+        "lifecycle_call": "BLOCKED_BUDGET",
+        "manifest_hash": "c6eadafd51200535ed082955ec4f4d69e9c1aade89bb3ed5fdd66a3c3d561796",
+        "protocol_hash": "42fdd630f01da9a2efef2435b1e69ea4b7c3f0407cacb5f8874b431d368092ca",
+        "report_hash": "32c534a04d5b4ca269f6c1de260578935df624b06bd46e94ecb6f67b203757d8",
+        "search_n": 7,
+        "slot": "B",
+        "trial_number": 7
+      },
+      "payload_hash": "a1882fbae3f8636fc88ded83b4c719db5e644f4efd5993bfc4f9333be0f56daa",
+      "previous_hash": "4deadbc82fecfcabc9c0ce40c5fa3a847b78aa611a183ce968b4e94dedb76ce3",
+      "sequence": 147,
+      "timestamp": "2026-09-28T09:11:24.170157+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "b0808b661d4e128c0ec58dc89b59c4e8b8ff888052b2baf730351b30019d0897",
+      "entity_id": "55caff16-6a24-435e-8923-1e60fb223025",
+      "entity_type": "research_cycle",
+      "event_type": "TARGETED_CYCLE_NO_RUN",
+      "payload": {
+        "error_code": "NO_RUN_BUDGET_EXHAUSTED",
+        "measured_tokens": 26090,
+        "qwen_called": false,
+        "slot": "C",
+        "token_cap": 25000,
+        "trial_allocated": false
+      },
+      "payload_hash": "de7269a80a52a803226d18772e243392bc6c482f787b7238d39c15e7ab02e948",
+      "previous_hash": "772cb1b8dfc6f277ee4af64f0f6a8e592bcc1269784809123ff195b233fa0879",
+      "sequence": 148,
+      "timestamp": "2026-09-28T09:11:24.234027+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "4b5707aca24bc6cfd49365813775c1eaf5da4dd29c772022ee04fdf1813ffa12",
+      "entity_id": "c20bc013-5cf7-4e3d-8d39-12ce37ced528",
+      "entity_type": "research_program",
+      "event_type": "TARGETED_BATCH_ABORTED_BUDGET",
+      "payload": {
+        "decision_hash": "95499afa87657a00040a52de4451487b823a610d3eb8879b797c1a3122235c0f",
+        "paper_trading_started": false,
+        "recommendation": "RESEARCH_PROTOCOL_REVIEW",
+        "search_n": 7
+      },
+      "payload_hash": "b0b263f12506e43cb4fa8efd26056c0c14ff0b4c09763ccb7ee6d56fccc48b0a",
+      "previous_hash": "b0808b661d4e128c0ec58dc89b59c4e8b8ff888052b2baf730351b30019d0897",
+      "sequence": 149,
+      "timestamp": "2026-09-28T09:11:24.298874+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "02fa8090610959c42b4db49b08076a11c69b1990af4e06257f0c785d093c155a",
+      "entity_id": "c20bc013-5cf7-4e3d-8d39-12ce37ced528",
+      "entity_type": "research_program",
+      "event_type": "PROTOCOL_REVIEW_V3_COMPLETE",
+      "payload": {
+        "draft_active": false,
+        "paper_trading_started": false,
+        "qwen_http_attempts": 0,
+        "review_hash": "23e4118c07aa132e4288f76107e9e9d6064d0ef65cccfb1d8801aef831f8136b",
+        "search_n": 7
+      },
+      "payload_hash": "2741deb8a832dc8a71bcf010a2be729c8a6b2455237c190b04d8571861510460",
+      "previous_hash": "4b5707aca24bc6cfd49365813775c1eaf5da4dd29c772022ee04fdf1813ffa12",
+      "sequence": 150,
+      "timestamp": "2026-09-28T09:36:16.760548+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "92a1b6cf37c3217132dd515b28c8e1adc5a711a98084291d5c8b6bd191946c8c",
+      "entity_id": "c20bc013-5cf7-4e3d-8d39-12ce37ced528",
+      "entity_type": "research_program",
+      "event_type": "SESSION_TRANSITION_CONTRACT_FROZEN",
+      "payload": {
+        "contract_hash": "3663cf1d7cd843b9a630d4d8c9c9ad7dc6f3f788270e97474b3e6ab2def687fa",
+        "contract_version": "session-transition-v1",
+        "search_n": 7
+      },
+      "payload_hash": "cae2b39e1aa77661283b975c7c871a9cdf6bb586d253e24b06f960dd98d8699e",
+      "previous_hash": "02fa8090610959c42b4db49b08076a11c69b1990af4e06257f0c785d093c155a",
+      "sequence": 151,
+      "timestamp": "2026-09-28T09:53:09.240848+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "a5ce6e68eca2452bbbebd6085d7d4d57a23ef9f76304c9dae62f90c954872d1d",
+      "entity_id": "c20bc013-5cf7-4e3d-8d39-12ce37ced528",
+      "entity_type": "research_program",
+      "event_type": "SESSION_TRANSITION_CAPABILITY_CLOSED",
+      "payload": {
+        "closure_hash": "a2398e535a76415922f063f59bbc2eb478d4a5cee3795b95fb8b009c8ec5d241",
+        "contract_hash": "3663cf1d7cd843b9a630d4d8c9c9ad7dc6f3f788270e97474b3e6ab2def687fa",
+        "draft_active": false,
+        "paper_trading_started": false,
+        "qwen_http_attempts": 0,
+        "search_n": 7
+      },
+      "payload_hash": "92b02d6e00bd25df512c2ef05bc3146113563a17ba876f48ec5f992ad3c392ff",
+      "previous_hash": "92a1b6cf37c3217132dd515b28c8e1adc5a711a98084291d5c8b6bd191946c8c",
+      "sequence": 152,
+      "timestamp": "2026-09-28T09:53:17.653226+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "1a4feba9be6a35330efd991579915e3c1096fe74b91abb4009579fa23e753285",
+      "entity_id": "c544331d-1827-4b4b-9931-67d1a112f716",
+      "entity_type": "research_protocol",
+      "event_type": "FDP_V3_PROTOCOL_ACTIVATED",
+      "payload": {
+        "protocol_hash": "08c088b3f366b2a269a3193e3b8671e0480b6f351f967c3f554a86d37c2d6d46",
+        "search_n": 7,
+        "search_program_id": "rtoken-session-alpha-v1"
+      },
+      "payload_hash": "239e02f2b38aaad58d5177751e3a74abbecb06b279e8be394976f766deb907ac",
+      "previous_hash": "a5ce6e68eca2452bbbebd6085d7d4d57a23ef9f76304c9dae62f90c954872d1d",
+      "sequence": 153,
+      "timestamp": "2026-09-28T10:15:01.454425+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "d96add5efa8bd325f26ac09db9706cfd03a8440438ebdaebdfccc12576cbe85c",
+      "entity_id": "c20bc013-5cf7-4e3d-8d39-12ce37ced528",
+      "entity_type": "research_program",
+      "event_type": "FDP_V3_BATCH_PLAN_FROZEN",
+      "payload": {
+        "plan_hash": "2460a0c88d2420caeed964a09e2baec5c129dfaab3339ea7e7e7deeb7c3650f1",
+        "protocol_hash": "08c088b3f366b2a269a3193e3b8671e0480b6f351f967c3f554a86d37c2d6d46",
+        "search_n": 7,
+        "slot_order": [
+          "A",
+          "B"
+        ]
+      },
+      "payload_hash": "4b854f4e0c6410afc276f75264a4783af9d93ac3ce22c87806ba3c7d36b59041",
+      "previous_hash": "1a4feba9be6a35330efd991579915e3c1096fe74b91abb4009579fa23e753285",
+      "sequence": 154,
+      "timestamp": "2026-09-28T10:15:01.469545+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "90ef8434711207064c42577448f82907128f1b680bde3e84f7d5460b0b4b933d",
+      "entity_id": "4feb798b-725a-47ef-a728-68fed6106bd6",
+      "entity_type": "research_cycle",
+      "event_type": "FDP_V3_QWEN_REQUEST_RESERVED",
+      "payload": {
+        "attempt": 1,
+        "prompt_hash": "50d9ccc9cef878bea0952f120c6a1ba50a5dd58bedcc0049a8e4ca674c0cccec",
+        "reservation_id": "4aea339b-c82d-48c7-9a50-2391d61308bc",
+        "reserved_tokens": 3557,
+        "role": "proposer",
+        "slot": "A"
+      },
+      "payload_hash": "e72ac0e409ac6442eefb9ca42d10cf703ac5440f6370ae7d3a4f539807f77b6b",
+      "previous_hash": "d96add5efa8bd325f26ac09db9706cfd03a8440438ebdaebdfccc12576cbe85c",
+      "sequence": 155,
+      "timestamp": "2026-09-28T10:15:50.713869+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "80a31b0c245c475dc24ca62e7193a77b208830d00764b1e5085eee3d8630b70d",
+      "entity_id": "4feb798b-725a-47ef-a728-68fed6106bd6",
+      "entity_type": "research_cycle",
+      "event_type": "FDP_V3_QWEN_RESPONSE",
+      "payload": {
+        "actual_charged": 1986,
+        "attempt": 1,
+        "endpoint_path": "/chat/completions",
+        "latency_ms": 30244,
+        "model": "qwen3.8-max",
+        "request_hash": "d0ae577534f9733fab4b97e381470df489f562b15405987ecf657c8e7c5684bc",
+        "reservation": 3557,
+        "response_hash": "e08723e0bc41244560cb748eacc060e03e5a27ddae1abf1895f73db8f9ed697f",
+        "role": "proposer",
+        "slot": "A",
+        "usage": {
+          "input_tokens": 903,
+          "output_tokens": 1083,
+          "reasoning_tokens": 704,
+          "total_tokens": 1986
+        },
+        "valid": false
+      },
+      "payload_hash": "412f78933bcd1bc976fe018281f149dc3ec9456e9ab7b1b6c52107266a4d2924",
+      "previous_hash": "90ef8434711207064c42577448f82907128f1b680bde3e84f7d5460b0b4b933d",
+      "sequence": 156,
+      "timestamp": "2026-09-28T10:16:21.107005+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "1c7d9fc7f526ee7ba6b074b1d73b62f760094a3b42a485f5134933caa43540e2",
+      "entity_id": "4feb798b-725a-47ef-a728-68fed6106bd6",
+      "entity_type": "research_cycle",
+      "event_type": "FDP_V3_QWEN_REQUEST_RESERVED",
+      "payload": {
+        "attempt": 2,
+        "prompt_hash": "69fffddbe331e6c2448e31c041dffc1e69fe1ffacb1c3ba6eff53907c7343293",
+        "reservation_id": "7586787b-242a-491a-a21c-6a038e3b3b68",
+        "reserved_tokens": 11744,
+        "role": "proposer",
+        "slot": "A"
+      },
+      "payload_hash": "7fdf5e6fdd0dfb3ae9dd6218f83849cd00cdbf43448f9aa7ead0d2d2136d2124",
+      "previous_hash": "80a31b0c245c475dc24ca62e7193a77b208830d00764b1e5085eee3d8630b70d",
+      "sequence": 157,
+      "timestamp": "2026-09-28T10:16:21.235096+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "f7d74e266329b5632eb3862dc1f43159dbd745feb089d8ed22fec2cdb006c0c1",
+      "entity_id": "4feb798b-725a-47ef-a728-68fed6106bd6",
+      "entity_type": "research_cycle",
+      "event_type": "FDP_V3_QWEN_RESPONSE",
+      "payload": {
+        "actual_charged": 3900,
+        "attempt": 2,
+        "endpoint_path": "/chat/completions",
+        "latency_ms": 22871,
+        "model": "qwen3.8-max",
+        "request_hash": "97fe19d893a643abbbef6761485e6b1177c328a950cc9cc8a53a3879b132313d",
+        "reservation": 11744,
+        "response_hash": "638cace95bc45711f74741dc0f2b7a0a7eb7ce95d486cf97664f374b6392d8a5",
+        "role": "proposer",
+        "slot": "A",
+        "usage": {
+          "input_tokens": 2845,
+          "output_tokens": 1055,
+          "reasoning_tokens": 681,
+          "total_tokens": 3900
+        },
+        "valid": true
+      },
+      "payload_hash": "9fd2132a11241011f3cdb7ef82e501c53341585e152f2d226231f015109edd6b",
+      "previous_hash": "1c7d9fc7f526ee7ba6b074b1d73b62f760094a3b42a485f5134933caa43540e2",
+      "sequence": 158,
+      "timestamp": "2026-09-28T10:16:44.224978+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "2184e43fa8cfae6c001d27e87c8f4f53a032d823e0ebf89e5d03f0b19f4e8cdd",
+      "entity_id": "cbc62127-9af9-4e47-896c-af2f6739ba3a",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_HYPOTHESIS_COMMITTED",
+      "payload": {
+        "duplicate": false,
+        "family": "beta_residual",
+        "search_n": 8,
+        "slot": "A",
+        "trial_number": 8
+      },
+      "payload_hash": "03094378b87b28ffa2ecd0715650ebaf791972f3353e6aea40b4d52cb6789d43",
+      "previous_hash": "f7d74e266329b5632eb3862dc1f43159dbd745feb089d8ed22fec2cdb006c0c1",
+      "sequence": 159,
+      "timestamp": "2026-09-28T10:16:44.388422+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "ea6d2df693d3185f0e0b435eade4b2942b583e2bcf2bc27932be179d7da5faa0",
+      "entity_id": "675bca39-e42c-4b3e-8030-18ce950a0c69",
+      "entity_type": "research_cycle",
+      "event_type": "FDP_V3_QWEN_REQUEST_RESERVED",
+      "payload": {
+        "attempt": 1,
+        "prompt_hash": "b389444e3f965aae9009873b7c791c271fafc686a4b6c9166401ab837d622dd4",
+        "reservation_id": "47916012-273e-4779-b8c4-eaf708609706",
+        "reserved_tokens": 3656,
+        "role": "proposer",
+        "slot": "B"
+      },
+      "payload_hash": "a9ac05b297fc02b35ce9c4e60fec79528150035cdff8774e46f995b97a983727",
+      "previous_hash": "2184e43fa8cfae6c001d27e87c8f4f53a032d823e0ebf89e5d03f0b19f4e8cdd",
+      "sequence": 160,
+      "timestamp": "2026-09-28T10:16:44.461519+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "7c154fda128959f728bbb72669ded031001be50f3d1612be000d7f9f6747f155",
+      "entity_id": "675bca39-e42c-4b3e-8030-18ce950a0c69",
+      "entity_type": "research_cycle",
+      "event_type": "FDP_V3_QWEN_RESPONSE",
+      "payload": {
+        "actual_charged": 2034,
+        "attempt": 1,
+        "endpoint_path": "/chat/completions",
+        "latency_ms": 30525,
+        "model": "qwen3.8-max",
+        "request_hash": "a9b487921aa9012407e7bcccfd6a7d4a2dc9f380dfde6df2dbef2040c520b302",
+        "reservation": 3656,
+        "response_hash": "68a329a94507a183f024d49d9ff944b3857fb8b21dc0075a87a74ca3492b4d11",
+        "role": "proposer",
+        "slot": "B",
+        "usage": {
+          "input_tokens": 885,
+          "output_tokens": 1149,
+          "reasoning_tokens": 644,
+          "total_tokens": 2034
+        },
+        "valid": false
+      },
+      "payload_hash": "432131c1651b45c870ebcab7bdfc312ebed41d97c269d8038bdb2705637ebdc5",
+      "previous_hash": "ea6d2df693d3185f0e0b435eade4b2942b583e2bcf2bc27932be179d7da5faa0",
+      "sequence": 161,
+      "timestamp": "2026-09-28T10:17:15.042671+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "07acc27364416b138c478e954ebf10825ce6978a68af06a7cb53b86f30b62886",
+      "entity_id": "27ad6364-0ab9-4e3b-a349-06ff480a9c0f",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_HYPOTHESIS_COMMITTED",
+      "payload": {
+        "duplicate": false,
+        "family": "session_transition",
+        "search_n": 9,
+        "slot": "B",
+        "trial_number": 9
+      },
+      "payload_hash": "8ef5ae154863c7d9ab892e04f72b9ae35850b4ac95776706cda302a451646ba5",
+      "previous_hash": "7c154fda128959f728bbb72669ded031001be50f3d1612be000d7f9f6747f155",
+      "sequence": 162,
+      "timestamp": "2026-09-28T10:17:15.142074+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "e241964ff90212feb0b46391a15743b0713693a5f7452e45a321367696895579",
+      "entity_id": "cbc62127-9af9-4e47-896c-af2f6739ba3a",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Syntax",
+        "outcome": "PASS",
+        "reason": "Strict fdp-v2 safe AST and slot validation passed.",
+        "slot": "A",
+        "trial_number": 8
+      },
+      "payload_hash": "0c2854f6544fc2fce91e0c38f9b33f944ad1a37ae406f9a9f3f698679957c9a2",
+      "previous_hash": "07acc27364416b138c478e954ebf10825ce6978a68af06a7cb53b86f30b62886",
+      "sequence": 163,
+      "timestamp": "2026-09-28T10:18:42.441064+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "63894d290f5aafecacdac122554f280769de33def9f06c32a80ee934842e2a04",
+      "entity_id": "cbc62127-9af9-4e47-896c-af2f6739ba3a",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Coverage",
+        "outcome": "PASS",
+        "reason": "118.1 certified days and 2270 aligned bars.",
+        "slot": "A",
+        "trial_number": 8
+      },
+      "payload_hash": "3e32b541fd1bcaaac3fcef9274cf2efcc668c18911ee3fd4b9dada3314008ff0",
+      "previous_hash": "e241964ff90212feb0b46391a15743b0713693a5f7452e45a321367696895579",
+      "sequence": 164,
+      "timestamp": "2026-09-28T10:18:42.466518+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "db3b74e286cbdf46420b7588660740b3140bbefad41221e230bad6ab3ee15efd",
+      "entity_id": "cbc62127-9af9-4e47-896c-af2f6739ba3a",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Point-in-time",
+        "outcome": "PASS",
+        "reason": "Certified closed OHLC only; volume disabled.",
+        "slot": "A",
+        "trial_number": 8
+      },
+      "payload_hash": "740a4077fab7057c7b44c1ae50b9df2ab04fd183aec775370f31dffbcff74e31",
+      "previous_hash": "63894d290f5aafecacdac122554f280769de33def9f06c32a80ee934842e2a04",
+      "sequence": 165,
+      "timestamp": "2026-09-28T10:18:42.486166+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "a0e45dc6152801329b9b457361dbf45a9ec317ed1c702666a64876de59eb7123",
+      "entity_id": "cbc62127-9af9-4e47-896c-af2f6739ba3a",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Mechanics",
+        "outcome": "PASS",
+        "reason": "Next-bar execution and rebalance controls enforced.",
+        "slot": "A",
+        "trial_number": 8
+      },
+      "payload_hash": "2dad03a534f161ad6f19956eace140b3ce718f2b08d3420ae67532c58c3e4662",
+      "previous_hash": "db3b74e286cbdf46420b7588660740b3140bbefad41221e230bad6ab3ee15efd",
+      "sequence": 166,
+      "timestamp": "2026-09-28T10:18:42.504709+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "7f6d9d9514a320949572e84a77bdd8ac37f51b0cc0dfd76230f7cbec388c7beb",
+      "entity_id": "cbc62127-9af9-4e47-896c-af2f6739ba3a",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Costs",
+        "outcome": "PASS",
+        "reason": "Net return after unchanged fee/slippage is 7.8369%.",
+        "slot": "A",
+        "trial_number": 8
+      },
+      "payload_hash": "f79e4a7b40d435363811e62eb3748982764c23502fe5fac8aee4152e80ccbcc3",
+      "previous_hash": "a0e45dc6152801329b9b457361dbf45a9ec317ed1c702666a64876de59eb7123",
+      "sequence": 167,
+      "timestamp": "2026-09-28T10:18:42.52396+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "2c2b322681c17ac7fbb5bfaae41cd8d8df246bdb3711783fec02734259be6bc9",
+      "entity_id": "cbc62127-9af9-4e47-896c-af2f6739ba3a",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "OOS",
+        "outcome": "INCONCLUSIVE",
+        "reason": "0 OOS fills; net OOS 0.0000%.",
+        "slot": "A",
+        "trial_number": 8
+      },
+      "payload_hash": "013de95542d18c4eb7a2847d8afec42df2981857e5178b06a1452e21b4110346",
+      "previous_hash": "7f6d9d9514a320949572e84a77bdd8ac37f51b0cc0dfd76230f7cbec388c7beb",
+      "sequence": 168,
+      "timestamp": "2026-09-28T10:18:42.542192+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "a78a871f6060848ab518a669e9f01dcfa50f4a4d94f27a5d7256e217b1d3db4d",
+      "entity_id": "cbc62127-9af9-4e47-896c-af2f6739ba3a",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Stability",
+        "outcome": "FAIL",
+        "reason": "SESSION_PURITY_FAIL",
+        "slot": "A",
+        "trial_number": 8,
+        "value": {
+          "blocks": [
+            {
+              "absolute_pnl_contribution": null,
+              "end": "2026-09-05T21:15:00+00:00",
+              "evaluable": false,
+              "fills": 0,
+              "max_drawdown": 0.0,
+              "net_return": 0.0,
+              "observations": 148,
+              "payoff_sign": 0,
+              "sharpe": null,
+              "start": "2026-08-29T09:00:00+00:00"
+            },
+            {
+              "absolute_pnl_contribution": null,
+              "end": "2026-09-13T09:30:00+00:00",
+              "evaluable": false,
+              "fills": 0,
+              "max_drawdown": 0.0,
+              "net_return": 0.0,
+              "observations": 160,
+              "payoff_sign": 0,
+              "sharpe": null,
+              "start": "2026-09-05T21:15:00+00:00"
+            },
+            {
+              "absolute_pnl_contribution": null,
+              "end": "2026-09-20T21:45:00+00:00",
+              "evaluable": false,
+              "fills": 0,
+              "max_drawdown": 0.0,
+              "net_return": 0.0,
+              "observations": 160,
+              "payoff_sign": 0,
+              "sharpe": null,
+              "start": "2026-09-13T09:30:00+00:00"
+            },
+            {
+              "absolute_pnl_contribution": null,
+              "end": "2026-09-28T10:00:00+00:00",
+              "evaluable": false,
+              "fills": 0,
+              "max_drawdown": 0.0,
+              "net_return": 0.0,
+              "observations": 163,
+              "payoff_sign": 0,
+              "sharpe": null,
+              "start": "2026-09-20T21:45:00+00:00"
+            }
+          ],
+          "evaluable_blocks": 0,
+          "reason_code": "SESSION_PURITY_FAIL",
+          "scope_method": "scope-aware-stability-v1",
+          "session_purity": false,
+          "status": "FAIL",
+          "thresholds": {
+            "halves_must_agree": true,
+            "maximum_absolute_pnl_contribution": 0.6,
+            "minimum_evaluable_blocks": 3,
+            "sign_agreement": 0.6
+          }
+        }
+      },
+      "payload_hash": "068117fe1ee2392046fed02edca8b0d3c47de2c3e6a6098ed12a0e2e869fe247",
+      "previous_hash": "2c2b322681c17ac7fbb5bfaae41cd8d8df246bdb3711783fec02734259be6bc9",
+      "sequence": 169,
+      "timestamp": "2026-09-28T10:18:42.560595+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "87926330b23ffbb35680ca67ab3ef0ac06f95e24c7ecbec7e62d3a2620a4a5ae",
+      "entity_id": "cbc62127-9af9-4e47-896c-af2f6739ba3a",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Permutation",
+        "outcome": "FAIL",
+        "reason": "Deterministic 2,000 sign-flip p=0.2029.",
+        "slot": "A",
+        "trial_number": 8
+      },
+      "payload_hash": "fd11521e51aca27b0c011398f6976022b25462e4e18472a7b1c58c52dd26dccc",
+      "previous_hash": "a78a871f6060848ab518a669e9f01dcfa50f4a4d94f27a5d7256e217b1d3db4d",
+      "sequence": 170,
+      "timestamp": "2026-09-28T10:18:42.583689+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "c9f3373277cc8113a6843c82442cd099453cc5b8a32c952dd216b989d4d4116c",
+      "entity_id": "cbc62127-9af9-4e47-896c-af2f6739ba3a",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Multiple testing",
+        "outcome": "FAIL",
+        "reason": "DSR_THRESHOLD_NOT_MET",
+        "slot": "A",
+        "trial_number": 8,
+        "value": {
+          "benchmark_sharpe": 0.008764851553099553,
+          "kurtosis": 128.45129622853455,
+          "method_version": "phase3-evidence-v1",
+          "observations": 2269,
+          "observed_sharpe": 0.015902863040016788,
+          "probability": 0.6296432562911781,
+          "reason_code": "DSR_THRESHOLD_NOT_MET",
+          "search_n": 9,
+          "sigma_sr": 0.005763399032602534,
+          "skew": -2.971469458624275,
+          "status": "FAIL",
+          "threshold": 0.9
+        }
+      },
+      "payload_hash": "77e24fcb6911d369faf65828825eb22d8aa32407ab99cdfade5c13006ff58979",
+      "previous_hash": "87926330b23ffbb35680ca67ab3ef0ac06f95e24c7ecbec7e62d3a2620a4a5ae",
+      "sequence": 171,
+      "timestamp": "2026-09-28T10:18:42.600061+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "2d304056f25338c375329abdd6053dc947e70cf7d5e73ea086c12c2ad9283437",
+      "entity_id": "cbc62127-9af9-4e47-896c-af2f6739ba3a",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Baseline",
+        "outcome": "FAIL",
+        "reason": "Factor net 7.8369% versus same-window primary buy-and-hold 22.0073%.",
+        "slot": "A",
+        "trial_number": 8
+      },
+      "payload_hash": "98851accd12353c975ccf3df6464d7b529a0ce5a938cbfed80e7111b8432d088",
+      "previous_hash": "c9f3373277cc8113a6843c82442cd099453cc5b8a32c952dd216b989d4d4116c",
+      "sequence": 172,
+      "timestamp": "2026-09-28T10:18:42.617888+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "a34f9dc6719f342d9372007a54009b726a024f4ad7c46653963e8a95be9e5c00",
+      "entity_id": "4feb798b-725a-47ef-a728-68fed6106bd6",
+      "entity_type": "research_cycle",
+      "event_type": "FDP_V3_QWEN_REQUEST_RESERVED",
+      "payload": {
+        "attempt": 1,
+        "prompt_hash": "49e709757e576f7fbd7782d7f63768aef627a86b09ca2c0d62dc11a05f2547d1",
+        "reservation_id": "0ce8d0b6-1179-4464-865c-4b1fef3f1e5d",
+        "reserved_tokens": 987,
+        "role": "lifecycle",
+        "slot": "A"
+      },
+      "payload_hash": "870cdde9c57225e3c7c26e8aea5380939bf179a24d71a326e3dd57fa541db532",
+      "previous_hash": "2d304056f25338c375329abdd6053dc947e70cf7d5e73ea086c12c2ad9283437",
+      "sequence": 173,
+      "timestamp": "2026-09-28T10:18:42.667589+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "df8ccadc0522cf99d76670f21db3106ab20190fa32e34891e470c4f07121184b",
+      "entity_id": "4feb798b-725a-47ef-a728-68fed6106bd6",
+      "entity_type": "research_cycle",
+      "event_type": "FDP_V3_QWEN_RESPONSE",
+      "payload": {
+        "actual_charged": 382,
+        "attempt": 1,
+        "endpoint_path": "/chat/completions",
+        "latency_ms": 10328,
+        "model": "qwen3.8-max",
+        "request_hash": "f9908bbb8313b0410da15026d988f51cdc8095272a4772641a2020b1ff5c151a",
+        "reservation": 987,
+        "response_hash": "9ca3ee963333c04b8ab143178578e812ee58f5d39b11ba0e48ac7cb57e45c3c6",
+        "role": "lifecycle",
+        "slot": "A",
+        "usage": {
+          "input_tokens": 167,
+          "output_tokens": 215,
+          "reasoning_tokens": 205,
+          "total_tokens": 382
+        },
+        "valid": false
+      },
+      "payload_hash": "93d7a8c419c918a3f6316c1ee830e84ce9ffa97a3b3a7c7828e214373b0ae10c",
+      "previous_hash": "a34f9dc6719f342d9372007a54009b726a024f4ad7c46653963e8a95be9e5c00",
+      "sequence": 174,
+      "timestamp": "2026-09-28T10:18:53.114544+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "223617d170f898b15659252b7a1e959e5a42d303033d96abe339b55b3cd33eaa",
+      "entity_id": "4feb798b-725a-47ef-a728-68fed6106bd6",
+      "entity_type": "research_cycle",
+      "event_type": "FDP_V3_QWEN_REQUEST_RESERVED",
+      "payload": {
+        "attempt": 2,
+        "prompt_hash": "d61ff09665886258dfe5cfe14c86176e52e4cae6450caa53dbc30ffb155169e8",
+        "reservation_id": "7f3b1d06-b735-4b6a-b517-622c3933d626",
+        "reserved_tokens": 1348,
+        "role": "lifecycle",
+        "slot": "A"
+      },
+      "payload_hash": "21b084748c58dad593190b580814beb09b5316633e0adde479c53302f0fdf533",
+      "previous_hash": "df8ccadc0522cf99d76670f21db3106ab20190fa32e34891e470c4f07121184b",
+      "sequence": 175,
+      "timestamp": "2026-09-28T10:18:53.203843+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "5d2f2bf6a92130053c6f6ae8edbbc6e57064b9f32fe3b8c0282e7371eacda57f",
+      "entity_id": "4feb798b-725a-47ef-a728-68fed6106bd6",
+      "entity_type": "research_cycle",
+      "event_type": "FDP_V3_QWEN_RESPONSE",
+      "payload": {
+        "actual_charged": 502,
+        "attempt": 2,
+        "endpoint_path": "/chat/completions",
+        "latency_ms": 7918,
+        "model": "qwen3.8-max",
+        "request_hash": "5071e5d73c86678d7b9a7c6cb987ef21488b53eb14c086269446b39d479083be",
+        "reservation": 1348,
+        "response_hash": "561034ed9cd1eff8ce6099dde213ea949d96672e73403aa70460d40982d4a92a",
+        "role": "lifecycle",
+        "slot": "A",
+        "usage": {
+          "input_tokens": 250,
+          "output_tokens": 252,
+          "reasoning_tokens": 200,
+          "total_tokens": 502
+        },
+        "valid": true
+      },
+      "payload_hash": "6132edd446e8640e9e2b1439759831181eaf36a3935f63d881f29d9d5cbf3faa",
+      "previous_hash": "223617d170f898b15659252b7a1e959e5a42d303033d96abe339b55b3cd33eaa",
+      "sequence": 176,
+      "timestamp": "2026-09-28T10:19:01.206668+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "78eb6ef7d385abb323fcef859fb084ee9b9c09659933ed91bf2b5a9fe51364cd",
+      "entity_id": "4feb798b-725a-47ef-a728-68fed6106bd6",
+      "entity_type": "research_cycle",
+      "event_type": "FDP_V3_CYCLE_COMPLETE",
+      "payload": {
+        "aggregate": "REJECTED",
+        "ast_hash": "067a68319b1378e07abd66fcfa4106b6436cea0959aba4ef74afc84495aa4c3c",
+        "automatic_revision_child": false,
+        "manifest_hash": "533ebd2f0918ab49174384d1e6744c385b889e1f77402b659448ae5678d8653c",
+        "protocol_hash": "08c088b3f366b2a269a3193e3b8671e0480b6f351f967c3f554a86d37c2d6d46",
+        "recipe_hash": "694abe979059b11ac80085334b74b155192a650733d59b9bdbd266af51f1b396",
+        "report_hash": "33aceed4929c50d594490db72f991f5da64ed8bf86b34ea6da9d4568dd195d10",
+        "search_n": 9,
+        "slot": "A",
+        "trial_number": 8
+      },
+      "payload_hash": "9cd2da620dffc0df594a3fc78467f3d08e1bb8dd427a5cc8c86bc5b9663e03a3",
+      "previous_hash": "5d2f2bf6a92130053c6f6ae8edbbc6e57064b9f32fe3b8c0282e7371eacda57f",
+      "sequence": 177,
+      "timestamp": "2026-09-28T10:19:01.365129+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "1ddf304831989143fd57c393d66497d60883ff52fa596e3a655a7cf8d32aa716",
+      "entity_id": "27ad6364-0ab9-4e3b-a349-06ff480a9c0f",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Syntax",
+        "outcome": "FAIL",
+        "reason": "NO_RUN_PROJECTED_BUDGET_EXHAUSTED_AFTER_INVALID_OUTPUT",
+        "slot": "B",
+        "trial_number": 9
+      },
+      "payload_hash": "f69cca928bc1c1058187e0a5317746bb15b2a81d4da5e2a1db27d107460d4d3d",
+      "previous_hash": "78eb6ef7d385abb323fcef859fb084ee9b9c09659933ed91bf2b5a9fe51364cd",
+      "sequence": 178,
+      "timestamp": "2026-09-28T10:19:01.633638+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "bd458deee265f20b1bfbda2a226aa67b496ec6b2a86cf127875220b70b791d6b",
+      "entity_id": "27ad6364-0ab9-4e3b-a349-06ff480a9c0f",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Coverage",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 9
+      },
+      "payload_hash": "ebf0355b46f13a780927a109401f9db8025f085e64669ce163d9ddb397730f7e",
+      "previous_hash": "1ddf304831989143fd57c393d66497d60883ff52fa596e3a655a7cf8d32aa716",
+      "sequence": 179,
+      "timestamp": "2026-09-28T10:19:01.654785+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "4698b7223a35987ea783e7ca4fb25d10775480640ca813e41deeaeeccae34e17",
+      "entity_id": "27ad6364-0ab9-4e3b-a349-06ff480a9c0f",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Point-in-time",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 9
+      },
+      "payload_hash": "156cf9956128a0df8944d3d8cbe4c106f8ccc234517dc1756ddbe573787ab9b7",
+      "previous_hash": "bd458deee265f20b1bfbda2a226aa67b496ec6b2a86cf127875220b70b791d6b",
+      "sequence": 180,
+      "timestamp": "2026-09-28T10:19:01.667143+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "e9b423bf7e63f65b9e283125d9379767ed1f5202fc3d27b25a1d51d030ba3de4",
+      "entity_id": "27ad6364-0ab9-4e3b-a349-06ff480a9c0f",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Mechanics",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 9
+      },
+      "payload_hash": "3c0b5db4bcfc6acc4c66f8d7f0e2272c184ba76dc04e417a49b43bf2491e75dc",
+      "previous_hash": "4698b7223a35987ea783e7ca4fb25d10775480640ca813e41deeaeeccae34e17",
+      "sequence": 181,
+      "timestamp": "2026-09-28T10:19:01.680515+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "042e6d1a6531159cf1f88fb6c740f440809384fbd73164efdcc1ee3dd5637de5",
+      "entity_id": "27ad6364-0ab9-4e3b-a349-06ff480a9c0f",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Costs",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 9
+      },
+      "payload_hash": "767c72b5c918490fc2123dc5446e9dc52030fa67e764edfd30ae72e2a9d7595f",
+      "previous_hash": "e9b423bf7e63f65b9e283125d9379767ed1f5202fc3d27b25a1d51d030ba3de4",
+      "sequence": 182,
+      "timestamp": "2026-09-28T10:19:01.693867+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "39a9a95295deec6423ef78d976d6804b3d303e0dd74b242bbca7dd5c08a702da",
+      "entity_id": "27ad6364-0ab9-4e3b-a349-06ff480a9c0f",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "OOS",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 9
+      },
+      "payload_hash": "620c7ee0383ad51efc3cfb07be2494dd23dc3d0c79011a08c00a0df2a98697ca",
+      "previous_hash": "042e6d1a6531159cf1f88fb6c740f440809384fbd73164efdcc1ee3dd5637de5",
+      "sequence": 183,
+      "timestamp": "2026-09-28T10:19:01.707155+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "27e1f7fc4105ee01892f713884703f3b14a2cdd6b48193232fbe81fdc046ad98",
+      "entity_id": "27ad6364-0ab9-4e3b-a349-06ff480a9c0f",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Stability",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 9
+      },
+      "payload_hash": "452a749f5e3cf521d65d66d8317e8ee740a151fff43da20db94dfb01c5d38a47",
+      "previous_hash": "39a9a95295deec6423ef78d976d6804b3d303e0dd74b242bbca7dd5c08a702da",
+      "sequence": 184,
+      "timestamp": "2026-09-28T10:19:01.721975+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "c4dacf7abea2054d475075fca5904cc14c6a55381c192a5680673e6a04e76485",
+      "entity_id": "27ad6364-0ab9-4e3b-a349-06ff480a9c0f",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Permutation",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 9
+      },
+      "payload_hash": "3f85fe7d120051e43bd6dc5089576b9fab80789ac010512467ab7cd8cf753860",
+      "previous_hash": "27e1f7fc4105ee01892f713884703f3b14a2cdd6b48193232fbe81fdc046ad98",
+      "sequence": 185,
+      "timestamp": "2026-09-28T10:19:01.737511+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "6356ab3a19b15dcda8f1b94e55ff7639aafe7ad80f4d3bdb1f6407ac361b5385",
+      "entity_id": "27ad6364-0ab9-4e3b-a349-06ff480a9c0f",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Multiple testing",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 9
+      },
+      "payload_hash": "5e5a5c64fbcfeb4cf32ba519f028c4f061d033a65355b587f4e1c1cb00c69e6a",
+      "previous_hash": "c4dacf7abea2054d475075fca5904cc14c6a55381c192a5680673e6a04e76485",
+      "sequence": 186,
+      "timestamp": "2026-09-28T10:19:01.750654+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "a1fca5ff83cdc836a81bbd32b1b34de42f72609d00d65e29e8174566dd8f4355",
+      "entity_id": "27ad6364-0ab9-4e3b-a349-06ff480a9c0f",
+      "entity_type": "factor_version",
+      "event_type": "FDP_V3_GATE_RESULT",
+      "payload": {
+        "name": "Baseline",
+        "outcome": "INCONCLUSIVE",
+        "reason": "Not evaluated after structural rejection.",
+        "slot": "B",
+        "trial_number": 9
+      },
+      "payload_hash": "bf6be76a3c2c47edb51a26dece291f239dcf2a6a2c876d6bc324c2b7ff7796d5",
+      "previous_hash": "6356ab3a19b15dcda8f1b94e55ff7639aafe7ad80f4d3bdb1f6407ac361b5385",
+      "sequence": 187,
+      "timestamp": "2026-09-28T10:19:01.763525+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "bbb0e61dab11602eb66184c679b064628b1e1df72c72da5c5e8de0392045ddbc",
+      "entity_id": "675bca39-e42c-4b3e-8030-18ce950a0c69",
+      "entity_type": "research_cycle",
+      "event_type": "FDP_V3_CYCLE_COMPLETE",
+      "payload": {
+        "aggregate": "REJECTED",
+        "ast_hash": null,
+        "automatic_revision_child": false,
+        "manifest_hash": "d8d705ae0ab8f05d0c69abc8555e563a3d21d36cab1eba563e3886b5af0fa733",
+        "protocol_hash": "08c088b3f366b2a269a3193e3b8671e0480b6f351f967c3f554a86d37c2d6d46",
+        "recipe_hash": null,
+        "report_hash": "59987cc317e52a4281b34a514afda98335d07442a3d96a35db0bb08c59989e31",
+        "search_n": 9,
+        "slot": "B",
+        "trial_number": 9
+      },
+      "payload_hash": "e4ad33dc7f8ce4e72f9e4134c5532130adc65a18d5643d722301233d919dfbf1",
+      "previous_hash": "a1fca5ff83cdc836a81bbd32b1b34de42f72609d00d65e29e8174566dd8f4355",
+      "sequence": 188,
+      "timestamp": "2026-09-28T10:19:01.791151+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "6c35692f3f24540278fd7eb256255bd19e6af7f4bc2bf8fc637082aae8429caa",
+      "entity_id": "c20bc013-5cf7-4e3d-8d39-12ce37ced528",
+      "entity_type": "research_program",
+      "event_type": "FDP_V3_CONTROLLED_BATCH_COMPLETE",
+      "payload": {
+        "decision_hash": "163397583af08e309a629cdb01844505443c959d53ed7f1d524468c24422ea99",
+        "paper_trading_started": false,
+        "protocol_hash": "08c088b3f366b2a269a3193e3b8671e0480b6f351f967c3f554a86d37c2d6d46",
+        "search_n": 9,
+        "slots_closed": [
+          "A",
+          "B"
+        ]
+      },
+      "payload_hash": "1ccf2951c88e43a97574419b1af88c4a1d2f2b6656d804a631644782a5a56863",
+      "previous_hash": "bbb0e61dab11602eb66184c679b064628b1e1df72c72da5c5e8de0392045ddbc",
+      "sequence": 189,
+      "timestamp": "2026-09-28T10:19:01.897185+00:00",
+      "verified": true
+    },
+    {
+      "current_hash": "3393199128eccbffc99ff9554b205179202412c1eef4a484711390aec5fb216b",
+      "entity_id": "675bca39-e42c-4b3e-8030-18ce950a0c69",
+      "entity_type": "research_cycle",
+      "event_type": "FDP_V3_QWEN_ATTEMPT_REFUSED",
+      "payload": {
+        "attempt": 2,
+        "reason": "NO_RUN_PROJECTED_BUDGET_EXHAUSTED",
+        "recorded_after_batch_as_integrity_audit": true,
+        "role": "proposer",
+        "slot": "B"
+      },
+      "payload_hash": "02a8ae87ede293b8a8434ddb0b37ee637620b9d1b988822d39efc3c905034bcd",
+      "previous_hash": "6c35692f3f24540278fd7eb256255bd19e6af7f4bc2bf8fc637082aae8429caa",
+      "sequence": 190,
+      "timestamp": "2026-09-28T10:22:59.784136+00:00",
+      "verified": true
+    }
+  ],
+  "summary": {
+    "event_count": 190,
+    "events_exported": 190,
+    "head_hash": "3393199128eccbffc99ff9554b205179202412c1eef4a484711390aec5fb216b",
+    "source": "persistent PostgreSQL append-only ledger",
+    "status": "PASS",
+    "verified_at": "2026-09-28T14:17:55.931505+00:00"
+  }
+}
