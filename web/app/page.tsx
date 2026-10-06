@@ -112,6 +112,6 @@ export default function Home() {
       <section className="landing-close" aria-labelledby="close-title"><p>THE CAPITAL GATE IS THE PRODUCT</p><h2 id="close-title">The AI is allowed to have bad ideas.<br /><em>It is not allowed to turn bad evidence into a trade.</em></h2><div><Link className="button-primary" href="/lab">Open Research Lab <span aria-hidden="true">↗</span></Link><Link className="button-secondary" href="/proof">See the complete proof</Link></div></section>
     </main>
 
-    <footer className="landing-footer"><div><span className="brand-mark">F/</span><div><strong>Factor Discovery Agent</strong><p>Built for Bitget AI Genesis S2</p></div></div><p>Research-only · No capital allocated</p><nav aria-label="Footer"><Link href="/proof">Proof</Link><Link href="/system">System</Link></nav></footer>
+    <footer className="landing-footer"><div><span className="brand-mark">F/</span><div><strong>Factor Discovery Agent</strong><p>Built for Bitget AI Genesis S2</p></div></div><p>Research-only · No capital allocated</p><nav aria-label="Footer"><Link href="/proof">Proof</Link><Link href="/run-records">Run records</Link><Link href="/system">System</Link></nav></footer>
   </div>;
 }

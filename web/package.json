@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "test:integration": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test server/*.test.mjs",
-    "probe:bitget-agent": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types scripts/probe-bitget-agent-sdk.mjs"
+    "probe:bitget-agent": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types scripts/probe-bitget-agent-sdk.mjs",
+    "capture:run-records": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types scripts/capture-run-records.mjs"
   },
   "dependencies": {
     "@bitget-ai/bitget-agent-sdk": "3.3.1",

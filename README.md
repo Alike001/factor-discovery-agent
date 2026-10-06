@@ -62,6 +62,7 @@ The frozen protocol checks transaction costs (fee and slippage), point-in-time d
 | [System](https://factor-discovery-agent.vercel.app/system) | Last-verified provenance, budget, and execution status. |
 | [Proof](https://factor-discovery-agent.vercel.app/proof) | The judge-facing evidence path. |
 | [Replay](https://factor-discovery-agent.vercel.app/replay?trial=8) | Trial 8 replay from stored artifacts, without model or market calls. |
+| [Run records](https://factor-discovery-agent.vercel.app/run-records) | Timestamped read-only RAMDUSDT market observations and no-order capital-gate decisions; downloadable JSON/CSV. |
 
 ## Architecture
 
