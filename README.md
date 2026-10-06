@@ -67,6 +67,8 @@ The frozen protocol checks transaction costs (fee and slippage), point-in-time d
 
 Qwen `qwen3.8-max` serves bounded proposer and lifecycle roles. A typed `FactorRecipe` is compiled into a safe factor specification and evaluated by deterministic Python research jobs against Bitget Reality/rToken market data. PostgreSQL persists research integrity, budget, and append-only evidence records. The Next.js App Router frontend presents a sanitized, read-only public export; it does not connect to the research database or execute research during page rendering. The repository contains a Python research backend, not a deployed FastAPI service.
 
+The official `@bitget-ai/bitget-agent-sdk` is integrated in a server-side readiness layer. Its read-only market tool was verified against `RAMDUSDT`; that connectivity check is separate from the frozen historical research dataset. A deterministic Candidate-to-`OrderIntent` contract rechecks evidence, freshness, symbol, size, capital, and risk before a bounded paper dry-run can be considered. The public execution mode remains `READ_ONLY`: with no qualified Candidate, the bridge returns `BLOCKED_NO_CANDIDATE`, produces no order intent, and invokes no SDK write tool. No real-money order was placed.
+
 ## Bounded autonomy
 
 - Under `fdp-v3`, Qwen submits a FactorRecipe, not a raw executable AST or arbitrary Python.
@@ -88,20 +90,23 @@ pytest
 
 The preflight checks public data and records blocked or unverified credential-dependent capabilities without inventing results. Keep any local credentials in a Git-ignored `.env`; no credentials are needed to view the public snapshot.
 
-For the frontend:
+For the frontend and Node 24 integration tests:
 
 ```bash
 cd web
 npm ci
 npm run lint
+npm run test:integration
 npx tsc --noEmit
 npm run build
 npm run dev
 ```
 
+To repeat the credential-free, read-only SDK market probe, run `npm run probe:bitget-agent` from `web/`. It refreshes only the separate SDK-readiness artifact; it does not run research or place an order.
+
 ## Public deployment
 
-The Vercel Root Directory is `web/`. The judge-facing app runs in read-only, evidence-backed snapshot mode from committed sanitized JSON. It exposes no research, paper, or trading trigger, and needs no production Qwen, Bitget, Demo, or database secrets. See [public deployment guidance](docs/PUBLIC_DEPLOYMENT.md).
+The Vercel Root Directory is `web/`. The judge-facing app runs in read-only, evidence-backed snapshot mode from committed sanitized JSON. The separate [Bitget Agent SDK readiness artifact](web/public/evidence/BITGET_AGENT_SDK_STATUS.json) records a public market check without altering the historical evidence manifest. The deployed pages do not invoke the SDK, expose a research, paper, or trading trigger, or need production Qwen, Bitget, Demo, or database secrets. See [public deployment guidance](docs/PUBLIC_DEPLOYMENT.md).
 
 ## Current limitations
 

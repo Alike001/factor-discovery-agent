@@ -1,0 +1,24 @@
+{
+  "integration_package": "@bitget-ai/bitget-agent-sdk",
+  "integration_version": "3.3.1",
+  "mode": "READ_ONLY",
+  "timestamp": "2026-10-06T06:06:10.923Z",
+  "connection_status": "VERIFIED_READ_ONLY",
+  "market_tool": "VERIFIED",
+  "rtoken_probe": {
+    "ok": true,
+    "resultClass": "MATCHING_TICKER",
+    "tool": "market",
+    "symbol": "RAMDUSDT",
+    "category": "SPOT",
+    "matchingRows": 1
+  },
+  "fallback_probe": null,
+  "execution_adapter": "READY_DORMANT",
+  "execution_mode": "READ_ONLY",
+  "capital_gate": "CLOSED",
+  "current_order": "BLOCKED_NO_CANDIDATE",
+  "historical_research_source": "UNCHANGED_COMMITTED_BITGET_REALITY_EVIDENCE",
+  "account_write_calls": 0,
+  "real_orders": 0
+}

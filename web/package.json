@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test:integration": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test server/*.test.mjs",
+    "probe:bitget-agent": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types scripts/probe-bitget-agent-sdk.mjs"
   },
   "dependencies": {
+    "@bitget-ai/bitget-agent-sdk": "3.3.1",
     "next": "16.3.6",
     "react": "19.2.0",
     "react-dom": "19.2.0"

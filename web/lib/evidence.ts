@@ -36,6 +36,13 @@ export function evidence<T>(name: string): T {
 
 export const summary = () => evidence<Summary>("RESEARCH_SUMMARY.json");
 export const chainSummary = () => evidence<ChainSummary>("EVIDENCE_CHAIN_SUMMARY.json");
+export type AgentHubStatus = {
+  integration_package: string; integration_version: string; mode: "READ_ONLY";
+  timestamp: string; connection_status: string; market_tool: string;
+  rtoken_probe: { ok: boolean; resultClass: string; symbol: string; matchingRows: number };
+  execution_adapter: string; execution_mode: string; capital_gate: string; current_order: string;
+};
+export const agentHubStatus = () => JSON.parse(fs.readFileSync(path.join(process.cwd(), "public/evidence/BITGET_AGENT_SDK_STATUS.json"), "utf8")) as AgentHubStatus;
 export const trials = () => [evidence<Trial>("TRIAL_8.json"), evidence<Trial>("TRIAL_9.json")];
 export const formatPct = (value: number | null | undefined) => value == null ? "—" : `${(value * 100).toFixed(2)}%`;
 export const shortHash = (value: string | null | undefined) => value ? `${value.slice(0, 12)}…${value.slice(-6)}` : "—";
