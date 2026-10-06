@@ -4,7 +4,7 @@ An autonomous Bitget rToken research system where Qwen proposes hypotheses and d
 
 Open source under the MIT License.
 
-[Live App](https://factor-discovery-agent.vercel.app) · [Research Proof](https://factor-discovery-agent.vercel.app/proof) · [Research Lab](https://factor-discovery-agent.vercel.app/lab) · [GitHub](https://github.com/Alike001/factor-discovery-agent)
+[Live App](https://factor-discovery-agent.vercel.app) · [Demo Video](https://youtu.be/5_SgHq5SKts)  · [Research Proof](https://factor-discovery-agent.vercel.app/proof) · [Research Lab](https://factor-discovery-agent.vercel.app/lab) · [GitHub](https://github.com/Alike001/factor-discovery-agent)
 
 ## Why this exists
 
@@ -118,6 +118,8 @@ The Vercel Root Directory is `web/`. The judge-facing app runs in read-only, evi
 ## Hackathon
 
 Built for Bitget AI Genesis S2. Track: **Agentic Trading**. Direction: **Factor Discovery / rToken research**.
+
+[Watch the final demo](https://youtu.be/5_SgHq5SKts).
 
 ## License
 
